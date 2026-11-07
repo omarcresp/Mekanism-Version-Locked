@@ -81,9 +81,9 @@ partial-burn fixture. That fixture then generated exactly 2280 FE. See
 
 ## Remaining balance and reactor work
 
-Heat-generator and bio fuel behavior, equipment values,
-other general settings, transport limits and pack recipes remain in the parity
-inventory. In particular, ATM10 generators limit external output to twice their
+Equipment values, other general settings, transport limits and pack recipes
+remain in the parity inventory. Heat-generator conversion and bio fuel behavior
+are now covered in `heat-bio-balance.md` and `heat-bio-runtime/`. In particular, ATM10 generators limit external output to twice their
 configured/current production rate; the port's external output path needs its
 own transport test and review. Turbine conversion and fractional persistence are
 covered in `turbine-balance.md`. Disconnected production checks do not prove

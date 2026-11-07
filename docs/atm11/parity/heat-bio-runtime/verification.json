@@ -1,0 +1,57 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "d78035bdeabfbf911deac2412d3001b6b2df2b7c",
+  "sourceTree": "e0e6721cafc915428482228553b5c8e2fd2dec35",
+  "profileSha256": "ecbad6637eb2edf53b59fc7fffccf763ee26173c9516de002fcc9d8f0d37090f",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "checks": {
+    "seed": 341,
+    "restart": 116
+  },
+  "productionSourceCommit": "d78035bdeabfbf911deac2412d3001b6b2df2b7c",
+  "sourceNote": "Snapshot includes generated heat-generator loot; all tested JARs match local build artifacts byte for byte.",
+  "seedHeatBio": {
+    "heatFE": 1,
+    "heatRemainder": 0.20000000000000018,
+    "bioBlockRemaining": 1799,
+    "bioFE": 28000
+  },
+  "restartHeatBio": {
+    "bioBlockRemaining": 1798,
+    "heatRemainder": 2.220446049250313e-16,
+    "heatFE": 2,
+    "bioFE": 28000
+  },
+  "seedGameTicks": 20119,
+  "logs": {
+    "seed": {
+      "sha256": "39d183e16b82f107a78dae58597012a500f291d61ca9a0fa8ddf3627e6436fe8",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "7026f38e3d4349820e8e301a46e499cba80c5d4237d40029c6fa82ff17c1af7b",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "artifactHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "a3c6b1f42e61ae7f34d07fc2373f24598a18030b84fcf7a64936605a1d95c01a",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "81a707ea54863caafe714d30e8dd4dd323988bda7c553ffd0ec722473a0e136f",
+    "atm11-server-qa-0.1.0.jar": "0ce378aec2db0148aa76c763bd8268d951ce8efda8971005c2116d9f6d43800a"
+  },
+  "scope": "ATM10 heat/bio effective settings; lava active and passive thermal accounting; whole-Joule to FE conversion and fractional output; output cap; aborted simulation rollback; normal block loot and replacement; full-item bio yield, block burn duration, partial-space rollback; fresh-JVM fractional and bio fuel persistence followed by continued generation. Retains turbine, fission, physical fusion ignition, heater, gas, machine and SPS checks. Nether passive heat is configuration-checked only. Generator external transfer limits, reactor recirculation and hot-state safety, equipment, progression and addons remain incomplete.",
+  "excludedAttempts": [
+    "Initial fixture assumed that the first global post-tick included a generator update. Final fixture waits for every generator ticker to advance, applies inputs between ticks and checks exactly one tile update before measuring.",
+    "The next attempt passed thermal/fuel/rollback checks but exposed missing generation_remainder in generated block loot. runData, a separate main build and then QA build regenerated and packaged the component. Packaged loot was checked before the final seed. Failed worlds/evidence are archived separately."
+  ]
+}
