@@ -31,6 +31,7 @@ final class ReactorSafetyProbe {
     private int shutdownTicks;
     private int explosionTick;
     private int damagedTicks;
+    private int survivingCasings;
     private long shutdownFuel;
     private long fuelBeforeMeltdown;
     private long survivingFuel;
@@ -59,23 +60,28 @@ final class ReactorSafetyProbe {
     }
 
     private void build(ServerLevel level, BlockPos base, boolean repair) {
-        for (int x = 0; x < 5; x++) for (int y = 0; y < 5; y++) for (int z = 0; z < 5; z++) {
+        int size = base.equals(MELTDOWN) ? 18 : 5;
+        for (int x = 0; x < size; x++) for (int y = 0; y < size; y++) for (int z = 0; z < size; z++) {
             BlockPos pos = base.offset(x, y, z);
-            boolean wall = x == 0 || x == 4 || y == 0 || y == 4 || z == 0 || z == 4;
+            boolean wall = x == 0 || x == size - 1 || y == 0 || y == size - 1 || z == 0 || z == size - 1;
             // Preserve surviving casing inventories and their multiblock cache during repair.
             if (!repair || !(level.getBlockEntity(pos) instanceof TileEntityFissionReactorCasing)) {
                 level.setBlockAndUpdate(pos, wall ? GeneratorsBlocks.FISSION_REACTOR_CASING.defaultState() : Blocks.AIR.defaultBlockState());
             }
         }
-        level.setBlockAndUpdate(base.offset(2, 1, 2), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.defaultState());
-        level.setBlockAndUpdate(base.offset(2, 2, 2), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.defaultState());
-        level.setBlockAndUpdate(base.offset(2, 3, 2), GeneratorsBlocks.CONTROL_ROD_ASSEMBLY.defaultState());
+        int[] columns = size == 18 ? new int[]{4, 8} : new int[]{2};
+        for (int x : columns) for (int z : columns) {
+            level.setBlockAndUpdate(base.offset(x, 1, z), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.defaultState());
+            level.setBlockAndUpdate(base.offset(x, 2, z), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.defaultState());
+            level.setBlockAndUpdate(base.offset(x, 3, z), GeneratorsBlocks.CONTROL_ROD_ASSEMBLY.defaultState());
+        }
         level.setBlockAndUpdate(base.offset(0, 2, 2), GeneratorsBlocks.FISSION_REACTOR_PORT.defaultState());
     }
 
     private FissionReactorMultiblockData reactor(ServerLevel level, BlockPos base) {
         // An explosion may remove any particular casing, so locate a surviving controller.
-        for (int x = 0; x < 5; x++) for (int y = 0; y < 5; y++) for (int z = 0; z < 5; z++) {
+        int size = base.equals(MELTDOWN) ? 18 : 5;
+        for (int x = 0; x < size; x++) for (int y = 0; y < size; y++) for (int z = 0; z < size; z++) {
             if (level.getBlockEntity(base.offset(x, y, z)) instanceof TileEntityFissionReactorCasing tile && tile.getMultiblock().isFormed()) return tile.getMultiblock();
         }
         return null;
@@ -191,6 +197,7 @@ final class ReactorSafetyProbe {
                 check.accept(IRadiationManager.INSTANCE.getRadiationLevel(level, MELTDOWN.offset(2, 2, 2)) > IRadiationManager.INSTANCE.baselineRadiation(),
                       "safety: real meltdown fallout survives JVM restart");
                 survivingFuel = prior.get("survivingFuel").getAsLong();
+                survivingCasings = prior.get("survivingCasings").getAsInt();
                 postMeltdownDamage = prior.get("postMeltdownDamage").getAsDouble();
                 postMeltdownTemperature = prior.get("postMeltdownTemperature").getAsDouble();
                 fallout = prior.get("fallout").getAsDouble();
@@ -198,8 +205,8 @@ final class ReactorSafetyProbe {
             } else {
                 check.accept(IRadiationManager.INSTANCE.getRadiationLevel(level, MELTDOWN.offset(2, 2, 2)) == IRadiationManager.INSTANCE.baselineRadiation(),
                       "safety: destructive fixture has no preexisting fallout");
-                chargeFuel(level, MELTDOWN, 16000);
-                r.setRateLimit(2);
+                chargeFuel(level, MELTDOWN, 64000);
+                r.setRateLimit(8);
                 r.setActive(true);
                 failedReactor = r;
                 fuelBeforeMeltdown = r.fuelTank.amountAsLong();
@@ -211,7 +218,7 @@ final class ReactorSafetyProbe {
             check.accept(failedReactor.reactorDamage == 75 && failedReactor.wasteTank.isEmpty(),
                   "safety: natural meltdown clears radioactive waste, shuts down and resets damage to 75"
                         + " (damage=" + failedReactor.reactorDamage + ", waste=" + failedReactor.wasteTank.amountAsLong() + ")");
-            check.accept(survivingFuel > 0 && survivingFuel <= fuelBeforeMeltdown && survivingFuel >= fuelBeforeMeltdown - 2
+            check.accept(survivingFuel > 0 && survivingFuel <= fuelBeforeMeltdown && survivingFuel >= fuelBeforeMeltdown - 8
                         && failedReactor.fuelTank.resource().getRadioactivity() == 0,
                   "safety: meltdown preserves nonradioactive fissile fuel as ATM10 does (fuel=" + survivingFuel + ")");
             postMeltdownDamage = failedReactor.reactorDamage;
@@ -222,11 +229,15 @@ final class ReactorSafetyProbe {
             explosionTick = elapsed;
             meltdownStage = 2;
         } else if (meltdownStage == 2 && elapsed > explosionTick + 200 && ignitionComplete) {
+            for (int x = 0; x < 18; x++) for (int y = 0; y < 18; y++) for (int z = 0; z < 18; z++) {
+                if (level.getBlockEntity(MELTDOWN.offset(x, y, z)) instanceof TileEntityFissionReactorCasing) survivingCasings++;
+            }
+            check.accept(survivingCasings > 0, "safety: destructive reactor retains actual surviving casings for cache recovery (count=" + survivingCasings + ")");
             build(level, MELTDOWN, true);
             meltdownStage = 3;
         } else if (meltdownStage == 3 && r != null) {
             check.accept(!r.isActive() && r.reactorDamage > 70 && r.reactorDamage <= 75,
-                  "safety: physical rebuild restores damaged inactive reactor cache");
+                  "safety: physical rebuild restores damaged inactive reactor cache (damage=" + r.reactorDamage + ", active=" + r.isActive() + ")");
             check.accept(r.fuelTank.amountAsLong() == survivingFuel && r.wasteTank.isEmpty(), "safety: physical rebuild preserves surviving fuel without resurrecting irradiated waste");
             meltdownStage = 4;
         }
@@ -241,6 +252,7 @@ final class ReactorSafetyProbe {
         recovery.put("repairTicks", damagedTicks);
         var meltdown = new LinkedHashMap<String, Object>(state(reactor(level, MELTDOWN)));
         meltdown.put("survivingFuel", survivingFuel);
+        meltdown.put("survivingCasings", survivingCasings);
         meltdown.put("postMeltdownDamage", postMeltdownDamage);
         meltdown.put("postMeltdownTemperature", postMeltdownTemperature);
         meltdown.put("fallout", fallout);
