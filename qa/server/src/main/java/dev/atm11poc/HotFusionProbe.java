@@ -49,6 +49,7 @@ final class HotFusionProbe {
     private long initialDeuterium;
     private long initialTritium;
     private long generated;
+    private long injectedPerFuel;
     private long initialEnergy;
     private double previousFraction;
     private double firstPlasma;
@@ -141,6 +142,7 @@ final class HotFusionProbe {
         generated += (long) converted;
         previousFraction = converted - Math.floor(converted);
         checkFraction(r);
+        if (r.isBurning() && r.lastEnvironmentLoss > 0 && r.getInjectionRate() == 4) injectedPerFuel += 2;
         if (saved != null && !observedRestart) {
             firstPlasma = r.getPlasmaTemp();
             firstCase = r.getHeatCapacitor().getTemperature();
@@ -170,7 +172,9 @@ final class HotFusionProbe {
                 stage = 1;
             } else {
                 check.accept(energy(level) == saved.get("energy").getAsLong() + generated, "hot fusion: exact aggregate FE restores with independently counted boot generation");
-                check.accept(fuel(level, 1) == fuel(level, 3), "hot fusion: both external fuel inventories resume symmetrically");
+                check.accept(fuel(level, 1) == saved.get("deuterium").getAsLong() - injectedPerFuel
+                            && fuel(level, 3) == saved.get("tritium").getAsLong() - injectedPerFuel,
+                      "hot fusion: exact saved fuel inventories restore after counted boot injection");
                 initialEnergy = saved.get("energy").getAsLong();
                 initialDeuterium = fuel(level, 1);
                 initialTritium = fuel(level, 3);
@@ -239,6 +243,9 @@ final class HotFusionProbe {
     Map<String, Object> snapshot(ServerLevel level) {
         var r = reactor(level);
         check.accept(energy(level) == initialEnergy + generated, "hot fusion: complete electrical ledger remains conserved until final save");
+        check.accept(fuel(level, 1) == (saved == null ? 50000 : saved.get("deuterium").getAsLong()) - injectedPerFuel
+                    && fuel(level, 3) == (saved == null ? 50000 : saved.get("tritium").getAsLong()) - injectedPerFuel,
+              "hot fusion: complete separate fuel ledgers remain conserved until final save");
         if (saved == null) check.accept(ignited && r.isBurning() && r.getPlasmaTemp() > FusionReactorMultiblockData.BURN_TEMPERATURE,
               "hot fusion: seed saves the physically ignited reactor while hot and burning");
         var out = new LinkedHashMap<String, Object>();
@@ -253,6 +260,7 @@ final class HotFusionProbe {
         out.put("energy", energy(level));
         out.put("matrixEnergy", matrix(level).getEnergy());
         out.put("generated", generated);
+        out.put("injectedPerFuel", injectedPerFuel);
         out.put("laserSupply", suppliedFE);
         out.put("firstRestartPlasma", firstPlasma);
         out.put("firstRestartCase", firstCase);
