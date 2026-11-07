@@ -38,9 +38,9 @@ the final fixture fills its real coolant capacity before each operating cycle.
 | Area | Required proof | State |
 | --- | --- | --- |
 | Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Exact burn/waste, cooling, shutdown and fresh JVM persistence passed; external ports/safety scenarios pending |
-| Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Formation and internal conversion passed; external output/restart pending |
-| Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Hohlraum/API ignition, 100 ticks of injection and generation passed; laser/persistence pending |
-| SPS | Coil/port energy, polonium-to-antimatter quantities/cost, output/restart | Real port/coil and exact 1 mB conversion passed; external transport/balance/restart pending |
+| Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Physical 28-blade and one-blade conversion, fractional accounting and fresh-JVM restart passed; external output/recirculation pending |
+| Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Physical laser/amplifier/focus-matrix ignition and 100 burn ticks passed; controlled FE/fraction restart passed; hot-state safety pending |
+| SPS | Coil/port energy, polonium-to-antimatter quantities/cost, output/restart | Real port/coil, bounded external energy insertion and exact 40000 FE per input mB passed; output transport/restart pending |
 | Nuclear progression | Fuel chain, plutonium/polonium, pellets, waste decay/radiation | Pending |
 | Machines | Processing families, factories/upgrades, fivefold ore chain and pack metals | Selected processing passed; full inventory pending |
 | Transport/storage | Cable/tube/pipe/item networks, induction, dynamic tank, QIO, chunk reload | Capability checks passed; network proof pending |
@@ -78,7 +78,8 @@ The full pack passed 298 seed checks, including a real powered-laser/amplifier/
 focus-matrix ignition and 100 fusion burn ticks. A fresh JVM passed 89 checks,
 including exact stored FE and fractional thermocouple output continuation. See
 `reactor-thermal.md` and `reactor-thermal-runtime/`. Hot-state persistence, safety,
-heat-generator/turbine conversion and complete transport remain pending.
+heat-generator conversion and complete transport remain pending. Turbine conversion
+is covered separately in `turbine-balance.md`.
 
 ## Fractional gas fuel
 
@@ -145,3 +146,13 @@ receives explicit save/restart assertions; the other structures remain in the
 saved world but are not rebuilt or operated again by the restart fixture.
 The verified run starts with a newly seeded world; recovery of heat data already
 corrupted by a pre-fix save is not certified.
+
+## Turbine conversion and capacity
+
+The turbine source and pack profile now restore the pinned rotor, vent, condenser,
+steam cavity and energy capacity settings. Full rotors convert ten Joules to four
+FE per consumed mB; smaller rotors carry fractional FE. A full condenser tank no
+longer rolls back steam conversion. See `turbine-balance.md` for the accounting
+and runtime fixture. The full pack passed 319 seed and 101 fresh-JVM restart
+checks; evidence is in `turbine-balance-runtime/`. External valve transport and
+connected recirculation remain pending.

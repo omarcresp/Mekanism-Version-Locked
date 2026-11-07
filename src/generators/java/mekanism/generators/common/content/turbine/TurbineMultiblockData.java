@@ -24,9 +24,11 @@ import mekanism.common.inventory.container.sync.dynamic.ContainerSync;
 import mekanism.common.lib.multiblock.IValveHandler.ValveData;
 import mekanism.common.lib.multiblock.MultiblockData;
 import mekanism.common.lib.transaction.SimpleLongJournal;
+import mekanism.common.lib.transaction.SimpleDoubleJournal;
 import mekanism.common.tile.TileEntityChemicalTank.GasMode;
 import mekanism.common.util.ChemicalUtils;
 import mekanism.common.util.EnergyUtils;
+import mekanism.common.util.HeatUtils;
 import mekanism.common.util.MekanismUtils;
 import mekanism.common.util.NBTUtils;
 import mekanism.common.util.ResourceUtils;
@@ -72,6 +74,15 @@ public class TurbineMultiblockData extends MultiblockData {
     @SyntheticComputerMethod(getter = "getDumpingMode")
     public GasMode dumpMode = GasMode.IDLE;
     private long energyCapacity = 0;
+    private final SimpleDoubleJournal generationRemainder = new SimpleDoubleJournal() {
+        @Override
+        protected void onRootCommit(Double originalState) {
+            super.onRootCommit(originalState);
+            if (originalState != value) markDirty();
+        }
+    };
+    @ContainerSync
+    private int lastProduction;
 
     @ContainerSync
     @SyntheticComputerMethod(getter = "getBlades")
@@ -145,25 +156,29 @@ public class TurbineMultiblockData extends MultiblockData {
 
         long energyNeeded = energyContainer.getNeededAsLong();
         int flow = 0;
+        lastProduction = 0;
         if (stored > 0 && energyNeeded > 0) {
             double energyMultiplier = getEnergyMultiplier();
             if (energyMultiplier >= Mth.EPSILON) {
-                int steamDivisor = MekanismGeneratorsConfig.generators.turbineSteamDivisor.get();
                 double proportion = stored / (double) getSteamCapacity();
                 double origRate = getMaxFlowRateDouble();
-                double rate = Math.min(Math.min(stored, origRate), (energyNeeded / energyMultiplier) * steamDivisor) * proportion;
-                int amountGenerated = MathUtils.clampToInt(energyMultiplier * (rate / steamDivisor));
-                if (rate > Mth.EPSILON && amountGenerated > 0) {
-                    flow = MathUtils.clampToInt(rate);
-                    flowRate = rate / origRate;
+                double energyBudget = Math.min(energyNeeded, Integer.MAX_VALUE) - generationRemainder.value;
+                double rate = Math.min(Math.min(stored, origRate), energyBudget / energyMultiplier) * proportion;
+                int toConsume = MathUtils.clampToInt(rate);
+                if (toConsume > 0) {
+                    double generated = energyMultiplier * toConsume + generationRemainder.value;
+                    int amountGenerated = MathUtils.clampToInt(generated);
                     try (Transaction transaction = Transaction.openRoot()) {
-                        //TODO - 26.1: Re-evaluate these checks and the above math
                         if (energyContainer.insert(amountGenerated, transaction, AutomationType.INTERNAL) == amountGenerated &&
-                            chemicalTank.extract(chemicalTank.resource(), flow, transaction, AutomationType.INTERNAL) == flow) {
-                            int waterProduced = Math.min(flow, condensers * MekanismGeneratorsConfig.generators.condenserRate.get());
-                            if (ventTank.insert(FluidResource.of(Fluids.WATER), waterProduced, transaction, AutomationType.INTERNAL) == waterProduced) {
-                                transaction.commit();
-                            }
+                            chemicalTank.extract(chemicalTank.resource(), toConsume, transaction, AutomationType.INTERNAL) == toConsume) {
+                            // Condensers recover what fits; a full water tank must not stop the rotor.
+                            int waterProduced = Math.min(toConsume, condensers * MekanismGeneratorsConfig.generators.condenserRate.get());
+                            ventTank.insert(FluidResource.of(Fluids.WATER), waterProduced, transaction, AutomationType.INTERNAL);
+                            setGenerationRemainder(generated - amountGenerated, transaction);
+                            transaction.commit();
+                            flow = toConsume;
+                            lastProduction = amountGenerated;
+                            flowRate = toConsume / origRate;
                         }
                     }
                 }
@@ -209,7 +224,9 @@ public class TurbineMultiblockData extends MultiblockData {
     }
 
     private double getEnergyMultiplier() {
-        return ((double) MekanismGeneratorsConfig.generators.turbineJoulesPerSteam.get() / TurbineValidator.MAX_BLADES)
+        double joulesPerSteam = (double) MekanismGeneratorsConfig.generators.turbineJoulesPerSteam.get()
+              / MekanismGeneratorsConfig.generators.turbineSteamDivisor.get();
+        return HeatUtils.joulesToFE(joulesPerSteam) / TurbineValidator.MAX_BLADES
                * Math.min(blades, coils * MekanismGeneratorsConfig.generators.turbineBladesPerCoil.get());
     }
 
@@ -268,7 +285,16 @@ public class TurbineMultiblockData extends MultiblockData {
 
     @ComputerMethod
     public int getProductionRate() {
-        return MathUtils.clampToInt(getEnergyMultiplier() * clientFlow / MekanismGeneratorsConfig.generators.turbineSteamDivisor.getAsInt());
+        return lastProduction;
+    }
+
+    public double getGenerationRemainder() {
+        return generationRemainder.value;
+    }
+
+    public void setGenerationRemainder(double remainder, TransactionContext transaction) {
+        generationRemainder.updateSnapshots(transaction);
+        generationRemainder.value = remainder;
     }
 
     @ComputerMethod

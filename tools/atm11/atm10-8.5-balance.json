@@ -101,7 +101,15 @@
       "fusion_reactor.casingThermalConductivity": 0.333333333,
       "fusion_reactor.waterHeatingRatio": 0.27272727272727,
       "fusion_reactor.fuelCapacity": 500,
-      "fusion_reactor.energyCapacity": 400000000
+      "fusion_reactor.energyCapacity": 400000000,
+      "turbine.bladesPerCoil": 8,
+      "turbine.ventChemicalFlow": 43478.262,
+      "turbine.disperserChemicalFlow": 1280.0,
+      "turbine.condenserRate": 128000,
+      "turbine.energyCapacityPerVolume": 6400000,
+      "turbine.chemicalPerTank": 6400,
+      "turbine.joulesPerSteam": 10,
+      "turbine.steamDivisor": 1
     }
   }
 }

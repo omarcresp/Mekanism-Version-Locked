@@ -134,23 +134,23 @@ public class GeneratorsConfig extends BaseMekanismConfig {
 
         GeneratorsConfigTranslations.SERVER_TURBINE.applyToBuilder(builder).push("turbine");
         turbineBladesPerCoil = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_TURBINE_BLADES.applyToBuilder(builder)
-              .defineInRange("bladesPerCoil", 4, 1, 12));
+              .defineInRange("bladesPerCoil", 8, 1, 12));
         turbineVentChemicalFlow = CachedDoubleValue.wrap(this, GeneratorsConfigTranslations.SERVER_TURBINE_RATE_VENT.applyToBuilder(builder)
-              .defineInRange("ventChemicalFlow", 32D * FluidType.BUCKET_VOLUME, 0.1, 1_024 * FluidType.BUCKET_VOLUME));
+              .defineInRange("ventChemicalFlow", 43_478.262D, 0.1, 1_024 * FluidType.BUCKET_VOLUME));
         turbineDisperserChemicalFlow = CachedDoubleValue.wrap(this, GeneratorsConfigTranslations.SERVER_TURBINE_RATE_DISPERSER.applyToBuilder(builder)
               .defineInRange("disperserChemicalFlow", 1_280D, 0.1, 1_024 * FluidType.BUCKET_VOLUME));
         condenserRate = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_TURBINE_RATE_CONDENSER.applyToBuilder(builder)
-              .defineInRange("condenserRate", 64 * FluidType.BUCKET_VOLUME, 1, 2_000 * FluidType.BUCKET_VOLUME));
+              .defineInRange("condenserRate", 128 * FluidType.BUCKET_VOLUME, 1, 2_000 * FluidType.BUCKET_VOLUME));
         turbineEnergyCapacityPerVolume = CachedLongValue.define(this, builder, GeneratorsConfigTranslations.SERVER_TURBINE_ENERGY_CAPACITY,
-              "energyCapacityPerVolume", 100, 1L, 1_000_000_000_000L);
+              "energyCapacityPerVolume", 6_400_000, 1L, 1_000_000_000_000L);
         //Note: We use maxVolume as it still is a large number, and we have no reason to go higher even if some things we technically could
         int maxTurbine = 17 * 17 * 18;
         turbineChemicalPerTank = CachedLongValue.wrap(this, GeneratorsConfigTranslations.SERVER_TURBINE_CHEMICAL_CAPACITY.applyToBuilder(builder)
-              .defineInRange("chemicalPerTank", 64L * FluidType.BUCKET_VOLUME, 1, Long.MAX_VALUE / maxTurbine));
+              .defineInRange("chemicalPerTank", 6_400L, 1, Long.MAX_VALUE / maxTurbine));
         turbineJoulesPerSteam = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_TURBINE_JOULES_PER_STEAM.applyToBuilder(builder)
-              .defineInRange("joulesPerSteam", 5, 0, Integer.MAX_VALUE));
+              .defineInRange("joulesPerSteam", 10, 0, Integer.MAX_VALUE));
         turbineSteamDivisor = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_TURBINE_STEAM_DIVISOR.applyToBuilder(builder)
-              .defineInRange("steamDivisor", 100, 1, Integer.MAX_VALUE));
+              .defineInRange("steamDivisor", 1, 1, Integer.MAX_VALUE));
         builder.pop();
 
         GeneratorsConfigTranslations.SERVER_FISSION.applyToBuilder(builder).push("fission_reactor");
