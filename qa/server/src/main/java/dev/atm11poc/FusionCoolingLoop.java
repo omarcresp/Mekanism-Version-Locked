@@ -37,8 +37,7 @@ final class FusionCoolingLoop {
     private final BiConsumer<Boolean, String> check;
     private long initialWater;
     private long generated;
-    private long previousWater;
-    private boolean sawReturn;
+    private long returnedWater;
     private boolean sawSteam;
 
     FusionCoolingLoop(BlockPos start, BiConsumer<Boolean, String> check) {
@@ -101,7 +100,6 @@ final class FusionCoolingLoop {
             check.accept(input.insert(fluid, (int) initialWater, tx) == initialWater, "water-cooled fusion: finite initial coolant charge enters real port");
             tx.commit();
         }
-        previousWater = reactor.waterTank.amountAsLong();
     }
 
     long energy(ServerLevel level) {
@@ -122,9 +120,8 @@ final class FusionCoolingLoop {
         if (!t.isFormed()) return 0;
         long produced = t.getProductionRate();
         generated += produced;
-        long current = reactor.waterTank.amountAsLong();
-        if (current > previousWater) sawReturn = true;
-        previousWater = current;
+        var returnPipe = ((TileEntityMechanicalPipe) level.getBlockEntity(water.getFirst())).getTransmitter();
+        if (returnPipe.hasTransmitterNetwork()) returnedWater += returnPipe.getTransmitterNetwork().getPrevTransferAmount();
         if (produced > 0) sawSteam = true;
         return produced;
     }
@@ -134,13 +131,13 @@ final class FusionCoolingLoop {
     void verify(ServerLevel level, FusionReactorMultiblockData reactor) {
         check.accept(coolant(level, reactor) == initialWater, "water-cooled fusion: finite coolant conserved across reactor, steam, turbine, condenser and return pipes");
         check.accept(sawSteam && generated > 0, "water-cooled fusion: physical reactor steam generates turbine power");
-        check.accept(sawReturn, "water-cooled fusion: condenser water returns through physical pipes");
+        check.accept(returnedWater > 0, "water-cooled fusion: condenser water returns through physical pipes");
         check.accept(((TileEntityEnergyCube) level.getBlockEntity(cable.east())).energyContainer().getAmountAsLong() > 0,
               "water-cooled fusion: turbine output reaches physical cable receiver");
     }
 
     Map<String, Object> snapshot(ServerLevel level, FusionReactorMultiblockData reactor) {
         verify(level, reactor);
-        return Map.of("coolant", coolant(level, reactor), "turbineGenerated", generated, "turbineEnergy", energy(level));
+        return Map.of("coolant", coolant(level, reactor), "turbineGenerated", generated, "turbineEnergy", energy(level), "returnedWater", returnedWater);
     }
 }
