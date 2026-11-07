@@ -181,7 +181,7 @@ final class HeatBioProbe {
                   "aborted heat simulation restores fractional credit and stored FE");
             var state = tile.getBlockState();
             var item = Block.getDrops(state, level, tile.getBlockPos(), tile).stream().filter(stack -> stack.is(GeneratorsBlocks.HEAT_GENERATOR.asItem())).findFirst().orElseThrow();
-            check.accept(item.get(MekanismDataComponents.GENERATION_REMAINDER) == savedRemainder,
+            check.accept(Double.valueOf(savedRemainder).equals(item.get(MekanismDataComponents.GENERATION_REMAINDER)),
                   "normal heat-generator loot preserves earned fractional FE");
             level.setBlockAndUpdate(tile.getBlockPos(), Blocks.AIR.defaultBlockState());
             level.setBlockAndUpdate(tile.getBlockPos(), state);
