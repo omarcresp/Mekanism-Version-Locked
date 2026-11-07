@@ -1,0 +1,434 @@
+{
+  "fileId": 9431427,
+  "url": "https://www.curseforge.com/minecraft/modpacks/all-the-mods-10/files/9431427",
+  "sha256": "dfb34538715589f354c370101ffab3cbb2c3c8dcbc1dac6e382e8560b4a6db06",
+  "mods": [
+    {
+      "file": "AdvancedPeripherals-1.21.1-0.8.2a.jar",
+      "mods": [
+        {
+          "id": "advancedperipherals",
+          "version": "1.21.1-0.8.2a",
+          "name": "Advanced Peripherals"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "optional",
+          "versionRange": "[1.21.1-10.7.15.81,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "advancedperipherals": null
+      }
+    },
+    {
+      "file": "Applied-Mekanistics-1.6.3.jar",
+      "mods": [
+        {
+          "id": "appmek",
+          "version": "1.6.3",
+          "name": "Applied Mekanistics"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "required",
+          "versionRange": "[10.7.14,11-)",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "appmek": null
+      }
+    },
+    {
+      "file": "AppliedFlux-1.21-2.1.7-neoforge.jar",
+      "mods": [
+        {
+          "id": "appflux",
+          "version": "1.21-2.1.7-neoforge",
+          "name": "AppliedFlux"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "OPTIONAL",
+          "versionRange": "[10.6.6,)",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "appflux": null
+      }
+    },
+    {
+      "file": "ars_unification-1.2.23.jar",
+      "mods": [
+        {
+          "id": "ars_unification",
+          "version": "1.2.23",
+          "name": "Ars Unification"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "optional",
+          "versionRange": "[10.7.19,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "mc-publish": {
+            "modrinth": "mekanism",
+            "curseforge": "mekanism"
+          }
+        }
+      ],
+      "targetMatches": {
+        "ars_unification": null
+      }
+    },
+    {
+      "file": "enderio-8.2.12-beta.jar",
+      "mods": [
+        {
+          "id": "enderio",
+          "version": "8.2.12-beta",
+          "name": "Ender IO"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "optional",
+          "versionRange": "[10.7.0,)",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "enderio": "enderio-9.0.6-alpha.jar"
+      }
+    },
+    {
+      "file": "ExtraDisks-1.21.1-4.0.15.jar",
+      "mods": [
+        {
+          "id": "extradisks",
+          "version": "1.21.1-4.0.15",
+          "name": "Extra Disks"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "refinedstorage_mekanism_integration",
+          "type": "optional",
+          "versionRange": "[1.1.0,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "extradisks": "ExtraDisks-26.1.1.jar"
+      }
+    },
+    {
+      "file": "GravitationalModulatingAdditionalUnit-1.21.1-6.4.jar",
+      "mods": [
+        {
+          "id": "gmut",
+          "version": "6.4",
+          "name": "Gravitational Modulating Additional Unit"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "required",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "gmut": null
+      }
+    },
+    {
+      "file": "invasiveopts-1.0.26.jar",
+      "mods": [
+        {
+          "id": "invasiveopts",
+          "version": "1.0.26",
+          "name": "Invasive Optimizations"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "optional",
+          "versionRange": "[10.7.0,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "mc-publish": {
+            "modrinth": "mekanism",
+            "curseforge": "mekanism"
+          }
+        }
+      ],
+      "targetMatches": {
+        "invasiveopts": null
+      }
+    },
+    {
+      "file": "JustEnoughMekanismMultiblocks-1.21.1-7.23.jar",
+      "mods": [
+        {
+          "id": "jei_mekanism_multiblocks",
+          "version": "7.23",
+          "name": "Just Enough Mekanism Multiblocks"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "required",
+          "versionRange": "[10.7.17,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "jei_mekanism_multiblocks": null
+      }
+    },
+    {
+      "file": "laserio-1.9.11.jar",
+      "mods": [
+        {
+          "id": "laserio",
+          "version": "1.9.11",
+          "name": "LaserIO"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "optional",
+          "versionRange": "[10.7,)",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "laserio": "laserio-1.10.2.jar"
+      }
+    },
+    {
+      "file": "logisticsnetworks-1.21.1-1.17.2.jar",
+      "mods": [
+        {
+          "id": "logisticsnetworks",
+          "version": "1.17.2",
+          "name": "LogisticsNetworks"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "optional",
+          "versionRange": "[10.7.0,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "logisticsnetworks": "logisticsnetworks-26.1.2-1.13.0.jar"
+      }
+    },
+    {
+      "file": "Mekanism-1.21.1-10.7.19.85.jar",
+      "mods": [
+        {
+          "id": "mekanism",
+          "version": "10.7.19",
+          "name": "Mekanism"
+        }
+      ],
+      "mekanismDependencies": [],
+      "targetMatches": {
+        "mekanism": "Mekanism-26.1.2-10.8.0.homebaked.jar"
+      }
+    },
+    {
+      "file": "mekanismcovers-1.3-BETA+1.21.jar",
+      "mods": [
+        {
+          "id": "mekanismcovers",
+          "version": "1.3-BETA+1.21",
+          "name": "Mekanism Covers"
+        }
+      ],
+      "mekanismDependencies": [],
+      "targetMatches": {
+        "mekanismcovers": null
+      }
+    },
+    {
+      "file": "MekanismGenerators-1.21.1-10.7.19.85.jar",
+      "mods": [
+        {
+          "id": "mekanismgenerators",
+          "version": "10.7.19",
+          "name": "Mekanism: Generators"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "required",
+          "versionRange": "[10.7.19]",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "mekanismgenerators": "MekanismGenerators-26.1.2-10.8.0.homebaked.jar"
+      }
+    },
+    {
+      "file": "MekanismTools-1.21.1-10.7.19.85.jar",
+      "mods": [
+        {
+          "id": "mekanismtools",
+          "version": "10.7.19",
+          "name": "Mekanism: Tools"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "required",
+          "versionRange": "[10.7.19]",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "mekanismtools": null
+      }
+    },
+    {
+      "file": "mekanisticrouters-1.2.0.jar",
+      "mods": [
+        {
+          "id": "mekanisticrouters",
+          "version": "1.2.0",
+          "name": "Mekanistic Routers"
+        }
+      ],
+      "mekanismDependencies": [],
+      "targetMatches": {
+        "mekanisticrouters": null
+      }
+    },
+    {
+      "file": "mekmm-1.21.1-1.4.2.jar",
+      "mods": [
+        {
+          "id": "mekmm",
+          "version": "1.4.2",
+          "name": "Mekanism: MoreMachine"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "required",
+          "versionRange": "[10.7.19,)",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        },
+        {
+          "modId": "evolvedmekanism",
+          "type": "optional",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "mekmm": null
+      }
+    },
+    {
+      "file": "pipez-neoforge-1.21.1-1.2.31.jar",
+      "mods": [
+        {
+          "id": "pipez",
+          "version": "1.21.1-1.2.31",
+          "name": "Pipez"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "optional",
+          "versionRange": "[1.21.1-10.7.3.59,)",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "pipez": "pipez-neoforge-1.2.31+26.1.2.jar"
+      }
+    },
+    {
+      "file": "refinedstorage-mekanism-integration-1.2.0.jar",
+      "mods": [
+        {
+          "id": "refinedstorage_mekanism_integration",
+          "version": "1.2.0",
+          "name": "Refined Storage - Mekanism Integration"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "required",
+          "versionRange": "[10.6,11-)",
+          "side": "BOTH"
+        }
+      ],
+      "targetMatches": {
+        "refinedstorage_mekanism_integration": null
+      }
+    },
+    {
+      "file": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+      "mods": [
+        {
+          "id": "sfm",
+          "version": "4.34.0",
+          "name": "Super Factory Manager (SFM)"
+        }
+      ],
+      "mekanismDependencies": [
+        {
+          "modId": "mekanism",
+          "type": "optional",
+          "versionRange": "[10.3.2,)"
+        }
+      ],
+      "targetMatches": {
+        "sfm": "Super Factory Manager (SFM)-MC26.1.2-4.34.0.jar"
+      }
+    }
+  ],
+  "serverJarCount": 468,
+  "interpretation": "Metadata presence only; optional dependencies do not prove runtime integration, and absent parent mods may be outside Mekanism-specific parity."
+}

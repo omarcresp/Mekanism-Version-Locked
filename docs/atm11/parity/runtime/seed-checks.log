@@ -1,0 +1,69 @@
+[07:14:14] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS disposable world ownership marker
+[07:14:14] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS registered mekanism:enrichment_chamber
+[07:14:14] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS registered mekanism:metallurgic_infuser
+[07:14:14] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS registered mekanism:chemical_dissolution_chamber
+[07:14:14] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS registered mekanism:sps_casing
+[07:14:14] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS registered mekanismgenerators:fission_reactor_casing
+[07:14:14] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS registered mekanismgenerators:fusion_reactor_controller
+[07:14:14] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS enrichment chamber block entity created
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS pack integration block registered trashcans:liquid_trash_can
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS chemical capability available on trashcans:liquid_trash_can
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS chemical insertion accepted by trashcans:liquid_trash_can
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS pack integration block registered trashcans:ultimate_trash_can
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS chemical capability available on trashcans:ultimate_trash_can
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS chemical insertion accepted by trashcans:ultimate_trash_can
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS chemical tank block entity available
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS chemical transaction changes visible before abort
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS aborted chemical transaction restores exact amount
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS ATM10 8.5 deterministic secondary chemical consumption is active
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS pack ethene fuel map loads with preserved 6000 energy per mB and current burn limit
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS pack hydrogen fuel map loads with preserved 200 energy per mB and current burn limit
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS creative cube component parses and retains exact long energy value
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS ATM creative energy cube progression recipe loads
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded atm11mekcompat:platinum/from_raw
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/crushing/aum
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/enriching/aum
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/pigment_extracting/aum
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/sawing/witchwood_logs
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded allthemods:mekanism/sawing/undergarden/grongle_planks
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/honeycomb_lithium
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/honeycomb_wasted_radioactive
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/comb_block_lithium
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/comb_block_wasted_radioactive
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS uncounted external recipe input defaults to one item
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS counted recipe input preserves quantity
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS zero-count input rejected instead of silently defaulting
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS uncounted input encodes back to canonical counted schema
+[07:14:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS platinum processing chamber available
+[07:14:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS formed fission reactor detects fuel assemblies
+[07:14:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS formed turbine detects blades, coils and condensers
+[07:14:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS turbine begins with steam and no stored energy
+[07:14:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS fusion begins unignited with a filled hohlraum
+[07:14:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS formed SPS detects actual port-connected coil
+[07:14:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS SPS port accepts exact energy for one mB antimatter
+[07:14:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS turbine consumes steam during normal ticking
+[07:14:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS turbine generates stored energy
+[07:14:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS turbine condensers recover water
+[07:14:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS SPS consumes exact configured polonium input
+[07:14:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS SPS converts polonium into exactly one mB antimatter
+[07:14:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS SPS actual port and coil consume exact supplied energy
+[07:14:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:tick:205]: ATM11_POC tick 100
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS 100 fission ticks consume exactly 100 mB fissile fuel
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS 100 fission ticks produce exactly 100 mB nuclear waste
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS fission operation consumes water coolant
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS fission operation produces heated coolant
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS cooled fission operation avoids reactor damage (damage=0.0, water=10664247)
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS fusion ignition consumes the filled hohlraum
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS fusion sustains burning for 100 ticks after ignition
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS fusion injects both deuterium and tritium
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS fusion consumes equal quantities of deuterium and tritium
+[07:14:26] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS fusion generates stored energy
+[07:14:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:tick:205]: ATM11_POC tick 200
+[07:14:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:tick:205]: ATM11_POC tick 300
+[07:14:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:tick:205]: ATM11_POC tick 400
+[07:14:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS three raw platinum processed into exactly four dust
+[07:14:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS compat processing outputs native AllTheOres platinum dust
+[07:14:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS platinum recipe consumed exactly three raw items
+[07:14:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS native enrichment recipe produces enriched carbon
+[07:14:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS machine consumed exact supplied input
+[07:14:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:55]: ATM11_POC PASS machine consumed energy while processing
