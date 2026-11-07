@@ -7,3 +7,9 @@ node_modules/
 .idea/
 .serena/
 publicacao-*/
+# Local dependency downloads and isolated pack instances
+libs/
+runs/
+qa/**/run/
+
+__pycache__/

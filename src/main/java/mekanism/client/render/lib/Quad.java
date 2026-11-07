@@ -1,12 +1,15 @@
 package mekanism.client.render.lib;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.QuadInstance;
 import com.mojang.blaze3d.vertex.VertexFormatElement;
 import java.util.Arrays;
 import java.util.function.Consumer;
 import mekanism.common.lib.Color;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.geometry.BakedQuad;
+import net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.core.Vec3i;
@@ -25,6 +28,8 @@ public class Quad {
     private int tintIndex;
     private boolean shade;
     private boolean hasAmbientOcclusion;
+    @Nullable
+    private MaterialInfo materialInfo;
 
     public Quad(TextureAtlasSprite sprite, Direction side, Vertex[] vertices) {
         this(sprite, side, vertices, -1, false, true);
@@ -45,9 +50,11 @@ public class Quad {
         tintIndex = quad.materialInfo().tintIndex();
         shade = quad.materialInfo().shade();
         hasAmbientOcclusion = quad.materialInfo().ambientOcclusion();
+        materialInfo = quad.materialInfo();
         BakedQuadUnpacker unpacker = new BakedQuadUnpacker();
-        //TODO - 26.1: no existy. Hopefully yeet this class. Validate this properly works, it used to pass readAlpha as true, but that no longer is a parameter
-        //unpacker.putBulkData(new PoseStack().last(), quad, 1, 1, 1, 1, 0, OverlayTexture.NO_OVERLAY);
+        QuadInstance instance = new QuadInstance();
+        instance.setLightCoords(0);
+        unpacker.putBakedQuad(new PoseStack().last(), quad, instance);
         vertices = unpacker.getVertices();
     }
 
@@ -57,6 +64,7 @@ public class Quad {
 
     public void setTexture(TextureAtlasSprite sprite) {
         this.sprite = sprite;
+        materialInfo = null;
     }
 
     public int getTint() {
@@ -111,7 +119,13 @@ public class Quad {
 
     public BakedQuad bake() {
         QuadBakingVertexConsumer quadBaker = new QuadBakingVertexConsumer();
-        //TODO - 26.1 quadBaker.setSprite(sprite);
+        if (materialInfo == null) {
+            quadBaker.setSprite(new net.minecraft.client.resources.model.sprite.Material.Baked(sprite, false));
+        } else {
+            quadBaker.setSprite(sprite, materialInfo.layer(), materialInfo.itemRenderType());
+        }
+        quadBaker.setLightEmission(Arrays.stream(vertices)
+              .mapToInt(vertex -> Math.min(vertex.getRawLightU(), vertex.getRawLightV()) >> 4).min().orElse(0));
         quadBaker.setDirection(side);
         quadBaker.setTintIndex(tintIndex);
         quadBaker.setShade(shade);
@@ -127,7 +141,9 @@ public class Quad {
         for (int i = 0; i < newVertices.length; i++) {
             newVertices[i] = vertices[i].copy(true);
         }
-        return new Quad(sprite, side, newVertices, tintIndex, shade, hasAmbientOcclusion);
+        Quad copy = new Quad(sprite, side, newVertices, tintIndex, shade, hasAmbientOcclusion);
+        copy.materialInfo = materialInfo;
+        return copy;
     }
 
     public Quad flip() {
@@ -135,7 +151,9 @@ public class Quad {
         for (int i = 0; i < flipped.length; i++) {
             flipped[i] = vertices[i].flip();
         }
-        return new Quad(sprite, side.getOpposite(), flipped, tintIndex, shade, hasAmbientOcclusion);
+        Quad copy = new Quad(sprite, side.getOpposite(), flipped, tintIndex, shade, hasAmbientOcclusion);
+        copy.materialInfo = materialInfo;
+        return copy;
     }
 
     private static class BakedQuadUnpacker implements VertexConsumer {

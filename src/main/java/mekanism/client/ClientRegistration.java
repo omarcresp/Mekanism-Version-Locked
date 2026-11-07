@@ -103,11 +103,11 @@ import mekanism.client.render.RenderPropertiesProvider.MekCustomArmorRenderPrope
 import mekanism.client.render.RenderTickHandler;
 import mekanism.client.render.armor.FreeRunnerArmor;
 import mekanism.client.render.armor.JetpackArmor;
-import mekanism.client.render.armor.MekaSuitArmor;
+import mekanism.client.render.armor.MekaSuitModel;
 import mekanism.client.render.armor.ScubaMaskArmor;
 import mekanism.client.render.armor.ScubaTankArmor;
 import mekanism.client.render.entity.FlameModel;
-import mekanism.client.render.entity.RenderFlame;
+import mekanism.client.render.entity.FlameRenderer;
 import mekanism.client.render.entity.RenderRobit;
 import mekanism.client.render.hud.MekaSuitEnergyLevel;
 import mekanism.client.render.hud.MekanismHUD;
@@ -256,7 +256,7 @@ public class ClientRegistration {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         //Register entity rendering handlers
         event.registerEntityRenderer(MekanismEntityTypes.ROBIT.get(), RenderRobit::new);
-        event.registerEntityRenderer(MekanismEntityTypes.FLAME.get(), RenderFlame::new);
+        event.registerEntityRenderer(MekanismEntityTypes.FLAME.get(), FlameRenderer::new);
 
         //Register TileEntityRenderers
         ClientRegistrationUtil.bindTileEntityRenderer(event, RenderThermoelectricBoiler::new, MekanismTileEntityTypes.BOILER_CASING, MekanismTileEntityTypes.BOILER_VALVE);
@@ -511,10 +511,10 @@ public class ClientRegistration {
         event.registerItem(new MekCustomArmorRenderProperties(ScubaMaskArmor.SCUBA_MASK), MekanismItems.SCUBA_MASK);
         event.registerItem(new MekCustomArmorRenderProperties(ScubaTankArmor.SCUBA_TANK), MekanismItems.SCUBA_TANK);
 
-        event.registerItem(MekaSuitArmor.HELMET, MekanismItems.MEKASUIT_HELMET);
-        event.registerItem(MekaSuitArmor.BODYARMOR, MekanismItems.MEKASUIT_BODYARMOR);
-        event.registerItem(MekaSuitArmor.PANTS, MekanismItems.MEKASUIT_PANTS);
-        event.registerItem(MekaSuitArmor.BOOTS, MekanismItems.MEKASUIT_BOOTS);
+        event.registerItem(MekaSuitModel.HELMET, MekanismItems.MEKASUIT_HELMET);
+        event.registerItem(MekaSuitModel.BODYARMOR, MekanismItems.MEKASUIT_BODYARMOR);
+        event.registerItem(MekaSuitModel.PANTS, MekanismItems.MEKASUIT_PANTS);
+        event.registerItem(MekaSuitModel.BOOTS, MekanismItems.MEKASUIT_BOOTS);
 
         event.registerBlock(RenderPropertiesProvider.boundingParticles(), MekanismBlocks.BOUNDING_BLOCK);
         ClientRegistrationUtil.registerBlockExtensions(event, MekanismBlocks.BLOCKS);

@@ -16,7 +16,7 @@ import mekanism.api.gear.IHUDElement.HUDColor;
 import mekanism.api.gear.IModuleHelper;
 import mekanism.api.gear.ModuleData;
 import mekanism.client.model.MekanismModelCache;
-import mekanism.client.render.armor.MekaSuitArmor;
+import mekanism.client.render.armor.MekaSuitModel;
 import mekanism.common.Mekanism;
 import mekanism.common.item.ItemModule;
 import mekanism.common.registries.MekanismDataComponents;
@@ -206,6 +206,6 @@ public class ModuleHelper implements IModuleHelper {//TODO - 26.1: Evaluate movi
 
     @Override
     public synchronized void addMekaSuitModuleModelSpec(String name, Holder<ModuleData<?>> moduleData, EquipmentSlot slotType, Predicate<LivingEntity> isActive) {
-        MekaSuitArmor.registerModule(name, moduleData, slotType, isActive);
+        MekaSuitModel.registerModule(name, moduleData, slotType, isActive);
     }
 }

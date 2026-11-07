@@ -13,7 +13,7 @@ import mekanism.api.RelativeSide;
 import mekanism.client.gui.GuiMekanism;
 import mekanism.client.gui.GuiRadialSelector;
 import mekanism.client.render.armor.ISpecialGear;
-import mekanism.client.render.armor.MekaSuitArmor;
+import mekanism.client.render.armor.MekaSuitModel;
 import mekanism.client.render.hud.RadiationOverlay;
 import mekanism.client.render.lib.Outlines;
 import mekanism.client.render.lib.Outlines.Line;
@@ -181,7 +181,7 @@ public class RenderTickHandler {
         AbstractClientPlayer player = event.getPlayer();
         ItemStack chestStack = player.getItemBySlot(EquipmentSlot.CHEST);
         if (chestStack.getItem() instanceof ItemMekaSuitArmor armorItem) {
-            MekaSuitArmor armor = (MekaSuitArmor) ((ISpecialGear) IClientItemExtensions.of(armorItem)).gearModel();
+            MekaSuitModel armor = (MekaSuitModel) ((ISpecialGear) IClientItemExtensions.of(armorItem)).gearModel();
             AvatarRenderer<AbstractClientPlayer> renderer = (AvatarRenderer<AbstractClientPlayer>) Minecraft.getInstance().getEntityRenderDispatcher().getRenderer(player);
             PlayerModel model = renderer.getModel();
             AvatarRenderState renderState = renderer.createRenderState();
@@ -198,8 +198,9 @@ public class RenderTickHandler {
             renderState.isCrouching = false;
             renderState.swimAmount = 0.0F;
             model.setupAnim(renderState);
-            armor.renderArm(model, event.getPoseStack(), event.getSubmitNodeCollector(), event.getPackedLight(), renderState, chestStack, rightHand);
-            event.setCanceled(true);
+            if (armor.renderArm(model, event.getPoseStack(), event.getSubmitNodeCollector(), event.getPackedLight(), renderState, chestStack, rightHand)) {
+                event.setCanceled(true);
+            }
         }
     }
 

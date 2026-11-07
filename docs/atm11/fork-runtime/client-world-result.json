@@ -1,0 +1,12 @@
+{
+  "pid": 6977,
+  "worldTicks": 200,
+  "success": true,
+  "checks": [
+    "HEAD MekaSuit equipped: true",
+    "CHEST MekaSuit equipped: true",
+    "LEGS MekaSuit equipped: true",
+    "FEET MekaSuit equipped: true",
+    "world master volume muted: true"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "kubegroovy/client_scripts/tooltips/mekanism.groovy": "e83e1a446da34aad9039034ab274da92532bc5ec67d93486f6697f25df0d0e35",
+  "kubegroovy/client_scripts/recipe_viewer/hide_items.groovy": "f528264bf7df891a5a9c7010e7a41d51317946a75da926777e313077c354c66d",
+  "kubegroovy/server_scripts/progression/atm_star_creative.groovy": "01dee4ed22d87e3db8f5ee4e143b8212a892262061e163c7de376040540a0656",
+  "kubegroovy/dynamic_data/mekanism/data_maps/mekanism/chemical/chemical_attribute_fuel.json": "5b4a0f41068a6e4119b5e624ac54111b3fe38805e3ce6fa8ef582b892ce4ea07",
+  "config/ftbquests/quests/chapters/mekanism.json5": "16c3eb028d4a7be5d23cd979acdb0121bab80a9f15933b1f0c7f436be1434139",
+  "config/ftbquests/quests/chapters/mekanism_reactors.json5": "f3798d7a257e70b885b90ea81514a6faae3efb968f9783f972656c9ea0a9c6c4"
+}
