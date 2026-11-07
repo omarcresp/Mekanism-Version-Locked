@@ -211,7 +211,6 @@ final class ConnectedFissionProbe {
     }
 
     boolean tick(ServerLevel l, int elapsed, boolean ignitionChecksComplete) {
-        if (stage == 5) return true;
         var sync = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, l.registryAccess());
         barrel(l).writeReducedUpdatedTag(sync);
         int progress = sync.buildResult().getIntOr(mekanism.api.SerializationConstants.PROGRESS, 0);
@@ -219,6 +218,10 @@ final class ConnectedFissionProbe {
         previousDecayProgress = progress;
         var r = reactor(l);
         var t = turbine(l);
+        if (stage == 5) {
+            production += t.getProductionRate();
+            return true;
+        }
         if (saved != null && t.isFormed()) bootProduction += t.getProductionRate();
         if (saved != null && r.isFormed() && !observedHotRestart) {
             firstRestartTemperature = r.getHeatCapacitor().getTemperature();
@@ -327,6 +330,8 @@ final class ConnectedFissionProbe {
     }
 
     Map<String, Object> snapshot(ServerLevel l) {
+        check.accept(fuelTotal(l) + wasteTotal(l) + decayedWaste == 3000, "connected fuel and independently counted decay remain conserved until final save");
+        check.accept(energyTotal(l) - energyAtStart == production, "connected generation ledger includes all updates while other fixtures finish");
         Map<String, Object> r = new LinkedHashMap<>();
         r.put("fuel", fuelTotal(l));
         r.put("waste", wasteTotal(l));
