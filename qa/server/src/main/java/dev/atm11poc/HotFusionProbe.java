@@ -12,10 +12,12 @@ import mekanism.common.content.matrix.MatrixMultiblockData;
 import mekanism.common.lib.transmitter.TransmissionType;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.tile.TileEntityChemicalTank;
+import mekanism.common.tile.TileEntityEnergyCube;
 import mekanism.common.tile.component.config.DataType;
 import mekanism.common.tile.laser.TileEntityLaser;
 import mekanism.common.tile.laser.TileEntityLaserAmplifier;
 import mekanism.common.tile.multiblock.TileEntityInductionCasing;
+import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.transmitter.TileEntityPressurizedTube;
 import mekanism.common.tile.transmitter.TileEntityUniversalCable;
 import mekanism.generators.common.content.fusion.FusionReactorMultiblockData;
@@ -39,6 +41,7 @@ final class HotFusionProbe {
     private static final BlockPos LASER = START.offset(-3, 2, 2);
     private static final BlockPos SOURCE = LASER.offset(0, 0, -3);
     private static final BlockPos MATRIX = START.offset(10, 0, 1);
+    private static final BlockPos CUBE = MATRIX.offset(4, 2, 1);
     private static final int IGNITION_FE = 400000000;
     private final BiConsumer<Boolean, String> check;
     private JsonObject saved;
@@ -93,6 +96,14 @@ final class HotFusionProbe {
         level.setBlockAndUpdate(MATRIX.offset(1, 1, 1), MekanismBlocks.BASIC_INDUCTION_CELL.defaultState());
         level.setBlockAndUpdate(MATRIX.offset(1, 2, 1), MekanismBlocks.ADVANCED_INDUCTION_PROVIDER.defaultState());
         level.setBlockAndUpdate(MATRIX.offset(0, 1, 1), MekanismBlocks.INDUCTION_PORT.defaultState());
+        level.setBlockAndUpdate(MATRIX.offset(2, 2, 1), MekanismBlocks.INDUCTION_PORT.defaultState());
+        ((TileEntityInductionCasing) level.getBlockEntity(MATRIX.offset(2, 2, 1))).setActive(true);
+        level.setBlockAndUpdate(MATRIX.offset(3, 2, 1), MekanismBlocks.ULTIMATE_UNIVERSAL_CABLE.defaultState());
+        level.setBlockAndUpdate(CUBE, MekanismBlocks.ULTIMATE_ENERGY_CUBE.defaultState());
+        var cube = (TileEntityEnergyCube) level.getBlockEntity(CUBE);
+        var config = cube.getConfig().getConfig(TransmissionType.ENERGY);
+        for (var side : RelativeSide.values()) if (config.setDataType(DataType.INPUT, side)) cube.getConfig().sideChanged(TransmissionType.ENERGY, side);
+        config.setEjecting(false);
     }
 
     private FusionReactorMultiblockData reactor(ServerLevel level) {
@@ -116,6 +127,8 @@ final class HotFusionProbe {
 
     private long energy(ServerLevel level) {
         return reactor(level).energyContainer().getAmountAsLong() + matrix(level).getEnergy()
+              + ((TileEntityEnergyCube) level.getBlockEntity(CUBE)).energyContainer().getAmountAsLong()
+              + ((TileEntityUniversalCable) level.getBlockEntity(MATRIX.offset(3, 2, 1))).getTransmitter().getBufferWithFallback()
               + ((TileEntityUniversalCable) level.getBlockEntity(START.offset(5, 1, 2))).getTransmitter().getBufferWithFallback();
     }
 
@@ -128,7 +141,7 @@ final class HotFusionProbe {
         var first = ((TileEntityUniversalCable) level.getBlockEntity(START.offset(5, 1, 2))).getTransmitter();
         if (!first.hasTransmitterNetwork()) return false;
         for (int x = 6; x < 10; x++) if (((TileEntityUniversalCable) level.getBlockEntity(START.offset(x, 1, 2))).getTransmitter().getTransmitterNetwork() != first.getTransmitterNetwork()) return false;
-        return true;
+        return ((TileEntityUniversalCable) level.getBlockEntity(MATRIX.offset(3, 2, 1))).getTransmitter().hasTransmitterNetwork();
     }
 
     boolean tick(ServerLevel level, int elapsed) {
@@ -159,6 +172,8 @@ final class HotFusionProbe {
             if (elapsed < 40 || !matrix(level).isFormed() || !networksReady(level)) return false;
             check.accept(matrix(level).getCellCount() == 1 && matrix(level).getProviderCount() == 1, "hot fusion: physical induction matrix forms with cell and provider");
             if (saved == null) {
+                check.accept(energy(level) == 0, "induction: active output port cannot create energy while the matrix is empty");
+                checkMatrixTransactions(level);
                 check.accept(fuel(level, 1) == 50000 && fuel(level, 3) == 50000, "hot fusion: separate physical feeds conserve both initial fuel charges");
                 check.accept(r.deuteriumTank.amountAsLong() == 500 && r.tritiumTank.amountAsLong() == 500,
                       "hot fusion: tubes fill reactor through actual chemical input ports");
@@ -171,7 +186,8 @@ final class HotFusionProbe {
                 initialEnergy = energy(level);
                 stage = 1;
             } else {
-                check.accept(energy(level) == saved.get("energy").getAsLong() + generated, "hot fusion: exact aggregate FE restores with independently counted boot generation");
+                check.accept(energy(level) == saved.get("energy").getAsLong() + generated, "hot fusion: exact aggregate FE restores with independently counted boot generation"
+                      + " (actual=" + energy(level) + ", saved=" + saved.get("energy").getAsLong() + ", boot=" + generated + ")");
                 check.accept(fuel(level, 1) == saved.get("deuterium").getAsLong() - injectedPerFuel
                             && fuel(level, 3) == saved.get("tritium").getAsLong() - injectedPerFuel,
                       "hot fusion: exact saved fuel inventories restore after counted boot injection");
@@ -211,7 +227,7 @@ final class HotFusionProbe {
                             && initialTritium - fuel(level, 3) == measuredTicks * 2L,
                       "hot fusion: separate physical fuel feeds each supply two mB per tick at " + measuredTicks);
                 check.accept(energy(level) == initialEnergy + generated, "hot fusion: physical electrical inventory equals thermal generation ledger at " + measuredTicks);
-                check.accept(matrix(level).getEnergy() > 0, "hot fusion: output port and cables deliver actual FE into induction cell at " + measuredTicks);
+                check.accept(((TileEntityEnergyCube) level.getBlockEntity(CUBE)).energyContainer().getAmountAsLong() > 0, "hot fusion: physical induction output and cable deliver FE into receiver at " + measuredTicks);
             }
             if (measuredTicks < 200) return false;
             if (saved == null) { stage = 4; return true; }
@@ -234,6 +250,54 @@ final class HotFusionProbe {
 
     private void checkFraction(FusionReactorMultiblockData r) {
         if (Math.abs(r.getGenerationRemainder() - previousFraction) > 1e-8) throw new IllegalStateException("Hot fusion fractional generation journal disagrees with thermal ledger");
+    }
+
+    private void checkMatrixTransactions(ServerLevel level) {
+        var matrix = matrix(level);
+        var container = matrix.energyContainer();
+        var cell = ((TileEntityInductionCell) level.getBlockEntity(MATRIX.offset(1, 1, 1))).energyContainer();
+        check.accept(container.getAmountAsLong() == 0 && cell.getAmountAsLong() == 0, "induction: empty matrix and physical cell agree");
+        try (var tx = Transaction.openRoot()) {
+            check.accept(container.insert(12345, tx, AutomationType.EXTERNAL) == 12345, "induction: real matrix accepts committed input");
+            tx.commit();
+        }
+        check.accept(cell.getAmountAsLong() == 12345 && container.getAmountAsLong() == 12345,
+              "induction: committed energy reaches persistable cell before another world tick");
+        try (var tx = Transaction.openRoot()) {
+            check.accept(container.extract(345, tx, AutomationType.EXTERNAL) == 345 && cell.getAmountAsLong() == 12000,
+                  "induction: transactional extraction updates the actual cell immediately");
+        }
+        check.accept(cell.getAmountAsLong() == 12345 && container.getAmountAsLong() == 12345,
+              "induction: aborted extraction restores cell, aggregate and transfer budget");
+        try (var tx = Transaction.openRoot()) {
+            try (var nested = Transaction.open(tx)) {
+                check.accept(container.extract(345, nested, AutomationType.EXTERNAL) == 345, "induction: nested extraction sees restored output budget");
+                nested.commit();
+            }
+        }
+        check.accept(cell.getAmountAsLong() == 12345 && container.getAmountAsLong() == 12345,
+              "induction: outer abort restores a committed nested cell transfer");
+        try (var tx = Transaction.openRoot()) {
+            long remaining = matrix.getTransferCap() - 12345;
+            check.accept(container.insert(Integer.MAX_VALUE, tx, AutomationType.EXTERNAL) == remaining
+                        && container.insert(1, tx, AutomationType.EXTERNAL) == 0,
+                  "induction: immediate cell storage preserves the shared input throughput limit");
+        }
+        check.accept(container.getAmountAsLong() == 12345 && cell.getAmountAsLong() == 12345,
+              "induction: aborted full-budget input restores persistable storage");
+        try (var tx = Transaction.openRoot()) {
+            check.accept(container.extract(12345, tx, AutomationType.EXTERNAL) == 12345, "induction: full committed extraction uses restored budget");
+            tx.commit();
+        }
+        check.accept(cell.getAmountAsLong() == 0 && container.getAmountAsLong() == 0,
+              "induction: committed extraction is reflected in persistable cell immediately");
+        long capacity = container.getCapacityAsLong();
+        container.removeInternal(MATRIX.offset(1, 1, 1));
+        container.removeInternal(MATRIX.offset(1, 1, 1));
+        check.accept(container.getCapacityAsLong() == 0 && container.getAmountAsLong() == 0,
+              "induction: removing a cell twice subtracts capacity once");
+        container.addCell(MATRIX.offset(1, 1, 1), (TileEntityInductionCell) level.getBlockEntity(MATRIX.offset(1, 1, 1)));
+        check.accept(container.getCapacityAsLong() == capacity, "induction: reattaching physical cell restores exact capacity");
     }
 
     private void checkSupply(boolean ok) {
@@ -259,6 +323,7 @@ final class HotFusionProbe {
         out.put("mixedFuel", r.fuelTank.amountAsLong());
         out.put("energy", energy(level));
         out.put("matrixEnergy", matrix(level).getEnergy());
+        out.put("cubeEnergy", ((TileEntityEnergyCube) level.getBlockEntity(CUBE)).energyContainer().getAmountAsLong());
         out.put("generated", generated);
         out.put("injectedPerFuel", injectedPerFuel);
         out.put("laserSupply", suppliedFE);
