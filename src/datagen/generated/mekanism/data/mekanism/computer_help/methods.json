@@ -3593,6 +3593,13 @@
   ],
   "Generator": [
     {
+      "methodName": "getMaxOutput",
+      "returns": {
+        "type": "Number (int)",
+        "java_type": "int"
+      }
+    },
+    {
       "description": "Get the amount of energy produced by this generator in the last tick.",
       "methodName": "getProductionRate",
       "returns": {

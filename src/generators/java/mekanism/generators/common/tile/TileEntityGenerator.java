@@ -3,15 +3,19 @@ package mekanism.generators.common.tile;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.function.IntSupplier;
 import mekanism.api.IContentsListener;
 import mekanism.api.RelativeSide;
 import mekanism.api.energy.IEnergyContainer;
+import mekanism.api.math.MathUtils;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.capabilities.energy.BasicEnergyContainer;
 import mekanism.common.capabilities.energy.MachineEnergyContainer;
 import mekanism.common.capabilities.holder.single.BasicSingleHolder;
 import mekanism.common.capabilities.holder.single.ISingleContainerHolder;
 import mekanism.common.integration.computer.annotation.ComputerMethod;
+import mekanism.common.inventory.container.sync.SyncableInt;
+import mekanism.common.inventory.container.sync.ISyncableData;
 import mekanism.common.tile.base.TileEntityMekanism;
 import mekanism.common.util.EnergyUtils;
 import net.minecraft.core.BlockPos;
@@ -33,10 +37,12 @@ public abstract class TileEntityGenerator extends TileEntityMekanism {
     private List<BlockCapabilityCache<EnergyHandler, @Nullable Direction>> outputCaches;
     @UnknownNullability//Initialized via getInitialEnergyContainer
     private BasicEnergyContainer energyContainer;
+    private int maxOutput;
 
     /// Generator -- a block that produces energy. It has a certain amount of fuel it can store as well as an output rate.
-    public TileEntityGenerator(Holder<Block> blockProvider, BlockPos pos, BlockState state) {
+    public TileEntityGenerator(Holder<Block> blockProvider, BlockPos pos, BlockState state, IntSupplier maxOutput) {
         super(blockProvider, pos, state);
+        updateMaxOutputRaw(maxOutput.getAsInt());
     }
 
     protected Set<RelativeSide> getEnergySides() {
@@ -63,7 +69,7 @@ public abstract class TileEntityGenerator extends TileEntityMekanism {
                     outputCaches.add(Capabilities.ENERGY.createCache(level, worldPosition.relative(side), side.getOpposite()));
                 }
             }
-            EnergyUtils.emit(outputCaches, energyContainer, null);
+            EnergyUtils.emit(outputCaches, energyContainer, getMaxOutput(), null);
         }
         return sendUpdatePacket;
     }
@@ -72,6 +78,19 @@ public abstract class TileEntityGenerator extends TileEntityMekanism {
     protected void invalidateDirectionCaches(Direction newDirection) {
         super.invalidateDirectionCaches(newDirection);
         outputCaches = null;
+    }
+
+    @ComputerMethod
+    public int getMaxOutput() {
+        return maxOutput;
+    }
+
+    protected void updateMaxOutputRaw(int generation) {
+        maxOutput = MathUtils.multiplyClamped(generation, 2);
+    }
+
+    protected ISyncableData syncableMaxOutput() {
+        return SyncableInt.create(this::getMaxOutput, value -> maxOutput = value);
     }
 
     public BasicEnergyContainer energyContainer() {

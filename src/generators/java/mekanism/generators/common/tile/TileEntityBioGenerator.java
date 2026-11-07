@@ -47,7 +47,7 @@ public class TileEntityBioGenerator extends TileEntityGenerator {
     private float lastFluidScale;
 
     public TileEntityBioGenerator(BlockPos pos, BlockState state) {
-        super(GeneratorsBlocks.BIO_GENERATOR, pos, state);
+        super(GeneratorsBlocks.BIO_GENERATOR, pos, state, MekanismGeneratorsConfig.generators.bioGeneration);
     }
 
     private static int biofuelFromItem(ItemResource itemType) {

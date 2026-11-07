@@ -44,6 +44,7 @@ public final class Probe {
     private final GasProbe gas = new GasProbe(this::check);
     private final HeaterProbe heater = new HeaterProbe(this::check);
     private final HeatBioProbe heatBio = new HeatBioProbe(this::check);
+    private final GeneratorTransferProbe generatorTransfer = new GeneratorTransferProbe(this::check);
     private long initialMachineEnergy;
     private final FusionProbe fusion = new FusionProbe(this::check);
     private final SPSProbe sps = new SPSProbe(this::check);
@@ -107,6 +108,8 @@ public final class Probe {
             heater.prepare(level, reopen);
             heatBio.prepare(level, reopen ? JsonParser.parseString(Files.readString(Path.of("seed-result.json")))
                   .getAsJsonObject().getAsJsonObject("heatBio") : null);
+            generatorTransfer.prepare(level, reopen ? JsonParser.parseString(Files.readString(Path.of("seed-result.json")))
+                  .getAsJsonObject().getAsJsonObject("generatorTransfer") : null);
             initialMachineEnergy = machine().getEnergyContainer().getCapacityAsLong();
             machine().getEnergyContainer().setEnergy(initialMachineEnergy, null);
             chemicalInterop();
@@ -225,9 +228,10 @@ public final class Probe {
             boolean gasComplete = gas.tick(server.overworld(), ticks, reopen);
             boolean heaterComplete = heater.tick(server.overworld(), ticks);
             boolean heatBioComplete = heatBio.tick(server.overworld(), ticks);
+            boolean generatorTransferComplete = generatorTransfer.tick(server.overworld(), ticks);
             var output = machine().getInventorySlots().get(1);
             long expected = reopen ? 3 : 2;
-            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && spsComplete && generatorsComplete && gasComplete && heaterComplete && heatBioComplete) {
+            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && spsComplete && generatorsComplete && gasComplete && heaterComplete && heatBioComplete && generatorTransferComplete) {
                 if (ModList.get().isLoaded("atm11mekcompat")) {
                     var platinum = (TileEntityMekanism) server.overworld().getBlockEntity(PLATINUM);
                     var dust = platinum.getInventorySlots().get(1);
@@ -243,6 +247,7 @@ public final class Probe {
                 observations.put("fission", reactors.snapshot(server.overworld()));
                 observations.put("turbines", turbine.snapshot(server.overworld()));
                 observations.put("heatBio", heatBio.snapshot(server.overworld()));
+                observations.put("generatorTransfer", generatorTransfer.snapshot(server.overworld()));
                 if (!reopen) observations.put("fusionShutdown", fusion.shutdownForSave(server.overworld()));
                 observations.put("outputCount", output.amountAsLong());
                 observations.put("processingTicks", ticks);

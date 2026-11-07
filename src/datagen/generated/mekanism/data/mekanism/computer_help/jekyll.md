@@ -2636,6 +2636,10 @@ methods:
       java_type: long
       type: Number (long)
   Generator:
+  - methodName: getMaxOutput
+    returns:
+      java_type: int
+      type: Number (int)
   - description: Get the amount of energy produced by this generator in the last tick.
     methodName: getProductionRate
     returns:
