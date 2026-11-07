@@ -17,6 +17,8 @@ jobs:
           distribution: temurin
           java-version: '25'
       - uses: gradle/actions/setup-gradle@v4
+      - name: Check integration tools
+        run: python3 -m compileall -q tools/atm11 qa/run_server.py
       - name: Generate data
         run: ./gradlew --no-daemon --max-workers=2 runData
       - name: Build and run unit tests

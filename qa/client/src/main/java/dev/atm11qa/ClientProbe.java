@@ -123,6 +123,19 @@ public final class ClientProbe {
             check(MekanismRenderType.MEKASUIT == net.minecraft.client.renderer.rendertype.RenderTypes.entityCutout(
                   net.minecraft.client.renderer.texture.TextureAtlas.LOCATION_ITEMS), "armor render type binds the matching item atlas");
             check(data.bake(java.util.Set.of()).isEmpty(), "empty part selection emits no geometry");
+            var sample = quads.getFirst();
+            var roundTrip = new mekanism.client.render.lib.Quad(sample).bake();
+            for (int vertex = 0; vertex < 4; vertex++) {
+                check(sample.position(vertex).equals(roundTrip.position(vertex)) && sample.packedUV(vertex) == roundTrip.packedUV(vertex),
+                      "quad round trip preserves position and UV " + vertex);
+            }
+            check(sample.materialInfo().sprite() == roundTrip.materialInfo().sprite()
+                  && sample.materialInfo().layer() == roundTrip.materialInfo().layer()
+                  && sample.materialInfo().itemRenderType() == roundTrip.materialInfo().itemRenderType(),
+                  "quad round trip preserves sprite, transparency and render type");
+            var lit = mekanism.client.render.lib.QuadUtils.transformBakedQuads(List.of(sample),
+                  mekanism.client.render.lib.QuadTransformation.fullbright).getFirst();
+            check(lit.materialInfo().lightEmission() == 15, "LED fullbright survives modern quad rebaking");
             VertexConsumer consumer = (VertexConsumer) Proxy.newProxyInstance(getClass().getClassLoader(), new Class<?>[]{VertexConsumer.class},
                 (proxy, method, args) -> {
                     if (method.isDefault()) {
@@ -141,8 +154,9 @@ public final class ClientProbe {
             SubmitNodeCollector collector = (SubmitNodeCollector) Proxy.newProxyInstance(getClass().getClassLoader(),
                 new Class<?>[]{SubmitNodeCollector.class}, (proxy, method, args) -> {
                     if (method.getName().equals("submitCustomGeometry")) {
-                        if (args[1] == null) {
-                            throw new IllegalStateException("null render type");
+                        if (args[1] != MekanismRenderType.MEKASUIT && args[1] != net.minecraft.client.renderer.rendertype.RenderTypes.entityTranslucent(
+                              net.minecraft.client.renderer.texture.TextureAtlas.LOCATION_ITEMS)) {
+                            throw new IllegalStateException("armor batch does not bind the item atlas");
                         }
                         batches++;
                         ((SubmitNodeCollector.CustomGeometryRenderer) args[2]).render(((PoseStack) args[0]).last(), consumer);

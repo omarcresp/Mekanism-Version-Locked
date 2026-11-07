@@ -128,7 +128,7 @@ public class MekaSuitModel implements ICustomArmor, ISpecialGear {
                 submitQuads(
                     nodeCollector,
                     poseStack,
-                    RenderTypes.entityTranslucent(TextureAtlas.LOCATION_BLOCKS),
+                    RenderTypes.entityTranslucent(TextureAtlas.LOCATION_ITEMS),
                     armorQuads.transparentQuads().get(armPos),
                     lightCoords,
                     Color.WHITE
@@ -181,7 +181,7 @@ public class MekaSuitModel implements ICustomArmor, ISpecialGear {
         boolean transparent
     ) {
         if (!quadMap.isEmpty()) {
-            RenderType renderType = transparent ? RenderTypes.entityTranslucent(TextureAtlas.LOCATION_BLOCKS) : MekanismRenderType.MEKASUIT;
+            RenderType renderType = transparent ? RenderTypes.entityTranslucent(TextureAtlas.LOCATION_ITEMS) : MekanismRenderType.MEKASUIT;
 
             for (Entry<ModelPos, List<BakedQuad>> entry : quadMap.entrySet()) {
                 poseStack.pushPose();

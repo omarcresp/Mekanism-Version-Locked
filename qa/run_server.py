@@ -60,7 +60,10 @@ def main():
     assert report.get('exitCode') == 0 and not report.get('timeout'), report
     result = json.loads((server / (args.phase + '-result.json')).read_text())
     assert result['pid'] == process.pid and result['success'], result
-    assert 'Error parsing recipe' not in prefix.with_suffix('.log').read_text(), 'recipe decoding errors remain'
+    log_text = prefix.with_suffix('.log').read_text()
+    assert 'Error parsing recipe' not in log_text, 'recipe decoding errors remain'
+    assert "Error in 'ServerEvents.recipes'" not in log_text, 'pack recipe event failed'
+    assert 'Could not read data map of type mekanism:' not in log_text, 'Mekanism data map failed'
     if args.phase == 'restart':
         assert json.loads((output / 'seed-result.json').read_text())['pid'] != result['pid']
     prefix.with_name(prefix.name + '-result.json').write_text(json.dumps(result, indent=2) + '\n')

@@ -92,7 +92,22 @@ public final class Probe {
         }
     }
 
-    private void prepareCompat() {
+    private void prepareCompat() throws com.mojang.brigadier.exceptions.CommandSyntaxException {
+        var fuelType = mekanism.api.datamaps.IMekanismDataMapTypes.INSTANCE.chemicalFuel();
+        var ethene = ChemicalResource.of(MekanismChemicals.ETHENE).getData(fuelType);
+        var hydrogen = ChemicalResource.of(MekanismChemicals.HYDROGEN).getData(fuelType);
+        check(ethene != null && ethene.energyDensity() == 6000 && ethene.maxBurnPerTick() == 10,
+              "pack ethene fuel map loads with preserved 6000 energy per mB and current burn limit");
+        check(hydrogen != null && hydrogen.energyDensity() == 200 && hydrogen.maxBurnPerTick() == 10,
+              "pack hydrogen fuel map loads with preserved 200 energy per mB and current burn limit");
+        var creative = new net.minecraft.commands.arguments.item.ItemParser(server.registryAccess())
+              .parse(new com.mojang.brigadier.StringReader("mekanism:creative_energy_cube[mekanism:energy=9223372036854775807L]"))
+              .createItemStack(1);
+        check(creative.get(mekanism.common.registries.MekanismDataComponents.ATTACHED_ENERGY.get()) == Long.MAX_VALUE,
+              "creative cube component parses and retains exact long energy value");
+        check(server.getRecipeManager().byKey(ResourceKey.create(Registries.RECIPE,
+              Identifier.parse("allthemods:energizing/mekanism_creative_energy_cube"))).isPresent(),
+              "ATM creative energy cube progression recipe loads");
         for (String id : new String[]{"atm11mekcompat:platinum/from_raw",
                 "arsmagicalegacy:compat/mekanism/crushing/aum",
                 "arsmagicalegacy:compat/mekanism/enriching/aum",
