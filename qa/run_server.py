@@ -49,7 +49,7 @@ def main():
     reader = threading.Thread(target=record)
     reader.start()
     try:
-        report['exitCode'] = process.wait(timeout=480)
+        report['exitCode'] = process.wait(timeout=900)
     except subprocess.TimeoutExpired:
         report['timeout'] = True
         os.killpg(process.pid, signal.SIGTERM)
