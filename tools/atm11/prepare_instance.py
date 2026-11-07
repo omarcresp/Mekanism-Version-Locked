@@ -5,7 +5,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
-from patch_tooltips import patch_tooltips
+from patch_pack import patch_pack
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -47,7 +47,7 @@ def main():
         shutil.copy2(artifact, target / 'mods' / artifact.name)
     subprocess.run([sys.executable, str(ROOT / 'tools/atm11/build_compat.py'), '--mods', str(target / 'mods'),
                     '--output', str(target / 'mods/atm11-mekanism-compat-0.1.0.jar')], check=True)
-    patch_tooltips(target)
+    patch_pack(target)
     # Create this before the first client launch so Default Options cannot initialize audible defaults.
     (target / 'options.txt').write_text('soundCategory_master:0.0\n')
     print(target)

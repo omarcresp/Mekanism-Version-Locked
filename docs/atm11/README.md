@@ -8,7 +8,7 @@ This fork targets Minecraft 26.1.2, NeoForge 26.1.2.126 and Java 25. The validat
 - Builds an overlay that translates legacy Ars Magica Legacy and Productive Bees recipes and adds AllTheOres platinum processing.
 - Restores MekaSuit OBJ loading, armor geometry and first-person arms from the community binary's MIT-licensed implementation, adapted to reproducible source. See [source provenance](render-source-provenance.json).
 - Uses `MekaSuitModel` and `FlameRenderer` so Iris 1.11.4 does not apply obsolete mixins targeting pre-26.1 classes.
-- Repairs the pack's Mekanism tooltip selectors in the local instance copy. Groovy slashy literals are strings; these selectors need regex Patterns with trailing wildcards.
+- Reveals the pack's two existing Mekanism quest chapters and repairs its tooltip selectors in the local instance copy. Groovy slashy literals are strings; these selectors need regex Patterns with trailing wildcards.
 
 No Iris JAR changes or gameplay feature flags are required. Production sound works normally; every local test client is muted.
 
@@ -24,7 +24,7 @@ python3 tools/atm11/prepare_instance.py \
   --target /path/to/new-disposable-minecraft
 ```
 
-The target must not already exist. The script copies mods, configuration, scripts, shader packs and resource packs. It copies no player worlds or launcher accounts, replaces Core and Generators, generates the overlay, fixes tooltip selectors, and sets master volume to zero before first launch. Launch this copy using a production NeoForge 26.1.2.126 profile with Java 25. A development launch does not faithfully reproduce this pack's production behavior.
+The target must not already exist. The script copies mods, configuration, scripts, shader packs and resource packs. It copies no player worlds or launcher accounts, replaces Core and Generators, generates the overlay, fixes tooltip selectors, reveals the two quest chapters, and sets master volume to zero before first launch. Launch this copy using a production NeoForge 26.1.2.126 profile with Java 25. A development launch does not faithfully reproduce this pack's production behavior.
 
 A specific extra local `ancestrallies-0.1.0-alpha.1.jar` pins NeoForge .124. The preparation script disables that file only in the disposable copy. Rebuild it for .126 before using it alongside the target pack.
 
@@ -42,7 +42,7 @@ Install these three artifacts on both server and client:
 - `build/libs/MekanismGenerators-26.1.2-10.8.0.homebaked.jar`
 - `build/atm11/atm11-mekanism-compat-0.1.0.jar`
 
-Replace previous Core/Generators versions rather than keeping duplicate mod IDs. Do not install QA JARs on a playing server. Clients also require the tooltip selector repair described above.
+Replace previous Core/Generators versions rather than keeping duplicate mod IDs. Do not install QA JARs on a playing server. Clients also require the tooltip selector repair described above. On the server, reveal the existing quest chapters by changing `always_invisible: true` to `false` in `config/ftbquests/quests/chapters/mekanism.json5` and `mekanism_reactors.json5`. The instance preparation script applies both changes to copied clients. For marked disposable server copies, run `python3 tools/atm11/patch_pack.py /path/to/server`.
 
 The overlay reads the user's installed Ars Magica Legacy and Productive Bees JARs at build time. Their recipe resources and ATM pack scripts are not redistributed in this repository. Translation preserves quantities and conditions; dynamic recipes also require this fork's codec fix.
 

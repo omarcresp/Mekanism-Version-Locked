@@ -22,6 +22,12 @@ def main():
     output = args.output.resolve()
     if not (server / 'poc-owned-world').is_file():
         parser.error('server must have the disposable-world ownership marker poc-owned-world')
+    if args.phase == 'seed' and (server / 'seed-result.json').exists():
+        parser.error('seed requires a fresh disposable world and no previous seed-result.json')
+    if args.phase == 'restart':
+        saved_seed = json.loads((server / 'seed-result.json').read_text())
+        recorded_seed = json.loads((output / 'seed-result.json').read_text())
+        assert saved_seed == recorded_seed and saved_seed['success'], 'seed evidence does not belong to this server world'
     output.mkdir(parents=True, exist_ok=True)
     prefix = output / args.phase
     inputs = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((server / 'mods').glob('*.jar'))}
