@@ -1,0 +1,11 @@
+{
+  "trigger": "Input to induction matrix after its update, followed by world save before next matrix update.",
+  "logicalSeedEnergyFE": 163369620,
+  "persistedSeedCellEnergyFE": 162936990,
+  "missingFE": 432630,
+  "seedRegionSha256": "bb08e66befcb6aab4250efcdb14d5f5a3989bbb0ef55c56df54afd1a817714c8",
+  "seedResultSha256": "4111db68b0469e92862383754aedb89e861f4ff315eb77fe2f7458b4499c7e3a",
+  "coreArtifactSha256": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+  "cause": "Matrix reported pending input in aggregate energy while physical cells still held the preceding update. World save persisted the cell, not pending input.",
+  "fix": "Commit transfers directly to cell storage in the same transaction; journal aggregate and budgets together; pending counters track throughput only."
+}
