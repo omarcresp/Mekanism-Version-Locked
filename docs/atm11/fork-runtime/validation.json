@@ -1,30 +1,34 @@
 {
-  "buildSourceCommit": "d60da5a004423d888bdd434c981ddb70b664477b",
+  "buildSourceCommit": "5f3bcc4386c2985c5bf1d7e6a253e7a4deb0883e",
   "pack": "ATM11 0.14.0-beta",
   "minecraft": "26.1.2",
   "neoforge": "26.1.2.126",
   "java": 25,
   "modHashes": {
-    "Mekanism-26.1.2-10.8.0.homebaked.jar": "a23dfe4a172f609a65c661c15b7d12fb17e36126e9d0f70668af1c667ae9f32b",
-    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "a6754481e192b7d2ffdd286112b9942bfec8657bffc48ac22e0ed67d6d41bb1d",
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "f9383a28490ef7b7535a2ab5d399ffa7b036caec7a095b72e15fa4492c4dd4e6",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "a8691620a56c29dad3499adf09a14910ff5f00c1913e5482873df961ab610e40",
     "atm11-mekanism-compat-0.1.0.jar": "f211fd5820300fb3b4e16c76d9f367d4194da23bd35ceee5ea0f229214d2f2f4",
-    "atm11-server-qa-0.1.0.jar": "bf896672abc5ecdfa3dc0999c1ed03f7990321bda4883d54f06f0e935c069bcc"
+    "atm11-server-qa-0.1.0.jar": "a0c7e50305fc887119cafe8604e12eef773f833c0c202f69f3b4aa8d05cbf392"
   },
   "serverModCount": 295,
   "server": {
     "seed": {
-      "pid": 80913,
+      "pid": 48903,
       "exitCode": 0,
-      "assertions": 38,
-      "recipeCount": 41296,
-      "recipeParseErrors": 0
+      "assertions": 42,
+      "recipeCount": 41299,
+      "recipeParseErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
     },
     "restart": {
-      "pid": 84672,
+      "pid": 52849,
       "exitCode": 0,
-      "assertions": 36,
-      "recipeCount": 41296,
-      "recipeParseErrors": 0
+      "assertions": 40,
+      "recipeCount": 41299,
+      "recipeParseErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
     }
   },
   "client": "pending native validation",
@@ -33,5 +37,11 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0
+  },
+  "packEdits": {
+    "clientTooltipSelectors": 8,
+    "questChaptersRevealed": 2,
+    "fuelEntriesMigrated": 2,
+    "creativeEnergyComponentMigrated": 1
   }
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Repair ATM11 0.14 Mekanism tooltip selectors and reveal its existing quests."""
+"""Migrate ATM11 0.14 pack scripts, quests and fuel data for the Mekanism fork."""
 import argparse
 from pathlib import Path
 import re
@@ -21,6 +21,19 @@ def patch_tooltips(instance: Path):
     return count
 
 
+def patch_optional_chemical_items(instance: Path):
+    path = instance / 'kubegroovy/client_scripts/recipe_viewer/hide_items.groovy'
+    if not path.is_file():
+        return 0
+    original = path.read_text()
+    updated, count = re.subn(
+        r'(?m)^(\s*)allthemods\.remove\("(extradisks:infinite_chemical_storage_(?:block|disk|part))"\)$',
+        r'\1if ($Item.exists("\2")) allthemods.remove("\2")', original)
+    if count:
+        path.write_text(updated)
+    return count
+
+
 def enable_quests(instance: Path):
     changed = 0
     for chapter in ('mekanism', 'mekanism_reactors'):
@@ -31,6 +44,26 @@ def enable_quests(instance: Path):
             if count:
                 path.write_text(updated)
                 changed += count
+    return changed
+
+
+def remove_unavailable_quest_gates(instance: Path):
+    changed = 0
+    # These hidden "NOT HERE YET" checkmarks disable the entire quest chains.
+    for chapter, gate in (('mekanism', '132777D37FD5E38B'),
+                          ('mekanism_reactors', '48195ED3F9E729BE')):
+        path = instance / f'config/ftbquests/quests/chapters/{chapter}.json5'
+        if not path.is_file():
+            continue
+        original = path.read_text()
+        def migrate(match):
+            nonlocal changed
+            updated, count = re.subn(r'(?m)^\s*"' + gate + r'",?\s*$', '', match.group())
+            changed += count
+            return updated
+        updated = re.sub(r'dependencies: \[.*?\]', migrate, original, flags=re.DOTALL)
+        if updated != original:
+            path.write_text(updated)
     return changed
 
 
@@ -74,7 +107,9 @@ def migrate_creative_energy(instance: Path):
 
 
 def patch_pack(instance: Path):
-    return {'tooltipSelectors': patch_tooltips(instance), 'questChapters': enable_quests(instance),
+    return {'tooltipSelectors': patch_tooltips(instance),
+            'optionalChemicalItemSelectors': patch_optional_chemical_items(instance), 'questChapters': enable_quests(instance),
+            'unavailableQuestDependencies': remove_unavailable_quest_gates(instance),
             'chemicalFuels': migrate_fuel(instance), 'creativeEnergyComponents': migrate_creative_energy(instance)}
 
 

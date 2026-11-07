@@ -10,7 +10,7 @@ Build the main project first, then:
 ./gradlew -p qa/client --no-daemon --max-workers=2 build
 ```
 
-Install `qa/client/build/libs/atm11-client-qa-0.1.0.jar` only in a disposable ATM11 0.14.0-beta test instance, with the fork's Core, Generators and generated resource overlay. Use the real production NeoForge .126 runtime. The fixture observes the actual title screen, then waits for a disposable single-player world so item components are bound. It checks registered OBJ geometry, texture atlas agreement, part selection, all four armor slots and first-person arm output through real rendering callbacks. A recording vertex consumer checks finite coordinates and counts geometry; it does not replace visual inspection of an in-world player.
+Install `qa/client/build/libs/atm11-client-qa-0.1.0.jar` only in a disposable ATM11 0.14.0-beta test instance, with the fork's Core, Generators and generated resource overlay. Use the real production NeoForge .126 runtime. The fixture observes the actual title screen, then waits for a disposable single-player world so item components are bound. It checks registered OBJ geometry, texture atlas agreement, quad unpack/rebake round trips, full-bright emission, part selection, all four armor slots and first-person arm output through real rendering callbacks. A recording vertex consumer checks finite coordinates and counts geometry; it does not replace visual inspection of an in-world player.
 
 Results are written to `client-render-result.json` in the test instance. A successful launch alone does not count: inspect `success` and every asserted behavior. The fixture leaves the client open for native UI inspection. In a disposable single-player world, it equips the player with all four MekaSuit pieces, selects the front third-person camera, and writes `client-world-result.json` after 200 client ticks. Inspect the actual armor visually as well; the world result verifies synchronized equipment and mute state, not pixel correctness.
 
@@ -37,4 +37,4 @@ python3 qa/run_server.py --server /path/to/disposable-server --output /path/to/e
 python3 qa/run_server.py --server /path/to/disposable-server --output /path/to/evidence --phase restart --java /path/to/jdk25/bin/java
 ```
 
-The runner checks result success, matching process IDs, distinct JVMs, unchanged mod hashes, and recipe parse errors. It does not treat a clean process exit as sufficient evidence.
+The runner checks result success, matching process IDs, distinct JVMs, unchanged mod hashes, and recipe decoder errors, recipe-event failures and Mekanism data-map failures. It does not treat a clean process exit as sufficient evidence.

@@ -13,6 +13,7 @@
   "build": "Source only; release JAR is a reference, not a build input or bytecode overlay.",
   "additionalRepairs": [
     "Remove two OBJ faces exported with untextured material none, which the current NeoForge baker rejects.",
-    "Bind the item atlas used by the baked armor sprites instead of the block atlas."
+    "Bind the item atlas used by the baked armor sprites instead of the block atlas.",
+    "Restore quad vertex unpacking and preserve material/atlas and emissive light when rebaking armor geometry."
   ]
 }
