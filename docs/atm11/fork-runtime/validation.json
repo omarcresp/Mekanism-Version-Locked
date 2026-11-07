@@ -1,0 +1,37 @@
+{
+  "buildSourceCommit": "d60da5a004423d888bdd434c981ddb70b664477b",
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "modHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "a23dfe4a172f609a65c661c15b7d12fb17e36126e9d0f70668af1c667ae9f32b",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "a6754481e192b7d2ffdd286112b9942bfec8657bffc48ac22e0ed67d6d41bb1d",
+    "atm11-mekanism-compat-0.1.0.jar": "f211fd5820300fb3b4e16c76d9f367d4194da23bd35ceee5ea0f229214d2f2f4",
+    "atm11-server-qa-0.1.0.jar": "bf896672abc5ecdfa3dc0999c1ed03f7990321bda4883d54f06f0e935c069bcc"
+  },
+  "serverModCount": 295,
+  "server": {
+    "seed": {
+      "pid": 80913,
+      "exitCode": 0,
+      "assertions": 38,
+      "recipeCount": 41296,
+      "recipeParseErrors": 0
+    },
+    "restart": {
+      "pid": 84672,
+      "exitCode": 0,
+      "assertions": 36,
+      "recipeCount": 41296,
+      "recipeParseErrors": 0
+    }
+  },
+  "client": "pending native validation",
+  "unitTests": {
+    "tests": 71,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

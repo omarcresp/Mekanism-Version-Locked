@@ -31,6 +31,9 @@ public final class ClientProbe {
     private final List<String> checks = new ArrayList<>();
     private int vertices;
     private int batches;
+    private int worldTicks;
+    private boolean worldPrepared;
+    private boolean worldRecorded;
 
     public ClientProbe() {
         NeoForge.EVENT_BUS.addListener(this::tick);
@@ -43,9 +46,58 @@ public final class ClientProbe {
         checks.add(label);
     }
 
+    private void probeWorld(Minecraft client) {
+        if (client.level == null || client.player == null || client.getSingleplayerServer() == null) {
+            return;
+        }
+        if (!worldPrepared) {
+            worldPrepared = true;
+            var uuid = client.player.getUUID();
+            var server = client.getSingleplayerServer();
+            server.execute(() -> {
+                var player = server.getPlayerList().getPlayer(uuid);
+                if (player != null) {
+                    player.setGameMode(net.minecraft.world.level.GameType.CREATIVE);
+                    player.setItemSlot(net.minecraft.world.entity.EquipmentSlot.HEAD, MekanismItems.MEKASUIT_HELMET.asStack());
+                    player.setItemSlot(net.minecraft.world.entity.EquipmentSlot.CHEST, MekanismItems.MEKASUIT_BODYARMOR.asStack());
+                    player.setItemSlot(net.minecraft.world.entity.EquipmentSlot.LEGS, MekanismItems.MEKASUIT_PANTS.asStack());
+                    player.setItemSlot(net.minecraft.world.entity.EquipmentSlot.FEET, MekanismItems.MEKASUIT_BOOTS.asStack());
+                }
+            });
+            client.options.setCameraType(net.minecraft.client.CameraType.THIRD_PERSON_FRONT);
+        }
+        if (++worldTicks < 200 || worldRecorded) {
+            return;
+        }
+        worldRecorded = true;
+        Map<String, Object> result = new LinkedHashMap<>();
+        result.put("pid", ProcessHandle.current().pid());
+        result.put("worldTicks", worldTicks);
+        List<String> worldChecks = new ArrayList<>();
+        boolean success = true;
+        for (var slot : List.of(net.minecraft.world.entity.EquipmentSlot.HEAD, net.minecraft.world.entity.EquipmentSlot.CHEST,
+              net.minecraft.world.entity.EquipmentSlot.LEGS, net.minecraft.world.entity.EquipmentSlot.FEET)) {
+            boolean equipped = client.player.getItemBySlot(slot).getItem() instanceof mekanism.common.item.gear.ItemMekaSuitArmor;
+            success &= equipped;
+            worldChecks.add(slot + " MekaSuit equipped: " + equipped);
+        }
+        boolean muted = client.options.getSoundSourceVolume(net.minecraft.sounds.SoundSource.MASTER) == 0;
+        success &= muted;
+        worldChecks.add("world master volume muted: " + muted);
+        result.put("success", success);
+        result.put("checks", worldChecks);
+        try {
+            Files.writeString(client.gameDirectory.toPath().resolve("client-world-result.json"),
+                new GsonBuilder().setPrettyPrinting().create().toJson(result));
+        } catch (Exception error) {
+            throw new RuntimeException(error);
+        }
+    }
+
     private void tick(ClientTickEvent.Post event) {
         Minecraft client = Minecraft.getInstance();
         client.options.getSoundSourceOptionInstance(net.minecraft.sounds.SoundSource.MASTER).set(0.0);
+        probeWorld(client);
         if (ran || !(client.screen instanceof TitleScreen) || client.getOverlay() != null) {
             return;
         }

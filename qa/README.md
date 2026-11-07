@@ -12,7 +12,7 @@ Build the main project first, then:
 
 Install `qa/client/build/libs/atm11-client-qa-0.1.0.jar` only in a disposable ATM11 0.14.0-beta test instance, with the fork's Core, Generators and generated resource overlay. Use the real production NeoForge .126 runtime. The fixture waits until the actual title screen has loaded, then checks the registered OBJ geometry, part selection, all four armor slots and first-person arm output through the real rendering callbacks. A recording vertex consumer checks finite coordinates and counts geometry; it does not replace visual inspection of an in-world player.
 
-Results are written to `client-render-result.json` in the test instance. A successful launch alone does not count: inspect `success` and every asserted behavior. The fixture leaves the client open for native UI inspection.
+Results are written to `client-render-result.json` in the test instance. A successful launch alone does not count: inspect `success` and every asserted behavior. The fixture leaves the client open for native UI inspection. In a disposable single-player world, it equips the player with all four MekaSuit pieces, selects the front third-person camera, and writes `client-world-result.json` after 200 client ticks. Inspect the actual armor visually as well; the world result verifies synchronized equipment and mute state, not pixel correctness.
 
 The user's extra Ancestrallies alpha.1 build pins NeoForge .124 and must be rebuilt or excluded from the disposable .126 test copy. Do not change the updated pack's loader to .124.
 
