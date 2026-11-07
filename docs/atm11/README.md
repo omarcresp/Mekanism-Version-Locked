@@ -1,6 +1,6 @@
 # ATM11 0.14.0-beta integration
 
-This fork targets Minecraft 26.1.2, NeoForge 26.1.2.126 and Java 25. The validation pack is ATM11 **0.14.0-beta**. Other pack or Minecraft patch versions have not been validated. Runtime validation is in progress; there is no ready-to-play release yet.
+This fork targets Minecraft 26.1.2, NeoForge 26.1.2.126 and Java 25. The validation pack is ATM11 **0.14.0-beta**. Other pack or Minecraft patch versions have not been validated. Release candidate `atm11-0.14-rc1` passed the server processing/restart and full-pack client checks below. Use the required pack repairs with the two mod JARs and generated overlay. This candidate has the limits listed below.
 
 ## What the fork changes
 
@@ -53,6 +53,8 @@ The overlay reads the user's installed Ars Magica Legacy and Productive Bees JAR
 The current source build passes 71 upstream unit tests. The exact candidate passed two full-pack dedicated-server runs with 42 seed and 40 fresh-JVM restart assertions. Machines consumed energy and inputs, enriched carbon and AllTheOres platinum processing produced exact quantities, and inventories plus 1,000 hydrogen persisted across restart. Actual pack trash cans accepted chemical insertion, and aborted transactions restored their original chemical amount.
 
 Both runs loaded 41,299 recipes with zero recipe decoder errors, recipe-event failures or Mekanism data-map failures. The checks include both migrated fuel entries and the creative energy cube progression recipe. The community binary previously logged 257 distinct invalid recipe IDs; earlier POC runs only checked decoder errors and missed the fuel and recipe-event problems. See [current runtime evidence](fork-runtime/validation.json) for artifact hashes, JVM process IDs and assertion results.
+
+The full production client passed 21 rendering checks and 5 equipped-player/audio checks. Native inspection confirmed textured MekaSuit armor and both quest chapters; saving and returning to title produced no script error screen. No KubeGroovy event failures were logged in the final client run. The test used Iris and Sodium with shader packs disabled. The quest gate repair was applied after the dedicated-server runs and validated in the integrated client world.
 
 The unmodified pack has unrelated log errors. Reactor and SPS registration were tested; operation was not. Existing ATM10 world migration, complete ATM10 progression parity, enabled shader packs and every module animation have not been validated. Fuel energy density is preserved, but the new burn-rate model does not reproduce legacy peak throughput or fractional burn timing.
 

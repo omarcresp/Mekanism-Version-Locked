@@ -1,0 +1,18 @@
+{
+  "firstPass": {
+    "tooltipSelectors": 8,
+    "optionalChemicalItemSelectors": 3,
+    "questChapters": 2,
+    "unavailableQuestDependencies": 184,
+    "chemicalFuels": 2,
+    "creativeEnergyComponents": 1
+  },
+  "secondPass": {
+    "tooltipSelectors": 0,
+    "optionalChemicalItemSelectors": 0,
+    "questChapters": 0,
+    "unavailableQuestDependencies": 0,
+    "chemicalFuels": 0,
+    "creativeEnergyComponents": 0
+  }
+}

@@ -2,7 +2,7 @@
 
 # omarcresp ATM11 compatibility fork
 
-Work targets ATM11 **0.14.0-beta**, Minecraft **26.1.2**, NeoForge **26.1.2.126**, Java **25**. See [current fork status and build instructions](docs/atm11/README.md). This branch is under validation; historical Version Locked release links below belong to upstream and are not releases of this fork. Original credits and MIT license are preserved.
+Work targets ATM11 **0.14.0-beta**, Minecraft **26.1.2**, NeoForge **26.1.2.126**, Java **25**. See [current fork status and build instructions](docs/atm11/README.md). The ATM11 release candidate passed the documented client and server POC checks; historical Version Locked release links below belong to upstream and are not releases of this fork. Original credits and MIT license are preserved.
 
 ---
 

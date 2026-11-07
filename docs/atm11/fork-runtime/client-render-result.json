@@ -1,0 +1,29 @@
+{
+  "pid": 6977,
+  "success": true,
+  "vertices": 3256,
+  "batches": 10,
+  "checks": [
+    "test client master volume is muted",
+    "real client reached title screen with the full ATM11 renderer stack",
+    "MekaSuit render type is available",
+    "MekaSuit OBJ geometry loaded in real model bake",
+    "MekaSuit OBJ has named model parts",
+    "MekaSuit selected parts bake into actual quads",
+    "armor UVs are baked from the item atlas",
+    "armor render type binds the matching item atlas",
+    "empty part selection emits no geometry",
+    "quad round trip preserves position and UV 0",
+    "quad round trip preserves position and UV 1",
+    "quad round trip preserves position and UV 2",
+    "quad round trip preserves position and UV 3",
+    "quad round trip preserves sprite, transparency and render type",
+    "LED fullbright survives modern quad rebaking",
+    "armor slot emits finite rendered vertices 15",
+    "armor slot emits finite rendered vertices 16",
+    "armor slot emits finite rendered vertices 17",
+    "armor slot emits finite rendered vertices 18",
+    "first-person right arm replaces vanilla arm when geometry exists",
+    "first-person arm emits rendered vertices"
+  ]
+}

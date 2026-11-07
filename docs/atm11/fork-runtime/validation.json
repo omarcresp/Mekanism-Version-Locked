@@ -31,7 +31,25 @@
       "mekanismDataMapErrors": 0
     }
   },
-  "client": "pending native validation",
+  "client": {
+    "pid": 6977,
+    "activeModJars": 303,
+    "renderAssertions": 21,
+    "worldAssertions": 5,
+    "renderedVertices": 3256,
+    "renderBatches": 10,
+    "masterVolume": 0,
+    "kubeGroovyEventErrors": 0,
+    "nativeInspection": [
+      "Textured MekaSuit equipped in world",
+      "Mekanism quest chapter visible and opens",
+      "Mekanism: Reactors chapter visible and opens"
+    ],
+    "shaderPacksEnabled": false,
+    "qaJarSha256": "941c44c85cb465d85fde2470858ba9d222f78018d864bd31074987d5dd732134",
+    "returnedToTitleWithoutScriptErrorScreen": true,
+    "testProcessClosed": true
+  },
   "unitTests": {
     "tests": 71,
     "failures": 0,
@@ -42,6 +60,9 @@
     "clientTooltipSelectors": 8,
     "questChaptersRevealed": 2,
     "fuelEntriesMigrated": 2,
-    "creativeEnergyComponentMigrated": 1
+    "creativeEnergyComponentMigrated": 1,
+    "optionalChemicalItemSelectors": 3,
+    "unavailableQuestDependenciesRemoved": 184,
+    "questGateRemovalAppliedAfterServerRuns": true
   }
 }
