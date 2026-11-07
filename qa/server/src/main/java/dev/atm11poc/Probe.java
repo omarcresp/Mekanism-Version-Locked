@@ -95,9 +95,10 @@ public final class Probe {
             reactors.prepare(level, reopen ? JsonParser.parseString(Files.readString(Path.of("seed-result.json")))
                   .getAsJsonObject().getAsJsonObject("fission") : null);
             if (!reopen) {
-                turbine.build(level);
                 sps.build(level);
             }
+            turbine.prepare(level, reopen ? JsonParser.parseString(Files.readString(Path.of("seed-result.json")))
+                  .getAsJsonObject().getAsJsonObject("turbines") : null);
             fusion.prepare(level, reopen);
             energy.prepare(level, reopen);
             generators.prepare(level, reopen);
@@ -214,7 +215,7 @@ public final class Probe {
             ticks++;
             if (ticks % 100 == 0) System.out.println("ATM11_POC tick " + ticks);
             boolean reactorsComplete = reactors.tick(server.overworld(), ticks);
-            boolean turbineComplete = reopen || turbine.tick(server.overworld(), ticks);
+            boolean turbineComplete = turbine.tick(server.overworld(), ticks);
             boolean fusionComplete = fusion.tick(server.overworld(), ticks);
             boolean spsComplete = reopen || sps.tick(server.overworld(), ticks);
             boolean generatorsComplete = generators.tick(server.overworld(), ticks, reopen);
@@ -236,6 +237,7 @@ public final class Probe {
                 check(machine().getInventorySlots().get(0).isEmpty(), "machine consumed exact supplied input");
                 check(machine().getEnergyContainer().getAmountAsLong() < initialMachineEnergy, "machine consumed energy while processing");
                 observations.put("fission", reactors.snapshot(server.overworld()));
+                observations.put("turbines", turbine.snapshot(server.overworld()));
                 if (!reopen) observations.put("fusionShutdown", fusion.shutdownForSave(server.overworld()));
                 observations.put("outputCount", output.amountAsLong());
                 observations.put("processingTicks", ticks);
