@@ -11,7 +11,8 @@ The ATM10 profile uses 256 steps/t, 20 steps/mB for ethene and one for hydrogen.
 At full pressure ethene produces 30720 FE/t (12.8 mB/t equivalent).
 
 The generator uses ATM10's `ceil(256 × tank fullness)` pressure curve, bounded by
-available fuel and actual energy insertion. When consuming a whole mB produces
+available fuel and space for whole burn steps (120 FE per ethene step). A
+37 FE gap waits; a 157 FE gap admits one 120 FE step. When consuming a whole mB produces
 more energy than fits this tick, it retains the remainder as typed fuel credit.
 That credit persists in world saves and block item components; the normal loot
 table copies it. Credit finishes burning even when the whole-mB tank is empty.

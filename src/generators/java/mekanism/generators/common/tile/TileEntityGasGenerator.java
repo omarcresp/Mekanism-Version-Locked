@@ -102,8 +102,8 @@ public class TileEntityGasGenerator extends TileEntityGenerator {
             long availableEnergy = (long) availableFuel * attributes.energyDensity() + credit;
             // Retain ATM10's pressure curve, and allow the final partial mB to finish burning.
             long pressureAmount = availableFuel == 0 && credit > 0 ? 1 : availableFuel;
-            int maxEnergy = (int) Math.min(availableEnergy,
-                  attributes.getEnergyForFullness(pressureAmount, fuelTank.capacityAsLong(fuel)));
+            int maxEnergy = (int) Math.min(availableEnergy, Math.min(attributes.getEnergyForSpace(energyContainer().getCapacityAsLong() - energyContainer().getAmountAsLong()),
+                  attributes.getEnergyForFullness(pressureAmount, fuelTank.capacityAsLong(fuel))));
             if (maxEnergy > 0) {
                 try (Transaction transaction = Transaction.openRoot()) {
                     int inserted = energyContainer().insert(maxEnergy, transaction, AutomationType.INTERNAL);

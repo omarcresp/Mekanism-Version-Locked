@@ -26,6 +26,15 @@ class ChemicalFuelTest {
     }
 
     @Test
+    void etheneOnlyBurnsWholeStepsThatFitTheBuffer() {
+        var fuel = new ChemicalFuel(256, 2400, 20);
+        Assertions.assertEquals(0, fuel.getEnergyForSpace(37));
+        Assertions.assertEquals(120, fuel.getEnergyForSpace(157));
+        Assertions.assertEquals(2400, fuel.getEnergyForSpace(2400));
+        Assertions.assertTrue(fuel.getEnergyForSpace(Long.MAX_VALUE) > 0);
+    }
+
+    @Test
     void highDensityFuelSaturatesWithoutIntegerOverflow() {
         var fuel = new ChemicalFuel(Integer.MAX_VALUE, Integer.MAX_VALUE, 20);
         Assertions.assertEquals(Integer.MAX_VALUE, fuel.getMaxEnergyPerTick());

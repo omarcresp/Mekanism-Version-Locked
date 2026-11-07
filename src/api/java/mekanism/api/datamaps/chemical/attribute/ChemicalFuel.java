@@ -68,6 +68,11 @@ public record ChemicalFuel(int maxBurnPerTick, int energyPerTick, int burnTicksP
         return (int) Math.min(Integer.MAX_VALUE, (long) maxBurnPerTick * energyPerTick / burnTicksPerMB);
     }
 
+    public int getEnergyForSpace(long space) {
+        long steps = Math.min(Integer.MAX_VALUE, space) * burnTicksPerMB / energyPerTick;
+        return (int) Math.min(Integer.MAX_VALUE, steps * energyPerTick / burnTicksPerMB);
+    }
+
     public int getEnergyForFullness(long stored, long capacity) {
         long steps = (long) Math.ceil(maxBurnPerTick * Math.min(1, stored / (double) capacity));
         return (int) Math.min(Integer.MAX_VALUE, steps * energyPerTick / burnTicksPerMB);

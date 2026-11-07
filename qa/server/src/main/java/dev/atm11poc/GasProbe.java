@@ -33,7 +33,7 @@ final class GasProbe {
     void prepare(ServerLevel level, boolean reopen) {
         ethene = ChemicalResource.of(MekanismChemicals.ETHENE);
         hydrogen = ChemicalResource.of(MekanismChemicals.HYDROGEN);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             BlockPos pos = START.offset(i * 3, 0, 0);
             level.setChunkForced(pos.getX() >> 4, pos.getZ() >> 4, true);
             if (!reopen) level.setBlockAndUpdate(pos, GeneratorsBlocks.GAS_BURNING_GENERATOR.value().defaultBlockState());
@@ -45,9 +45,9 @@ final class GasProbe {
                   "full-pressure burn retains exact whole fuel and fractional credit across JVM restart");
             check.accept(tile(level, 0).energyContainer().getAmountAsLong() == 30720, "full-pressure burn retains exact output across JVM restart");
             var partial = tile(level, 1);
-            check.accept(partial.getFuelTank().isEmpty() && partial.getBufferedFuelEnergy() == 2363,
-                  "empty tank retains 2363 FE of partial ethene across JVM restart");
-            check.accept(partial.energyContainer().getAmountAsLong() == 80000 && partial.getControlType() == RedstoneControl.HIGH,
+            check.accept(partial.getFuelTank().isEmpty() && partial.getBufferedFuelEnergy() == 2280,
+                  "empty tank retains 2280 FE of partial ethene across JVM restart");
+            check.accept(partial.energyContainer().getAmountAsLong() == 79963 && partial.getControlType() == RedstoneControl.HIGH,
                   "partial burn retains full output buffer and shutdown mode across JVM restart");
             check.accept(partial.collectComponents().get(MekanismDataComponents.FUEL_BURN_BUFFER).fuel().equals(ethene),
                   "saved partial fuel retains chemical identity");
@@ -57,10 +57,12 @@ final class GasProbe {
         }
         tile(level, 0).getFuelTank().setContents(ethene, 18000, null);
         tile(level, 1).getFuelTank().setContents(ethene, 1, null);
-        tile(level, 1).energyContainer().setEnergy(79963, null);
+        tile(level, 1).energyContainer().setEnergy(79843, null);
         tile(level, 2).getFuelTank().setContents(ethene, 1, null);
         tile(level, 3).getFuelTank().setContents(ethene, 1, null);
-        tile(level, 3).energyContainer().setEnergy(80000, null);
+        tile(level, 3).energyContainer().setEnergy(79963, null);
+        tile(level, 5).getFuelTank().setContents(ethene, 1, null);
+        tile(level, 5).energyContainer().setEnergy(80000, null);
         tile(level, 4).getFuelTank().setContents(hydrogen, 1, null);
     }
 
@@ -70,7 +72,7 @@ final class GasProbe {
         if (reopen) {
             var tile = tile(level, 1);
             if (tile.getBufferedFuelEnergy() != 0) return false;
-            check.accept(tile.getFuelTank().isEmpty() && tile.energyContainer().getAmountAsLong() == 2363,
+            check.accept(tile.getFuelTank().isEmpty() && tile.energyContainer().getAmountAsLong() == 2280,
                   "restarted generator converts every remaining FE of partial fuel with an empty tank");
             complete = true;
             return true;
@@ -87,10 +89,10 @@ final class GasProbe {
         }
         var partial = tile(level, 1);
         if (!partialChecked && partial.getProductionRate() > 0) {
-            check.accept(partial.getProductionRate() == 37 && partial.energyContainer().getAmountAsLong() == 80000,
-                  "a 37 FE gap only generates 37 FE from ethene");
-            check.accept(partial.getFuelTank().isEmpty() && partial.getBufferedFuelEnergy() == 2363,
-                  "partial ethene burn preserves all 2363 ungenerated FE");
+            check.accept(partial.getProductionRate() == 120 && partial.energyContainer().getAmountAsLong() == 79963,
+                  "a 157 FE gap admits one 120 FE burn step and retains 37 FE free");
+            check.accept(partial.getFuelTank().isEmpty() && partial.getBufferedFuelEnergy() == 2280,
+                  "partial ethene burn preserves all 2280 ungenerated FE");
             try (var tx = Transaction.openRoot()) {
                 check.accept(partial.getFuelTank().insert(hydrogen, 1, tx, AutomationType.EXTERNAL) == 0,
                       "partial ethene credit cannot be mixed with a different fuel");
@@ -100,13 +102,13 @@ final class GasProbe {
             var drops = Block.getDrops(state, level, partial.getBlockPos(), partial);
             var item = drops.stream().filter(stack -> stack.is(GeneratorsBlocks.GAS_BURNING_GENERATOR.asItem())).findFirst().orElseThrow();
             var buffer = item.get(MekanismDataComponents.FUEL_BURN_BUFFER);
-            check.accept(buffer != null && buffer.energy() == 2363 && buffer.fuel().equals(ethene),
+            check.accept(buffer != null && buffer.energy() == 2280 && buffer.fuel().equals(ethene),
                   "normal generator loot preserves remaining fuel energy and chemical identity");
             level.setBlockAndUpdate(partial.getBlockPos(), Blocks.AIR.defaultBlockState());
             level.setBlockAndUpdate(partial.getBlockPos(), state);
             partial = tile(level, 1);
             partial.applyComponentsFromItemStack(item);
-            check.accept(partial.getBufferedFuelEnergy() == 2363 && partial.energyContainer().getAmountAsLong() == 80000,
+            check.accept(partial.getBufferedFuelEnergy() == 2280 && partial.energyContainer().getAmountAsLong() == 79963,
                   "placing the dropped generator restores both fuel credit and output energy");
             partialChecked = true;
         }
@@ -129,6 +131,8 @@ final class GasProbe {
         if (fullChecked && partialChecked && emptyChecked && hydrogenChecked) {
             var blocked = tile(level, 3);
             check.accept(blocked.getFuelTank().amountAsLong() == 1 && blocked.getBufferedFuelEnergy() == 0,
+                  "37 FE of free space consumes no fuel or partial credit");
+            check.accept(tile(level, 5).getFuelTank().amountAsLong() == 1 && tile(level, 5).getBufferedFuelEnergy() == 0,
                   "full energy buffer consumes no fuel or partial credit");
             try (var tx = Transaction.openRoot()) {
                 check.accept(blocked.getFuelTank().extract(ethene, 1, tx, AutomationType.INTERNAL) == 1,
