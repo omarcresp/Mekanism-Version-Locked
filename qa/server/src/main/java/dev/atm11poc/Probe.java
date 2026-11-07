@@ -51,6 +51,7 @@ public final class Probe {
     private long initialMachineEnergy;
     private final FusionProbe fusion = new FusionProbe(this::check);
     private final HotFusionProbe hotFusion = new HotFusionProbe(this::check);
+    private final HotFusionProbe waterFusion = new HotFusionProbe(this::check, HotFusionProbe.Cooling.WATER);
     private final SPSProbe sps = new SPSProbe(this::check);
     private final TurbineProbe turbine = new TurbineProbe(this::check);
     private final ReactorProbe reactors = new ReactorProbe(this::check);
@@ -109,6 +110,8 @@ public final class Probe {
             fusion.prepare(level, reopen);
             hotFusion.prepare(level, reopen ? JsonParser.parseString(Files.readString(Path.of("seed-result.json")))
                   .getAsJsonObject().getAsJsonObject("hotFusion") : null);
+            waterFusion.prepare(level, reopen ? JsonParser.parseString(Files.readString(Path.of("seed-result.json")))
+                  .getAsJsonObject().getAsJsonObject("waterFusion") : null);
             energy.prepare(level, reopen);
             generators.prepare(level, reopen);
             gas.prepare(level, reopen);
@@ -239,6 +242,7 @@ public final class Probe {
             boolean turbineComplete = turbine.tick(server.overworld(), ticks);
             boolean fusionComplete = fusion.tick(server.overworld(), ticks);
             boolean hotFusionComplete = hotFusion.tick(server.overworld(), ticks);
+            boolean waterFusionComplete = waterFusion.tick(server.overworld(), ticks);
             boolean spsComplete = reopen || sps.tick(server.overworld(), ticks);
             boolean generatorsComplete = generators.tick(server.overworld(), ticks, reopen);
             boolean gasComplete = gas.tick(server.overworld(), ticks, reopen);
@@ -251,7 +255,7 @@ public final class Probe {
             boolean safetyComplete = safety.tick(server.overworld(), ticks, fusionComplete);
             var output = machine().getInventorySlots().get(1);
             long expected = reopen ? 3 : 2;
-            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && hotFusionComplete && spsComplete && generatorsComplete && gasComplete && heaterComplete && heatBioComplete && generatorTransferComplete && fuelChainComplete && connectedComplete && sodiumComplete && safetyComplete) {
+            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && hotFusionComplete && waterFusionComplete && spsComplete && generatorsComplete && gasComplete && heaterComplete && heatBioComplete && generatorTransferComplete && fuelChainComplete && connectedComplete && sodiumComplete && safetyComplete) {
                 if (ModList.get().isLoaded("atm11mekcompat")) {
                     var platinum = (TileEntityMekanism) server.overworld().getBlockEntity(PLATINUM);
                     var dust = platinum.getInventorySlots().get(1);
@@ -266,6 +270,7 @@ public final class Probe {
                 check(machine().getEnergyContainer().getAmountAsLong() < initialMachineEnergy, "machine consumed energy while processing");
                 observations.put("sodiumFission", sodium.snapshot(server.overworld()));
                 observations.put("hotFusion", hotFusion.snapshot(server.overworld()));
+                observations.put("waterFusion", waterFusion.snapshot(server.overworld()));
                 observations.put("reactorSafety", safety.snapshot(server.overworld()));
                 observations.put("connectedFission", connected.snapshot(server.overworld()));
                 observations.put("fission", reactors.snapshot(server.overworld()));
