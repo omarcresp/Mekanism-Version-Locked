@@ -1,0 +1,46 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "7ee2ef64908ecca1b7d57ed0a28b578912861233",
+  "sourceTree": "35723dfd5c9f98a1091aa92bc52441acd653ceeb",
+  "productionSourceCommit": "6193b25bba46c2849aa243064fb127e52d650a77",
+  "productionSourceNote": "Production sources and pack profile are identical to this build snapshot; later commits change only QA laser charging and assertions. All tested JARs match the local build artifacts byte for byte.",
+  "profileSha256": "068a7278e69ee642a6ed415de4f8135971aeb23a0c7ff82627426031a61db6f2",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "checks": {
+    "seed": 298,
+    "restart": 89
+  },
+  "laserElectricalBudgetFE": 400000000,
+  "laserFEPerFiring": 20000,
+  "laserFirings": 20000,
+  "seedGameTicks": 20119,
+  "fusionShutdown": {
+    "burning": false,
+    "injectionRate": 4,
+    "energy": 12345,
+    "fraction": 0.4,
+    "heatCapacity": 1.0
+  },
+  "logs": {
+    "seed": {
+      "sha256": "456d9b6b5f9fe162e79a047ca206bac61735cd8822464b81e593786b189dc496",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "f544ef67c8f6afe66308d35a850fd8cb57f5173b9619641ff7fa112b789d8e7f",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "scope": "Resistive FE-to-J heat accounting; ATM10 fission heat and fusion settings; cold plasma conversion and rollback; fractional thermocouple output; physical powered laser to amplifier to focus matrix ignition; 100 sustained fusion burn ticks; controlled fusion checkpoint and fractional output continuation across a fresh JVM. Existing machine, gas, fission, turbine and SPS checks retained. Heat-generator/turbine conversion, transfer limits, active-hot reactor persistence/safety and full parity remain pending."
+}

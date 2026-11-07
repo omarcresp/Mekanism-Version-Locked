@@ -155,7 +155,7 @@ public class GeneratorsConfig extends BaseMekanismConfig {
 
         GeneratorsConfigTranslations.SERVER_FISSION.applyToBuilder(builder).push("fission_reactor");
         energyPerFissionFuel = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_FISSION_FUEL_ENERGY.applyToBuilder(builder)
-              .defineInRange("energyPerFissionFuel", 1_000_000, 0, Integer.MAX_VALUE));
+              .defineInRange("energyPerFissionFuel", 250_000, 0, Integer.MAX_VALUE));
         fissionCasingHeatCapacity = CachedDoubleValue.wrap(this, GeneratorsConfigTranslations.SERVER_FISSION__CASING_HEAT_CAPACITY.applyToBuilder(builder)
               .defineInRange("casingHeatCapacity", 1_000D, 1, 1_000_000));
         fissionSurfaceAreaTarget = CachedDoubleValue.wrap(this, GeneratorsConfigTranslations.SERVER_FISSION_SURFACE_AREA.applyToBuilder(builder)
@@ -193,15 +193,15 @@ public class GeneratorsConfig extends BaseMekanismConfig {
         energyPerFusionFuel = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_FUSION_FUEL_ENERGY.applyToBuilder(builder)
               .defineInRange("fuelEnergy", 10_000_000, 0, Integer.MAX_VALUE));
         fusionThermocoupleEfficiency = CachedDoubleValue.wrap(this, GeneratorsConfigTranslations.SERVER_FUSION_THERMOCOUPLE_EFFICIENCY.applyToBuilder(builder)
-              .defineInRange("thermocoupleEfficiency", 0.05D, 0D, 1D));
+              .defineInRange("thermocoupleEfficiency", 0.04D, 0D, 1D));
         fusionCasingThermalConductivity = CachedDoubleValue.wrap(this, GeneratorsConfigTranslations.SERVER_FUSION_THERMAL_CONDUCTIVITY.applyToBuilder(builder)
-              .defineInRange("casingThermalConductivity", 0.1D, 0.001D, 1D));
+              .defineInRange("casingThermalConductivity", 0.333333333D, 0.001D, 1D));
         fusionWaterHeatingRatio = CachedDoubleValue.wrap(this, GeneratorsConfigTranslations.SERVER_FUSION_HEATING_RATE.applyToBuilder(builder)
-              .defineInRange("waterHeatingRatio", 0.3D, 0D, 1D));
+              .defineInRange("waterHeatingRatio", 0.27272727272727D, 0D, 1D));
         fusionFuelCapacity = CachedLongValue.wrap(this, GeneratorsConfigTranslations.SERVER_FUSION_FUEL_CAPACITY.applyToBuilder(builder)
-              .defineInRange("fuelCapacity", FluidType.BUCKET_VOLUME, 2, 1_000L * FluidType.BUCKET_VOLUME));
+              .defineInRange("fuelCapacity", 500, 2, 1_000L * FluidType.BUCKET_VOLUME));
         fusionEnergyCapacity = CachedLongValue.define(this, builder, GeneratorsConfigTranslations.SERVER_FUSION_ENERGY_CAPACITY,
-              "energyCapacity", 1_000_000_000, 1, Long.MAX_VALUE);
+              "energyCapacity", 400_000_000, 1, Long.MAX_VALUE);
         //TODO - 26.1: Should we merge these two configs?
         long baseMaxWater = 1_000L * FluidType.BUCKET_VOLUME;
         fusionWaterPerInjection = CachedLongValue.wrap(this, GeneratorsConfigTranslations.SERVER_FUSION_WATER_INJECTION.applyToBuilder(builder)

@@ -31,6 +31,7 @@ import mekanism.common.inventory.slot.EnergyInventorySlot;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismDataComponents;
 import mekanism.common.tile.base.TileEntityMekanism;
+import mekanism.common.util.HeatUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.core.component.DataComponentMap;
@@ -49,7 +50,7 @@ public class TileEntityResistiveHeater extends TileEntityMekanism {
     public static final double INVERSE_CONDUCTION_COEFFICIENT = 5;
     public static final double INVERSE_INSULATION_COEFFICIENT = 10;
     //TODO: Eventually make this into a config at some point?
-    public static final int BASE_USAGE = 100;
+    public static final int BASE_USAGE = 40;
 
     private float soundScale = 1;
     private double lastEnvironmentLoss;
@@ -96,7 +97,7 @@ public class TileEntityResistiveHeater extends TileEntityMekanism {
             if (canFunction()) {
                 clientEnergyUsed = energyContainer.extract(energyContainer.getEnergyPerTick(), transaction, AutomationType.INTERNAL);
                 if (clientEnergyUsed > 0) {
-                    heatCapacitor.handleHeat(clientEnergyUsed * MekanismConfig.general.resistiveHeaterEfficiency.get(), transaction);
+                    heatCapacitor.handleHeat(HeatUtils.feToJoules(clientEnergyUsed) * MekanismConfig.general.resistiveHeaterEfficiency.get(), transaction);
                 }
             } else {
                 clientEnergyUsed = 0;

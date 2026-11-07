@@ -16,6 +16,15 @@ public class HeatUtils {
 
     public static final double BASE_BOIL_TEMP = TemperatureUnit.CELSIUS.zeroOffset + 100;
 
+    /** ATM10's electrical conversion; heat capacitors continue to store Joules. */
+    public static double feToJoules(double energy) {
+        return energy * 2.5;
+    }
+
+    public static double joulesToFE(double energy) {
+        return energy / 2.5;
+    }
+
     public static long getWaterThermalEnthalpy() {
         return MekanismConfig.general.maxEnergyPerSteam.get();
     }
