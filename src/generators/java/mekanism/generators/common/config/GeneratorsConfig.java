@@ -86,9 +86,9 @@ public class GeneratorsConfig extends BaseMekanismConfig {
 
         GeneratorsConfigTranslations.SERVER_GENERATOR_SOLAR.applyToBuilder(builder).push("solar_generator");
         solarGeneration = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_SOLAR_GENERATION.applyToBuilder(builder)
-              .defineInRange("solarGeneration", 2, 0, Integer.MAX_VALUE));
+              .defineInRange("solarGeneration", 60, 0, Integer.MAX_VALUE));
         advancedSolarGeneration = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_SOLAR_GENERATION_ADVANCED.applyToBuilder(builder)
-              .defineInRange("advancedSolarGeneration", 12, 0, Integer.MAX_VALUE));
+              .defineInRange("advancedSolarGeneration", 480, 0, Integer.MAX_VALUE));
         builder.pop();
 
         GeneratorsConfigTranslations.SERVER_GENERATOR_BIO.applyToBuilder(builder).push("bio_generator");
@@ -120,10 +120,10 @@ public class GeneratorsConfig extends BaseMekanismConfig {
 
         GeneratorsConfigTranslations.SERVER_GENERATOR_WIND.applyToBuilder(builder).push("wind_generator");
         windGenerationMin = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_WIND_GEN_MIN.applyToBuilder(builder)
-              .defineInRange("generationMin", 1, 0, Integer.MAX_VALUE));
+              .defineInRange("generationMin", 60, 0, Integer.MAX_VALUE));
         //TODO: Should this be capped by the min generator?
         windGenerationMax = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_WIND_GEN_MAX.applyToBuilder(builder)
-              .defineInRange("generationMax", 5, 0, Integer.MAX_VALUE));
+              .defineInRange("generationMax", 360, 0, Integer.MAX_VALUE));
         windGenerationMinY = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_WIND_GEN_MIN_Y.applyToBuilder(builder)
               .defineInRange("minY", 24, DimensionType.MIN_Y, DimensionType.MAX_Y - 1));
         //Note: We just require that the maxY is greater than the minY, nothing goes badly if it is set above the max y of the world though

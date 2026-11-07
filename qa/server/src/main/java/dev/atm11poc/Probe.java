@@ -40,6 +40,7 @@ public final class Probe {
     private boolean finished;
     private boolean reopen;
     private final EnergyProbe energy = new EnergyProbe(this::check);
+    private final GeneratorProbe generators = new GeneratorProbe(this::check);
     private long initialMachineEnergy;
     private final FusionProbe fusion = new FusionProbe(this::check);
     private final SPSProbe sps = new SPSProbe(this::check);
@@ -97,6 +98,7 @@ public final class Probe {
                 sps.build(level);
             }
             energy.prepare(level, reopen);
+            generators.prepare(level, reopen);
             initialMachineEnergy = machine().getEnergyContainer().getCapacityAsLong();
             machine().getEnergyContainer().setEnergy(initialMachineEnergy, null);
             chemicalInterop();
@@ -211,9 +213,10 @@ public final class Probe {
             boolean turbineComplete = reopen || turbine.tick(server.overworld(), ticks);
             boolean fusionComplete = reopen || fusion.tick(server.overworld(), ticks);
             boolean spsComplete = reopen || sps.tick(server.overworld(), ticks);
+            boolean generatorsComplete = generators.tick(server.overworld(), ticks, reopen);
             var output = machine().getInventorySlots().get(1);
             long expected = reopen ? 3 : 2;
-            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && spsComplete) {
+            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && spsComplete && generatorsComplete) {
                 if (ModList.get().isLoaded("atm11mekcompat")) {
                     var platinum = (TileEntityMekanism) server.overworld().getBlockEntity(PLATINUM);
                     var dust = platinum.getInventorySlots().get(1);
