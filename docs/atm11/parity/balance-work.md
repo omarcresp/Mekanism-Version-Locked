@@ -21,7 +21,7 @@ values without a toggle. The migration preserves other settings and comments.
 | MekaSuit charging | 80000 FE/t | 100000 FE/t | Pending |
 | Solar generation | 60 FE/t | 2 FE/t | Source and pack profile restored; runtime evidence below |
 | Advanced solar generation | 480 FE/t | 12 FE/t | Source and pack profile restored; runtime evidence below |
-| Turbine storage per volume | 6400000 FE | 100 FE | Pending |
+| Turbine storage per volume | 6400000 FE | 100 FE | Restored in source/profile; see `turbine-balance.md` for runtime verification |
 
 Independent capacities use the existing `withEnergyConfig(usage, storage)` API.
 Energy upgrades increase the configured buffer; speed upgrades preserve it.
@@ -81,11 +81,12 @@ partial-burn fixture. That fixture then generated exactly 2280 FE. See
 
 ## Remaining balance and reactor work
 
-Heat-generator and bio fuel behavior, turbine conversion, equipment values,
+Heat-generator and bio fuel behavior, equipment values,
 other general settings, transport limits and pack recipes remain in the parity
 inventory. In particular, ATM10 generators limit external output to twice their
 configured/current production rate; the port's external output path needs its
-own transport test and review. Disconnected production checks do not prove
+own transport test and review. Turbine conversion and fractional persistence are
+covered in `turbine-balance.md`. Disconnected production checks do not prove
 that transfer limit. Release TOML values take precedence over older notes.
 
 Reference: [pinned 10.7.19.85 gas generator source](https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/tile/TileEntityGasGenerator.java)

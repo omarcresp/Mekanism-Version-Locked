@@ -1,0 +1,60 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "c503bd99d8645a00d691bf916866ca2b4b46cea2",
+  "sourceTree": "28bfd498d3d44fc3d412a27c0feb66078f5fc7d1",
+  "profileSha256": "8f0112a7d77009a89160dbaf9271645493ffe732a466195ac9c5ad3d6853938c",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "checks": {
+    "seed": 319,
+    "restart": 101
+  },
+  "seedTurbines": {
+    "turbine0": {
+      "energy": 12345,
+      "remainder": 0.0
+    },
+    "turbine1": {
+      "energy": 12345,
+      "remainder": 0.571428571263823
+    }
+  },
+  "restartTurbines": {
+    "turbine0": {
+      "remainder": 0.0,
+      "energy": 60012345
+    },
+    "turbine1": {
+      "remainder": 0.7142857140861452,
+      "energy": 2155202
+    }
+  },
+  "seedGameTicks": 20119,
+  "logs": {
+    "seed": {
+      "sha256": "0b207cfd990ed38c404680ee724624b33f3e31cd5659153165c5d1f561c4eb31",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "476288612b825332b2bb7fd072340b04af5964085a283e54aea3ba38b1e36a92",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "artifactHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "ce6d464d69520b313720447078000f5741fe1ce136614534b7765f7beafe0aff",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "5b2fba942a4f80aa2ef4e39fb55b49bfb402ce52929b90b7ea5da5488a466c0d",
+    "atm11-server-qa-0.1.0.jar": "6be5817f239391c4454594c28572bcc401607e019cef28c71ba5ab4f3d5f242d"
+  },
+  "scope": "ATM10 turbine capacities and flow settings; real 28-blade and one-blade structures; whole-mB energy conservation with fractional FE; full-water-tank generation; full-energy-buffer stall; rollback; fractional credit restoration and continued generation in a fresh JVM. Retains fission, physical fusion ignition, heater, gas, machine and SPS regression fixtures. External turbine valve transport, coolant recirculation, heat-generator balance, active-hot reactor safety, equipment, progression and addons remain incomplete.",
+  "excludedAttempt": "Initial launch included combined/API/source build artifacts alongside separate modules. NeoForge rejected duplicate mod IDs before gameplay. Evidence archived separately; final phases use only the intended Core/Generators and QA artifacts."
+}
