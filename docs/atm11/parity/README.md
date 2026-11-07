@@ -78,7 +78,8 @@ The full pack passed 298 seed checks, including a real powered-laser/amplifier/
 focus-matrix ignition and 100 fusion burn ticks. A fresh JVM passed 89 checks,
 including exact stored FE and fractional thermocouple output continuation. See
 `reactor-thermal.md` and `reactor-thermal-runtime/`. Hot-state persistence, safety,
-heat-generator conversion and complete transport remain pending. Turbine conversion
+complete transport remain pending. Heat/bio conversion is covered in
+`heat-bio-balance.md`. Turbine conversion
 is covered separately in `turbine-balance.md`.
 
 ## Fractional gas fuel
@@ -156,3 +157,14 @@ longer rolls back steam conversion. See `turbine-balance.md` for the accounting
 and runtime fixture. The full pack passed 319 seed and 101 fresh-JVM restart
 checks; evidence is in `turbine-balance-runtime/`. External valve transport and
 connected recirculation remain pending.
+
+## Heat and bio generators
+
+The fork restores 140 FE/t bio output, 200 burn ticks per item, 1800 ticks per
+block and both 24000 mB tanks. Heat settings remain thermal Joules and convert
+to electrical FE after the reference's Carnot calculation and whole-Joule cap.
+Fractional FE survives transaction rollback, normal block loot/replacement and
+a fresh JVM. Full-pack runs passed 341 seed and 116 restart checks. See
+`heat-bio-balance.md` and `heat-bio-runtime/`. Generator transfer limits and
+connected networks remain pending; the Nether heat value is configuration-checked
+without an actual Nether-world generator fixture.

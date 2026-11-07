@@ -93,24 +93,24 @@ public class GeneratorsConfig extends BaseMekanismConfig {
 
         GeneratorsConfigTranslations.SERVER_GENERATOR_BIO.applyToBuilder(builder).push("bio_generator");
         bioGeneration = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_BIO_GENERATION.applyToBuilder(builder)
-              .defineInRange("bioGeneration", 25, 0, Integer.MAX_VALUE));
-        bioFuelPerItem = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_BIO_GENERATION.applyToBuilder(builder).defineInRange(
-              "bioFuelPerItem", 64, 1, Integer.MAX_VALUE));
+              .defineInRange("bioGeneration", 140, 0, Integer.MAX_VALUE));
+        bioFuelPerItem = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_BIO_FUEL_PER_ITEM.applyToBuilder(builder).defineInRange(
+              "bioFuelPerItem", 200, 1, Integer.MAX_VALUE));
         bioTankCapacity = CachedLongValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_BIO_TANK_CAPACITY.applyToBuilder(builder)
-              .defineInRange("tankCapacity", 200, 1, Long.MAX_VALUE));
+              .defineInRange("tankCapacity", 24_000, 1, Long.MAX_VALUE));
         builder.pop();
 
         GeneratorsConfigTranslations.SERVER_GENERATOR_HEAT.applyToBuilder(builder).push("heat_generator");
         heatGeneration = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_HEAT_GENERATION.applyToBuilder(builder)
-              .defineInRange("heatGeneration", 100, 0, Integer.MAX_VALUE));
+              .defineInRange("heatGeneration", 800, 0, Integer.MAX_VALUE));
         heatGenerationLava = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_HEAT_GEN_LAVA.applyToBuilder(builder)
-              .defineInRange("heatGenerationLava", 7, 0, Integer.MAX_VALUE / (EnumUtils.DIRECTIONS.length + 1)));
+              .defineInRange("heatGenerationLava", 30, 0, Integer.MAX_VALUE / (EnumUtils.DIRECTIONS.length + 1)));
         heatGenerationNether = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_HEAT_GEN_NETHER.applyToBuilder(builder)
-              .defineInRange("heatGenerationNether", 10, 0, Integer.MAX_VALUE));
+              .defineInRange("heatGenerationNether", 100, 0, Integer.MAX_VALUE));
         heatTankCapacity = CachedLongValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_HEAT_TANK_CAPACITY.applyToBuilder(builder)
-              .defineInRange("tankCapacity", FluidType.BUCKET_VOLUME, 1, Long.MAX_VALUE));
+              .defineInRange("tankCapacity", 24_000, 1, Long.MAX_VALUE));
         heatGenerationFluidRate = CachedIntValue.wrap(this, GeneratorsConfigTranslations.SERVER_GENERATOR_HEAT_FLUID_RATE.applyToBuilder(builder)
-              .define("heatGenerationFluidRate", 100, value -> value instanceof Integer i && i > 0 && i <= heatTankCapacity.getOrDefault()));
+              .define("heatGenerationFluidRate", 10, value -> value instanceof Integer i && i > 0 && i <= heatTankCapacity.getOrDefault()));
         builder.pop();
 
         GeneratorsConfigTranslations.SERVER_GENERATOR_GAS.applyToBuilder(builder).push("gas_generator");

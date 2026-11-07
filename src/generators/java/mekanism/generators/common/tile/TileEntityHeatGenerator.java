@@ -2,6 +2,8 @@ package mekanism.generators.common.tile;
 
 import com.google.common.primitives.Ints;
 import java.util.Objects;
+import java.util.List;
+import com.mojang.serialization.Codec;
 import mekanism.api.AutomationType;
 import mekanism.api.IContentsListener;
 import mekanism.api.RelativeSide;
@@ -35,12 +37,20 @@ import mekanism.common.inventory.container.sync.SyncableInt;
 import mekanism.common.inventory.slot.EnergyInventorySlot;
 import mekanism.common.util.EnumUtils;
 import mekanism.common.util.WorldUtils;
+import mekanism.common.util.HeatUtils;
+import mekanism.common.lib.transaction.SimpleDoubleJournal;
+import mekanism.common.registries.MekanismDataComponents;
 import mekanism.generators.common.config.MekanismGeneratorsConfig;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import mekanism.generators.common.slot.FluidFuelInventorySlot;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponentGetter;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.level.Level;
@@ -72,6 +82,13 @@ public class TileEntityHeatGenerator extends TileEntityGenerator {
                                                                                      "getLavaFilledPercentage"}, docPlaceholder = "lava tank")
     public BasicFluidTank lavaTank;
     private int producingEnergy = 0;
+    private final SimpleDoubleJournal generationRemainder = new SimpleDoubleJournal() {
+        @Override
+        protected void onRootCommit(Double originalState) {
+            super.onRootCommit(originalState);
+            if (originalState != value) setChanged();
+        }
+    };
     private double lastTransferLoss;
     private double lastEnvironmentLoss;
 
@@ -191,8 +208,11 @@ public class TileEntityHeatGenerator extends TileEntityGenerator {
         double carnotEfficiency = 1 - Math.min(ambientTemp, temp) / Math.max(ambientTemp, temp);
         double heatLost = THERMAL_EFFICIENCY * (temp - ambientTemp);
         heatCapacitor.handleHeat(-heatLost, transaction);
-        int energyFromHeat = MathUtils.clampToInt(Math.abs(heatLost) * carnotEfficiency);
-        energyContainer().insert(Math.min(energyFromHeat, MAX_PRODUCTION.getAsInt()), transaction, AutomationType.INTERNAL);
+        int joulesFromHeat = MathUtils.clampToInt(Math.abs(heatLost) * carnotEfficiency);
+        double generated = HeatUtils.joulesToFE(Math.min(joulesFromHeat, MAX_PRODUCTION.getAsInt())) + generationRemainder.value;
+        energyContainer().insert(MathUtils.clampToInt(generated), transaction, AutomationType.INTERNAL);
+        generationRemainder.updateSnapshots(transaction);
+        generationRemainder.value = generated - Math.floor(generated);
         return super.simulate(transaction);
     }
 
@@ -238,6 +258,47 @@ public class TileEntityHeatGenerator extends TileEntityGenerator {
         container.track(SyncableInt.create(this::getProductionRate, value -> producingEnergy = value));
         container.track(SyncableDouble.create(this::getLastTransferLoss, value -> lastTransferLoss = value));
         container.track(SyncableDouble.create(this::getLastEnvironmentLoss, value -> lastEnvironmentLoss = value));
+    }
+
+    public double getGenerationRemainder() {
+        return generationRemainder.value;
+    }
+
+    @Override
+    public void readSustainedData(ValueInput input) {
+        super.readSustainedData(input);
+        generationRemainder.value = input.read("generationRemainder", Codec.doubleRange(0, Math.nextDown(1D))).orElse(0D);
+    }
+
+    @Override
+    public void writeSustainedData(ValueOutput output) {
+        super.writeSustainedData(output);
+        output.putDouble("generationRemainder", generationRemainder.value);
+    }
+
+    @Override
+    protected void applyImplicitComponents(DataComponentGetter input) {
+        super.applyImplicitComponents(input);
+        generationRemainder.value = input.getOrDefault(MekanismDataComponents.GENERATION_REMAINDER, 0D);
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder builder) {
+        super.collectImplicitComponents(builder);
+        if (generationRemainder.value > 0) builder.set(MekanismDataComponents.GENERATION_REMAINDER, generationRemainder.value);
+    }
+
+    @Override
+    public List<DataComponentType<?>> getRemapEntries() {
+        var entries = super.getRemapEntries();
+        if (!entries.contains(MekanismDataComponents.GENERATION_REMAINDER.get())) entries.add(MekanismDataComponents.GENERATION_REMAINDER.get());
+        return entries;
+    }
+
+    @Override
+    public void removeComponentsFromTag(ValueOutput output) {
+        super.removeComponentsFromTag(output);
+        output.discard("generationRemainder");
     }
 
     private static class DefaultInsulationCapacitor extends HeatCapacitorWrapper {

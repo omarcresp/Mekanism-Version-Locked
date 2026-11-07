@@ -109,7 +109,15 @@
       "turbine.energyCapacityPerVolume": 6400000,
       "turbine.chemicalPerTank": 6400,
       "turbine.joulesPerSteam": 10,
-      "turbine.steamDivisor": 1
+      "turbine.steamDivisor": 1,
+      "bio_generator.bioGeneration": 140,
+      "bio_generator.bioFuelPerItem": 200,
+      "bio_generator.tankCapacity": 24000,
+      "heat_generator.heatGeneration": 800,
+      "heat_generator.heatGenerationLava": 30,
+      "heat_generator.heatGenerationNether": 100,
+      "heat_generator.tankCapacity": 24000,
+      "heat_generator.heatGenerationFluidRate": 10
     }
   }
 }

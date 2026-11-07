@@ -1,5 +1,6 @@
 package mekanism.common.registries;
 
+import com.mojang.serialization.Codec;
 import java.util.UUID;
 import java.util.function.Consumer;
 import mekanism.api.MekanismAPI;
@@ -132,6 +133,9 @@ public class MekanismDataComponents {
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> SCUBA_TANK_MODE = DATA_COMPONENTS.registerBoolean("scuba_tank_mode");
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> ELECTRIC_BOW_MODE = DATA_COMPONENTS.registerBoolean("electric_bow_mode");
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> BUCKET_MODE = DATA_COMPONENTS.registerBoolean("bucket_mode");
+    public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Double>> GENERATION_REMAINDER = DATA_COMPONENTS.simple("generation_remainder",
+          builder -> builder.persistent(Codec.doubleRange(0, Math.nextDown(1D))).networkSynchronized(ByteBufCodecs.DOUBLE)
+    );
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<FuelBurnBuffer>> FUEL_BURN_BUFFER = DATA_COMPONENTS.simple("fuel_burn_buffer",
           builder -> builder.persistent(FuelBurnBuffer.CODEC).networkSynchronized(FuelBurnBuffer.STREAM_CODEC)
     );
