@@ -1,0 +1,92 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: test --tests mekanism.api.heat.CapacitorStateTest
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy UP-TO-DATE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+
+> Configure project :
+Disabling compilation of CraftTweaker integration
+Disabling compilation of The One Probe integration
+Disabling compilation of EMI integration
+Disabling compilation of ProjE integration
+[datagen] Disabling compilation of CrT integration
+[datagen] Disabling compilation of CrT integration
+[generators] Disabling compilation of EMI integration
+[datagen] Disabling compilation of CrT integration
+[datagen] Disabling compilation of CrT integration
+
+> Task :annotation-processor:compileJava UP-TO-DATE
+> Task :createMinecraftArtifacts UP-TO-DATE
+> Task :processApiResources NO-SOURCE
+> Task :annotation-processor:processResources UP-TO-DATE
+> Task :annotation-processor:classes UP-TO-DATE
+> Task :annotation-processor:jar UP-TO-DATE
+> Task :processGameTestResources UP-TO-DATE
+> Task :downloadAssets UP-TO-DATE
+> Task :prepareNeoForgeTestFiles UP-TO-DATE
+> Task :processTestResources NO-SOURCE
+> Task :annotation-processor:compileTestJava NO-SOURCE
+> Task :annotation-processor:processTestResources NO-SOURCE
+> Task :annotation-processor:testClasses UP-TO-DATE
+> Task :annotation-processor:test NO-SOURCE
+> Task :compileApiJava UP-TO-DATE
+> Task :apiClasses UP-TO-DATE
+
+> Task :compileJava
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :processResources UP-TO-DATE
+> Task :classes
+> Task :compileAdditionsJava UP-TO-DATE
+> Task :processAdditionsResources UP-TO-DATE
+> Task :additionsClasses UP-TO-DATE
+> Task :compileToolsJava UP-TO-DATE
+> Task :processToolsResources UP-TO-DATE
+> Task :toolsClasses UP-TO-DATE
+> Task :compileGeneratorsJava
+> Task :processGeneratorsResources UP-TO-DATE
+> Task :generatorsClasses
+> Task :compileGameTestJava UP-TO-DATE
+> Task :gameTestClasses UP-TO-DATE
+> Task :compileTestJava
+> Task :testClasses
+
+> Task :test
+
+CapacitorStateTest > savedHeatAndCapacityRemainIndependent() FAILED
+    org.opentest4j.AssertionFailedError at CapacitorStateTest.java:14
+
+CapacitorStateTest > invalidCapacityIsRejectedIndependentlyOfHeat() FAILED
+    org.opentest4j.AssertionFailedError at CapacitorStateTest.java:26
+
+CapacitorStateTest > emptyCapacitorCanBeSaved() FAILED
+    java.lang.IllegalArgumentException at CapacitorStateTest.java:19
+
+3 tests completed, 3 failed
+
+> Task :test FAILED
+
+[Incubating] Problems report is available at: file:///Users/jackcres/.t3/scratch/2026-11-07-the-latest-version-of-atm11-48f7da72/mekanism-port/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///Users/jackcres/.t3/scratch/2026-11-07-the-latest-version-of-atm11-48f7da72/mekanism-port/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.5.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 18s
+21 actionable tasks: 4 executed, 17 up-to-date
+Configuration cache entry stored.

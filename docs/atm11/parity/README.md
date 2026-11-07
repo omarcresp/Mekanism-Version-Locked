@@ -28,12 +28,16 @@ these to exact fuel/waste quantities and a fresh JVM persistence check. The stro
 passed. The first restart then exposed a heat serialization crash: the shared
 capacitor codec serialized the heat value into the capacity field. Its constructor
 also validated heat instead of capacity. Both source errors are fixed; three focused
-regressions failed before the fix and all 74 unit tests pass afterward. A new
-full-pack seed/restart is required before marking persistence fixed.
+regressions failed before the fix and all 74 unit tests pass afterward. The fresh full-pack run then passed **65 seed checks and 51 restart checks** in
+different JVMs with identical mod hashes. Fission heat capacity remained exactly
+98000, fuel/waste changed from 900/100 to 800/200 in the second operating cycle,
+and reactor damage stayed zero. See `runtime/` for results, input hashes, process
+reports and check transcripts. The initial fixed fixture supplied too little water;
+the final fixture fills its real coolant capacity before each operating cycle.
 
 | Area | Required proof | State |
 | --- | --- | --- |
-| Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Initial operation passed; expanded checks pending |
+| Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Exact burn/waste, cooling, shutdown and fresh JVM persistence passed; external ports/safety scenarios pending |
 | Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Formation and internal conversion passed; external output/restart pending |
 | Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Hohlraum/API ignition, 100 ticks of injection and generation passed; laser/persistence pending |
 | SPS | Coil/port energy, polonium-to-antimatter quantities/cost, output/restart | Real port/coil and exact 1 mB conversion passed; external transport/balance/restart pending |
@@ -97,3 +101,14 @@ therefore needs an explicit source-level storage decision, not just a TOML copy.
 
 QA fixtures are separate from production JARs and only run in owned disposable
 worlds. Client tests must retain `soundCategory_master:0.0` before and during launch.
+
+## Runtime test boundaries
+
+Structures form through normal multiblock validation. Fission, turbine and fusion
+fuel/coolant setup uses tank APIs; this does not prove external pipe networks.
+Fusion receives ignition energy through its reactor API, not a physical laser
+network. SPS energy goes through an actual port and connected coil. Only fission
+receives explicit save/restart assertions; the other structures remain in the
+saved world but are not rebuilt or operated again by the restart fixture.
+The verified run starts with a newly seeded world; recovery of heat data already
+corrupted by a pre-fix save is not certified.

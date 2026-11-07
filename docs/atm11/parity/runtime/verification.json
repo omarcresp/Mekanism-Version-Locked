@@ -1,0 +1,28 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "productionSourceCommit": "a4b68ad",
+  "qaSourceCommit": "56206b3",
+  "unitTests": {
+    "tests": 74,
+    "failures": 0,
+    "errors": 0
+  },
+  "logs": {
+    "seed": {
+      "sha256": "3f26c4d8d20db4d290f2930ca2cd2aaab662eac1cf49c76e0614eb9b1bab54f9",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "3e258badfc1000d3cc403f38fbfcbc0645df0ba06ad5a2281ac08801cb2e1df8",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "scope": "Fission exact burn/waste and JVM persistence; turbine internal conversion; fusion hohlraum/API ignition; SPS actual port and coil conversion. Full ATM10 parity remains pending."
+}
