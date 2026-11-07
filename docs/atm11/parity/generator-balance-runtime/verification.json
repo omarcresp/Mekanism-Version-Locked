@@ -1,0 +1,33 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "6f85c6026bf676b2e6f1599bdbe97ff6b7f3e546",
+  "sourceTree": "ba1b74a29fff79981629c0c7b9712624bcb04d67",
+  "profileSha256": "0bbe2456d3cc37ded941da70f6d5807aec54c80026faf8a5ada76cf1d479caba",
+  "unitTests": {
+    "java": 74,
+    "python": 3,
+    "failures": 0
+  },
+  "checks": {
+    "seed": 264,
+    "restart": 72
+  },
+  "logs": {
+    "seed": {
+      "sha256": "fe4871ba8d3f082d8d782544a5b5b617e3a4948333fd3e0681108b18ebcf7285",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "4e9b5e8525d77bc5c09e5d4a29387a59eee814378b3be1e2aea08f95eadc4ded",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "scope": "Five generator capacities; real solar and wind ticking, exact stored sum, wind output at both height limits; six generators retain 12345 FE after a fresh JVM restart. Existing machine/reactor/integration checks retained. Gas, bio and heat fuel behavior, thermal conversion, and full parity remain pending."
+}
