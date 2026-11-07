@@ -75,7 +75,9 @@ final class GeneratorTransferProbe {
             if (saved == null) for (var target : targets) {
                 level.setBlockAndUpdate(target, MekanismBlocks.ULTIMATE_ENERGY_CUBE.defaultState());
                 var config = cube(level, target).getConfig().getConfig(TransmissionType.ENERGY);
-                for (var side : RelativeSide.values()) config.setDataType(DataType.INPUT, side);
+                for (var side : RelativeSide.values()) {
+                    if (config.setDataType(DataType.INPUT, side)) cube(level, target).getConfig().sideChanged(TransmissionType.ENERGY, side);
+                }
                 config.setEjecting(false);
             }
         }
@@ -121,6 +123,8 @@ final class GeneratorTransferProbe {
             if (!cable(level, 1).getTransmitter().hasTransmitterNetwork() || !cable(level, 2).getTransmitter().hasTransmitterNetwork()) return false;
             check.accept(cable(level, 1).getTransmitter().getTransmitterNetwork() == cable(level, 2).getTransmitter().getTransmitterNetwork(),
                   "two physical universal cables form one shared energy network");
+            check.accept(cable(level, 2).getTransmitter().getTransmitterNetworkNN().hasAcceptor(receivers.get(6).getFirst()),
+                  "cable network discovers the configured energy cube input");
             if (saved != null) {
                 for (int i = 0; i < IDS.length; i++) {
                     check.accept(source(level, i).energyContainer().getAmountAsLong() == saved.getAsJsonObject("fixture" + i).get("source").getAsLong(),
@@ -170,7 +174,12 @@ final class GeneratorTransferProbe {
             for (int i : new int[]{3, 4}) for (var target : receivers.get(i)) check.accept(cube(level, target).energyContainer().getAmountAsLong() > 0,
                   "both physical output faces receive a share of one common budget " + i);
             check.accept(cube(level, receivers.get(6).getFirst()).energyContainer().getAmountAsLong() > 0,
-                  "automatic generator output reaches an actual receiver through universal cables");
+                  "automatic generator output reaches an actual receiver through universal cables: " + cable(level, 1).getTransmitter().getTransmitterNetworkNN()
+                        + " network=" + cable(level, 1).getTransmitter().getContainer().getAmountAsLong()
+                        + " local1=" + cable(level, 1).getTransmitter().buffer.getAmountAsLong()
+                        + " local2=" + cable(level, 2).getTransmitter().buffer.getAmountAsLong()
+                        + " running=" + level.getServer().tickRateManager().runsNormally()
+                        + " endpointAcceptor=" + cable(level, 2).getTransmitter().getAcceptor(Direction.NORTH));
             var fuel = ChemicalResource.of(MekanismChemicals.ETHENE);
             try (var tx = Transaction.openRoot()) {
                 check.accept(gas(level).getFuelTank().insert(fuel, 18000, tx, AutomationType.EXTERNAL) == 18000,
