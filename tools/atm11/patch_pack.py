@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import json
 import zipfile
+from balance import apply_balance
 
 
 def patch_tooltips(instance: Path):
@@ -106,21 +107,8 @@ def migrate_creative_energy(instance: Path):
     return count
 
 
-def align_chemical_consumption(instance: Path):
-    """ATM10 8.5 uses deterministic secondary chemical consumption."""
-    path = instance / 'config/Mekanism/machine-usage.toml'
-    if not path.is_file():
-        return 0
-    original = path.read_text()
-    updated, count = re.subn(r'(?m)^(\s*randomizedConsumption\s*=\s*)true(\s*(?:#.*)?)$',
-                             r'\1false\2', original)
-    if count:
-        path.write_text(updated)
-    return count
-
-
 def patch_pack(instance: Path):
-    return {'deterministicChemicalConsumption': align_chemical_consumption(instance),
+    return {'atm10BalanceSettings': apply_balance(instance),
             'tooltipSelectors': patch_tooltips(instance),
             'optionalChemicalItemSelectors': patch_optional_chemical_items(instance), 'questChapters': enable_quests(instance),
             'unavailableQuestDependencies': remove_unavailable_quest_gates(instance),

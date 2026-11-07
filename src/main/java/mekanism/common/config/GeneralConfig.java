@@ -132,7 +132,7 @@ public class GeneralConfig extends BaseMekanismConfig {
               .define("transmitterAlloyUpgrade", true));
         //If this is less than 1, upgrades make machines worse. If less than 0, I don't even know.
         maxUpgradeMultiplier = CachedIntValue.wrap(this, MekanismConfigTranslations.GENERAL_UPGRADE_MULTIPLIER.applyToBuilder(builder)
-              .defineInRange("maxUpgradeMultiplier", 10, 1, Integer.MAX_VALUE));
+              .defineInRange("maxUpgradeMultiplier", 16, 1, Integer.MAX_VALUE));
         maxSolarNeutronActivatorRate = CachedIntValue.wrap(this, MekanismConfigTranslations.GENERAL_RATE_SNA.applyToBuilder(builder)
               .defineInRange("maxSolarNeutronActivatorRate", 64, 1, 1_024));
 
@@ -309,7 +309,7 @@ public class GeneralConfig extends BaseMekanismConfig {
         spsOutputTankCapacity = CachedLongValue.wrap(this, MekanismConfigTranslations.GENERAL_SPS_CAPACITY_OUTPUT.applyToBuilder(builder)
               .defineInRange("outputTankCapacity", FluidType.BUCKET_VOLUME, 1, Long.MAX_VALUE));
         spsEnergyPerInput = CachedLongValue.wrap(this, MekanismConfigTranslations.GENERAL_SPS_ENERGY_PER.applyToBuilder(builder)
-              .defineInRange("energyPerInput", 1_000_000, 0, Long.MAX_VALUE));
+              .defineInRange("energyPerInput", 40_000, 0, Long.MAX_VALUE));
         builder.pop();
 
         configSpec = builder.build();

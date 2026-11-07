@@ -1,36 +1,49 @@
-# Balance work remaining after reactor persistence
+# ATM10 8.5 balance work
 
-Use effective FE, quantities and throughput for parity, not equal raw config values.
-ATM10 8.5 config sets 2.5 Joules per FE. The port removed that conversion and uses
-NeoForge energy directly. Thermal heat quantities need separate treatment from
-electrical energy; do not apply an electrical conversion to every `energy` key.
+Compare effective FE, quantities and throughput, rather than equal raw config
+values. ATM10 8.5 sets 2.5 Joules per FE. The port uses NeoForge energy directly.
+Thermal heat quantities need separate treatment from electrical energy.
 
-Representative electrical comparisons from the pinned release configs:
+## Machine storage and usage
 
-| Setting | ATM10 effective value | Current target value | Required work |
+The `tools/atm11/atm10-8.5-balance.json` profile defines 73 settings: 36 independent
+storage capacities, 35 usage/teleporter/consumption entries, the upgrade multiplier,
+and SPS input cost. Source defaults and the disposable-copy migration apply these
+values without a toggle. The migration preserves other settings and comments.
+
+| Setting | ATM10 effective value | Previous target | Current validation |
 | --- | --- | --- | --- |
-| Enrichment usage | 20 FE/t | 5 FE/t | Usage config |
-| Enrichment buffer | 8000 FE | 20 FE (four ticks) | Restore independent storage configuration |
-| MekaSuit base capacity | 16000000 FE | 16000000 FE | Already equivalent despite raw TOML difference |
-| MekaSuit charging | 80000 FE/t | 100000 FE/t | Gear config |
-| SPS per input mB | 40000 FE | 1000000 FE | Verify conversion through actual coil/port |
-| Solar generation | 60 FE/t | 2 FE/t | Generator config and real generation |
-| Advanced solar generation | 480 FE/t | 12 FE/t | Generator config and real generation |
-| Turbine storage per volume | 6400000 FE | 100 FE | Generator config and actual transfer |
+| Enrichment usage | 20 FE/t | 5 FE/t | Full-pack base usage check passed |
+| Enrichment buffer | 8000 FE | Usage-derived buffer | Full-pack capacity check passed |
+| Energy upgrades | 16× buffer with all eight upgrades | 10× and usage-derived override | Full-pack machine/factory checks passed |
+| SPS per input mB | 40000 FE | 1000000 FE | Exact bounded port insertion and antimatter conversion passed |
+| MekaSuit base capacity | 16000000 FE | 16000000 FE | Equivalent config; equipment verification pending |
+| MekaSuit charging | 80000 FE/t | 100000 FE/t | Pending |
+| Solar generation | 60 FE/t | 2 FE/t | Pending |
+| Advanced solar generation | 480 FE/t | 12 FE/t | Pending |
+| Turbine storage per volume | 6400000 FE | 100 FE | Pending |
 
-The fuel overlay requires a separate correction. Legacy ethene is 20 burn ticks
-at 300 J/t per mB: **2400 FE/mB**, not 6000 FE/mB. Hydrogen's 200 J/mB corresponds
-to **80 FE/mB**. RC1 preserved numeric energy density (6000 and 200) in the new
-schema and selected the port's integer burn limit. That is decoding compatibility,
-not effective energy or fractional consumption parity. Existing QA assertions
-explicitly describe those RC1 numeric values; update both the migration and runtime
-assertions together once equivalent throughput/consumption is implemented.
+Independent capacities use the existing `withEnergyConfig(usage, storage)` API.
+Energy upgrades increase the configured buffer; speed upgrades preserve it.
+Factories retain ATM10's buffer scaling. The separator no longer replaces its
+configured storage with a usage-derived buffer, and energy upgrades do not reduce
+electrolysis cost. Separate electrolysis/fuel energy accounting remains necessary.
+The default buffer for a machine without a specific storage setting is restored
+to 400 ticks; resistive-heater thermal conversion still needs its own verification.
 
-The old separate storage capability can be restored through the existing
-`BlockTypeTile.Builder.withEnergyConfig(usage, storage)` API. Avoid a second
-storage multiplier as a substitute: ATM10's individual capacities are not all the
-same multiple of their usage. The release TOML values, rather than the older
-rebalance notes, are the source of truth.
+The first full-pack run passed 246 checks, including all 36 capacities, ordinary
+machine usage, factory buffers, upgrade behavior, and bounded SPS energy insertion.
+Save/restart checks for upgraded machines are tracked separately in runtime evidence.
 
-This document records pending work; these values have not been applied to the
-current reactor runtime candidate.
+## Fuel and generator work still pending
+
+The fuel overlay still needs an electrical conversion. Legacy ethene is 20 burn
+ticks at 300 J/t per mB: **2400 FE/mB**, not 6000 FE/mB. Hydrogen's 200 J/mB is
+**80 FE/mB**. RC1 preserved numeric density (6000 and 200) in the new schema and
+selected the port's integer burn limit. Existing fuel assertions describe those
+RC1 values; update migration and runtime assertions together when equivalent
+throughput and fractional consumption are implemented.
+
+Generator outputs/storage, fusion/laser thermal conversion, equipment values,
+other general settings, network capacities and pack recipes remain in the parity
+inventory. Release TOML values take precedence over the older rebalance notes.

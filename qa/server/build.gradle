@@ -7,3 +7,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 repositories { mavenCentral() }
 dependencies { compileOnly files('../../build/libs/Mekanism-26.1.2-10.8.0.homebaked.jar', '../../build/libs/MekanismGenerators-26.1.2-10.8.0.homebaked.jar') }
 neoForge { version = '26.1.2.126' }
+
+tasks.named('processResources') {
+    from('../../tools/atm11/atm10-8.5-balance.json')
+}
