@@ -1,7 +1,31 @@
 # Chemical fuel migration
 
-ATM11 0.14.0-beta supplies `burn_time` and `energy` in its dynamic chemical fuel data map. The older Mekanism model stores ticks per mB and energy per tick: total energy per mB is their product. See the [upstream 1.21 implementation](https://github.com/mekanism/Mekanism/blob/1.21.x/src/api/java/mekanism/api/datamaps/chemical/attribute/ChemicalFuel.java).
+The parity baseline is ATM10 8.5 with Mekanism 10.7.19.85 and 2.5 Joules per FE.
+The legacy map defines burn ticks per mB and Joules per burn tick. Ethene is
+20 × 300 J = 2400 FE/mB; hydrogen is 200 J = 80 FE/mB.
 
-The current port uses `maxBurnPerTick` in mB per tick and stores energy per mB directly. These rate fields are not interchangeable. The pack repair preserves the old energy density: ethene becomes 6,000 energy per mB and hydrogen becomes 200. It reads the burn limit from the installed port's own default data map, currently 10 mB per tick for both fuels, rather than treating old burn duration as a consumption rate.
+The port keeps energy density in `energy` (FE/mB). `burnTicksPerMB` defaults to
+one for existing port data maps, retaining their whole-mB burn step. `maxBurnPerTick`
+counts burn steps; divide it by `burnTicksPerMB` to obtain the maximum mB/t.
+The ATM10 profile uses 256 steps/t, 20 steps/mB for ethene and one for hydrogen.
+At full pressure ethene produces 30720 FE/t (12.8 mB/t equivalent).
 
-This preserves fuel energy content with the port's current generator design. It does not reproduce the older fractional burn timing or certify identical peak throughput. Runtime QA checks the actual loaded data-map entries so silent fallback to the port's default energy densities is detected.
+The generator uses ATM10's `ceil(256 × tank fullness)` pressure curve, bounded by
+available fuel and space for whole burn steps (120 FE per ethene step). A
+37 FE gap waits; a 157 FE gap admits one 120 FE step. When consuming a whole mB produces
+more energy than fits this tick, it retains the remainder as typed fuel credit.
+That credit persists in world saves and block item components; the normal loot
+table copies it. Credit finishes burning even when the whole-mB tank is empty.
+A different chemical cannot enter the tank until existing fuel credit is spent.
+Fuel extraction and FE insertion commit together; aborted operations do not
+change credit. GUI production uses measured inserted FE, independent of rounded
+burn-rate text.
+
+`patch_pack.py` normalizes both legacy ATM overlays and RC1's previously migrated
+6000/200 numeric densities to 2400/80 FE. Custom legacy entries are converted
+from Joules and retain their burn duration; modern entries from other mods are
+preserved. The migration is idempotent and applies only to marked QA copies.
+
+Reference: [pinned gas generator source](https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/tile/TileEntityGasGenerator.java).
+The port conserves final partial credit rather than replicating the older
+empty-tank edge case. Remaining thermal, equipment and pack parity are separate.

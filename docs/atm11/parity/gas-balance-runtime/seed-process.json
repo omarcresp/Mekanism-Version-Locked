@@ -1,0 +1,13 @@
+{
+  "pid": 23907,
+  "phase": "seed",
+  "command": [
+    "/Users/jackcres/.t3/projects/ancestrallies/.tools/jdk-25.0.4.1+1/Contents/Home/bin/java",
+    "-Xms1G",
+    "-Xmx6G",
+    "@libraries/net/neoforged/neoforge/26.1.2.126/unix_args.txt",
+    "nogui"
+  ],
+  "exitCode": 0,
+  "seconds": 146.74
+}

@@ -4,7 +4,6 @@ import argparse
 from pathlib import Path
 import re
 import json
-import zipfile
 from balance import apply_balance
 
 
@@ -73,26 +72,28 @@ def migrate_fuel(instance: Path):
     if not path.is_file():
         return 0
     data = json.loads(path.read_text(encoding='utf-8-sig'))
-    legacy = {key: value for key, value in data['values'].items() if 'burn_time' in value}
-    if not legacy:
-        return 0
-    resource = 'data/mekanism/data_maps/mekanism/chemical/chemical_attribute_fuel.json'
-    defaults = []
-    for jar_path in (instance / 'mods').glob('Mekanism-*.jar'):
-        with zipfile.ZipFile(jar_path) as jar:
-            if resource in jar.namelist():
-                defaults.append(json.loads(jar.read(resource))['values'])
-    if len(defaults) != 1:
-        raise ValueError('fuel migration requires exactly one current Mekanism Core JAR')
-    for key, value in legacy.items():
-        density = value['burn_time'] * value['energy']
-        if not 0 < density <= 2147483647:
-            raise ValueError(f'fuel energy density cannot be represented: {key}')
-        value.pop('burn_time')
-        value['energy'] = density
-        value['maxBurnPerTick'] = defaults[0][key]['maxBurnPerTick']
-    path.write_text(json.dumps(data, indent=2) + '\n')
-    return len(legacy)
+    changes = 0
+    # These are the published ATM10 8.5 fuels, converted from Joules to FE.
+    # Normalize both legacy input and already-migrated RC1 overlays.
+    fuels = {'mekanism:hydrogen': {'energy': 80, 'maxBurnPerTick': 256},
+             'mekanism:ethene': {'energy': 2400, 'maxBurnPerTick': 256, 'burnTicksPerMB': 20}}
+    for key, expected in fuels.items():
+        current = data['values'].get(key)
+        if current is not None and current != expected:
+            data['values'][key] = expected
+            changes += 1
+    for key, value in data['values'].items():
+        if 'burn_time' in value:
+            ticks = value.pop('burn_time')
+            scaled = ticks * value['energy'] * 2
+            density, remainder = divmod(scaled, 5)
+            if remainder or not 0 < density <= 2147483647:
+                raise ValueError(f'fuel energy density cannot be represented in whole FE: {key}')
+            value.update(energy=int(density), maxBurnPerTick=256, burnTicksPerMB=ticks)
+            changes += 1
+    if changes:
+        path.write_text(json.dumps(data, indent=2) + '\n')
+    return changes
 
 
 def migrate_creative_energy(instance: Path):

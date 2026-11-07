@@ -55,26 +55,38 @@ The full-pack seed run passed **264 checks** and a fresh JVM passed **72 checks*
 including all six exact stored-energy checks. Mod hashes were identical.
 See `generator-balance-runtime/` for results, process identities and log hashes.
 
-## Fuel and generator work still pending
+## Fractional gas fuel implementation
 
-The fuel overlay still needs an electrical conversion. Legacy ethene is 20 burn
-ticks at 300 J/t per mB: **2400 FE/mB**, not 6000 FE/mB. Hydrogen's 200 J/mB is
-**80 FE/mB**. RC1 preserved numeric density (6000 and 200) in the new schema and
-selected the port's integer burn limit. Existing fuel assertions describe those
-RC1 values; update migration and runtime assertions together when equivalent
-throughput and fractional consumption are implemented.
+The profile restores a gas tank of 18000 mB. Generated defaults and the pack
+migration use ethene at 2400 FE/mB (20 burn steps) and hydrogen at 80 FE/mB
+(one step). Both allow 256 steps/t at full pressure. Existing port maps retain
+one step/mB unless they explicitly set `burnTicksPerMB`.
 
-Remaining generator fuel/heat behavior, fusion/laser thermal conversion, equipment values,
-other general settings, network capacities and pack recipes remain in the parity
-inventory. Release TOML values take precedence over the older rebalance notes.
+Ethene reaches 30720 FE/t with a full tank. Near-full energy buffers admit only
+whole 120 FE burn steps: 37 FE free space stalls, while 157 FE permits 120 FE.
+Fuel credit retains the remainder of the extracted mB, with chemical identity,
+in both world saves and item components. The final credit continues burning
+with an empty whole-mB tank. Extraction and FE insertion commit together.
+See `../fuel-migration.md` for data format and migration behavior.
 
-The [pinned 10.7.19.85 gas generator source](https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/tile/TileEntityGasGenerator.java)
-limits work to `ceil(256 * tank fullness)` burn ticks per server tick, then caps
-that by available fuel and free energy capacity. Ethene has 20 burn ticks/mB,
-so a full tank can consume 12.8 mB/t and produce 30720 FE/t with the pack's
-300 J per burn tick. The current integer mB limit cannot express this behavior.
-The next fuel change must preserve partial fuel credit across transactions and
-restart, keep chemical identity with that credit, and prove conservation when a
-buffer has less than one complete mB's energy available. The legacy source also
-has edge cases around empty tanks; those are not a reason to discard remaining
-fuel credit in the port.
+The isolated fixture checks pressure, whole-step output, exact fuel/FE
+conservation, zero consumption when blocked, transaction rollback, normal loot
+and replacement, and a fresh-JVM continuation with partial fuel credit.
+
+The full-pack run passed **282 seed checks** and **80 fresh-JVM restart checks**
+with identical mod hashes. Restart retained 17987 mB of ethene and 480 FE of
+fuel credit in the full-pressure fixture, and 2280 FE of credit in the empty
+partial-burn fixture. That fixture then generated exactly 2280 FE. See
+`gas-balance-runtime/` for input hashes, process identities and assertions.
+
+## Remaining balance and reactor work
+
+Heat and bio fuel behavior, fusion/laser thermal conversion, equipment values,
+other general settings, transport limits and pack recipes remain in the parity
+inventory. In particular, ATM10 generators limit external output to twice their
+configured/current production rate; the port's external output path needs its
+own transport test and review. Disconnected production checks do not prove
+that transfer limit. Release TOML values take precedence over older notes.
+
+Reference: [pinned 10.7.19.85 gas generator source](https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/tile/TileEntityGasGenerator.java)
+and [generator output implementation](https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/tile/TileEntityGenerator.java).

@@ -12,6 +12,7 @@ import mekanism.common.Mekanism;
 import mekanism.common.component.BlockData;
 import mekanism.common.component.FilterAware;
 import mekanism.common.component.FormulaComponent;
+import mekanism.common.component.FuelBurnBuffer;
 import mekanism.common.component.FrequencyAware;
 import mekanism.common.component.LockData;
 import mekanism.common.component.OverflowAware;
@@ -131,6 +132,10 @@ public class MekanismDataComponents {
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> SCUBA_TANK_MODE = DATA_COMPONENTS.registerBoolean("scuba_tank_mode");
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> ELECTRIC_BOW_MODE = DATA_COMPONENTS.registerBoolean("electric_bow_mode");
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> BUCKET_MODE = DATA_COMPONENTS.registerBoolean("bucket_mode");
+    public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<FuelBurnBuffer>> FUEL_BURN_BUFFER = DATA_COMPONENTS.simple("fuel_burn_buffer",
+          builder -> builder.persistent(FuelBurnBuffer.CODEC).networkSynchronized(FuelBurnBuffer.STREAM_CODEC)
+    );
+
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> ROTARY_MODE = DATA_COMPONENTS.registerBoolean("rotary_mode");
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> AUTO = DATA_COMPONENTS.registerBoolean("auto");
     public static final MekanismDeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> SORTING = DATA_COMPONENTS.registerBoolean("sorting");

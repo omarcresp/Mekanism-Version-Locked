@@ -71,12 +71,20 @@ python3 tools/atm11/audit_modules.py --baseline /path/to/ServerFiles-8.5.zip \
   --target /path/to/disposable-atm11 --output /tmp/atm10-modules.json
 ```
 
+## Fractional gas fuel
+
+Ethene and hydrogen densities, gas tank size, fractional burning and whole burn
+steps now match ATM10 8.5. Typed partial fuel credit survives normal block loot,
+replacement and a fresh JVM restart. Full-pack runs passed 282 seed and 80 restart
+checks; see `gas-balance-runtime/` and `../fuel-migration.md`. External generator
+transfer limits and thermal conversion remain pending.
+
 ## Solar/wind and generator buffers
 
 The next balance change restores 60/480 FE/t solar ratings, the 60–360 FE/t
 wind range, and five independent generator storage values. See
 `balance-work.md` and `generator-balance-runtime/` for runtime scope and evidence.
-Gas fuel timing and heat conversion remain pending.
+Gas fuel timing is covered above; heat conversion remains pending.
 
 ## Machine balance implementation
 
