@@ -1,0 +1,268 @@
+[07:44:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS disposable world ownership marker
+[07:44:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS registered mekanism:enrichment_chamber
+[07:44:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS registered mekanism:metallurgic_infuser
+[07:44:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS registered mekanism:chemical_dissolution_chamber
+[07:44:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS registered mekanism:sps_casing
+[07:44:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS registered mekanismgenerators:fission_reactor_casing
+[07:44:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS registered mekanismgenerators:fusion_reactor_controller
+[07:44:39] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS enrichment chamber block entity created
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 machine upgrade multiplier is 16
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:enrichment_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity enrichment_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage enrichment_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:osmium_compressor
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity osmium_compressor
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage osmium_compressor
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:combiner
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity combiner
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage combiner
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:crusher
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity crusher
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage crusher
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:metallurgic_infuser
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity metallurgic_infuser
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage metallurgic_infuser
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:purification_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity purification_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage purification_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:energized_smelter
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity energized_smelter
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage energized_smelter
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:digital_miner
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity digital_miner
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage digital_miner
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:electric_pump
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity electric_pump
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage electric_pump
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:chargepad
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity chargepad
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage chargepad
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:rotary_condensentrator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity rotary_condensentrator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage rotary_condensentrator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:chemical_oxidizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity chemical_oxidizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage chemical_oxidizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:chemical_infuser
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity chemical_infuser
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage chemical_infuser
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:chemical_injection_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity chemical_injection_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage chemical_injection_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:electrolytic_separator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity electrolytic_separator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:precision_sawmill
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity precision_sawmill
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage precision_sawmill
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:chemical_dissolution_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity chemical_dissolution_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage chemical_dissolution_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:chemical_washer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity chemical_washer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage chemical_washer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:chemical_crystallizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity chemical_crystallizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage chemical_crystallizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:seismic_vibrator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity seismic_vibrator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage seismic_vibrator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:pressurized_reaction_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity pressurized_reaction_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage pressurized_reaction_chamber
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:fluidic_plenisher
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity fluidic_plenisher
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage fluidic_plenisher
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:laser
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity laser
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:laser_amplifier
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity laser_amplifier
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:laser_tractor_beam
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity laser_tractor_beam
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:formulaic_assemblicator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity formulaic_assemblicator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage formulaic_assemblicator
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:teleporter
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity teleporter
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:modification_station
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity modification_station
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage modification_station
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:isotopic_centrifuge
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity isotopic_centrifuge
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage isotopic_centrifuge
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:nutritional_liquifier
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity nutritional_liquifier
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage nutritional_liquifier
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:antiprotonic_nucleosynthesizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity antiprotonic_nucleosynthesizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage antiprotonic_nucleosynthesizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:pigment_extractor
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity pigment_extractor
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage pigment_extractor
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:pigment_mixer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity pigment_mixer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage pigment_mixer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:painting_machine
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity painting_machine
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage painting_machine
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:sps_port
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity sps_port
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:dimensional_stabilizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy capacity dimensional_stabilizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 base energy usage dimensional_stabilizer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:basic_smelting_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer BASIC SMELTING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:basic_enriching_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer BASIC ENRICHING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:basic_crushing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer BASIC CRUSHING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:basic_compressing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer BASIC COMPRESSING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:basic_combining_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer BASIC COMBINING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:basic_purifying_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer BASIC PURIFYING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:basic_injecting_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer BASIC INJECTING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:basic_infusing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer BASIC INFUSING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:basic_sawing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer BASIC SAWING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:advanced_smelting_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ADVANCED SMELTING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:advanced_enriching_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ADVANCED ENRICHING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:advanced_crushing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ADVANCED CRUSHING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:advanced_compressing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ADVANCED COMPRESSING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:advanced_combining_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ADVANCED COMBINING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:advanced_purifying_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ADVANCED PURIFYING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:advanced_injecting_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ADVANCED INJECTING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:advanced_infusing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ADVANCED INFUSING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:advanced_sawing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ADVANCED SAWING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:elite_smelting_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ELITE SMELTING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:elite_enriching_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ELITE ENRICHING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:elite_crushing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ELITE CRUSHING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:elite_compressing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ELITE COMPRESSING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:elite_combining_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ELITE COMBINING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:elite_purifying_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ELITE PURIFYING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:elite_injecting_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ELITE INJECTING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:elite_infusing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ELITE INFUSING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:elite_sawing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ELITE SAWING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_smelting_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ULTIMATE SMELTING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_enriching_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ULTIMATE ENRICHING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_crushing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ULTIMATE CRUSHING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_compressing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ULTIMATE COMPRESSING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_combining_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ULTIMATE COMBINING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_purifying_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ULTIMATE PURIFYING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_injecting_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ULTIMATE INJECTING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_infusing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ULTIMATE INFUSING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_sawing_factory
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 factory buffer ULTIMATE SAWING
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS eight energy upgrades increase configured buffer sixteenfold
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS speed upgrades preserve independently configured buffer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS eight energy upgrades increase configured buffer sixteenfold
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS speed upgrades preserve independently configured buffer
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 solar ratings are 60/480 FE per tick
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 wind rating spans 60 to 360 FE per tick
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 generator capacity heat_generator at BlockPos{x=8, y=200, z=112}
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 generator capacity bio_generator at BlockPos{x=16, y=200, z=112}
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 generator capacity solar_generator at BlockPos{x=24, y=200, z=112}
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 generator capacity advanced_solar_generator at BlockPos{x=32, y=200, z=112}
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 generator capacity wind_generator at BlockPos{x=40, y=20, z=112}
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 generator capacity wind_generator at BlockPos{x=48, y=315, z=112}
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS pack integration block registered trashcans:liquid_trash_can
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS chemical capability available on trashcans:liquid_trash_can
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS chemical insertion accepted by trashcans:liquid_trash_can
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS pack integration block registered trashcans:ultimate_trash_can
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS chemical capability available on trashcans:ultimate_trash_can
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS chemical insertion accepted by trashcans:ultimate_trash_can
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS chemical tank block entity available
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS chemical transaction changes visible before abort
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS aborted chemical transaction restores exact amount
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 8.5 deterministic secondary chemical consumption is active
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS pack ethene fuel map loads with preserved 6000 energy per mB and current burn limit
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS pack hydrogen fuel map loads with preserved 200 energy per mB and current burn limit
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS creative cube component parses and retains exact long energy value
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM creative energy cube progression recipe loads
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded atm11mekcompat:platinum/from_raw
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/crushing/aum
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/enriching/aum
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/pigment_extracting/aum
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/sawing/witchwood_logs
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded allthemods:mekanism/sawing/undergarden/grongle_planks
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/honeycomb_lithium
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/honeycomb_wasted_radioactive
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/comb_block_lithium
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/comb_block_wasted_radioactive
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS uncounted external recipe input defaults to one item
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS counted recipe input preserves quantity
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS zero-count input rejected instead of silently defaulting
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS uncounted input encodes back to canonical counted schema
+[07:44:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS platinum processing chamber available
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS formed fission reactor detects fuel assemblies
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS formed turbine detects blades, coils and condensers
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS turbine begins with steam and no stored energy
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS fusion begins unignited with a filled hohlraum
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS formed SPS detects actual port-connected coil
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS ATM10 SPS cost is 40000 FE per input mB
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS SPS port insertion accepts the required energy within its configured capacity
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS SPS port accepts exact energy for one mB antimatter
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS turbine consumes steam during normal ticking
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS turbine generates stored energy
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS turbine condensers recover water
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS SPS consumes exact configured polonium input
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS SPS converts polonium into exactly one mB antimatter
+[07:44:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS SPS actual port and coil consume exact supplied energy
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:tick:211]: ATM11_POC tick 100
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS generator produces restored-scale FE through normal ticks at BlockPos{x=24, y=200, z=112}
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS generator stores exact sum of actual tick output at BlockPos{x=24, y=200, z=112}
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS generator produces restored-scale FE through normal ticks at BlockPos{x=32, y=200, z=112}
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS generator stores exact sum of actual tick output at BlockPos{x=32, y=200, z=112}
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS generator produces restored-scale FE through normal ticks at BlockPos{x=40, y=20, z=112}
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS generator stores exact sum of actual tick output at BlockPos{x=40, y=20, z=112}
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS generator produces restored-scale FE through normal ticks at BlockPos{x=48, y=315, z=112}
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS generator stores exact sum of actual tick output at BlockPos{x=48, y=315, z=112}
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS wind at minimum height produces 60 FE/t
+[07:44:47] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS wind at maximum height produces 360 FE/t
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS 100 fission ticks consume exactly 100 mB fissile fuel
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS 100 fission ticks produce exactly 100 mB nuclear waste
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS fission operation consumes water coolant
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS fission operation produces heated coolant
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS cooled fission operation avoids reactor damage (damage=0.0, water=10664247)
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS fusion ignition consumes the filled hohlraum
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS fusion sustains burning for 100 ticks after ignition
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS fusion injects both deuterium and tritium
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS fusion consumes equal quantities of deuterium and tritium
+[07:44:48] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS fusion generates stored energy
+[07:44:52] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:tick:211]: ATM11_POC tick 200
+[07:44:57] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:tick:211]: ATM11_POC tick 300
+[07:45:02] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:tick:211]: ATM11_POC tick 400
+[07:45:02] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS three raw platinum processed into exactly four dust
+[07:45:02] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS compat processing outputs native AllTheOres platinum dust
+[07:45:02] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS platinum recipe consumed exactly three raw items
+[07:45:02] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS native enrichment recipe produces enriched carbon
+[07:45:02] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS machine consumed exact supplied input
+[07:45:02] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:58]: ATM11_POC PASS machine consumed energy while processing

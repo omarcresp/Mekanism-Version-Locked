@@ -81,6 +81,19 @@
     "general.toml": {
       "maxUpgradeMultiplier": 16,
       "sps.energyPerInput": 40000
+    },
+    "generator-storage.toml": {
+      "heatGenerator": 64000,
+      "bioGenerator": 64000,
+      "solarGenerator": 38400,
+      "advancedSolarGenerator": 1000000,
+      "windGenerator": 80000
+    },
+    "generators.toml": {
+      "solar_generator.solarGeneration": 60,
+      "solar_generator.advancedSolarGeneration": 480,
+      "wind_generator.generationMin": 60,
+      "wind_generator.generationMax": 360
     }
   }
 }

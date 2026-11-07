@@ -71,6 +71,13 @@ python3 tools/atm11/audit_modules.py --baseline /path/to/ServerFiles-8.5.zip \
   --target /path/to/disposable-atm11 --output /tmp/atm10-modules.json
 ```
 
+## Solar/wind and generator buffers
+
+The next balance change restores 60/480 FE/t solar ratings, the 60–360 FE/t
+wind range, and five independent generator storage values. See
+`balance-work.md` and `generator-balance-runtime/` for runtime scope and evidence.
+Gas fuel timing and heat conversion remain pending.
+
 ## Machine balance implementation
 
 The first balance change restores 36 machine storage settings, ordinary electrical
