@@ -202,8 +202,13 @@ final class ReactorSafetyProbe {
             }
         } else if (meltdownStage == 1 && !failedReactor.isActive()) {
             fallout = IRadiationManager.INSTANCE.getRadiationLevel(level, MELTDOWN.offset(2, 2, 2));
-            check.accept(failedReactor.reactorDamage == 75 && failedReactor.fuelTank.isEmpty() && failedReactor.wasteTank.isEmpty(),
-                  "safety: natural meltdown clears radioactive contents, shuts down and resets damage to 75");
+            // Level-post meltdown and multiblock ticks can precede this server-post observer;
+            // allow at most one normal cool repair update after the configured reset to 75.
+            check.accept(failedReactor.reactorDamage <= 75 && failedReactor.reactorDamage >= 74.99
+                        && failedReactor.fuelTank.isEmpty() && failedReactor.wasteTank.isEmpty(),
+                  "safety: natural meltdown clears radioactive contents and resets damage to 75 within one repair tick"
+                        + " (damage=" + failedReactor.reactorDamage + ", fuel=" + failedReactor.fuelTank.amountAsLong()
+                        + ", waste=" + failedReactor.wasteTank.amountAsLong() + ", formed=" + failedReactor.isFormed() + ")");
             postMeltdownDamage = failedReactor.reactorDamage;
             postMeltdownTemperature = failedReactor.heatCapacitor.getTemperature();
             check.accept(postMeltdownTemperature < 350 && fallout > IRadiationManager.INSTANCE.baselineRadiation(),
