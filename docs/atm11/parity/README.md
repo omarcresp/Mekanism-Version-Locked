@@ -71,7 +71,16 @@ python3 tools/atm11/audit_modules.py --baseline /path/to/ServerFiles-8.5.zip \
   --target /path/to/disposable-atm11 --output /tmp/atm10-modules.json
 ```
 
-## Config findings
+## Machine balance implementation
+
+The first balance change restores 36 machine storage settings, ordinary electrical
+usage, independent upgrade buffers and SPS cost, with 2.5 J converted to 1 FE.
+The full pack passed 246 seed checks and 58 fresh-JVM restart checks. See
+`balance-work.md` and `machine-balance-runtime/` for scope, results and remaining
+fuel/generator/equipment work. The initial audit below remains a frozen comparison
+against the RC1 target; it is not a claim that all listed differences remain open.
+
+## Initial config findings
 
 `atm10-8.5-audit.json` records reference file hashes and TOML key differences without
 redistributing the pack's script contents. Reproduce with:

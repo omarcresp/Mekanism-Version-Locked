@@ -39,6 +39,8 @@ public final class Probe {
     private int ticks;
     private boolean finished;
     private boolean reopen;
+    private final EnergyProbe energy = new EnergyProbe(this::check);
+    private long initialMachineEnergy;
     private final FusionProbe fusion = new FusionProbe(this::check);
     private final SPSProbe sps = new SPSProbe(this::check);
     private final TurbineProbe turbine = new TurbineProbe(this::check);
@@ -94,7 +96,9 @@ public final class Probe {
                 fusion.build(level);
                 sps.build(level);
             }
-            machine().getEnergyContainer().setEnergy(100000, null);
+            energy.prepare(level, reopen);
+            initialMachineEnergy = machine().getEnergyContainer().getCapacityAsLong();
+            machine().getEnergyContainer().setEnergy(initialMachineEnergy, null);
             chemicalInterop();
             if (ModList.get().isLoaded("atm11mekcompat")) prepareCompat();
             observations.put("recipeCount", server.getRecipeManager().getRecipes().size());
@@ -159,7 +163,7 @@ public final class Probe {
         }
         machine.getInventorySlots().get(0).setContents(ItemResource.of(BuiltInRegistries.ITEM.getValue(
               Identifier.parse("alltheores:raw_platinum"))), 3, null);
-        machine.getEnergyContainer().setEnergy(100000, null);
+        machine.getEnergyContainer().setEnergy(machine.getEnergyContainer().getCapacityAsLong(), null);
     }
 
     private void chemicalInterop() {
@@ -221,7 +225,7 @@ public final class Probe {
                 check(output.resource().is(BuiltInRegistries.ITEM.getValue(Identifier.parse("mekanism:enriched_carbon"))),
                       "native enrichment recipe produces enriched carbon");
                 check(machine().getInventorySlots().get(0).isEmpty(), "machine consumed exact supplied input");
-                check(machine().getEnergyContainer().getAmountAsLong() < 100000, "machine consumed energy while processing");
+                check(machine().getEnergyContainer().getAmountAsLong() < initialMachineEnergy, "machine consumed energy while processing");
                 observations.put("fission", reactors.snapshot(server.overworld()));
                 observations.put("outputCount", output.amountAsLong());
                 observations.put("processingTicks", ticks);

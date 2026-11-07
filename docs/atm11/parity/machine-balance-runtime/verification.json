@@ -1,0 +1,29 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "dec452d715ef58525186162917db6f311c2d48ad",
+  "sourceTree": "a26f0e1a9d06987ef2fb05a0a01026f566d67e0f",
+  "profileSha256": "ce6c0e9643e12ca04d23a73da0fef59a30830520475be1d41ffef46de2d71bd7",
+  "unitTests": {
+    "java": 74,
+    "python": 3,
+    "failures": 0
+  },
+  "logs": {
+    "seed": {
+      "sha256": "19ad710d01e4a241e9a2674fdab5ff9ab9d3a877f3835e2b7a2d76a7a4294db0",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "1ddb690d2114bd88dcb246dd63b409463ee582ef49a5b30aa3ff7cb1e1c6cab8",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "scope": "36 base machine capacities, ordinary usage, factory capacities, eight speed/energy upgrades, stored-energy persistence, bounded SPS energy insertion; earlier reactor checks retained. Fuel/generator/equipment balance and full parity remain pending."
+}

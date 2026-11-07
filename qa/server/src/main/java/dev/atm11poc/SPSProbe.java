@@ -50,7 +50,12 @@ final class SPSProbe {
             input = MekanismConfig.general.spsInputPerAntimatter.get();
             sps.inputTank.setContents(ChemicalResource.of(MekanismChemicals.POLONIUM), input, null);
             long energy = Math.multiplyExact(input, MekanismConfig.general.spsEnergyPerInput.get());
-            port.getEnergyContainer().setEnergy(energy, null);
+            check.accept(MekanismConfig.general.spsEnergyPerInput.get() == 40000, "ATM10 SPS cost is 40000 FE per input mB");
+            try (var tx = net.neoforged.neoforge.transfer.transaction.Transaction.openRoot()) {
+                check.accept(port.getEnergyContainer().insert(Math.toIntExact(energy), tx, mekanism.api.AutomationType.EXTERNAL) == energy,
+                      "SPS port insertion accepts the required energy within its configured capacity");
+                tx.commit();
+            }
             check.accept(port.getEnergyContainer().getAmountAsLong() == energy, "SPS port accepts exact energy for one mB antimatter");
             supplied = true;
             return false;

@@ -11,8 +11,6 @@ import mekanism.common.block.attribute.Attribute;
 import mekanism.common.block.attribute.AttributeEnergy;
 import mekanism.common.component.containers.type.ContainerType;
 import mekanism.common.tile.base.TileEntityMekanism;
-import mekanism.common.tile.factory.TileEntityFactory;
-import mekanism.common.tile.prefab.TileEntityProgressMachine;
 import mekanism.common.util.MekanismUtils;
 import org.jetbrains.annotations.Range;
 import org.jspecify.annotations.Nullable;
@@ -85,17 +83,7 @@ public class MachineEnergyContainer<TILE extends TileEntityMekanism> extends Bas
     }
 
     public void updateMaxEnergy() {
-        if (tile.supportsUpgrade(Upgrade.SPEED)) {
-            long bufferMultipler = AttributeEnergy.STORAGE_MULTIPLIER;
-            //TODO - 26.1: Take this into account for the item's defined max energy so that it doesn't display 1 kFE / 20 FE for an energized smelter
-            if (tile instanceof TileEntityProgressMachine<?> progressMachine) {
-                bufferMultipler = Math.max(bufferMultipler, progressMachine.ticksRequired);
-            }
-            if (tile instanceof TileEntityFactory<?> factory) {
-                bufferMultipler *= factory.tier.processes;
-            }
-            setMaxEnergy(getEnergyPerTick() * bufferMultipler);
-        } else if (tile.supportsUpgrade(Upgrade.ENERGY)) {
+        if (tile.supportsUpgrade(Upgrade.ENERGY)) {
             setMaxEnergy(MekanismUtils.getMaxEnergy(tile, getBaseMaxEnergy()));
         }
     }
