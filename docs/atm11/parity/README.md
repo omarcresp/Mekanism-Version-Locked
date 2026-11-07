@@ -41,12 +41,21 @@ the final fixture fills its real coolant capacity before each operating cycle.
 | Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Physical 28-blade and one-blade conversion, fractional accounting and fresh-JVM restart passed; external output/recirculation pending |
 | Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Physical laser/amplifier/focus-matrix ignition and 100 burn ticks passed; controlled FE/fraction restart passed; hot-state safety pending |
 | SPS | Coil/port energy, polonium-to-antimatter quantities/cost, output/restart | Real port/coil, bounded external energy insertion and exact 40000 FE per input mB passed; output transport/restart pending |
-| Nuclear progression | Fuel chain, plutonium/polonium, pellets, waste decay/radiation | Pending |
+| Nuclear progression | Fuel chain, plutonium/polonium, pellets, waste decay/radiation | Physical polonium, brine and heavy-water production, waste/isotope decay and radiation factors passed; full connected fuel chain and pellets pending |
 | Machines | Processing families, factories/upgrades, fivefold ore chain and pack metals | Selected processing passed; full inventory pending |
-| Transport/storage | Cable/tube/pipe/item networks, induction, dynamic tank, QIO, chunk reload | Capability checks passed; network proof pending |
+| Transport/storage | Cable/tube/pipe/item networks, induction, dynamic tank, QIO, chunk reload | Real energy cube/cable transfer and fresh-JVM continuation passed; broader networks/storage pending |
 | Equipment | Modules, MekaSuit/tool mechanics, first/third person, ATM stats/recipes | Render evidence exists; mechanics/config parity pending |
 | Pack progression | Quests, gated recipes, ATM star and creative crafts, external recipes | Selected checks passed; complete semantic diff pending |
 | Addons | Compare actual baseline manifest dependencies against available target modules | Pinned server metadata inventory complete; missing Mekanism-specific addons identified, runtime parity pending |
+
+## Reactor fuel-chain balance
+
+Twelve remaining general settings now match ATM10, including real neutron
+activation, evaporation, filtered pumping, waste decay and radiation factors.
+A formed boiler stores water, steam and cooled sodium above the previous port
+capacities and checks exact fresh-JVM contents. See `fuel-chain.md` and
+`fuel-chain-runtime/` for measured scope. Connected cooling loops, full fuel
+processing, and hot-state safety remain pending.
 
 ## Module and integration inventory
 

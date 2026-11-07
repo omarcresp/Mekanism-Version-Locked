@@ -1,0 +1,12 @@
+{"tests": 79, "failures": 0, "errors": 0}
+test_corrects_wrong_scalar_type (test_balance.BalanceMigrationTest.test_corrects_wrong_scalar_type) ... ok
+test_creates_missing_root_and_sections (test_balance.BalanceMigrationTest.test_creates_missing_root_and_sections) ... ok
+test_preserves_unrelated_values_and_table_ownership (test_balance.BalanceMigrationTest.test_preserves_unrelated_values_and_table_ownership) ... ok
+test_custom_legacy_fuel_converts_without_rewriting_modern_fuels (test_fuel.FuelMigrationTest.test_custom_legacy_fuel_converts_without_rewriting_modern_fuels) ... ok
+test_legacy_atm_fuels_convert_joules_and_retain_burn_timing (test_fuel.FuelMigrationTest.test_legacy_atm_fuels_convert_joules_and_retain_burn_timing) ... ok
+test_rc1_converted_overlay_is_corrected (test_fuel.FuelMigrationTest.test_rc1_converted_overlay_is_corrected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK
