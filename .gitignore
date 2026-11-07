@@ -11,3 +11,5 @@ publicacao-*/
 libs/
 runs/
 qa/**/run/
+
+__pycache__/

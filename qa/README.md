@@ -29,3 +29,12 @@ Run the same production mod files in two separate JVMs. The first run places and
 ## Audio preference
 
 Every test client must start with `soundCategory_master:0.0` in its isolated `options.txt`. The client fixture also keeps master volume zero and asserts the muted value. This is a test-machine preference; production gameplay sound is unchanged.
+
+Run and retain the dedicated-server evidence:
+
+```sh
+python3 qa/run_server.py --server /path/to/disposable-server --output /path/to/evidence --phase seed --java /path/to/jdk25/bin/java
+python3 qa/run_server.py --server /path/to/disposable-server --output /path/to/evidence --phase restart --java /path/to/jdk25/bin/java
+```
+
+The runner checks result success, matching process IDs, distinct JVMs, unchanged mod hashes, and recipe parse errors. It does not treat a clean process exit as sufficient evidence.
