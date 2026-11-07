@@ -37,16 +37,26 @@ the final fixture fills its real coolant capacity before each operating cycle.
 
 | Area | Required proof | State |
 | --- | --- | --- |
-| Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Exact burn/waste, cooling, shutdown and fresh JVM persistence passed; external ports/safety scenarios pending |
-| Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Physical 28-blade and one-blade conversion, fractional accounting and fresh-JVM restart passed; external output/recirculation pending |
+| Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Physical fuel/waste ports, steam tubes, turbine/condenser water return, cable output and conserved 400-tick operation passed; active hot restart and shutdown covered in connected fixture; coolant-loss/safety scenarios pending |
+| Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Physical rotor conversion and fractional restart passed; connected fission loop verifies actual energy output and condenser recirculation |
 | Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Physical laser/amplifier/focus-matrix ignition and 100 burn ticks passed; controlled FE/fraction restart passed; hot-state safety pending |
 | SPS | Coil/port energy, polonium-to-antimatter quantities/cost, output/restart | Real port/coil, bounded external energy insertion and exact 40000 FE per input mB passed; output transport/restart pending |
 | Nuclear progression | Fuel chain, plutonium/polonium, pellets, waste decay/radiation | Physical polonium, brine and heavy-water production, waste/isotope decay and radiation factors passed; full connected fuel chain and pellets pending |
 | Machines | Processing families, factories/upgrades, fivefold ore chain and pack metals | Selected processing passed; full inventory pending |
-| Transport/storage | Cable/tube/pipe/item networks, induction, dynamic tank, QIO, chunk reload | Real energy cube/cable transfer and fresh-JVM continuation passed; broader networks/storage pending |
+| Transport/storage | Cable/tube/pipe/item networks, induction, dynamic tank, QIO, chunk reload | Real cube/cable transfer, fuel/waste/steam tubes and water return pipes passed; broader item networks/storage/chunk reload pending |
 | Equipment | Modules, MekaSuit/tool mechanics, first/third person, ATM stats/recipes | Render evidence exists; mechanics/config parity pending |
 | Pack progression | Quests, gated recipes, ATM star and creative crafts, external recipes | Selected checks passed; complete semantic diff pending |
 | Addons | Compare actual baseline manifest dependencies against available target modules | Pinned server metadata inventory complete; missing Mekanism-specific addons identified, runtime parity pending |
+
+## Connected fission operation
+
+`connected-fission.md` and `connected-fission-runtime/` cover an external fuel
+tank and tubes, real fission input/output ports, a steam tube network, turbine,
+condenser water return pipes, a waste barrel, and cable/energy-cube output.
+Measured operation conserves coolant, remaining fuel plus waste and decay, and
+reported FE. The fixture saves while the reactor remains active and hot and
+checks the first formed restart state before resuming and shutting it down.
+Sodium/boiler cooling and coolant-loss/meltdown safety remain pending.
 
 ## Reactor fuel-chain balance
 
