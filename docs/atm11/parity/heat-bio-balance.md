@@ -65,7 +65,7 @@ worlds and evidence are archived outside this committed final proof.
 
 The Nether setting is checked from the effective configuration; this fixture does
 not place a heat generator in a Nether world. Generator output limits and real
-receiver/network transfer still require their own verification.
+receiver/network transfer are covered separately in `generator-output.md`.
 
 ## Reference
 

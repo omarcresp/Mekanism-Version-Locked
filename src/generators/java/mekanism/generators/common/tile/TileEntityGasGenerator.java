@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.function.Predicate;
 import mekanism.api.AutomationType;
 import mekanism.api.IContentsListener;
+import mekanism.api.resource.LargeResourceStack;
+import mekanism.common.util.ChemicalUtils;
 import mekanism.api.RelativeSide;
 import mekanism.api.chemical.ChemicalResource;
 import mekanism.api.chemical.IChemicalTank;
@@ -64,7 +66,7 @@ public class TileEntityGasGenerator extends TileEntityGenerator {
     EnergyInventorySlot energySlot;
 
     public TileEntityGasGenerator(BlockPos pos, BlockState state) {
-        super(GeneratorsBlocks.GAS_BURNING_GENERATOR, pos, state);
+        super(GeneratorsBlocks.GAS_BURNING_GENERATOR, pos, state, ChemicalUtils::hydrogenEnergyDensity);
     }
 
     @Override
@@ -73,7 +75,16 @@ public class TileEntityGasGenerator extends TileEntityGenerator {
         builder.addContainer(fuelTank = new VariableCapacityChemicalTank(MekanismGeneratorsConfig.generators.gbgTankCapacity,
               ConstantPredicates.notExternal(), ConstantPredicates.alwaysTrueBi(),
               resource -> HAS_FUEL.test(resource) && (burnBuffer == null || burnBuffer.fuel().equals(resource)),
-              null, null, null, listener), RelativeSide.LEFT, RelativeSide.RIGHT, RelativeSide.BACK, RelativeSide.TOP, RelativeSide.BOTTOM);
+              null, null, null, listener) {
+            @Override
+            protected void onContentsChanged(LargeResourceStack<ChemicalResource> originalState) {
+                super.onContentsChanged(originalState);
+                if (originalState.isEmpty() && !isEmpty()) {
+                    ChemicalFuel fuel = resource().getData(IMekanismDataMapTypes.INSTANCE.chemicalFuel());
+                    if (fuel != null) updateMaxOutputRaw(fuel.energyDensity() / fuel.burnTicksPerMB());
+                }
+            }
+        }, RelativeSide.LEFT, RelativeSide.RIGHT, RelativeSide.BACK, RelativeSide.TOP, RelativeSide.BOTTOM);
         return builder.build();
     }
 
@@ -114,10 +125,12 @@ public class TileEntityGasGenerator extends TileEntityGenerator {
                         burnBuffer = remaining == 0 ? null : new FuelBurnBuffer(fuel, remaining);
                         gasUsedLastTick = inserted / (double) attributes.energyDensity();
                         productionLastTick = inserted;
+                        updateMaxOutputRaw(Math.max(ChemicalUtils.hydrogenEnergyDensity(), inserted));
                     }
                 }
             }
         }
+        if (productionLastTick == 0 && fuelTank.isEmpty() && burnBuffer == null) updateMaxOutputRaw(ChemicalUtils.hydrogenEnergyDensity());
         setActive(productionLastTick != 0);
         return sendUpdatePacket;
     }
@@ -144,6 +157,7 @@ public class TileEntityGasGenerator extends TileEntityGenerator {
     @Override
     public void addContainerTrackers(MekanismContainer container) {
         super.addContainerTrackers(container);
+        container.track(syncableMaxOutput());
         container.track(SyncableDouble.create(this::getUsed, value -> gasUsedLastTick = value));
         container.track(SyncableInt.create(this::getProductionRate, value -> productionLastTick = value));
     }
@@ -164,10 +178,16 @@ public class TileEntityGasGenerator extends TileEntityGenerator {
         return productionLastTick;
     }
 
+    private void updateOutputForBufferedFuel() {
+        ChemicalFuel fuel = getCachedFuel();
+        if (fuel != null) updateMaxOutputRaw(fuel.energyDensity() / fuel.burnTicksPerMB());
+    }
+
     @Override
     public void readSustainedData(ValueInput input) {
         super.readSustainedData(input);
         burnBuffer = input.read("fuelBurnBuffer", FuelBurnBuffer.CODEC).orElse(null);
+        updateOutputForBufferedFuel();
     }
 
     @Override
@@ -180,6 +200,7 @@ public class TileEntityGasGenerator extends TileEntityGenerator {
     protected void applyImplicitComponents(DataComponentGetter input) {
         super.applyImplicitComponents(input);
         burnBuffer = input.get(MekanismDataComponents.FUEL_BURN_BUFFER);
+        updateOutputForBufferedFuel();
     }
 
     @Override

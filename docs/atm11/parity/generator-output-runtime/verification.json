@@ -1,0 +1,118 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "5898be5594ab1463c9004adf904912ed80a92ddd",
+  "sourceTree": "18f738e77147e850e077db67bf19ae1fc5d0fc67",
+  "profileSha256": "ecbad6637eb2edf53b59fc7fffccf763ee26173c9516de002fcc9d8f0d37090f",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "checks": {
+    "seed": 520,
+    "restart": 142
+  },
+  "productionSourceCommit": "5898be5594ab1463c9004adf904912ed80a92ddd",
+  "sourceNote": "Snapshot includes generator emission limits and notified cube configuration; all tested JARs match local build artifacts byte for byte.",
+  "seedGeneratorTransfer": {
+    "fixture0": {
+      "source": 53344,
+      "received": 10656,
+      "budget": 888
+    },
+    "fixture1": {
+      "source": 60640,
+      "received": 3360,
+      "budget": 280
+    },
+    "fixture2": {
+      "source": 37152,
+      "received": 1248,
+      "budget": 104
+    },
+    "fixture3": {
+      "source": 989872,
+      "received": 10128,
+      "budget": 844
+    },
+    "fixture4": {
+      "source": 71360,
+      "received": 8640,
+      "budget": 720
+    },
+    "fixture5": {
+      "source": 49280,
+      "received": 63040,
+      "budget": 61440
+    },
+    "fixture6": {
+      "source": 71360,
+      "received": 8640,
+      "budget": 720
+    }
+  },
+  "restartGeneratorTransfer": {
+    "fixture0": {
+      "received": 10656,
+      "source": 53344,
+      "budget": 888
+    },
+    "fixture1": {
+      "received": 3360,
+      "source": 60640,
+      "budget": 280
+    },
+    "fixture2": {
+      "received": 1248,
+      "source": 37152,
+      "budget": 104
+    },
+    "fixture3": {
+      "received": 10128,
+      "source": 989872,
+      "budget": 844
+    },
+    "fixture4": {
+      "received": 8640,
+      "source": 71360,
+      "budget": 720
+    },
+    "fixture5": {
+      "received": 63040,
+      "source": 49280,
+      "budget": 240
+    },
+    "fixture6": {
+      "received": 9360,
+      "source": 70640,
+      "budget": 720
+    }
+  },
+  "seedGameTicks": 20119,
+  "logs": {
+    "seed": {
+      "sha256": "11015165a97888423df9c6e0fcf1e4b1def813e36b1c0b326cc3eb9f97d70297",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "b91f70ae5c665cdc7c6e5b2365b8cd3971e1d9d616f525e6f455e935c6ccb0b2",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "artifactHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "d17233f1c8d2f052d83e9e3423f46e7e44059ad56b6a1026a730a6fde8a6701d",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "17cdf6541db6e6b030a1395e720c4bc6f1bfcf71d1df81234a3971b73926465b",
+    "atm11-server-qa-0.1.0.jar": "5405f1435d999af7c54eca3b64f75f6f70ec256273d54da2230c84fe02f0d43c"
+  },
+  "scope": "ATM10 automatic generator output limits for heat, bio, solar, advanced solar, wind and gas; ten measured ticks with exact source/receiver conservation, two simultaneous output faces, a physical two-cable network and energy cube, gas fuel transaction rollback and committed limit updates, dynamic ethene output, fresh-JVM exact source/receiver state and resumed cable transfer. Retains all earlier reactor, turbine, fractional fuel, heat/bio, heater, machine and SPS checks. Manual or capability-pulled extraction rate is outside this automatic emission unit. Full reactor recirculation, hot-state safety, equipment, progression and addons remain incomplete.",
+  "excludedAttempts": [
+    "Initial cable fixture changed the cube ConfigInfo directly without the normal sideChanged capability invalidation. Diagnostics showed a running two-cable network holding 7200 FE, zero local buffers and no endpoint acceptor. Final fixture sends the same capability notification as player/computer configuration and asserts receiver discovery before measuring. Both failed worlds and logs remain archived separately."
+  ]
+}

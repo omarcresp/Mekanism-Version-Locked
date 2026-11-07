@@ -1,6 +1,7 @@
 package mekanism.generators.common.tile;
 
 import java.util.Set;
+import java.util.function.IntSupplier;
 import mekanism.api.AutomationType;
 import mekanism.api.IContentsListener;
 import mekanism.api.RelativeSide;
@@ -42,11 +43,11 @@ public class TileEntitySolarGenerator extends TileEntityGenerator {
     protected SolarCheck solarCheck;
 
     public TileEntitySolarGenerator(BlockPos pos, BlockState state) {
-        this(GeneratorsBlocks.SOLAR_GENERATOR, pos, state);
+        this(GeneratorsBlocks.SOLAR_GENERATOR, pos, state, MekanismGeneratorsConfig.generators.solarGeneration);
     }
 
-    protected TileEntitySolarGenerator(Holder<Block> blockProvider, BlockPos pos, BlockState state) {
-        super(blockProvider, pos, state);
+    protected TileEntitySolarGenerator(Holder<Block> blockProvider, BlockPos pos, BlockState state, IntSupplier maxOutput) {
+        super(blockProvider, pos, state, maxOutput);
     }
 
     @Override
@@ -89,6 +90,7 @@ public class TileEntitySolarGenerator extends TileEntityGenerator {
             return;
         }
         solarCheck = new SolarCheck(level, worldPosition);
+        updateMaxOutputRaw(MathUtils.clampToInt(getConfiguredMax() * solarCheck.getPeakMultiplier()));
     }
 
     protected boolean checkCanSeeSun() {
