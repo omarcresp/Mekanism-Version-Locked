@@ -124,7 +124,8 @@ final class FusionProbe {
             laser.setMinThresholdFromPacket(IGNITION_FE);
             laser.setMaxThresholdFromPacket(IGNITION_FE);
             supplyLaser(level);
-            check.accept(level.getServer().tickRateManager().requestGameToSprint(20500),
+            level.getServer().tickRateManager().requestGameToSprint(20500);
+            check.accept(level.getServer().tickRateManager().isSprinting(),
                   "isolated server accelerates normal laser charging ticks");
             return false;
         }
