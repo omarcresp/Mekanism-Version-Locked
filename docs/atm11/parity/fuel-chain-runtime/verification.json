@@ -1,0 +1,62 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "adee3ef90fd7c78247701d3ae6bdc69d7625b62d",
+  "sourceTree": "4ab3872f2d9c69af645e6a98a5220f1000d28182",
+  "profileSha256": "e3a845cff5b9748d7cb338b6c7479b02f4df55256b4dae35bd923490699c2bef",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "checks": {
+    "seed": 578,
+    "restart": 206
+  },
+  "productionSourceCommit": "adee3ef90fd7c78247701d3ae6bdc69d7625b62d",
+  "sourceNote": "Snapshot includes reactor fuel-chain settings and physical processing fixtures; all tested JARs match local build artifacts byte for byte.",
+  "seedFuelChain": {
+    "boilerWater": 744000,
+    "boilerSteam": 7680000,
+    "boilerSodium": 12288000,
+    "activatorInput": 7750,
+    "polonium": 225,
+    "brine": 1109,
+    "heavyWater": 50,
+    "isotope": 100
+  },
+  "restartFuelChain": {
+    "boilerWater": 744000,
+    "boilerSteam": 7680000,
+    "boilerSodium": 12288000,
+    "activatorInput": 7750,
+    "polonium": 450,
+    "brine": 2218,
+    "heavyWater": 50,
+    "isotope": 100
+  },
+  "seedGameTicks": 20119,
+  "logs": {
+    "seed": {
+      "sha256": "e036aad87113e241f56e908e95a16361ec1dd3cc354af75a40b442db4546c752",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "0b570f3b0b7f144a8e12fa5efe98f2babe3e711c3f2863a1e4dd2de3d61eec72",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "artifactHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "92acadbdd26027ffa48b2c790914c67bdb4205a72ba2e594a0419ba84d53e865",
+    "atm11-server-qa-0.1.0.jar": "b7b860ab17bf43192de90fd6430bc6d25a77fc2979995722929de8f48691bc9c"
+  },
+  "scope": "ATM10 neutron activation, heavy-water pump yield, evaporation rate and heat capacity, boiler storage, waste barrel decay and radiation decay settings. Actual sunlit nuclear-waste to polonium processing, heated water to brine processing, filtered water-source pumping, twenty measured waste barrel updates, isotope blacklist, radiation source and entity decay. Real formed boiler capacities, stored water/steam/cooled sodium above old capacity, fresh-JVM exact contents and resumed fuel-chain processing. Retains all earlier generator, cable, reactor, turbine, fuel, heat/bio, heater, machine and SPS checks. Connected reactor/boiler recirculation, hot-state safety, equipment, progression and addons remain incomplete.",
+  "excludedAttempts": []
+}

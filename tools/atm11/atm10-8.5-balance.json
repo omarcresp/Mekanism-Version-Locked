@@ -81,7 +81,19 @@
     "general.toml": {
       "maxUpgradeMultiplier": 16,
       "sps.energyPerInput": 40000,
-      "heater.resistiveEfficiency": 0.6
+      "heater.resistiveEfficiency": 0.6,
+      "maxSolarNeutronActivatorRate": 256,
+      "radiation.sourceDecayRate": 0.9975,
+      "radiation.targetDecayRate": 0.9975,
+      "radiation.wasteBarrelProcessTicks": 10,
+      "radiation.wasteBarrelDecayAmount": 2,
+      "pump.heavyWaterAmount": 50,
+      "thermal_evaporation.tempMultiplier": 1.85,
+      "thermal_evaporation.heatCapacity": 600.0,
+      "boiler.waterPerTank": 32000,
+      "boiler.steamPerTank": 320000,
+      "boiler.heatedCoolantPerTank": 512000,
+      "boiler.cooledCoolantPerTank": 512000
     },
     "generator-storage.toml": {
       "heatGenerator": 64000,

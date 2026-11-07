@@ -81,7 +81,9 @@ partial-burn fixture. That fixture then generated exactly 2280 FE. See
 
 ## Remaining balance and reactor work
 
-Equipment values, other general settings, transport limits and pack recipes
+Twelve fuel-chain general settings are covered in `fuel-chain.md`, including
+physical processing and formed boiler storage. Equipment values, remaining
+general settings, transport limits and pack recipes
 remain in the parity inventory. Heat-generator conversion and bio fuel behavior
 are now covered in `heat-bio-balance.md` and `heat-bio-runtime/`. ATM10 automatic generator output limits and real receiver/network transfer
 are covered in `generator-output.md` and `generator-output-runtime/`. Turbine conversion and fractional persistence are
