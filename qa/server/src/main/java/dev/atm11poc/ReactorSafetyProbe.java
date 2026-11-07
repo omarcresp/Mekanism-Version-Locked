@@ -32,6 +32,8 @@ final class ReactorSafetyProbe {
     private int explosionTick;
     private int damagedTicks;
     private long shutdownFuel;
+    private long fuelBeforeMeltdown;
+    private long survivingFuel;
     private double shutdownDamage;
     private double shutdownTemperature;
     private double peakDamage;
@@ -177,16 +179,18 @@ final class ReactorSafetyProbe {
 
     private boolean meltdown(ServerLevel level, int elapsed, boolean ignitionComplete) {
         var r = reactor(level, MELTDOWN);
+        if (meltdownStage == 1 && failedReactor.isActive()) fuelBeforeMeltdown = failedReactor.fuelTank.amountAsLong();
         if (meltdownStage == 0) {
             if (r == null) return false;
             if (saved != null) {
                 var prior = saved.getAsJsonObject("meltdown");
-                check.accept(!r.isActive() && r.fuelTank.isEmpty() && r.wasteTank.isEmpty(),
-                      "safety: rebuilt melted reactor remains inactive and empty after JVM restart");
+                check.accept(!r.isActive() && r.fuelTank.amountAsLong() == prior.get("fuel").getAsLong() && r.wasteTank.isEmpty(),
+                      "safety: rebuilt melted reactor retains exact surviving fuel and stays inactive after JVM restart");
                 check.accept(r.reactorDamage > 0 && Math.abs(r.reactorDamage - prior.get("damage").getAsDouble()) < 0.02,
                       "safety: post-meltdown damage survives JVM restart");
                 check.accept(IRadiationManager.INSTANCE.getRadiationLevel(level, MELTDOWN.offset(2, 2, 2)) > IRadiationManager.INSTANCE.baselineRadiation(),
                       "safety: real meltdown fallout survives JVM restart");
+                survivingFuel = prior.get("survivingFuel").getAsLong();
                 postMeltdownDamage = prior.get("postMeltdownDamage").getAsDouble();
                 postMeltdownTemperature = prior.get("postMeltdownTemperature").getAsDouble();
                 fallout = prior.get("fallout").getAsDouble();
@@ -198,17 +202,18 @@ final class ReactorSafetyProbe {
                 r.setRateLimit(2);
                 r.setActive(true);
                 failedReactor = r;
+                fuelBeforeMeltdown = r.fuelTank.amountAsLong();
                 meltdownStage = 1;
             }
         } else if (meltdownStage == 1 && !failedReactor.isActive()) {
             fallout = IRadiationManager.INSTANCE.getRadiationLevel(level, MELTDOWN.offset(2, 2, 2));
-            // Level-post meltdown and multiblock ticks can precede this server-post observer;
-            // allow at most one normal cool repair update after the configured reset to 75.
-            check.accept(failedReactor.reactorDamage <= 75 && failedReactor.reactorDamage >= 74.99
-                        && failedReactor.fuelTank.isEmpty() && failedReactor.wasteTank.isEmpty(),
-                  "safety: natural meltdown clears radioactive contents and resets damage to 75 within one repair tick"
-                        + " (damage=" + failedReactor.reactorDamage + ", fuel=" + failedReactor.fuelTank.amountAsLong()
-                        + ", waste=" + failedReactor.wasteTank.amountAsLong() + ", formed=" + failedReactor.isFormed() + ")");
+            survivingFuel = failedReactor.fuelTank.amountAsLong();
+            check.accept(failedReactor.reactorDamage == 75 && failedReactor.wasteTank.isEmpty(),
+                  "safety: natural meltdown clears radioactive waste, shuts down and resets damage to 75"
+                        + " (damage=" + failedReactor.reactorDamage + ", waste=" + failedReactor.wasteTank.amountAsLong() + ")");
+            check.accept(survivingFuel > 0 && survivingFuel <= fuelBeforeMeltdown && survivingFuel >= fuelBeforeMeltdown - 2
+                        && failedReactor.fuelTank.resource().getRadioactivity() == 0,
+                  "safety: meltdown preserves nonradioactive fissile fuel as ATM10 does (fuel=" + survivingFuel + ")");
             postMeltdownDamage = failedReactor.reactorDamage;
             postMeltdownTemperature = failedReactor.heatCapacitor.getTemperature();
             check.accept(postMeltdownTemperature < 350 && fallout > IRadiationManager.INSTANCE.baselineRadiation(),
@@ -222,7 +227,7 @@ final class ReactorSafetyProbe {
         } else if (meltdownStage == 3 && r != null) {
             check.accept(!r.isActive() && r.reactorDamage > 70 && r.reactorDamage <= 75,
                   "safety: physical rebuild restores damaged inactive reactor cache");
-            check.accept(r.fuelTank.isEmpty() && r.wasteTank.isEmpty(), "safety: physical rebuild cannot resurrect irradiated fuel or waste");
+            check.accept(r.fuelTank.amountAsLong() == survivingFuel && r.wasteTank.isEmpty(), "safety: physical rebuild preserves surviving fuel without resurrecting irradiated waste");
             meltdownStage = 4;
         }
         return meltdownStage == 4;
@@ -235,6 +240,7 @@ final class ReactorSafetyProbe {
         recovery.put("shutdownTemperature", shutdownTemperature);
         recovery.put("repairTicks", damagedTicks);
         var meltdown = new LinkedHashMap<String, Object>(state(reactor(level, MELTDOWN)));
+        meltdown.put("survivingFuel", survivingFuel);
         meltdown.put("postMeltdownDamage", postMeltdownDamage);
         meltdown.put("postMeltdownTemperature", postMeltdownTemperature);
         meltdown.put("fallout", fallout);
