@@ -10,5 +10,9 @@
     "MekanismRenderType.MEKASUIT"
   ],
   "compatibilityChange": "Migrated renderers use MekaSuitModel and FlameRenderer names so old Iris injections for incompatible pre-26.1 APIs do not apply. Iris JAR is unchanged.",
-  "build": "Source only; release JAR is a reference, not a build input or bytecode overlay."
+  "build": "Source only; release JAR is a reference, not a build input or bytecode overlay.",
+  "additionalRepairs": [
+    "Remove two OBJ faces exported with untextured material none, which the current NeoForge baker rejects.",
+    "Bind the item atlas used by the baked armor sprites instead of the block atlas."
+  ]
 }

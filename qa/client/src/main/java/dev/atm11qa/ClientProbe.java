@@ -28,6 +28,7 @@ import net.neoforged.neoforge.common.NeoForge;
 @Mod(value = "atm11clientqa", dist = Dist.CLIENT)
 public final class ClientProbe {
     private boolean ran;
+    private boolean titleObserved;
     private final List<String> checks = new ArrayList<>();
     private int vertices;
     private int batches;
@@ -97,8 +98,11 @@ public final class ClientProbe {
     private void tick(ClientTickEvent.Post event) {
         Minecraft client = Minecraft.getInstance();
         client.options.getSoundSourceOptionInstance(net.minecraft.sounds.SoundSource.MASTER).set(0.0);
+        if (client.screen instanceof TitleScreen && client.getOverlay() == null) {
+            titleObserved = true;
+        }
         probeWorld(client);
-        if (ran || !(client.screen instanceof TitleScreen) || client.getOverlay() != null) {
+        if (ran || client.level == null || client.player == null || worldTicks < 20 || client.getOverlay() != null) {
             return;
         }
         ran = true;
@@ -106,7 +110,7 @@ public final class ClientProbe {
         result.put("pid", ProcessHandle.current().pid());
         try {
             check(client.options.getSoundSourceVolume(net.minecraft.sounds.SoundSource.MASTER) == 0, "test client master volume is muted");
-            check(true, "real client reached title screen with the full ATM11 renderer stack");
+            check(titleObserved, "real client reached title screen with the full ATM11 renderer stack");
             check(MekanismRenderType.MEKASUIT != null, "MekaSuit render type is available");
             var data = MekanismModelCache.INSTANCE.MEKASUIT;
             check(data.getModel() != null, "MekaSuit OBJ geometry loaded in real model bake");
@@ -114,6 +118,10 @@ public final class ClientProbe {
             check(!parts.isEmpty(), "MekaSuit OBJ has named model parts");
             var quads = data.bake(parts);
             check(!quads.isEmpty(), "MekaSuit selected parts bake into actual quads");
+            check(quads.stream().allMatch(quad -> quad.materialInfo().sprite().atlasLocation()
+                  .equals(net.minecraft.client.renderer.texture.TextureAtlas.LOCATION_ITEMS)), "armor UVs are baked from the item atlas");
+            check(MekanismRenderType.MEKASUIT == net.minecraft.client.renderer.rendertype.RenderTypes.entityCutout(
+                  net.minecraft.client.renderer.texture.TextureAtlas.LOCATION_ITEMS), "armor render type binds the matching item atlas");
             check(data.bake(java.util.Set.of()).isEmpty(), "empty part selection emits no geometry");
             VertexConsumer consumer = (VertexConsumer) Proxy.newProxyInstance(getClass().getClassLoader(), new Class<?>[]{VertexConsumer.class},
                 (proxy, method, args) -> {
@@ -143,6 +151,7 @@ public final class ClientProbe {
                 });
             HumanoidModel<HumanoidRenderState> model = new HumanoidModel<>(client.getEntityModels().bakeLayer(ModelLayers.PLAYER));
             HumanoidRenderState state = new HumanoidRenderState();
+            state.mainArm = net.minecraft.world.entity.HumanoidArm.RIGHT;
             state.headEquipment = MekanismItems.MEKASUIT_HELMET.asStack();
             state.chestEquipment = MekanismItems.MEKASUIT_BODYARMOR.asStack();
             state.legsEquipment = MekanismItems.MEKASUIT_PANTS.asStack();
