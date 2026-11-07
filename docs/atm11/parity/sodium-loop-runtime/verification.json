@@ -1,0 +1,76 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "7f74e20f90edee2ffa06420c7c0bcd79b8999886",
+  "sourceTree": "c722ae75d12961488b2aa0623865429bca70a662",
+  "profileSha256": "e3a845cff5b9748d7cb338b6c7479b02f4df55256b4dae35bd923490699c2bef",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "checks": {
+    "seed": 677,
+    "restart": 276
+  },
+  "productionSourceCommit": "7f74e20f90edee2ffa06420c7c0bcd79b8999886",
+  "sourceNote": "Snapshot includes physical sodium boiler loop fixture plus retained water circuit; production code unchanged from merged fuel-chain implementation; all tested JARs match local build artifacts byte for byte.",
+  "seedSodiumFission": {
+    "fuel": 2600,
+    "waste": 322,
+    "decayedWaste": 78,
+    "coolant": 992000,
+    "energy": 5898256,
+    "cubeEnergy": 5898256,
+    "active": true,
+    "temperature": 373.14637135551675,
+    "damage": 0.0,
+    "observedReturnedWater": true,
+    "reportedProduction": 5898256,
+    "firstRestartTemperature": 0.0,
+    "sodium": 12500000,
+    "boilerTemperature": 404.63082396782244,
+    "observedCondenserReturn": true
+  },
+  "restartSodiumFission": {
+    "fuel": 2371,
+    "waste": 501,
+    "decayedWaste": 128,
+    "coolant": 992000,
+    "energy": 10659228,
+    "cubeEnergy": 10659228,
+    "active": false,
+    "temperature": 373.1098217043959,
+    "damage": 0.0,
+    "observedReturnedWater": true,
+    "reportedProduction": 4181880,
+    "firstRestartTemperature": 373.14638724345895,
+    "sodium": 12500000,
+    "boilerTemperature": 373.6154900270868,
+    "observedCondenserReturn": true
+  },
+  "seedGameTicks": 20519,
+  "logs": {
+    "seed": {
+      "sha256": "a10b490681300d8d7d8676278efd738a9516412dd9ad871a1aa6ede9bea635d5",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "52d49ba6ea3d27d206a3dfb85d4ad1d15b7e08e1c52dce1a2e6e3dddc088d21c",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "artifactHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "92acadbdd26027ffa48b2c790914c67bdb4205a72ba2e594a0419ba84d53e865",
+    "atm11-server-qa-0.1.0.jar": "076eb16f1f75fad43b4a1b8115faa09002c77113e49348bacd0d1a96231f92b7"
+  },
+  "scope": "Physical sodium-cooled fission reactor to boiler via separate hot and cold tubes; actual boiler input/coolant/steam valves; independent water/steam turbine circuit with condenser water return into boiler; external fuel/waste and actual cable/cube electrical output. 400 active seed ticks, independent sodium and water conservation, fuel/waste/decay and reported FE accounting, first-formed hot reactor restoration, exact aggregate FE plus boot generation, 200 resumed ticks and ten shutdown ticks. Original water loop and all prior fixtures retained. Coolant-loss/meltdown safety, hot fusion persistence, equipment, progression and addons remain incomplete.",
+  "excludedAttempts": []
+}

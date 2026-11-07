@@ -37,8 +37,9 @@ the final fixture fills its real coolant capacity before each operating cycle.
 
 | Area | Required proof | State |
 | --- | --- | --- |
-| Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Physical fuel/waste ports, steam tubes, turbine/condenser water return, cable output and conserved 400-tick operation passed; active hot restart and shutdown covered in connected fixture; coolant-loss/safety scenarios pending |
+| Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Physical water and sodium/boiler loops, fuel/waste ports, turbine output, conserved 400-tick operation, active hot restart and shutdown passed; coolant-loss/safety scenarios pending |
 | Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Physical rotor conversion and fractional restart passed; connected fission loop verifies actual energy output and condenser recirculation |
+| Thermoelectric boiler | Formation, sodium heat transfer, steam output, cooled sodium return and restart | Formed storage above old capacity and physical sodium/water recirculation passed; detailed failure scenarios pending |
 | Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Physical laser/amplifier/focus-matrix ignition and 100 burn ticks passed; controlled FE/fraction restart passed; hot-state safety pending |
 | SPS | Coil/port energy, polonium-to-antimatter quantities/cost, output/restart | Real port/coil, bounded external energy insertion and exact 40000 FE per input mB passed; output transport/restart pending |
 | Nuclear progression | Fuel chain, plutonium/polonium, pellets, waste decay/radiation | Physical polonium, brine and heavy-water production, waste/isotope decay and radiation factors passed; full connected fuel chain and pellets pending |
@@ -56,7 +57,8 @@ condenser water return pipes, a waste barrel, and cable/energy-cube output.
 Measured operation conserves coolant, remaining fuel plus waste and decay, and
 reported FE. The fixture saves while the reactor remains active and hot and
 checks the first formed restart state before resuming and shutting it down.
-Sodium/boiler cooling and coolant-loss/meltdown safety remain pending.
+Sodium/boiler cooling is covered in `sodium-loop.md` and `sodium-loop-runtime/`.
+Coolant-loss/meltdown safety remains pending.
 
 ## Reactor fuel-chain balance
 

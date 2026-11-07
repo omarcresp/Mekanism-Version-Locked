@@ -67,7 +67,7 @@ Generators JARs match the unchanged production artifacts from the merged
 fuel-chain unit; this change adds QA evidence without altering production code.
 The main suite retains 79 passing Java tests, and the migration suite passed six
 Python tests. Actual artifact hashes, process identities and assertion logs are
-recorded under `connected-fission-runtime/`. This water-cooled proof does not
-establish sodium/boiler recirculation, coolant-loss or meltdown safety, hot fusion
-persistence, equipment, full progression or addon parity. Those remain in the
-active ATM10 8.5 parity inventory.
+recorded under `connected-fission-runtime/`. Sodium/boiler recirculation is covered separately in `sodium-loop.md`.
+This water-cooled proof does not establish coolant-loss or meltdown safety, hot
+fusion persistence, equipment, full progression or addon parity. Those remain in
+the active ATM10 8.5 parity inventory.
