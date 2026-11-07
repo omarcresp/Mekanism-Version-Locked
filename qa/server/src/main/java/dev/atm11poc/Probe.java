@@ -39,6 +39,10 @@ public final class Probe {
     private int ticks;
     private boolean finished;
     private boolean reopen;
+    private final FusionProbe fusion = new FusionProbe(this::check);
+    private final SPSProbe sps = new SPSProbe(this::check);
+    private final TurbineProbe turbine = new TurbineProbe(this::check);
+    private final ReactorProbe reactors = new ReactorProbe(this::check);
 
     public Probe() {
         NeoForge.EVENT_BUS.addListener(this::started);
@@ -83,6 +87,13 @@ public final class Probe {
                 check(machine() != null, "enrichment chamber block entity created");
                 machine().getInventorySlots().get(0).setContents(ItemResource.of(Items.COAL), 2, null);
             }
+            reactors.prepare(level, reopen ? JsonParser.parseString(Files.readString(Path.of("seed-result.json")))
+                  .getAsJsonObject().getAsJsonObject("fission") : null);
+            if (!reopen) {
+                turbine.build(level);
+                fusion.build(level);
+                sps.build(level);
+            }
             machine().getEnergyContainer().setEnergy(100000, null);
             chemicalInterop();
             if (ModList.get().isLoaded("atm11mekcompat")) prepareCompat();
@@ -93,6 +104,8 @@ public final class Probe {
     }
 
     private void prepareCompat() throws com.mojang.brigadier.exceptions.CommandSyntaxException {
+        check(!mekanism.common.config.MekanismConfig.usage.randomizedConsumption.get(),
+              "ATM10 8.5 deterministic secondary chemical consumption is active");
         var fuelType = mekanism.api.datamaps.IMekanismDataMapTypes.INSTANCE.chemicalFuel();
         var ethene = ChemicalResource.of(MekanismChemicals.ETHENE).getData(fuelType);
         var hydrogen = ChemicalResource.of(MekanismChemicals.HYDROGEN).getData(fuelType);
@@ -190,9 +203,13 @@ public final class Probe {
         try {
             ticks++;
             if (ticks % 100 == 0) System.out.println("ATM11_POC tick " + ticks);
+            boolean reactorsComplete = reactors.tick(server.overworld(), ticks);
+            boolean turbineComplete = reopen || turbine.tick(server.overworld(), ticks);
+            boolean fusionComplete = reopen || fusion.tick(server.overworld(), ticks);
+            boolean spsComplete = reopen || sps.tick(server.overworld(), ticks);
             var output = machine().getInventorySlots().get(1);
             long expected = reopen ? 3 : 2;
-            if (output.amountAsLong() == expected) {
+            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && spsComplete) {
                 if (ModList.get().isLoaded("atm11mekcompat")) {
                     var platinum = (TileEntityMekanism) server.overworld().getBlockEntity(PLATINUM);
                     var dust = platinum.getInventorySlots().get(1);
@@ -205,6 +222,7 @@ public final class Probe {
                       "native enrichment recipe produces enriched carbon");
                 check(machine().getInventorySlots().get(0).isEmpty(), "machine consumed exact supplied input");
                 check(machine().getEnergyContainer().getAmountAsLong() < 100000, "machine consumed energy while processing");
+                observations.put("fission", reactors.snapshot(server.overworld()));
                 observations.put("outputCount", output.amountAsLong());
                 observations.put("processingTicks", ticks);
                 finish(null);

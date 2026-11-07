@@ -1,0 +1,4485 @@
+{
+  "baseline": {
+    "pack": "All the Mods 10",
+    "version": "8.5",
+    "minecraft": {
+      "version": "1.21.1",
+      "modLoaders": [
+        {
+          "id": "neoforge-21.1.265",
+          "primary": true
+        }
+      ],
+      "recommendedRam": 8196
+    },
+    "fileId": 9431424,
+    "url": "https://www.curseforge.com/minecraft/modpacks/all-the-mods-10/files/9431424",
+    "sha256": "ea56a46b478b634ac538dfdd4c7175b5e58f6f3e0df67d25373ff601c79b49ac",
+    "modCount": 498
+  },
+  "configComparison": [
+    {
+      "file": "config/Mekanism/client.toml",
+      "targetPresent": false,
+      "differences": [
+        {
+          "key": "accessibility.whiteRadialText",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "accessibility.opaqueTransmitters",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "accessibility.allowModeScroll",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "sounds.baseVolume",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "sounds.enablePlayer",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "sounds.enableMachine",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "rendering.energyColor",
+          "atm10": 3997338,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "rendering.berRange",
+          "atm10": 256,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "rendering.particle.multiblockFormation",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "rendering.particle.machineEffects",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "rendering.particle.radiationParticleRadius",
+          "atm10": 30,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "rendering.particle.radiationParticleCount",
+          "atm10": 100,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "rendering.particle.magneticAttraction",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "rendering.particle.toolAOE",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "hud.enabled",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "hud.scale",
+          "atm10": 0.6,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "hud.reverse",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "hud.opacity",
+          "atm10": 0.4000000059604645,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "hud.color",
+          "atm10": 4257264,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "hud.warningColor",
+          "atm10": 16768335,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "hud.dangerColor",
+          "atm10": 16726076,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "hud.jitter",
+          "atm10": 6.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "hud.mekaSuitHelmetCompass",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "qio.sortType",
+          "atm10": "NAME",
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "qio.sortDirection",
+          "atm10": "ASCENDING",
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "qio.slotsWide",
+          "atm10": 8,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "qio.slotsTall",
+          "atm10": 4,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "qio.autoFocusSearchBar",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "qio.rejectsToInventory",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.color.x",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.color.y",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.confirmation.x",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.confirmation.y",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.crafting0.x",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.crafting0.y",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.crafting0.pinned",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.crafting1.x",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.crafting1.y",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.crafting1.pinned",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.crafting2.x",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.crafting2.y",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.crafting2.pinned",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.mekasuit_helmet.x",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.mekasuit_helmet.y",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.rename.x",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.rename.y",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.skin_select.x",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.skin_select.y",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.side_config.x",
+          "atm10": 10,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.side_config.y",
+          "atm10": 15,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.side_config.pinned",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.transporter_config.x",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.transporter_config.y",
+          "atm10": 2147483647,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.transporter_config.pinned",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.upgrade.x",
+          "atm10": 10,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.upgrade.y",
+          "atm10": 15,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "window.upgrade.pinned",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/common.toml",
+      "targetPresent": true,
+      "differences": [
+        {
+          "key": "energyType",
+          "atm10": "FORGE_ENERGY",
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "holidays",
+          "atm10": false,
+          "atm11": true,
+          "targetKeyPresent": true
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/gear.toml",
+      "targetPresent": true,
+      "differences": [
+        {
+          "key": "mekatool.baseEnergyCapacity",
+          "atm10": 40000000,
+          "atm11": 16000000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.chargeRate",
+          "atm10": 200000,
+          "atm11": 100000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.baseDamage",
+          "atm10": 24,
+          "atm11": 4,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.attackSpeed",
+          "atm10": -0.8,
+          "atm11": -2.4,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.energy_usage.base",
+          "atm10": 50,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.energy_usage.silk",
+          "atm10": 500,
+          "atm11": 100,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.energy_usage.weapon",
+          "atm10": 4000,
+          "atm11": 2000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.energy_usage.hoe",
+          "atm10": 50,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.energy_usage.shovel",
+          "atm10": 50,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.energy_usage.axe",
+          "atm10": 50,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.energy_usage.shearEntity",
+          "atm10": 50,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.energy_usage.shearTrim",
+          "atm10": 50,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekatool.energy_usage.teleport",
+          "atm10": 2500,
+          "atm11": 1000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekasuit.baseEnergyCapacity",
+          "atm10": 40000000,
+          "atm11": 16000000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekasuit.chargeRate",
+          "atm10": 200000,
+          "atm11": 100000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekasuit.solarRechargingRate",
+          "atm10": 1500,
+          "atm11": 500,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekasuit.energy_usage.damage",
+          "atm10": 250000,
+          "atm11": 100000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekasuit.energy_usage.magicReduce",
+          "atm10": 2500,
+          "atm11": 1000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekasuit.energy_usage.fall",
+          "atm10": 250,
+          "atm11": 50,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekasuit.energy_usage.jump",
+          "atm10": 2000,
+          "atm11": 1000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekasuit.energy_usage.energyUsagePotionTick",
+          "atm10": 80000,
+          "atm11": 40000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "mekasuit.energy_usage.sprintBoost",
+          "atm10": 250,
+          "atm11": 100,
+          "targetKeyPresent": true
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/general.toml",
+      "targetPresent": true,
+      "differences": [
+        {
+          "key": "maxUpgradeMultiplier",
+          "atm10": 16,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "maxSolarNeutronActivatorRate",
+          "atm10": 256,
+          "atm11": 64,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "cardboard_box.modBlacklist",
+          "atm10": [
+            "waystones",
+            "hyperbox"
+          ],
+          "atm11": [],
+          "targetKeyPresent": true
+        },
+        {
+          "key": "dynamic_tank.fluidPerTank",
+          "atm10": 350000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "dynamic_tank.chemicalPerTank",
+          "atm10": 16000000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "energy_conversion.blacklistForge",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "energy_conversion.feConversionRate",
+          "atm10": 2.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "energy_conversion.blacklistFluxNetworks",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "energy_conversion.blacklistGrandPower",
+          "atm10": false,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "energy_conversion.hydrogenEnergyDensity",
+          "atm10": 200,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "radiation.sourceDecayRate",
+          "atm10": 0.9975,
+          "atm11": 0.9995,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "radiation.targetDecayRate",
+          "atm10": 0.9975,
+          "atm11": 0.9995,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "radiation.wasteBarrelProcessTicks",
+          "atm10": 10,
+          "atm11": 20,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "radiation.wasteBarrelDecayAmount",
+          "atm10": 2,
+          "atm11": 1,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "digital_miner.easyMinerFilters",
+          "atm10": true,
+          "atm11": false,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "oredictionificator.validItemFilters",
+          "atm10": [
+            "c:dusts/",
+            "c:ingots/",
+            "c:nuggets/",
+            "c:ores/",
+            "c:raw_materials/",
+            "c:storage_blocks/",
+            "c:silicon"
+          ],
+          "atm11": [
+            "c:dusts/",
+            "c:ingots/",
+            "c:nuggets/",
+            "c:ores/",
+            "c:raw_materials/",
+            "c:storage_blocks/"
+          ],
+          "targetKeyPresent": true
+        },
+        {
+          "key": "pump.heavyWaterAmount",
+          "atm10": 50,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "security.opsBypassRestrictions",
+          "atm10": true,
+          "atm11": false,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "boiler.waterPerTank",
+          "atm10": 32000,
+          "atm11": 16000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "boiler.steamPerTank",
+          "atm10": 320000,
+          "atm11": 160000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "boiler.heatedCoolantPerTank",
+          "atm10": 512000,
+          "atm11": 256000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "boiler.cooledCoolantPerTank",
+          "atm10": 512000,
+          "atm11": 256000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "thermal_evaporation.tempMultiplier",
+          "atm10": 1.85,
+          "atm11": 0.4,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "thermal_evaporation.heatCapacity",
+          "atm10": 600.0,
+          "atm11": 100.0,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "sps.energyPerInput",
+          "atm10": 100000,
+          "atm11": 1000000,
+          "targetKeyPresent": true
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/generator-storage.toml",
+      "targetPresent": true,
+      "differences": [
+        {
+          "key": "heatGenerator",
+          "atm10": 160000,
+          "atm11": 240,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "bioGenerator",
+          "atm10": 160000,
+          "atm11": 600,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "solarGenerator",
+          "atm10": 96000,
+          "atm11": 40,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "advancedSolarGenerator",
+          "atm10": 2500000,
+          "atm11": 240,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "windGenerator",
+          "atm10": 200000,
+          "atm11": 100,
+          "targetKeyPresent": true
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/generators-gear.toml",
+      "targetPresent": true,
+      "differences": []
+    },
+    {
+      "file": "config/Mekanism/generators.toml",
+      "targetPresent": true,
+      "differences": [
+        {
+          "key": "solar_generator.solarGeneration",
+          "atm10": 150,
+          "atm11": 2,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "solar_generator.advancedSolarGeneration",
+          "atm10": 1200,
+          "atm11": 12,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "bio_generator.bioGeneration",
+          "atm10": 350,
+          "atm11": 25,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "bio_generator.tankCapacity",
+          "atm10": 24000,
+          "atm11": 200,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "heat_generator.heatGeneration",
+          "atm10": 800,
+          "atm11": 100,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "heat_generator.heatGenerationLava",
+          "atm10": 30,
+          "atm11": 7,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "heat_generator.heatGenerationNether",
+          "atm10": 100,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "heat_generator.tankCapacity",
+          "atm10": 24000,
+          "atm11": 1000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "heat_generator.heatGenerationFluidRate",
+          "atm10": 10,
+          "atm11": 100,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "gas_generator.tankCapacity",
+          "atm10": 18000,
+          "atm11": 1000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "gas_generator.etheneBurnTicks",
+          "atm10": 20,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "gas_generator.etheneDensityMultiplier",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "wind_generator.generationMin",
+          "atm10": 150,
+          "atm11": 1,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "wind_generator.generationMax",
+          "atm10": 900,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "turbine.bladesPerCoil",
+          "atm10": 8,
+          "atm11": 4,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "turbine.ventChemicalFlow",
+          "atm10": 43478.262,
+          "atm11": 32000.0,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "turbine.condenserRate",
+          "atm10": 128000,
+          "atm11": 64000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "turbine.energyCapacityPerVolume",
+          "atm10": 16000000,
+          "atm11": 100,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "turbine.chemicalPerTank",
+          "atm10": 6400,
+          "atm11": 64000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "fission_reactor.energyPerFissionFuel",
+          "atm10": 250000,
+          "atm11": 1000000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "fusion_reactor.thermocoupleEfficiency",
+          "atm10": 0.04,
+          "atm11": 0.05,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "fusion_reactor.casingThermalConductivity",
+          "atm10": 0.333333333,
+          "atm11": 0.1,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "fusion_reactor.waterHeatingRatio",
+          "atm10": 0.27272727272727,
+          "atm11": 0.3,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "fusion_reactor.fuelCapacity",
+          "atm10": 500,
+          "atm11": 1000,
+          "targetKeyPresent": true
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/machine-storage.toml",
+      "targetPresent": true,
+      "differences": [
+        {
+          "key": "enrichmentChamber",
+          "atm10": 20000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "osmiumCompressor",
+          "atm10": 80000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "combiner",
+          "atm10": 40000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "crusher",
+          "atm10": 20000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "metallurgicInfuser",
+          "atm10": 20000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "purificationChamber",
+          "atm10": 80000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "energizedSmelter",
+          "atm10": 20000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "digitalMiner",
+          "atm10": 50000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "electricPump",
+          "atm10": 40000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "chargepad",
+          "atm10": 2048000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "rotaryCondensentrator",
+          "atm10": 20000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "chemicalOxidizer",
+          "atm10": 80000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "chemicalInfuser",
+          "atm10": 80000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "chemicalInjectionChamber",
+          "atm10": 160000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "electrolyticSeparator",
+          "atm10": 160000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "precisionSawmill",
+          "atm10": 20000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "chemicalDissolutionChamber",
+          "atm10": 160000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "chemicalWasher",
+          "atm10": 80000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "chemicalCrystallizer",
+          "atm10": 160000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "seismicVibrator",
+          "atm10": 20000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "pressurizedReactionBase",
+          "atm10": 2000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "fluidicPlenisher",
+          "atm10": 40000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "laser",
+          "atm10": 10000000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "laserAmplifier",
+          "atm10": 5000000000,
+          "atm11": 5000000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "laserTractorBeam",
+          "atm10": 5000000000,
+          "atm11": 5000000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "formulaicAssemblicator",
+          "atm10": 40000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "teleporter",
+          "atm10": 5000000,
+          "atm11": 1000,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "modificationStation",
+          "atm10": 40000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "isotopicCentrifuge",
+          "atm10": 80000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "nutritionalLiquifier",
+          "atm10": 40000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "antiprotonicNucleosynthesizer",
+          "atm10": 1000000000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "pigmentExtractor",
+          "atm10": 40000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "pigmentMixer",
+          "atm10": 80000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "paintingMachine",
+          "atm10": 40000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "dimensionalStabilizer",
+          "atm10": 40000,
+          "atm11": null,
+          "targetKeyPresent": false
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/machine-usage.toml",
+      "targetPresent": true,
+      "differences": [
+        {
+          "key": "enrichmentChamber",
+          "atm10": 50,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "osmiumCompressor",
+          "atm10": 100,
+          "atm11": 15,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "combiner",
+          "atm10": 50,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "crusher",
+          "atm10": 50,
+          "atm11": 8,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "metallurgicInfuser",
+          "atm10": 50,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "purificationChamber",
+          "atm10": 200,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "energizedSmelter",
+          "atm10": 50,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "digitalMiner",
+          "atm10": 1000,
+          "atm11": 40,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "electricPump",
+          "atm10": 100,
+          "atm11": 2,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "chargepad",
+          "atm10": 1024000,
+          "atm11": 1024,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "rotaryCondensentrator",
+          "atm10": 50,
+          "atm11": 2,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "chemicalOxidizer",
+          "atm10": 200,
+          "atm11": 15,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "chemicalInfuser",
+          "atm10": 200,
+          "atm11": 15,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "chemicalInjectionChamber",
+          "atm10": 400,
+          "atm11": 15,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "precisionSawmill",
+          "atm10": 50,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "chemicalDissolutionChamber",
+          "atm10": 400,
+          "atm11": 16,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "chemicalWasher",
+          "atm10": 200,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "chemicalCrystallizer",
+          "atm10": 400,
+          "atm11": 15,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "seismicVibrator",
+          "atm10": 50,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "pressurizedReactionBase",
+          "atm10": 5,
+          "atm11": 2,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "fluidicPlenisher",
+          "atm10": 100,
+          "atm11": 2,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "laser",
+          "atm10": 50000,
+          "atm11": 20,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "formulaicAssemblicator",
+          "atm10": 100,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "modificationStation",
+          "atm10": 400,
+          "atm11": 10,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "isotopicCentrifuge",
+          "atm10": 200,
+          "atm11": 8,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "nutritionalLiquifier",
+          "atm10": 200,
+          "atm11": 8,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "antiprotonicNucleosynthesizer",
+          "atm10": 100000,
+          "atm11": 15,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "pigmentExtractor",
+          "atm10": 200,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "pigmentMixer",
+          "atm10": 200,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "paintingMachine",
+          "atm10": 100,
+          "atm11": 5,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "dimensionalStabilizer",
+          "atm10": 5000,
+          "atm11": 15,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "randomizedConsumption",
+          "atm10": false,
+          "atm11": true,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "teleporter.base",
+          "atm10": 1000,
+          "atm11": 100,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "teleporter.distance",
+          "atm10": 10,
+          "atm11": 2,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "teleporter.dimensionPenalty",
+          "atm10": 10000,
+          "atm11": 1000,
+          "targetKeyPresent": true
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/startup.toml",
+      "targetPresent": true,
+      "differences": [
+        {
+          "key": "gear.mekasuit.knockbackResistance",
+          "atm10": 0.1,
+          "atm11": 0.10000000149011612,
+          "targetKeyPresent": true
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/tiers.toml",
+      "targetPresent": true,
+      "differences": [
+        {
+          "key": "energy_cubes.creativeOutput",
+          "atm10": 9223372036854775807,
+          "atm11": 2147483647,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "fluid_tanks.creativeCapacity",
+          "atm10": 2147483647,
+          "atm11": 9223372036854775807,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "fluid_tanks.creativeOutput",
+          "atm10": 1073741823,
+          "atm11": 2147483647,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "chemical_tanks.creativeOutput",
+          "atm10": 4611686018427387903,
+          "atm11": 2147483647,
+          "targetKeyPresent": true
+        },
+        {
+          "key": "bins.creativeCapacity",
+          "atm10": 2147483647,
+          "atm11": 9223372036854775807,
+          "targetKeyPresent": true
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/tools-client.toml",
+      "targetPresent": false,
+      "differences": [
+        {
+          "key": "displayDurabilityTooltips",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/tools-materials-startup.toml",
+      "targetPresent": false,
+      "differences": [
+        {
+          "key": "materials.wood.woodPaxelDamage",
+          "atm10": 7.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.wood.woodPaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.wood.woodPaxelEfficiency",
+          "atm10": 2.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.wood.woodPaxelEnchantability",
+          "atm10": 15,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.wood.woodPaxelDurability",
+          "atm10": 118,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.stone.stonePaxelDamage",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.stone.stonePaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.stone.stonePaxelEfficiency",
+          "atm10": 4.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.stone.stonePaxelEnchantability",
+          "atm10": 5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.stone.stonePaxelDurability",
+          "atm10": 262,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.gold.goldPaxelDamage",
+          "atm10": 7.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.gold.goldPaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.gold.goldPaxelEfficiency",
+          "atm10": 12.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.gold.goldPaxelEnchantability",
+          "atm10": 22,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.gold.goldPaxelDurability",
+          "atm10": 64,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.iron.ironPaxelDamage",
+          "atm10": 7.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.iron.ironPaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.iron.ironPaxelEfficiency",
+          "atm10": 6.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.iron.ironPaxelEnchantability",
+          "atm10": 14,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.iron.ironPaxelDurability",
+          "atm10": 500,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.diamond.diamondPaxelDamage",
+          "atm10": 6.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.diamond.diamondPaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.diamond.diamondPaxelEfficiency",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.diamond.diamondPaxelEnchantability",
+          "atm10": 10,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.diamond.diamondPaxelDurability",
+          "atm10": 3122,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.netherite.netheritePaxelDamage",
+          "atm10": 6.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.netherite.netheritePaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.netherite.netheritePaxelEfficiency",
+          "atm10": 9.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.netherite.netheritePaxelEnchantability",
+          "atm10": 15,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.netherite.netheritePaxelDurability",
+          "atm10": 4062,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliToolDurability",
+          "atm10": 128,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliEfficiency",
+          "atm10": 9.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliAttackDamage",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliEnchantability",
+          "atm10": 32,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliShieldDurability",
+          "atm10": 224,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliSwordDamage",
+          "atm10": 3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliSwordAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliShovelDamage",
+          "atm10": 1.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliShovelAtkSpeed",
+          "atm10": -3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliAxeDamage",
+          "atm10": 4.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliAxeAtkSpeed",
+          "atm10": -2.9000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliPickaxeDamage",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliPickaxeAtkSpeed",
+          "atm10": -2.799999952316284,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliHoeDamage",
+          "atm10": -1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliHoeAtkSpeed",
+          "atm10": -2.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliPaxelDamage",
+          "atm10": 5.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliPaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliPaxelEfficiency",
+          "atm10": 9.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliPaxelEnchantability",
+          "atm10": 32,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliPaxelDurability",
+          "atm10": 256,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliToughness",
+          "atm10": 0.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliKnockbackResistance",
+          "atm10": 0.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliBootDurability",
+          "atm10": 130,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliBootArmor",
+          "atm10": 1,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliLeggingDurability",
+          "atm10": 150,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliLeggingArmor",
+          "atm10": 3,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliChestplateDurability",
+          "atm10": 160,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliChestplateArmor",
+          "atm10": 4,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliHelmetDurability",
+          "atm10": 110,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.lapis_lazuli.lapis_lazuliHelmetArmor",
+          "atm10": 1,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeToolDurability",
+          "atm10": 375,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeEfficiency",
+          "atm10": 7.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeAttackDamage",
+          "atm10": 2.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeEnchantability",
+          "atm10": 10,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeShieldDurability",
+          "atm10": 403,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeSwordDamage",
+          "atm10": 3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeSwordAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeShovelDamage",
+          "atm10": 1.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeShovelAtkSpeed",
+          "atm10": -3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeAxeDamage",
+          "atm10": 7.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeAxeAtkSpeed",
+          "atm10": -3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzePickaxeDamage",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzePickaxeAtkSpeed",
+          "atm10": -2.799999952316284,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeHoeDamage",
+          "atm10": -2.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeHoeAtkSpeed",
+          "atm10": -1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzePaxelDamage",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzePaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzePaxelEfficiency",
+          "atm10": 7.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzePaxelEnchantability",
+          "atm10": 10,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzePaxelDurability",
+          "atm10": 750,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeToughness",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeKnockbackResistance",
+          "atm10": 0.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeBootDurability",
+          "atm10": 234,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeBootArmor",
+          "atm10": 2,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeLeggingDurability",
+          "atm10": 270,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeLeggingArmor",
+          "atm10": 6,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeChestplateDurability",
+          "atm10": 288,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeChestplateArmor",
+          "atm10": 7,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeHelmetDurability",
+          "atm10": 198,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.bronze.bronzeHelmetArmor",
+          "atm10": 3,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumToolDurability",
+          "atm10": 1024,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumEfficiency",
+          "atm10": 4.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumAttackDamage",
+          "atm10": 4.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumEnchantability",
+          "atm10": 14,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumShieldDurability",
+          "atm10": 672,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumSwordDamage",
+          "atm10": 3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumSwordAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumShovelDamage",
+          "atm10": 1.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumShovelAtkSpeed",
+          "atm10": -3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumAxeDamage",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumAxeAtkSpeed",
+          "atm10": -3.299999952316284,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumPickaxeDamage",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumPickaxeAtkSpeed",
+          "atm10": -2.799999952316284,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumHoeDamage",
+          "atm10": -4.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumHoeAtkSpeed",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumPaxelDamage",
+          "atm10": 9.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumPaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumPaxelEfficiency",
+          "atm10": 4.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumPaxelEnchantability",
+          "atm10": 14,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumPaxelDurability",
+          "atm10": 2048,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumToughness",
+          "atm10": 3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumKnockbackResistance",
+          "atm10": 0.10000000149011612,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumBootDurability",
+          "atm10": 390,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumBootArmor",
+          "atm10": 3,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumLeggingDurability",
+          "atm10": 450,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumLeggingArmor",
+          "atm10": 6,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumChestplateDurability",
+          "atm10": 480,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumChestplateArmor",
+          "atm10": 8,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumHelmetDurability",
+          "atm10": 330,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.osmium.osmiumHelmetArmor",
+          "atm10": 4,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelToolDurability",
+          "atm10": 500,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelEfficiency",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelAttackDamage",
+          "atm10": 3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelEnchantability",
+          "atm10": 16,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelShieldDurability",
+          "atm10": 448,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelSwordDamage",
+          "atm10": 3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelSwordAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelShovelDamage",
+          "atm10": 1.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelShovelAtkSpeed",
+          "atm10": -3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelAxeDamage",
+          "atm10": 7.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelAxeAtkSpeed",
+          "atm10": -3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelPickaxeDamage",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelPickaxeAtkSpeed",
+          "atm10": -2.799999952316284,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelHoeDamage",
+          "atm10": -3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelHoeAtkSpeed",
+          "atm10": 0.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelPaxelDamage",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelPaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelPaxelEfficiency",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelPaxelEnchantability",
+          "atm10": 16,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelPaxelDurability",
+          "atm10": 1000,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelToughness",
+          "atm10": 2.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelKnockbackResistance",
+          "atm10": 0.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelBootDurability",
+          "atm10": 260,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelBootArmor",
+          "atm10": 3,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelLeggingDurability",
+          "atm10": 300,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelLeggingArmor",
+          "atm10": 6,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelChestplateDurability",
+          "atm10": 320,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelChestplateArmor",
+          "atm10": 8,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelHelmetDurability",
+          "atm10": 220,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.steel.steelHelmetArmor",
+          "atm10": 3,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneToolDurability",
+          "atm10": 384,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneEfficiency",
+          "atm10": 15.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneAttackDamage",
+          "atm10": 2.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneEnchantability",
+          "atm10": 20,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneShieldDurability",
+          "atm10": 381,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneSwordDamage",
+          "atm10": 3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneSwordAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneShovelDamage",
+          "atm10": 1.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneShovelAtkSpeed",
+          "atm10": -3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneAxeDamage",
+          "atm10": 6.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneAxeAtkSpeed",
+          "atm10": -2.9000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstonePickaxeDamage",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstonePickaxeAtkSpeed",
+          "atm10": -2.799999952316284,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneHoeDamage",
+          "atm10": -2.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneHoeAtkSpeed",
+          "atm10": -1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstonePaxelDamage",
+          "atm10": 7.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstonePaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstonePaxelEfficiency",
+          "atm10": 15.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstonePaxelEnchantability",
+          "atm10": 20,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstonePaxelDurability",
+          "atm10": 768,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneToughness",
+          "atm10": 0.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneKnockbackResistance",
+          "atm10": 0.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneBootDurability",
+          "atm10": 221,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneBootArmor",
+          "atm10": 3,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneLeggingDurability",
+          "atm10": 255,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneLeggingArmor",
+          "atm10": 6,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneChestplateDurability",
+          "atm10": 272,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneChestplateArmor",
+          "atm10": 8,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneHelmetDurability",
+          "atm10": 187,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_glowstone.refined_glowstoneHelmetArmor",
+          "atm10": 3,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianToolDurability",
+          "atm10": 4096,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianEfficiency",
+          "atm10": 12.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianAttackDamage",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianEnchantability",
+          "atm10": 18,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianShieldDurability",
+          "atm10": 1680,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianSwordDamage",
+          "atm10": 3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianSwordAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianShovelDamage",
+          "atm10": 1.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianShovelAtkSpeed",
+          "atm10": -3.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianAxeDamage",
+          "atm10": 7.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianAxeAtkSpeed",
+          "atm10": -2.9000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianPickaxeDamage",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianPickaxeAtkSpeed",
+          "atm10": -2.799999952316284,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianHoeDamage",
+          "atm10": -8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianHoeAtkSpeed",
+          "atm10": 5.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianPaxelDamage",
+          "atm10": 8.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianPaxelAtkSpeed",
+          "atm10": -2.4000000953674316,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianPaxelEfficiency",
+          "atm10": 12.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianPaxelEnchantability",
+          "atm10": 18,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianPaxelDurability",
+          "atm10": 8192,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianToughness",
+          "atm10": 5.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianKnockbackResistance",
+          "atm10": 0.20000000298023224,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianBootDurability",
+          "atm10": 975,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianBootArmor",
+          "atm10": 5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianLeggingDurability",
+          "atm10": 1125,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianLeggingArmor",
+          "atm10": 8,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianChestplateDurability",
+          "atm10": 1200,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianChestplateArmor",
+          "atm10": 12,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianHelmetDurability",
+          "atm10": 825,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "materials.refined_obsidian.refined_obsidianHelmetArmor",
+          "atm10": 6,
+          "atm11": null,
+          "targetKeyPresent": false
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/tools.toml",
+      "targetPresent": false,
+      "differences": [
+        {
+          "key": "mobGearSpawnRate.general",
+          "atm10": 0.1,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.weapon",
+          "atm10": 0.01,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.weaponHard",
+          "atm10": 0.05000000074505806,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.canSpawnWeapon",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.swordWeight",
+          "atm10": 0.33,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.helmetChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.chestplateChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.leggingsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.bootsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.multiplePieceChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.multiplePieceChanceHard",
+          "atm10": 0.1,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.weaponEnchantmentChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.bronze.armorEnchantmentChance",
+          "atm10": 0.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.canSpawnWeapon",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.swordWeight",
+          "atm10": 0.33,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.helmetChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.chestplateChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.leggingsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.bootsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.multiplePieceChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.multiplePieceChanceHard",
+          "atm10": 0.1,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.weaponEnchantmentChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.lapis_lazuli.armorEnchantmentChance",
+          "atm10": 0.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.canSpawnWeapon",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.swordWeight",
+          "atm10": 0.33,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.helmetChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.chestplateChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.leggingsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.bootsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.multiplePieceChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.multiplePieceChanceHard",
+          "atm10": 0.1,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.weaponEnchantmentChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.osmium.armorEnchantmentChance",
+          "atm10": 0.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.canSpawnWeapon",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.swordWeight",
+          "atm10": 0.33,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.helmetChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.chestplateChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.leggingsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.bootsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.multiplePieceChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.multiplePieceChanceHard",
+          "atm10": 0.1,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.weaponEnchantmentChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_glowstone.armorEnchantmentChance",
+          "atm10": 0.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.canSpawnWeapon",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.swordWeight",
+          "atm10": 0.33,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.helmetChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.chestplateChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.leggingsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.bootsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.multiplePieceChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.multiplePieceChanceHard",
+          "atm10": 0.1,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.weaponEnchantmentChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.refined_obsidian.armorEnchantmentChance",
+          "atm10": 0.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.canSpawnWeapon",
+          "atm10": true,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.swordWeight",
+          "atm10": 0.33,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.helmetChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.chestplateChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.leggingsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.bootsChance",
+          "atm10": 1.0,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.multiplePieceChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.multiplePieceChanceHard",
+          "atm10": 0.1,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.weaponEnchantmentChance",
+          "atm10": 0.25,
+          "atm11": null,
+          "targetKeyPresent": false
+        },
+        {
+          "key": "mobGearSpawnRate.steel.armorEnchantmentChance",
+          "atm10": 0.5,
+          "atm11": null,
+          "targetKeyPresent": false
+        }
+      ]
+    },
+    {
+      "file": "config/Mekanism/world.toml",
+      "targetPresent": true,
+      "differences": []
+    }
+  ],
+  "referenceFiles": [
+    {
+      "file": "config/Mekanism/client.toml",
+      "sha256": "7acab1ed60a239dcc2f0d63a869ee044dc135ffa339f8cdb6f0c4fa21e4b8798"
+    },
+    {
+      "file": "config/Mekanism/common.toml",
+      "sha256": "ac17c31d3750383f81b87666c87e9cf129fb08a24ea6cd5394925a0077be0417"
+    },
+    {
+      "file": "config/Mekanism/gear.toml",
+      "sha256": "961572ce7a5027599c13366c6e16f0d9426e07e3aa01e934fb7f13c3257bcfdb"
+    },
+    {
+      "file": "config/Mekanism/general.toml",
+      "sha256": "4cb9d1354d1ab1ca933ada13c19053f488eddb88a36f67118202e14e257de062"
+    },
+    {
+      "file": "config/Mekanism/generator-storage.toml",
+      "sha256": "e7cb675b0ab78a16688cd720432bb4f6ffe88984c24b2353bbb4ea37fa11e558"
+    },
+    {
+      "file": "config/Mekanism/generators-gear.toml",
+      "sha256": "f459d6942569fa94f5cffd215eb14dfceb6954755343023f83d9fe1f25291337"
+    },
+    {
+      "file": "config/Mekanism/generators.toml",
+      "sha256": "8e732ae6ab7114f6b06ddd5b5ebca8f98c110637cfb581ebbe4f510f508c945a"
+    },
+    {
+      "file": "config/Mekanism/machine-storage.toml",
+      "sha256": "82099086710fe3538459bb8bbf151ffc8fb154540e992a3c4cf5a7f09cdca83f"
+    },
+    {
+      "file": "config/Mekanism/machine-usage.toml",
+      "sha256": "3b570540f438e6047ea97a92f31e8a6f4b19075802bd18a01ccf563413c459d7"
+    },
+    {
+      "file": "config/Mekanism/startup.toml",
+      "sha256": "84f8dac62b281985089a40907ca862a9f54f9010c171dd55b4c6bcb7a9a4bc10"
+    },
+    {
+      "file": "config/Mekanism/tiers.toml",
+      "sha256": "934704d0892d4abe43eb51bf9353103af60e800e044bb14435592cd6a14a0aaf"
+    },
+    {
+      "file": "config/Mekanism/tools-client.toml",
+      "sha256": "930a87ad60bf0bc93d7afa274386175a99488e4ba935d36eb62ae56f9ca6e08c"
+    },
+    {
+      "file": "config/Mekanism/tools-materials-startup.toml",
+      "sha256": "4046b48325ea9da08336a603da497b7afda2f5f008bd5c23c398366713835db4"
+    },
+    {
+      "file": "config/Mekanism/tools.toml",
+      "sha256": "f3171b54ae19eab89d71c45a2d96e934fa636f51f49b0e6a9f0309ad911c7fce"
+    },
+    {
+      "file": "config/Mekanism/world.toml",
+      "sha256": "dd5d5a23a8f8c90c1ba7bd7312988629084a88890ff7da17e6010b272c0bed88"
+    },
+    {
+      "file": "config/almostunified/unification/materials.json",
+      "sha256": "5cd0797fac5d6552e89a6fec4bc5774ce881fe09321c5fd7b31353195dafba04"
+    },
+    {
+      "file": "config/crash_assistant/modlist.json",
+      "sha256": "bad20e09ad7eba9dc08cd7209704240df33435e48940f1390266e7947aed74b9"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "ab940926a6495a6bba1e304ca976b52278a11678cce6b16489a5b945fabadc49"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/basic_armor.snbt",
+      "sha256": "8cbdd6374319e6dce81cfbccdb0eeea309880964daaa70ed5ca9058072b242c4"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/basic_logistics.snbt",
+      "sha256": "3f822eec9ac50f2e9d1940221b9b8a5bf6da8e525dcaf8036d0f2937651c04ed"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/basic_power.snbt",
+      "sha256": "b7fa300b839b44fb33027aa3bac08f332dfeaeab27cfe154c135993376e48090"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/basic_tools.snbt",
+      "sha256": "22b3df88fe23d02e5a72c8ee9358de6edbc8e7a583d2e0e63de4f3441d5915d6"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/building_tips.snbt",
+      "sha256": "a767ea6798e1fa1da81ca9210b6f1f4f55b8b1b96548c4cc92a477dd892a2586"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/chapter_2_the_star.snbt",
+      "sha256": "6e2df9170268f6f402588c155eff09b578a77db2dc3c12407e595d94df205100"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/draconic_evolution.snbt",
+      "sha256": "95d6339e3078c4e99039ee29eb1b32f7e6fdbef2ad0759b8d11f1664138c1f0b"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/immersive_engineering.snbt",
+      "sha256": "3df69f32d3951fd2c0a6a65671f20d624d1089ecd4b19dfe553e7ef3e8f7c1ad"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/industrial_foregoing.snbt",
+      "sha256": "7041f9a0fa857ed913b5f835bd90c92104d9ed2bdb0219ab4ae8bb7edfe58dfb"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/justdirethings.snbt",
+      "sha256": "aa10053de57e44544528ad738c1c60b0b0dae73bf907d6ac9ed6b235108163ed"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/mainquestline_part_1.snbt",
+      "sha256": "c680729a5c882e0ab17dcaa967def47e626f131f9aca00d8931d660d7b2b4bf8"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/mekanism.snbt",
+      "sha256": "99e360b6041ff55aee726dd66f055546b5e2499b28e0fe842ec33773bcc78259"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/mekanism_reactors.snbt",
+      "sha256": "9ca0fb447014dd0da4878c0911b03a7566ae393644ef11327f706bb83b259a41"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/productive_bees.snbt",
+      "sha256": "8b02784c97ca47b7b80ba0802e89c2ec7540392bdbae954b15100a5fe287631e"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/railcraft.snbt",
+      "sha256": "4b5376b4caf6595b7ff965c02783249af673dcca029649ae80cb5137753aedca"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/refined_storage.snbt",
+      "sha256": "cad561aebe32587a6a22e284ba018b05ca4878812518834442587087e1ce0312"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/tips_and_tricks.snbt",
+      "sha256": "6182f23f29c8d6f70a4799ac96d0bf2f87e216e725fa29f5726cef8f92442778"
+    },
+    {
+      "file": "config/ftbquests/quests/chapters/xycraft.snbt",
+      "sha256": "44b953bc6a5d1120b36b58f98f8649d8e8b190f857cbca74ad5d43f77466b6a1"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/el_gr/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "6bd501bab5da4a5e1e6fe453bccbc596312bd614fca062c742b9f9dc0ebf0ae2"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapter.snbt",
+      "sha256": "630a35fed0d22e5b4d367ed20b47fc5886dbe5e6e890aad22c5ea320ceddbd2a"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "188165b36ab47e67284ffeabab690ecae67607baac2502ac0023f951e3d4c00b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/allthemodium.snbt",
+      "sha256": "1861a438395e3d1e89ce3fa38e60b653e0cc0bc62950f9a452fed7fe3cdf6223"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/basic_armor.snbt",
+      "sha256": "e4224ecc5c5fd3891b49c60cbdb0f6b49394246825b1a1d98d93a24cabda7d42"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/basic_logistics.snbt",
+      "sha256": "3eaf466ac30d1cc9ae1830a6d6581338337cf868c358bd43861039b29b5a7273"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/basic_power.snbt",
+      "sha256": "c31064fdbd58a387c22facc1448398561e207f3f0cbee3d02b55dbf5a6f34179"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/basic_tools.snbt",
+      "sha256": "94ac3581515bb580ee28113c983ebeeadb67c77fc4cbb38388129f389db6f730"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/building_tips.snbt",
+      "sha256": "29e12c23a4ea29ffd2e0191f1e3c309ccc0aefccc86899d8855bd44be5c26e87"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/chapter_2_the_star.snbt",
+      "sha256": "4001181457464d88815e1a637773f9756248c1998fefb2af22105178818b6202"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/extended__advanced_ae.snbt",
+      "sha256": "7d37df42a027bf68649fb3f93ce8ce86ab4f10432bbea3b9113bbf0bb8a3351f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/extreme_reactors.snbt",
+      "sha256": "3973f72edcd0df044516f4ebbd1642149694f845e3849ced79a79875b028f074"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/generators.snbt",
+      "sha256": "9864e911ce09bef9fd2af8bf2464fc5db5e170060960761af6544bbaee28240b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/immersive_engineering.snbt",
+      "sha256": "d184e026bfcdcf0bb5be3f2914686cf1a2615f3919befadde8fc581691266cf9"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/industrial_foregoing.snbt",
+      "sha256": "ecfcfee546395bcd42893e53c9e41202aeec22e56f923700bcb5cb08e4a07f2f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/mekanism.snbt",
+      "sha256": "ba4d9e613c656ee5a3d59c3266c86740b6aad60e4c63c53006e540c629962e98"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/mekanism_reactors.snbt",
+      "sha256": "15b142304d833194ee2d7e05f94b238faf460161acd6e1ff2e52f0791c062b03"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/pneumaticcraft.snbt",
+      "sha256": "208b4eaaa0312c4af204bfb0e6b906a511493d5642ba68525a63624984b0a1de"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/chapters/refined_storage.snbt",
+      "sha256": "3a58b5e7a967104fc9dd90df8f4372c0176552e97d852d34c27bc51e52d3ec4d"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/en_us/reward_table.snbt",
+      "sha256": "f97132273fc7226d03dc01331810d24767b5a59aa8862d3d778af382af72bd50"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapter.snbt",
+      "sha256": "ec305e0e0b95f303fd9bc181dfadf34a4d055333a403594ede70287bb59e9bcb"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "9ff2fe4704525692f060c529ee1d91291a3da3a40bd7ffa34ef1ce5d6498321c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/allthemodium.snbt",
+      "sha256": "1273c7ee0930c9130e00450c8371c1587bfd8fc6e80b730cc58d57079cfd5bf3"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/basic_armor.snbt",
+      "sha256": "b18592dfacb0fe0ca9e064067d44a3afb7697b8c60142937183111cbe7b3b9aa"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/basic_logistics.snbt",
+      "sha256": "69225a7a4070f985d0ea8defb48065d88f6cc4d7627f6d6801df67e61a2b2059"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/basic_power.snbt",
+      "sha256": "225647520e4dab93263ede6e700702fb68e54e5269dbe53f2fa4d3631a4370b4"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/basic_tools.snbt",
+      "sha256": "3ba3a9a5290d1ea932ee13fc3be773f19d4695bf00675d2c738c82ca04c4da8b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/chapter_2_the_star.snbt",
+      "sha256": "9982a88dfd45b069aff82f392c369332fc7636d7e453ef94cada766b0e4fbd39"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/extreme_reactors.snbt",
+      "sha256": "46488268b421983889c545037a1da68c010692726f0044380128bf66b9555773"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/generators.snbt",
+      "sha256": "7c6de08d6cd3f97a156d2b01a9d937a480b3b06bcd0af924f9cda36a6b585114"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/immersive_engineering.snbt",
+      "sha256": "e88ce70adf4033c3e80ae895ff0683d136b646260e1cf88da488cf7bfb87123b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/mekanism.snbt",
+      "sha256": "ff0c63007d344aaa4e1da2b44c20e5c61fdad71c19d5864cd8b6d0e134e17b91"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/mekanism_reactors.snbt",
+      "sha256": "ec61aa2bb87f88ad2e1ce5cbbf9c7705ca998518ba795b5348987670e9a40fe9"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/pneumaticcraft.snbt",
+      "sha256": "0d592f881993eff4d92d5d0c82a233d11273d99648f42499119dd4939f6d8840"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/chapters/steam_age.snbt",
+      "sha256": "240a0234a4ba27c2bbdd56dce7242f4153ac7f5fe9fed056141ac61aab8d3be9"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/es_es/reward_table.snbt",
+      "sha256": "e16c5bc7e64f14b4ae830e209ecac0ca224fa965321796e6d70d31ec4de1425f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapter.snbt",
+      "sha256": "4a199bf00fabd236d32b8798caaa80ab80b5bab3c6d3002e34b4094c3c58a50c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "a5429a8df97a2ebe5742f93c6ebbdc0630cf8df59fa72fd349e666933401559f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/allthemodium.snbt",
+      "sha256": "f80e121ccaed8d2e6040941f1a929a3514b7964cadee631e8935fa43877c131c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/basic_armor.snbt",
+      "sha256": "79c8b4d0c07b6cc06c0e2125bc7f442fc5aca65eff967147ff3d569981ce1bb0"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/basic_logistics.snbt",
+      "sha256": "1db7c0c62ceeb0b6f4a7f602d757a947f0f25845bf813f99ac6a7c723503378a"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/basic_power.snbt",
+      "sha256": "51c1e33d005f32cd79b4c6b75f2b1ca6ba0a9ee22a59e5cd3410f4d27becaea1"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/basic_tools.snbt",
+      "sha256": "bd1849970f1997293eae96bbe3805791a8c8a5f491b69c621826acc06de16658"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/building_tips.snbt",
+      "sha256": "e185bd08b491f40f7242398ade73b5a05ca4376a1ffd01d77ff84c7aef842fb1"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/chapter_2_the_star.snbt",
+      "sha256": "a6fde529e79b5a91470bfe39af6a41d2f8d589a28650d1bfccf290a1ed071e9f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/extended__advanced_ae.snbt",
+      "sha256": "d0dc5d7661422d8a22e778fa4cba9ab8f0596b3c72366a7f10911af04fc36e08"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/extreme_reactors.snbt",
+      "sha256": "0e84d5e051a60de640d5f81a08a77413b7836496dce558b1ac36df114958fed6"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/generators.snbt",
+      "sha256": "6cffbed95c5b683754eaefeb22f3700707eba5afda72e1c836e0aced1f9a4d0b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/immersive_engineering.snbt",
+      "sha256": "873e82e61a7d2c4e8d073c46c030df6e706a8e69971fab208aa1a50c0c19755c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/industrial_foregoing.snbt",
+      "sha256": "93543d7f53d4f25e77a0be312f80583bea7858a2e113e1c9a038e59a010df54e"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/mekanism.snbt",
+      "sha256": "4c042eab87bc62ca272e16f061369b505312c4f71f2773cdc2aa924adc7d6ad0"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/mekanism_reactors.snbt",
+      "sha256": "b0a920917824dcf2058d29cb134aad30a29856778c35dd6ada76bbd742af107b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/pneumaticcraft.snbt",
+      "sha256": "9d9d1f90e6a96c4cbf0b60364534f6c283596ca7286ae203a16c92d99e63d6c1"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/chapters/refined_storage.snbt",
+      "sha256": "c61a8d66be7e0e89f58ba3b3c02af6b498f370975fa6c78d0faedc90a315893d"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/fr_fr/reward_table.snbt",
+      "sha256": "c2cedd2f82a59319c4a5e2f41e31134dab0696de62533a46c45e4c0a358758ae"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapter.snbt",
+      "sha256": "57f21c9d95a03f63848f47ae7bbc12db8d555d5294edcf187069e512d4c94b67"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "02ab5dadff70cc9babebfdef9160c24109cdad9db979753b76f85392cd66b002"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/allthemodium.snbt",
+      "sha256": "6bd64bfc664c0127b7b272bff9225a350894991477e30e48e61745adb0d9beb6"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/apotheosis_2.snbt",
+      "sha256": "6c7a2ce2b6bd0f872071060b001c1d3673906204b46e4eae14f2dc4813dc1d85"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/apothic_enchanting.snbt",
+      "sha256": "72bc4729d02563f636db02ebb02961a68828b2233c2e002cccc0077d4452bf04"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/basic_armor.snbt",
+      "sha256": "e3344f490f2057286cf1b406124574d8d878e5e764e01f5659185ccd7a53bcac"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/basic_logistics.snbt",
+      "sha256": "47275074442f3ef36795ec6fe1e067ead63061958b5f0fde454dacbbfa65ee84"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/basic_power.snbt",
+      "sha256": "288a364be8c2e46bc3815bf0a3ee3a319e67ba25473fda9ca8446d6f2929918a"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/basic_tools.snbt",
+      "sha256": "77ab1d2835d5f122a46680777f3f0d37ee3094d031d5465afc53df44b81c4885"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/bounty_board.snbt",
+      "sha256": "37911e7d4ac21c3a7c1a3089a6e7299f997962cbb395384a7ab7aaf061cad4b5"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/building_tips.snbt",
+      "sha256": "014d0d4406970b2ccacaaffbd1f95ca41ba06f7b35c17c2d6f1fada929f54b0b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/chapter_2_the_star.snbt",
+      "sha256": "b29521713e40cc97d10bfd85159ac96f88f0bf72971bfe6a978576c967a51a02"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/create.snbt",
+      "sha256": "13e4e1007a67607e4030bf5ae1b99297615240188ea59934ea0647e8c9cb95e3"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/extended__advanced_ae.snbt",
+      "sha256": "57495d3d4c55e32e534b5af918b33a374e684fe17743d10caa34e2001ed412c1"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/extreme_reactors.snbt",
+      "sha256": "7046f9231ff89ad6a2001b15e26e9c750830ad3fafb222b79a5a3cda1c5c9d45"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/generators.snbt",
+      "sha256": "f54aa1f72554cb7000b0852b869d54a83a365c9d2bdacdc74294e6206f4b2f0a"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/immersive_engineering.snbt",
+      "sha256": "a3d94437810124e43eb6eb7ca0c8d367e773b352ceb5a21bafe288542019a367"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/mekanism.snbt",
+      "sha256": "97816d29486e384aee0f1721b60717aec025ad9f7e366f9cf1aa122e4be3cc97"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/mekanism_reactors.snbt",
+      "sha256": "0f72b612e1d01fb73fca8083bcbb98fd555e9ad0b3ab3bb51a3b716749cb3412"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/modular_router.snbt",
+      "sha256": "5ae500f7d8bfe11da7230969e43a63fbeb3e6d065e56ffacc8c741ac1dda303b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/pneumaticcraft.snbt",
+      "sha256": "901da71fc2b83e7b69a5683eca46dcf8f89f2f80d2549ab7214d27371d181cb6"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/refined_storage.snbt",
+      "sha256": "500c7412e1086fa760f205ffd1ed20140bcebf84a2b87aba3fc418ae41c2cf8d"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/chapters/undergarden.snbt",
+      "sha256": "46bd5934a9ffab9207e2d3c8e0866ecb26536643e235e1f8e9cdc684f9c3b49c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/id_id/reward_table.snbt",
+      "sha256": "3d399a4e0bd445c186264f07fa2dbc33483fa6b41798b4f4f089c1175c96a53e"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapter.snbt",
+      "sha256": "b3d0cf10447d2d34244f14c4d68e015692f44e47aea3f3e404f17e767914653a"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "a82e32ed34685a9a9ee028a6fddb56283cd171e774eab0b1808a75eac4be7ef6"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/allthemodium.snbt",
+      "sha256": "706c499cd48643cdf02d40e8394e59a5e362973a08d525154babc9ab0eed3086"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/basic_armor.snbt",
+      "sha256": "17a9c792108d06e0c5dd98be31619346262555dfeb8744ec163ca08c00acd066"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/basic_logistics.snbt",
+      "sha256": "ede89be0d3602f9a76493033c5fb981dff22bc5897fff543fca3896ffd2c9e3e"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/basic_power.snbt",
+      "sha256": "3f693e18630ceae85992b44bfcac2e62ea876d959103537740c5b92f99270fae"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/basic_tools.snbt",
+      "sha256": "c8f7d33867439fbd0024e8faa5e7468f7417f62abc492e0d3a829475bb836985"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/building_tips.snbt",
+      "sha256": "820c64e91f512225d3b2818f8f952cfb713b9890c6681e76ee527b3d46e9e843"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/chapter_2_the_star.snbt",
+      "sha256": "d21694751211c9048c8eced3f82b989957e1b6d1f1b5e1f0ebdf82bd51d81219"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/extended__advanced_ae.snbt",
+      "sha256": "c448ff488aaee0892670450de1ef3496c196d260bff111621453e0690b26eac5"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/extreme_reactors.snbt",
+      "sha256": "505dad590cabc40ebb86a3ec02bdcf2cdfb2699d2daeb130cd819efff24459a1"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/generators.snbt",
+      "sha256": "24667849b450eaa4a29891fc9df6543e981cc7ac4522acdb3488d825c2dc7552"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/immersive_engineering.snbt",
+      "sha256": "b4dc8332685c9039f5ad2ad8f9f0028b5d26ebb0d8a6ce17d896b9dfb26dd7ee"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/industrial_foregoing.snbt",
+      "sha256": "2cb483302e9b3c1017d8a77c04f336183e49ed65abb8bed674a16cbed0e4faf8"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/mekanism.snbt",
+      "sha256": "8817f6635ab085dda085efe35ce89147530f4acfca503057ead5bd0bf9837f65"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/mekanism_reactors.snbt",
+      "sha256": "2da0b80034416a7176a48e82e41b1751dff06af8c587aed9faa83a2d1569dde5"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/pneumaticcraft.snbt",
+      "sha256": "5ee85b15ab28972705e5fe73d93fde66b2c48301bad7ad79a180f691735e8f6c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/chapters/refined_storage.snbt",
+      "sha256": "e32a0d56e9f9579a4607a770bc743ded4564e1836eb380e5d2ea26f07627fd8f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/it_it/reward_table.snbt",
+      "sha256": "d578c52550f746545450c6296a62ce3356fa0f981d533b1acfa12d141c4b5d55"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapter.snbt",
+      "sha256": "646ab61d9ef5cea8dd36329295f2e737b15f55ea7da4a9776765b56471b61a09"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "2a076cf04e9864cf2f7cb1a50fc415873a73374dbad238f62eb98ede420831b5"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/allthemodium.snbt",
+      "sha256": "d821dada665e25482bd6b9fd3fa5ad5ad9f8414a66f74c0190bac33ab150f737"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/basic_armor.snbt",
+      "sha256": "b67cea27bbf1f070d12e106dd842ffc1956e1a19d0229165d11e3e4260b5ecdb"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/basic_logistics.snbt",
+      "sha256": "daf6e1e0ec14b34a269d90b2d779872320eca3e786d8716874147c84059bb36d"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/basic_power.snbt",
+      "sha256": "bfa57afe6c35c4d69f1a584316d2d330a0458f43b9bddf43708cc0fc5ceb95b8"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/basic_tools.snbt",
+      "sha256": "0f82e569c44c5abf8172d78de7316528fab5c305c6e1a35fff529b8e75ded4ad"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/chapter_2_the_star.snbt",
+      "sha256": "d81193afb7c563cd87cc302dd15aeb1a8e7d493f119af5f2288585bf43765920"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/generators.snbt",
+      "sha256": "1aa5792b4669a9ffcc8d42390db0aeb070ae32ad6ed731553e2489a0bee60bfb"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/immersive_engineering.snbt",
+      "sha256": "0e7b4c586d71f22fa63b192ec8fe27ad82b34547b4e968392c310a09d93af61c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/mekanism.snbt",
+      "sha256": "078db8c1073c786678bd04214e8494c2677e04269a3b0ba6c95b3dcf3aa3b8f0"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/mekanism_reactors.snbt",
+      "sha256": "a36a631bab14841d62d455306a532f2bd073167d4df9944cde49965782ae7483"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/pneumaticcraft.snbt",
+      "sha256": "5b3b5b1b1062f50bdc6750dd2e4a9759b1ee1b08f1bdaa43d79884c48b910042"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/chapters/steam_age.snbt",
+      "sha256": "907a580b11a55689869f8db5459add86524ede9effb7fe5ff05a3b5e3ffd7bf4"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ja_jp/reward_table.snbt",
+      "sha256": "6e7e44c43165752805e5e21d4e89e1b31e4d5f0dfbcb0a26835b468d04d4d7fd"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "2cfd3b375c1387ae92321f960da4e28b3ec4a1b9ce21d0773d9d7a4a711343f0"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/basic_armor.snbt",
+      "sha256": "00257059d799cfc9ef32bbdfe46c579ee146369505b6e350884d2fbff2ed6720"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/basic_logistics.snbt",
+      "sha256": "4945c17a696b267559da1f30998509f0b8ee6a690e7e0b42ab95f8de1ce82e2b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/basic_power.snbt",
+      "sha256": "e99a46c0dc34b08d8817873e47cfb97af717648abaabb58c44891e44a6aec758"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/basic_tools.snbt",
+      "sha256": "01900d718d4c5a5832f25d8092fb02ef440bae75effb34b716240e6b784c14a3"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/chapter_2_the_star.snbt",
+      "sha256": "7532dc741bb03acb86b621a904b84bddea14536de702b71553c2288d8416e9d8"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/extreme_reactors.snbt",
+      "sha256": "9c54e7777638b7753452edd7100c84c70c4dd7ed1938cc13558cd9fbeebffc11"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/generators.snbt",
+      "sha256": "c561655f5ddf4aaebb31e466715890e82380b295e2bcf4564cae0f967db6f03f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/immersive_engineering.snbt",
+      "sha256": "e5c40fb7aeeb55572dd7af15f8108e5ff3280f0fe0a8280270dbb5e8159bb59f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/mekanism.snbt",
+      "sha256": "5a4fd4288a0d6c6e08388d0f51d11c6910bfb590a58544bed2f0ebe8b9f62b82"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/mekanism_reactors.snbt",
+      "sha256": "cec7fe94872bf546b8a66bcbc9eb1d610740027124566fa5171e2ba33a028aa2"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/pneumaticcraft.snbt",
+      "sha256": "6fa45e42f0d6ac11810596d165fc870c7705d0c89d708311246ee56523b8f210"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/chapters/steam_age.snbt",
+      "sha256": "07c86615e18c1ca354cbccc4e6a9e87794290a1a3945c2bec0b2ffa196b0fd1b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ko_kr/reward_table.snbt",
+      "sha256": "6c4b707dba24b5cad37691c8c6e972605a24a9e42ba10868bac9d606b7a37d48"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/nb_no/chapter.snbt",
+      "sha256": "09c8d7c868d2a0777aa1574d0bd1328868a82edd611d17379a3f28e22390e432"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/nb_no/chapters/basic_power.snbt",
+      "sha256": "5c871866afc09c89dc5d5ede5d24970f2db88e0ec0e0318dcb5443d8c68be910"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/nb_no/chapters/extreme_reactors.snbt",
+      "sha256": "a74a118ec6138bf9c33944d20269310bff4c4da9cb206f9687f6001c955a8720"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/nb_no/chapters/mekanism.snbt",
+      "sha256": "7b39be5ee28c1668b42e67cd56705f778fc0571a8c3dc27c37f9afd21cd5483f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/nb_no/chapters/mekanism_reactors.snbt",
+      "sha256": "925dabf4ba24ca0cffad840daa3483caf63e84e106febbdf4d7181985d6ed81c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pl_pl/chapter.snbt",
+      "sha256": "03c487bdf17700df731a99bfd6e788edc403b85a0fa616f13bc518e856adeebd"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pl_pl/chapters/allthemodium.snbt",
+      "sha256": "2b8949c36c0f6d08d651a995f761ce1f91db28bd0216910907f6525943eb6229"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapter.snbt",
+      "sha256": "6145e4db4453dd9bf0e833a015f0bfb5da18cd70ea301ed4766782e7c20ba9cf"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "05f9ee0f7e42b20174ea733d41ed6dacf9d8b0bf8d74592ddf1fefb50edf6cd8"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/allthemodium.snbt",
+      "sha256": "ed9474d6c147960f655d618f039be9f979004c59196ea93c0ce3af5cf49f47f5"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/basic_armor.snbt",
+      "sha256": "d65173548a35fb4a5b8b4fa8eb66a51b06bf45a742f082b05c5f7900a7268e6e"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/basic_logistics.snbt",
+      "sha256": "edf9867daa1d3bffc4d96f391fbc021c6ef11ee77558428e91b1896b50763c66"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/basic_power.snbt",
+      "sha256": "4680eb76a2a7d710ed96252ae5cc98c02dee938face16c1a9c5d7d44afe81beb"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/basic_tools.snbt",
+      "sha256": "c4ab10173d73ccaa71c7ad9cc84e34ccc7b111e4a7ec297125a45e2d5504a2be"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/building_tips.snbt",
+      "sha256": "830876ee23247003d46609d7a21508397fd103f04c441e175d87bf382954e83d"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/chapter_2_the_star.snbt",
+      "sha256": "1144785d945e7088d5a14fb3f46471ed1e2e17689aea6604daaa98fe4ab59b36"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/extended__advanced_ae.snbt",
+      "sha256": "25a7646939bb13f0f87f62231e7a1642f33de11c7e42022508656aed63a0fe40"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/extreme_reactors.snbt",
+      "sha256": "b4bb61111f963cedf1710e0bf076338109a056cbd13fac2dc83e26588d8f38b8"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/generators.snbt",
+      "sha256": "09fa542b154962a41b2443ffc17b88b57b119d62c22b0d41f9c7e780fe3a6ecf"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/immersive_engineering.snbt",
+      "sha256": "ea8a00aa0f13eb484f97fab2eb426d0277b521b4b941ec42c8b3f770c3b310d6"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/industrial_foregoing.snbt",
+      "sha256": "846198d5d2886385c0c3cc165b2b198f36bb87c51000fd6c9e67956de370c4bd"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/mekanism.snbt",
+      "sha256": "d323bf19b673faa21ff76ac49908667e1a4b25dbdaff582320fce03d2652c211"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/mekanism_reactors.snbt",
+      "sha256": "f415ca9b4db60b620fffd9e49382faca4058fe812e7a66f91db920a622999f66"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/pneumaticcraft.snbt",
+      "sha256": "9e12cd045f9c14dbe491277aab151deca354b5591a8054cb7066fea656fae380"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/chapters/refined_storage.snbt",
+      "sha256": "88b2d332aa914476cf894c01d8243482b27bcfc9d8c004df1beb80e0c3f8d5c6"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/pt_br/reward_table.snbt",
+      "sha256": "b45992ea80d72aa783419a5362f140aa137c0ee0f4f2df36513b0e4140dd9728"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapter.snbt",
+      "sha256": "2407c3ad6e8177063e8858ebb7803c59ab4e275215fbdcbfb71509c563bd5180"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "c75d05ad39df0dac8ca14b9f02ddec49bfc0caa18531b456c8fb5b88737df860"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/allthemodium.snbt",
+      "sha256": "a2816fa3a4bb0a73e2b4cbbdb4b37deaa673a7248287548080dd7586b42c8b79"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/basic_armor.snbt",
+      "sha256": "2838ab51977d19c36709ca5249a015043064fb49fb19b35dd7c53548ee8915ac"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/basic_logistics.snbt",
+      "sha256": "de9bc97ee4b9a577183d4d1abd5ceac342b03e81954688df996a0db4b9226411"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/basic_power.snbt",
+      "sha256": "ef3c5fe4a21f294dc40d3d436dfebe6ff60cd0d7e4f9ce3da3868171683800a8"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/basic_tools.snbt",
+      "sha256": "45ebb2dbab5589fefdd25b7ae9db59936b0e47a86037ec3798fbe8d6adea686b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/chapter_2_the_star.snbt",
+      "sha256": "df1ea8026927582f6bc436f8446c8c5f992c78d7db01caeacee3192d35945356"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/extreme_reactors.snbt",
+      "sha256": "265a939d8941809e7a946725167bafb140e9cc5af4f6ac6b621a437ce0f2cb2e"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/generators.snbt",
+      "sha256": "6378bb375de243cf2ede1d35ed43f2c3a65d9fbd5cab5ec4ec8c9c02eba7200c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/immersive_engineering.snbt",
+      "sha256": "c347b0e23861c3b1d0412b9bc1e5ab696ec2400d2635b9b6fff320b5568b7275"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/mekanism.snbt",
+      "sha256": "4511879182c15069ed9361bf89180740f10b378d26e33666c65ff23b102248d2"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/mekanism_reactors.snbt",
+      "sha256": "de2b255225fbf2f29123dc1ff90d42b58333b086eb33c79a189135246cecb6f1"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/pneumaticcraft.snbt",
+      "sha256": "dc9c391a8106fe46287915783d2a42a764eab7ddb8957fdf785214199fd18fe2"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/refined_storage.snbt",
+      "sha256": "66874bfe9e9bead307bc8b8c1c3552c9c1da9a7b7ce6b430d75ea2c079bbca98"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/chapters/steam_age.snbt",
+      "sha256": "64fa990f643c8447bd7f8445c2018843be4d220dbcb769e6e0869772477ebc67"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/ru_ru/reward_table.snbt",
+      "sha256": "44837b9a0ca30b70ed28614bb7734cdc8efe695fd3234867306a3b351621a3aa"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapter.snbt",
+      "sha256": "72db5a181e07579539c8d77b93e54bfd65e55ec7a3d67b13b87e07080219bb72"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "b1b9e54a978db99c00a18065c3f51378bfeab6543338f585ee26ff366a71bc38"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/allthemodium.snbt",
+      "sha256": "7bc982a7a008df1a637515f77029f0540827601ad8ab1f596b098ec04e981e37"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/basic_armor.snbt",
+      "sha256": "978339799224ae17a246c6a8122615063bec3eb0278c6cbfd44826e0c8406bca"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/basic_logistics.snbt",
+      "sha256": "0e74b75112cadb9ac428a37228ef2b3da929e1f1a593e1c427c3f03aea94ce80"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/basic_power.snbt",
+      "sha256": "fd1708a71baa729941917f60e5157fdb5c313b29dfc578168a24a4fbdd17c915"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/basic_tools.snbt",
+      "sha256": "0dba824b23d814f683c1dba3a461868ccb27f25122037b4d39fa66787a75751e"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/building_tips.snbt",
+      "sha256": "11c0e7b685622b8532154ff8fc10c7d1eb2b7ac0fda0d1931baad5177ccd7990"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/chapter_2_the_star.snbt",
+      "sha256": "9c7d3df1598bda5d4e65957b264e59721496c0411e99d20e6d00330c605da077"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/extended__advanced_ae.snbt",
+      "sha256": "a83d96d2b0ea96ceef20813e0a914849ea39f65def2f1e7c03dc934159259140"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/extreme_reactors.snbt",
+      "sha256": "a29f741741fb1517b63ec62d850c1342bde8a514bdbb8b36f6fb91eecf544910"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/generators.snbt",
+      "sha256": "37c9184a14a1e2c46c4d0a3ff595d9d3712cb4252029dcd60ecf0681f874c509"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/immersive_engineering.snbt",
+      "sha256": "7b5aae4d36732d43fa1e66548584493163cc326377e0f8e4dd7810d36e30718c"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/industrial_foregoing.snbt",
+      "sha256": "f1172f48eb65410d01104d5cd760551be4941b6ddb650b22c9f0485f7edd26ab"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/mekanism.snbt",
+      "sha256": "873d661e76c1e09690c752a99d185c8ec7a2396a0e84580eed7f865ab62d634d"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/mekanism_reactors.snbt",
+      "sha256": "700fbd12ff5b768f8521af967e4a15c9f18b240bb57287a17f3ea1d9f39aa88b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/pneumaticcraft.snbt",
+      "sha256": "d2cb43ea52b5078f543cad1b1b4f85c8a7a7f7ce7937ecdab245f9c7d76dd60b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/chapters/refined_storage.snbt",
+      "sha256": "cc27b7692c76997f5578f9ec0fc260e692a941594b7917060746f0b1a94c02cd"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/tr_tr/reward_table.snbt",
+      "sha256": "ec5a90432bd83213aae65c3629719ffa402f7f951b85b60da6575537a946ee1d"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapter.snbt",
+      "sha256": "32db32ce7e7de10c94a66a2394e7f2b2dd5359dbc63ddfcfa64074ee2466d7c5"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/achapter_2r_6the_atm_star.snbt",
+      "sha256": "1826ffe675fce645e206250629b39937bfcde9a5c630520c40467bf4d9c94a20"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/allthemodium.snbt",
+      "sha256": "1de7c929aa64fdf80028561a7f8e9120be0bf52526d6212657203e8d7b26042f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/basic_armor.snbt",
+      "sha256": "9fcb7081b4ac6a8c77955215ffff62784f39d0d206e8d793d7b35ca53dd53e8a"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/basic_logistics.snbt",
+      "sha256": "20dce5d3912260a85b7931130fa63e5b385b0c8af57c18b92824e0cbaa11782b"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/basic_power.snbt",
+      "sha256": "081cd7a72429d46a119491f54dd2d2bb39b6c0d87625a30f1dfd0090e10a6cf9"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/basic_tools.snbt",
+      "sha256": "4fc587163bb2f9b23b29a3fff412a221433bc11dee063c7614366132afa25420"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/chapter_2_the_star.snbt",
+      "sha256": "8168e51557b3830a90b2fd1c4b0a1e08d7b12a7adbdf2c5b40ded434b8320196"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/extreme_reactors.snbt",
+      "sha256": "844354fd50288c25680d40ffabe39279242c511440692221c0e5d1cdb7e1c177"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/generators.snbt",
+      "sha256": "a88869a95f32b05515c26dcb8233b52484732c06aa00140909483ce955cea4f0"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/immersive_engineering.snbt",
+      "sha256": "413633f5a760512c2b975e3ca2ef7f07c96a5a7f3f6751dc6c44c72b617f7caf"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/mekanism.snbt",
+      "sha256": "d172653da8f90d1699f8649dad6790d10b51284124eda2cf2d0a20e67d656177"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/mekanism_reactors.snbt",
+      "sha256": "66f992f5d852d4387d4ffcca40e501e92fc95803db9505d78c371180120fa1a0"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/pneumaticcraft.snbt",
+      "sha256": "f44bbb76d5334f35eea6d9391d573d4008a6572c8065f1661da16c698f9eeac5"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/chapters/steam_age.snbt",
+      "sha256": "9eeeb38038369209794db2ea6fa3107861891049bd6c27ae2707d35525bc8485"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/uk_ua/reward_table.snbt",
+      "sha256": "f440a6c61439d628b065fafff2776e2cfd08d75a1d277e781ffd25472427631f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/zh_cn/chapters/building_tips.snbt",
+      "sha256": "274d02f872dd607673805941becc256724cbcb5f9577098e4f0bab9f147c1c70"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/zh_cn/chapters/extended__advanced_ae.snbt",
+      "sha256": "b260401afcec4f9f1f4325d77acbbce3bf86a1da84164c3c593a24352373ef78"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/zh_cn/chapters/extreme_reactors.snbt",
+      "sha256": "2c62d35d53c5fed593c10b251443883c087741ccb80abead69fc103b89421f0f"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/zh_cn/chapters/generators.snbt",
+      "sha256": "f8c17e75b99b39c82486df73b9549f202f6ad4f4afdba6515d122d440e8de640"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/zh_cn/chapters/industrial_foregoing.snbt",
+      "sha256": "0d40cf9cfb09306ade51eb9702536fa793d1f19bd9bc460a221abe4efeedb569"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/zh_cn/chapters/mekanism.snbt",
+      "sha256": "7831dceb6dce69d7f13b53fe403e752a7cad0fb219577652d81b608bb6f839b5"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/zh_cn/chapters/mekanism_reactors.snbt",
+      "sha256": "56acc1ab9b42b111f37d504c04f41f27d90055497281f90bfc53323a44803943"
+    },
+    {
+      "file": "config/ftbquests/quests/lang/zh_cn/chapters/pneumaticcraft.snbt",
+      "sha256": "618b68fc2749d01bc17dbed553cc061a09781fbd316775725efbd78685c9a6c7"
+    },
+    {
+      "file": "config/ftbquests/quests/reward_tables/3602F483568B92BA.snbt",
+      "sha256": "9193bb7fa05d7930bbbb89d62b89b7a11609df3dd4ff9ee76fec1e4ce924b8c7"
+    },
+    {
+      "file": "config/ftbquests/quests/reward_tables/amekanismr_dadvanced_loot_boxr.snbt",
+      "sha256": "d45b7a14e5560ff50523a7e7e5bc624a9bb7ed8df3fd9e9c7794a12f94a63d17"
+    },
+    {
+      "file": "config/ftbquests/quests/reward_tables/common.snbt",
+      "sha256": "93e5d8f0ce13b86f5054f71147cd6e014c2ffd14059dc8e3b6ed2b80f190ad5d"
+    },
+    {
+      "file": "config/ftbquests/quests/reward_tables/epic.snbt",
+      "sha256": "ba19a662b4ac7521d46833bca397e982dd2ed015c9bf9ece8eb550e2ab68aa0d"
+    },
+    {
+      "file": "config/ftbquests/quests/reward_tables/mekanism.snbt",
+      "sha256": "eaa7377ea83f969a0a579f30852db44451053fff90895344d07b5f2428a490bf"
+    },
+    {
+      "file": "config/ftbquests/quests/reward_tables/mythic.snbt",
+      "sha256": "afce9d93abd248aeafb8559de5dfc19958b353b3c31c1f1dd9479c7447b4c4b3"
+    },
+    {
+      "file": "config/ftbquests/quests/reward_tables/rare.snbt",
+      "sha256": "3d3fef5bc8a32670bb70bc825f2431406febdfdd1b2c9e1790807fcfb0042e1b"
+    },
+    {
+      "file": "config/ftbquests/quests/reward_tables/uncommon.snbt",
+      "sha256": "81e3b1ba9554be61acae77733610d819096171c4e57099467055449bb01e1f3f"
+    },
+    {
+      "file": "config/immersiveengineering-startup.toml",
+      "sha256": "850c41b263543f44c93864c38d6606bc2c0a4fe3f1fb0c9f9af4b3e631690995"
+    },
+    {
+      "file": "config/jei/blacklist.json",
+      "sha256": "bc0df32987d2fc91b7273f2bc047dabccbe3ce81a5e0e85726dc82e0a13a430b"
+    },
+    {
+      "file": "config/mekanismcovers.json",
+      "sha256": "88d2782e24981889551c6d3d87262a35aac57a87760ce75629715dfa33a015fc"
+    },
+    {
+      "file": "config/modular_machinery_reborn_mekanism-common.toml",
+      "sha256": "a1cd6345b6ed1a5ba965d63c6973251b258887765bbed9849af4cbbcc68b9031"
+    },
+    {
+      "file": "config/pneumaticcraft-common.toml",
+      "sha256": "a619019a9583d3167483ce166a0ecaf879a1db47e343cb611c2d0ecab87de899"
+    },
+    {
+      "file": "config/utilitarian-common.toml",
+      "sha256": "b280a1c358f954627e610d713a9806c681e52f6e04ded945b9f8393f696aa31c"
+    },
+    {
+      "file": "kubejs/assets/ad_astra_giselle_addon/lang/pt_br.json",
+      "sha256": "9bcb87ed4512dab4c9fae0a03b509a8c7b9dd08da3325aa94ea846afec9af083"
+    },
+    {
+      "file": "kubejs/assets/atm/textures/questpics/logistics/mekanism.png",
+      "sha256": "6b0403da2a1adfcab9c848dca548fbd6c593db7922d8aec11f568bdb05194b69"
+    },
+    {
+      "file": "kubejs/assets/atm/textures/questpics/mek/mekanism_flowchart.png",
+      "sha256": "5e299dd519617f67e26b0a311ca2421e5da7e9bb239e7a7613ebfe778263af4e"
+    },
+    {
+      "file": "kubejs/assets/atm/textures/questpics/mek/mekanism_logo.png",
+      "sha256": "edd78e55c1c5bc51edc4539c6d6ad1f448cc864d488f028aa1a4148546e6f01b"
+    },
+    {
+      "file": "kubejs/assets/atm/textures/questpics/mekanism_easy_setup.png",
+      "sha256": "8f0658ebe173adf6750f3ba9706ee1e1ec22bcbc63ff64ab8703ac93b7c8b3c3"
+    },
+    {
+      "file": "kubejs/assets/bigreactors/lang/pt_br.json",
+      "sha256": "78ed7f2c3b1b07ae1130331fe2cde97c6171c8ec9d03659be275f96c1c4f326c"
+    },
+    {
+      "file": "kubejs/assets/emi/index/stacks/removals.json",
+      "sha256": "7133a3555afb7621bc4f7bd15517901ec8dc50916b6ef0c4b4ea85a83cd6daab"
+    },
+    {
+      "file": "kubejs/assets/enderman_overhaul/lang/pt_br.json",
+      "sha256": "f16b02e32aa56a18c1063f7b01e90f022c531b8e4443bf374ce588fcc5b13d09"
+    },
+    {
+      "file": "kubejs/assets/extreme_reactors2/lang/pt_br.json",
+      "sha256": "78ed7f2c3b1b07ae1130331fe2cde97c6171c8ec9d03659be275f96c1c4f326c"
+    },
+    {
+      "file": "kubejs/assets/gmut/lang/pt_br.json",
+      "sha256": "72f540d6982ed92081f813a2cf10a9de541ceed6d5389aac4f8c0b9c22e8eb2d"
+    },
+    {
+      "file": "kubejs/assets/jei_mekanism_multiblocks/lang/pt_br.json",
+      "sha256": "171731546849859f87dccd0990d2c43ab8f529341a0f8db5eaded5d2231c7120"
+    },
+    {
+      "file": "kubejs/assets/kubejs/lang/en_us.json",
+      "sha256": "c5a146d2624b92b6fd83def501df9e973598b1e8c8db59a4fe4ed9f1c57bb9ff"
+    },
+    {
+      "file": "kubejs/assets/kubejs/lang/ja_jp.json",
+      "sha256": "e50488599bfa021b38e5a1645e3e016e0b651ab55a9f8b08b8266f5422fddef4"
+    },
+    {
+      "file": "kubejs/assets/kubejs/lang/pt_br.json",
+      "sha256": "10bbe90586757a7774a828cf6aeafcab99ed4531a269f611967b73ed96084c68"
+    },
+    {
+      "file": "kubejs/assets/kubejs/lang/zh_cn.json",
+      "sha256": "f7ff9e54c216bde199657153adaf10962d6ab7cc1b0e085d365c2284d2547c11"
+    },
+    {
+      "file": "kubejs/assets/logisticsnetworks/lang/pt_br.json",
+      "sha256": "aceae4e1b7754fd5b35c298c0eb0fc24a8d4dcc154ba22fa79642a793aa7b7b2"
+    },
+    {
+      "file": "kubejs/assets/mekanism/lang/pt_br.json",
+      "sha256": "2a245354198b87f4403dd6bfda889eb4d4a2af24b92579422eff0c386bb6f3f5"
+    },
+    {
+      "file": "kubejs/assets/mekanismcovers/lang/pt_br.json",
+      "sha256": "cf04ca71fa4d1bef441f5ad145f63a481c0aa642d269364480808c27c15abb62"
+    },
+    {
+      "file": "kubejs/assets/mekanismgenerators/lang/pt_br.json",
+      "sha256": "603a47cc283b6fe05c19c2906f38eba0dd234aecd1b9d6865a32e7877f89020f"
+    },
+    {
+      "file": "kubejs/assets/mekanismtools/lang/pt_br.json",
+      "sha256": "2d4f68def704472aa57f8538f0aa09a950ad4954e304559340dcbf0bcf4efd52"
+    },
+    {
+      "file": "kubejs/assets/mekmm/lang/pt_br.json",
+      "sha256": "09460f480147891f34cc5322850c0e74dea00e4199d2bc6d0fe537bb19029d94"
+    },
+    {
+      "file": "kubejs/assets/pneumaticcraft/lang/pt_br.json",
+      "sha256": "16709cc6508b074632e24ab0525392b7c958ab53e77520abd81bf4b253ae1853"
+    },
+    {
+      "file": "kubejs/assets/pneumaticcraft_repressurized/lang/pt_br.json",
+      "sha256": "16709cc6508b074632e24ab0525392b7c958ab53e77520abd81bf4b253ae1853"
+    },
+    {
+      "file": "kubejs/assets/refinedstorage_mekanism_integration/lang/pt_br.json",
+      "sha256": "b85f2b31abef6473b22a7733890c56d8271fd42a367a1582ab2c34ad72e29fca"
+    },
+    {
+      "file": "kubejs/assets/sfm/lang/pt_br.json",
+      "sha256": "7a7d2febf136877574ca8b8862d15387fe53120aaa86e61e2cace8ff48a4870a"
+    },
+    {
+      "file": "kubejs/assets/starbunclemania/lang/pt_br.json",
+      "sha256": "7da6e967087f0a7c92cc85db730efc49337ce63aac10aeb7bbf6504afcae7a8b"
+    },
+    {
+      "file": "kubejs/client_scripts/Mekanism-Tooltips.js",
+      "sha256": "a84d3abc2c9ee0c72c09145f9ea3e8cd709d87afa9e12872dc11d68bd3e1c716"
+    },
+    {
+      "file": "kubejs/client_scripts/RecipeViewer.js",
+      "sha256": "cb9856f9df403a0353d2eb936aede74c467d995b1aad9c237dd8a99863451d19"
+    },
+    {
+      "file": "kubejs/client_scripts/ponder/fission_mek.js",
+      "sha256": "a9b563726261630a1e5697cd159d43a191b6db4d92950441a0bc597daadfbbe4"
+    },
+    {
+      "file": "kubejs/client_scripts/ponder/fission_mek_fuelrod.js",
+      "sha256": "e07cdd171d25188f90b6e84b4135eff6866b1e3f855f66b4e874c9f4869d6cf7"
+    },
+    {
+      "file": "kubejs/client_scripts/ponder/fission_mek_logic.js",
+      "sha256": "c3a6135a4a9c47071fe131cfaafe0797d5b66bfb564a11bfe5014e4b5640c30a"
+    },
+    {
+      "file": "kubejs/client_scripts/ponder/fission_mek_port.js",
+      "sha256": "59cea9c32cd3a74cdba18bb9e6436ed3b0d4ba6f04f4d0b1a448838b945b0b26"
+    },
+    {
+      "file": "kubejs/client_scripts/ponder/fusion_activate.js",
+      "sha256": "501cb7d9ff88bade43d54b8f287d4f70cd2f0cad45db3735abbb1f2e521139e7"
+    },
+    {
+      "file": "kubejs/client_scripts/ponder/fusion_reactor.js",
+      "sha256": "6f49fbfe424cf956dc3cc083798e2673e6c83743ca357f62d745ecb1be9f7b38"
+    },
+    {
+      "file": "kubejs/client_scripts/ponder/induction_mek.js",
+      "sha256": "8fb61443b6f9bbef7840ec0e6e3eaf51a51ef6fd45d16406808eed8cd603b121"
+    },
+    {
+      "file": "kubejs/client_scripts/ponder/sps.js",
+      "sha256": "b379c9a0d0ff2b0507475498126acc145a4d685a295f64af4dd8487a3c7bb529"
+    },
+    {
+      "file": "kubejs/client_scripts/ponder/turbine_mek.js",
+      "sha256": "b40fcad2b2f065ce939fa834ace3200a0bce8d2c0f08a3a3b88cee8ca9e7f73f"
+    },
+    {
+      "file": "kubejs/data/mekanism/data_maps/mekanism/chemical/chemical_attribute_fuel.json",
+      "sha256": "f43c550d2a8b08538f439203ce3c5f1332526f302f1167294dbb701d4f0ae153"
+    },
+    {
+      "file": "kubejs/data/mekanism/neoforge/biome_modifier/fluorite.json",
+      "sha256": "953d03e100ae88f4da8fe4f1a80de8586558f53f452b209efa6dfe5771cf86a4"
+    },
+    {
+      "file": "kubejs/data/mekanism/neoforge/biome_modifier/lead.json",
+      "sha256": "953d03e100ae88f4da8fe4f1a80de8586558f53f452b209efa6dfe5771cf86a4"
+    },
+    {
+      "file": "kubejs/data/mekanism/neoforge/biome_modifier/osmium.json",
+      "sha256": "953d03e100ae88f4da8fe4f1a80de8586558f53f452b209efa6dfe5771cf86a4"
+    },
+    {
+      "file": "kubejs/data/mekanism/neoforge/biome_modifier/salt.json",
+      "sha256": "953d03e100ae88f4da8fe4f1a80de8586558f53f452b209efa6dfe5771cf86a4"
+    },
+    {
+      "file": "kubejs/data/mekanism/neoforge/biome_modifier/tin.json",
+      "sha256": "953d03e100ae88f4da8fe4f1a80de8586558f53f452b209efa6dfe5771cf86a4"
+    },
+    {
+      "file": "kubejs/data/mekanism/neoforge/biome_modifier/uranium.json",
+      "sha256": "953d03e100ae88f4da8fe4f1a80de8586558f53f452b209efa6dfe5771cf86a4"
+    },
+    {
+      "file": "kubejs/data/modern_industrialization/recipe/quarry/allthemodium.json",
+      "sha256": "981b095973f68289386e4892d805bd2fd096c2f6c79f5b20e0bac06edcbaa578"
+    },
+    {
+      "file": "kubejs/data/modern_industrialization/recipe/quarry/unobtainium.json",
+      "sha256": "b67e3b5fae64fc1c14efe6596cf62054df4384906c7c1269719ebdbfe931be13"
+    },
+    {
+      "file": "kubejs/data/productivebees/productivebees/mekanism/wasted_radioactive.json",
+      "sha256": "8eb306d93d17fa305f91808fa20cc66d42dbf3ecdb2b22e9b692ad4948509491"
+    },
+    {
+      "file": "kubejs/data/productivebees/recipe/bee_conversion/wasted_radioactive_bee.json",
+      "sha256": "389d3a48f2fda22bbbc7a78a91b9472db522f923031928991eb0a0eb8ad8fa86"
+    },
+    {
+      "file": "kubejs/server_scripts/Tweaks/recipes.js",
+      "sha256": "8c7aff447a502f9c59379a0a7ef62903a811659f13a830d323e3f0ee6530f2a8"
+    },
+    {
+      "file": "kubejs/server_scripts/Tweaks/recipes_fix.js",
+      "sha256": "72c84ecbc1be67ebfa5c928da1534b28d7b4f84980408f8b595804ac47f2acdf"
+    },
+    {
+      "file": "kubejs/server_scripts/Tweaks/tags.js",
+      "sha256": "900e37efe3d245548be546742d6a7717453d60a542c8d29cecc098a7e757ce83"
+    },
+    {
+      "file": "kubejs/server_scripts/Unification/ingots.js",
+      "sha256": "68331c4bf1d656485e727f15060733b5f0acddbe12d938109f12520c2c6bd35c"
+    },
+    {
+      "file": "kubejs/server_scripts/Unification/sawing.js",
+      "sha256": "6de024fcf693d9f76cd2c5d20d00934321adb808ce2606c189f5a318ae845c79"
+    },
+    {
+      "file": "kubejs/server_scripts/Unification/tools.js",
+      "sha256": "7c26f16b72e22cada986fdeb04ec75a9c70a4274a72f0f5ccd3f21b7a806b7c1"
+    },
+    {
+      "file": "kubejs/server_scripts/announcements/announcements.js",
+      "sha256": "ae233a67b9aa41900781d91f066486402912a0b9460b00235679a1ee4ec454c3"
+    },
+    {
+      "file": "kubejs/server_scripts/modpack/atm_star_creative.js",
+      "sha256": "de1182910bc6724753db98eb7cdb06f06145010f650c3055f6f5441bdbee6924"
+    },
+    {
+      "file": "kubejs/server_scripts/modpack/att_items.js",
+      "sha256": "a2b60fdab490a517a82dc76fc074854c9e11f457edae8ddcf2138037a913b291"
+    },
+    {
+      "file": "kubejs/server_scripts/modpack/runic_multis/controllers.js",
+      "sha256": "e5bfa8a28e8069900a32b860fa38e2c689c20b873c39357236c44b8a2264bf36"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/AllTheOres/Recipes.js",
+      "sha256": "9038251304a5781683d67ca829eae4ccbfbdcd20c8b0d17d5b753569fde4cac6"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Draconic Evolution/draconic_evo.js",
+      "sha256": "acaf9474470dcf172e5676a78fbdac66f448418844c514274fb43b369ad0598e"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Entangled/Recipes.js",
+      "sha256": "d12327b0333ea98bf98bb3f4fa8033d1978041ebfb3bf59a5b405daa6a74272c"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/ExtendedAE/InfinityCellRecipes.js",
+      "sha256": "56b3606ac7d5ec71a7176fa68ebcab649e19f860dc63615d30002bfd9dfaae9a"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Immersive Engineering/Compatibility.js",
+      "sha256": "97ee2c03a6c10676bff39f0878e0a8827cfdbd1fd6d660f7aec1177f0e5dcfc5"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mega Cells/Recipes.js",
+      "sha256": "726a778dd41deb6ecf258bdcda50c6080a8fac971d6d1d2798a405bf88d29159"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mekanism/Compatibility.js",
+      "sha256": "980af720da37e1006abe331b1f52ec5e17e5e93714a854ca10206784399997da"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mekanism/Evilcraft.js",
+      "sha256": "1bd5df67b93c1e4f655d6848438f37cc17dac0cbb120abe31815e92b8be1c897"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mekanism/Rebalance/Gear.js",
+      "sha256": "56593707c1f05bd0148a713bbaf76e374b64c0a29763fe5bd54bcbcf0c0cbf5a"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mekanism/Rebalance/Items.js",
+      "sha256": "4b66447bfb351feb42f5b6632c49f523c7f3c50eee5a38c007390cba69ea04ae"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mekanism/Rebalance/Units.js",
+      "sha256": "e3532fd2e510f116e048d3e43ce72f90d80f31bdcad91df7cbf72d096debefef"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mekanism/Rebalance/rebalance.md",
+      "sha256": "e8f2524c66ed9b8bfd0a447de9dc54f34e2d9e39b1bc1b9b61c1043f18ad8615"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mekanism/Recipes.js",
+      "sha256": "c12ef5145f042a18b1a73f88defa0b645209d483f1b1e94a83443b9bb30fed90"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mekanism/SulfurOxidizing.js",
+      "sha256": "7fc5394245102a684f61ae0bbde728f407b06ccdc09a8552c20647778eb191e4"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Mekanism/ore_processing.js",
+      "sha256": "13c1fd3438cf5c7063f6292e7e1eb41a181a9f8d1fb96d38fd769b41db5adf73"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/MysticalAgriculture/Compatibility.js",
+      "sha256": "626807956f57969f2f37cc8c6b5ab943cb14947fc8b5d4fbfca2a3db95b28309"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/Silent Gear/Recipes.js",
+      "sha256": "d5919dd8e2ed201d16454b32f663086f7eb17835425d8d83b6692db98f18b1c5"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/multiblocks/mekanism/chemical_crystallizer.js",
+      "sha256": "a24f61c68490984660a5688088cd98ab0cd4d9177561a892120482ac11e975eb"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/multiblocks/mekanism/chemical_dissolution_chamber.js",
+      "sha256": "737dc0d90b371800b7d25df202e2fa08196438ff5080e3379076736556cb0e15"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/multiblocks/mekanism/chemical_infuser.js",
+      "sha256": "7d7d8b7d7943d089359a86dbbca680b1865b58760519bec468c624040c85054f"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/multiblocks/mekanism/chemical_oxidizer.js",
+      "sha256": "8ebcdd18e339a9c4d5c8ce0c6dce87b904c032a266b711b7fb8b7323615e4c24"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/multiblocks/mekanism/chemical_washer.js",
+      "sha256": "3036578b813c0f4a53a643676e783f650504b44c8db5ecae18216c450708ce82"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/multiblocks/mekanism/electrolytic_seperator.js",
+      "sha256": "eb164eff6363dcee0624894b871598c71931323feb08f53678779b5432ccc5fd"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/multiblocks/mekanism/isotopic_centrifuge.js",
+      "sha256": "7bf52bd757a2e0d618e0c68bb1cfb8d46f8c5326db746e4234a38f1fe634cc28"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/multiblocks/mekanism/pressurized_reaction_chamber.js",
+      "sha256": "9a9dc88e19e053dd5e90e6d1049327fc3bb10a1f48cd8ec1a71c3b833ac5a1f1"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/multiblocks/mekanism/solar_neutron_activator.js",
+      "sha256": "538741948e643daecb5d061dad1de50849c72d4ec6e23cff36b9f52c035b41d7"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/atm/general.js",
+      "sha256": "4232e5f29138dac3b89e18e8f6ee5350f21912ae41431a009374267d66da945a"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/atm/multiblock_parts.js",
+      "sha256": "3e3722fe7c6f5ca7302391bc836991baf83f5d5c8f940b2a8129b3285980dab1"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/atm/runic_crucible.js",
+      "sha256": "dfc775a5a470ce6a2040250449902f8f47afff04019b9ca6533a135639fec377"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/chemical_crystallizer.js",
+      "sha256": "04d29bf5e4ff544b09760c99733e6d8537bdef195e625d9ed165e4c25520d052"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/chemical_dissolution_chamber.js",
+      "sha256": "27fb41e8e9f0525b92b4bc5a5ab6cd41d59c490434d2e751bea9c0c9f6a5aabc"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/chemical_infuser.js",
+      "sha256": "2d367f301ce821f52af4d52697ec2ea50a63377eac47f5b32575b11b336f709e"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/chemical_oxidizer.js",
+      "sha256": "761d6cd1a6dda31fa7f8bd9b6b0bb92664d5efba5a4da32f9543c4f4841142ae"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/chemical_washer.js",
+      "sha256": "7191d63c7efabaa87672057c941bd764b81e627ba25088ffeccf21acbbfcf60b"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/controllers.js",
+      "sha256": "ee7abe49b0016ef489309a28375309f6eb627b2f15318e8bbbeeb7f1659b20b4"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/electrolytic_seperator.js",
+      "sha256": "7a423128dc78156670f8e2b09022271117788e92676b3ec7e5ad046a78da23d0"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/isotopic_centrifuge.js",
+      "sha256": "f1aa11ca75a0008cdbb359ed576a3a0886aad855d9aaededdab6c022d3755f2c"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/pressurized_reaction_chamber.js",
+      "sha256": "22732f74f621a2e3e5e5cc86d6b7ef58c7ccd653c11bcaed6b1d428f97a4aa86"
+    },
+    {
+      "file": "kubejs/server_scripts/mods/modular_machinery/recipes/mekanism/solar_neutron_activator.js",
+      "sha256": "2fe1d702828d1ab17fbc7af533a795e837865831155692663dc3b4a35a6d6368"
+    },
+    {
+      "file": "kubejs/startup_scripts/Mekanism/Compatibility.js",
+      "sha256": "ea75f639c0e2e11349b506584406be6d04594f2db382a618f08ad417f4daa46b"
+    }
+  ],
+  "interpretation": "Differences require semantic review; energy units, removed settings and intentional target behavior may differ."
+}
