@@ -83,11 +83,10 @@ partial-burn fixture. That fixture then generated exactly 2280 FE. See
 
 Equipment values, other general settings, transport limits and pack recipes
 remain in the parity inventory. Heat-generator conversion and bio fuel behavior
-are now covered in `heat-bio-balance.md` and `heat-bio-runtime/`. In particular, ATM10 generators limit external output to twice their
-configured/current production rate; the port's external output path needs its
-own transport test and review. Turbine conversion and fractional persistence are
-covered in `turbine-balance.md`. Disconnected production checks do not prove
-that transfer limit. Release TOML values take precedence over older notes.
+are now covered in `heat-bio-balance.md` and `heat-bio-runtime/`. ATM10 automatic generator output limits and real receiver/network transfer
+are covered in `generator-output.md` and `generator-output-runtime/`. Turbine conversion and fractional persistence are
+covered in `turbine-balance.md`. The earlier disconnected production checks alone do not prove
+that transfer limit; the separate output fixture measures actual receivers. Release TOML values take precedence over older notes.
 
 Reference: [pinned 10.7.19.85 gas generator source](https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/tile/TileEntityGasGenerator.java)
 and [generator output implementation](https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/tile/TileEntityGenerator.java).

@@ -87,15 +87,17 @@ is covered separately in `turbine-balance.md`.
 Ethene and hydrogen densities, gas tank size, fractional burning and whole burn
 steps now match ATM10 8.5. Typed partial fuel credit survives normal block loot,
 replacement and a fresh JVM restart. Full-pack runs passed 282 seed and 80 restart
-checks; see `gas-balance-runtime/` and `../fuel-migration.md`. External generator
-transfer limits and thermal conversion remain pending.
+checks; see `gas-balance-runtime/` and `../fuel-migration.md`. Automatic generator transfer is covered in `generator-output.md`; thermal
+conversion is covered in `reactor-thermal.md` and `heat-bio-balance.md`.
 
 ## Solar/wind and generator buffers
 
 The next balance change restores 60/480 FE/t solar ratings, the 60–360 FE/t
 wind range, and five independent generator storage values. See
 `balance-work.md` and `generator-balance-runtime/` for runtime scope and evidence.
-Gas fuel timing is covered above; heat conversion remains pending.
+Gas fuel timing is covered above; heat conversion is covered in
+`heat-bio-balance.md`. Automatic output limits and physical cable/receiver transfer
+are covered in `generator-output.md`.
 
 ## Machine balance implementation
 
