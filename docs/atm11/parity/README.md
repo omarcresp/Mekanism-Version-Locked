@@ -71,6 +71,15 @@ python3 tools/atm11/audit_modules.py --baseline /path/to/ServerFiles-8.5.zip \
   --target /path/to/disposable-atm11 --output /tmp/atm10-modules.json
 ```
 
+## Reactor heat and physical fusion ignition
+
+Resistive heating and fusion convert between electrical FE and thermal Joules.
+The full pack passed 298 seed checks, including a real powered-laser/amplifier/
+focus-matrix ignition and 100 fusion burn ticks. A fresh JVM passed 89 checks,
+including exact stored FE and fractional thermocouple output continuation. See
+`reactor-thermal.md` and `reactor-thermal-runtime/`. Hot-state persistence, safety,
+heat-generator/turbine conversion and complete transport remain pending.
+
 ## Fractional gas fuel
 
 Ethene and hydrogen densities, gas tank size, fractional burning and whole burn

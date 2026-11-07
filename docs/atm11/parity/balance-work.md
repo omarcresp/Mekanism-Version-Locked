@@ -81,7 +81,7 @@ partial-burn fixture. That fixture then generated exactly 2280 FE. See
 
 ## Remaining balance and reactor work
 
-Heat and bio fuel behavior, fusion/laser thermal conversion, equipment values,
+Heat-generator and bio fuel behavior, turbine conversion, equipment values,
 other general settings, transport limits and pack recipes remain in the parity
 inventory. In particular, ATM10 generators limit external output to twice their
 configured/current production rate; the port's external output path needs its
@@ -90,3 +90,8 @@ that transfer limit. Release TOML values take precedence over older notes.
 
 Reference: [pinned 10.7.19.85 gas generator source](https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/tile/TileEntityGasGenerator.java)
 and [generator output implementation](https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/tile/TileEntityGenerator.java).
+
+Reactor heat and resistive/fusion conversion are now covered in `reactor-thermal.md`
+and `reactor-thermal-runtime/`. That unit verifies a physical ignition chain and
+a controlled restart checkpoint; active/hot fusion persistence and safety remain
+pending.
