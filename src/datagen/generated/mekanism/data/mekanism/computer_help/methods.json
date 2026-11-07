@@ -3529,10 +3529,17 @@
   ],
   "Gas Generator": [
     {
-      "methodName": "getBurnRate",
+      "methodName": "getBufferedFuelEnergy",
       "returns": {
         "type": "Number (int)",
         "java_type": "int"
+      }
+    },
+    {
+      "methodName": "getBurnRate",
+      "returns": {
+        "type": "Number (double)",
+        "java_type": "double"
       }
     },
     {

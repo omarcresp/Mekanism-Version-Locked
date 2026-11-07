@@ -24,4 +24,6 @@ public interface ITooltipHelper {
     Component getEnergyDisplay(long energy, boolean perTick);
 
     Component getFluidDisplay(long mb, boolean perTick);
+
+    Component getFluidDisplay(double mb, boolean perTick);
 }

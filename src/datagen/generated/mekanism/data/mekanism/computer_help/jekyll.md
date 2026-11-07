@@ -2597,10 +2597,14 @@ methods:
       name: output
       type: boolean
   Gas Generator:
-  - methodName: getBurnRate
+  - methodName: getBufferedFuelEnergy
     returns:
       java_type: int
       type: Number (int)
+  - methodName: getBurnRate
+    returns:
+      java_type: double
+      type: Number (double)
   - description: Get the contents of the energy item slot.
     methodName: getEnergyItem
     returns:

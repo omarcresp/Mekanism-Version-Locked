@@ -47,4 +47,9 @@ public class TooltipHelper implements ITooltipHelper {
         Component formattedMb = Component.literal(getFormattedNumber(mb));
         return perTick ? MekanismLang.GENERIC_PER_TICK.translate(formattedMb) : formattedMb;
     }
+    @Override
+    public Component getFluidDisplay(double mb, boolean perTick) {
+        Component formattedMb = Component.literal(TextUtils.format(mb));
+        return perTick ? MekanismLang.GENERIC_PER_TICK.translate(formattedMb) : formattedMb;
+    }
 }

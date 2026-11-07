@@ -1,7 +1,7 @@
-// 26.1.2	2026-05-02T17:07:55.3888074	Data Maps
+// 26.1.2	2026-11-07T07:58:07.111164	Data Maps
 2369e18ed66a732f8af62dbe659f48964d72c206 data/mekanism/data_maps/damage_type/mekasuit_absorption.json
 0a40506077d2677d3eb3a91081a43e1275ce1022 data/mekanism/data_maps/mekanism/chemical/chemical_attribute_cooled_coolant.json
-98d20b9bd67a057c0ff91a43cfc8cd0d2a3acd0c data/mekanism/data_maps/mekanism/chemical/chemical_attribute_fuel.json
+4ad3bf5fab7715952221bec1edf93bc1e38ad3e6 data/mekanism/data_maps/mekanism/chemical/chemical_attribute_fuel.json
 67894a75ea7d42c8bc62c01da8ddf54388acd32a data/mekanism/data_maps/mekanism/chemical/chemical_attribute_heated_coolant.json
 28278d9876869f23e3b1a6f98cdfebccc8de9299 data/mekanism/data_maps/mekanism/chemical/chemical_attribute_radioactivity.json
 ef87b2bf8e136bbe95f7ceab869684b93147974b data/mekanism/data_maps/mekanism/chemical/chemical_solid_tag.json

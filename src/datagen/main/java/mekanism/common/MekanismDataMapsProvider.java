@@ -28,7 +28,7 @@ import net.neoforged.neoforge.registries.datamaps.builtin.VibrationFrequency;
 
 public class MekanismDataMapsProvider extends DataMapProvider {
 
-    public static final int HYDROGEN_ENERGY_DENSITY = 2;
+    public static final int HYDROGEN_ENERGY_DENSITY = 80;
 
     public MekanismDataMapsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(packOutput, lookupProvider);
@@ -69,8 +69,8 @@ public class MekanismDataMapsProvider extends DataMapProvider {
         builder(IMekanismDataMapTypes.INSTANCE.chemicalFuel())
               //GENERAL_ENERGY_CONVERSION_HYDROGEN("general.energy_conversion.hydrogen", "Hydrogen Energy Density",
               //"How much energy is produced per mB of Hydrogen, also affects Electrolytic Separator usage, Ethene burn rate and Gas-Burning Generator energy capacity."),
-              .add(MekanismChemicals.HYDROGEN, new ChemicalFuel(10, HYDROGEN_ENERGY_DENSITY), false)
-              .add(MekanismChemicals.ETHENE, new ChemicalFuel(10, 8), false)
+              .add(MekanismChemicals.HYDROGEN, new ChemicalFuel(256, HYDROGEN_ENERGY_DENSITY), false)
+              .add(MekanismChemicals.ETHENE, new ChemicalFuel(256, 2400, 20), false)
         ;
 
         builder(IMekanismDataMapTypes.INSTANCE.chemicalRadioactivity())

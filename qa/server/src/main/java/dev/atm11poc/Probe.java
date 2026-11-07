@@ -41,6 +41,7 @@ public final class Probe {
     private boolean reopen;
     private final EnergyProbe energy = new EnergyProbe(this::check);
     private final GeneratorProbe generators = new GeneratorProbe(this::check);
+    private final GasProbe gas = new GasProbe(this::check);
     private long initialMachineEnergy;
     private final FusionProbe fusion = new FusionProbe(this::check);
     private final SPSProbe sps = new SPSProbe(this::check);
@@ -99,6 +100,7 @@ public final class Probe {
             }
             energy.prepare(level, reopen);
             generators.prepare(level, reopen);
+            gas.prepare(level, reopen);
             initialMachineEnergy = machine().getEnergyContainer().getCapacityAsLong();
             machine().getEnergyContainer().setEnergy(initialMachineEnergy, null);
             chemicalInterop();
@@ -115,10 +117,10 @@ public final class Probe {
         var fuelType = mekanism.api.datamaps.IMekanismDataMapTypes.INSTANCE.chemicalFuel();
         var ethene = ChemicalResource.of(MekanismChemicals.ETHENE).getData(fuelType);
         var hydrogen = ChemicalResource.of(MekanismChemicals.HYDROGEN).getData(fuelType);
-        check(ethene != null && ethene.energyDensity() == 6000 && ethene.maxBurnPerTick() == 10,
-              "pack ethene fuel map loads with preserved 6000 energy per mB and current burn limit");
-        check(hydrogen != null && hydrogen.energyDensity() == 200 && hydrogen.maxBurnPerTick() == 10,
-              "pack hydrogen fuel map loads with preserved 200 energy per mB and current burn limit");
+        check(ethene != null && ethene.energyDensity() == 2400 && ethene.maxBurnPerTick() == 256 && ethene.burnTicksPerMB() == 20,
+              "ATM10 ethene fuel map loads with 2400 FE per mB and 20 burn steps");
+        check(hydrogen != null && hydrogen.energyDensity() == 80 && hydrogen.maxBurnPerTick() == 256,
+              "ATM10 hydrogen fuel map loads with 80 FE per mB");
         var creative = new net.minecraft.commands.arguments.item.ItemParser(server.registryAccess())
               .parse(new com.mojang.brigadier.StringReader("mekanism:creative_energy_cube[mekanism:energy=9223372036854775807L]"))
               .createItemStack(1);
@@ -214,9 +216,10 @@ public final class Probe {
             boolean fusionComplete = reopen || fusion.tick(server.overworld(), ticks);
             boolean spsComplete = reopen || sps.tick(server.overworld(), ticks);
             boolean generatorsComplete = generators.tick(server.overworld(), ticks, reopen);
+            boolean gasComplete = gas.tick(server.overworld(), ticks, reopen);
             var output = machine().getInventorySlots().get(1);
             long expected = reopen ? 3 : 2;
-            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && spsComplete && generatorsComplete) {
+            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && spsComplete && generatorsComplete && gasComplete) {
                 if (ModList.get().isLoaded("atm11mekcompat")) {
                     var platinum = (TileEntityMekanism) server.overworld().getBlockEntity(PLATINUM);
                     var dust = platinum.getInventorySlots().get(1);

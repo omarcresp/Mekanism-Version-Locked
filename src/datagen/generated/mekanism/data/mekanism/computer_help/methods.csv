@@ -406,7 +406,8 @@ Fusion Reactor Multiblock (formed),isIgnited,,boolean,,false,Checks if a reactio
 Fusion Reactor Multiblock (formed),setInjectionRate,rate: Number (int),,,false,
 Fusion Reactor Port,getMode,,boolean,,false,"true -> output, false -> input"
 Fusion Reactor Port,setMode,output: boolean,,,false,"true -> output, false -> input"
-Gas Generator,getBurnRate,,Number (int),,false,
+Gas Generator,getBufferedFuelEnergy,,Number (int),,false,
+Gas Generator,getBurnRate,,Number (double),,false,
 Gas Generator,getEnergyItem,,Table (LargeResourceStack),,false,Get the contents of the energy item slot.
 Gas Generator,getFuel,,Table (LargeResourceStack),,false,Get the contents of the fuel tank.
 Gas Generator,getFuelCapacity,,Number (long),,false,Get the capacity of the fuel tank.

@@ -93,7 +93,8 @@
       "solar_generator.solarGeneration": 60,
       "solar_generator.advancedSolarGeneration": 480,
       "wind_generator.generationMin": 60,
-      "wind_generator.generationMax": 360
+      "wind_generator.generationMax": 360,
+      "gas_generator.tankCapacity": 18000
     }
   }
 }
