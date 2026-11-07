@@ -112,7 +112,7 @@ public class UsageConfig extends BaseMekanismConfig {
               .defineInRange("dimensionalStabilizer", 15, 0, Integer.MAX_VALUE));
         randomizedConsumption = CachedBooleanValue.wrap(this, MekanismConfigTranslations.SECONDARY_CHEMICAL_USAGE_RANDOMIZED.applyToBuilder(builder)
               .worldRestart()
-              .define("randomizedConsumption", true));
+              .define("randomizedConsumption", false));
 
         MekanismConfigTranslations.USAGE_TELEPORTER.applyToBuilder(builder).push("teleporter");
         teleporterBase = CachedIntValue.wrap(this, MekanismConfigTranslations.USAGE_TELEPORTER_BASE.applyToBuilder(builder)

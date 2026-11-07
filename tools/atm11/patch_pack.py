@@ -106,8 +106,22 @@ def migrate_creative_energy(instance: Path):
     return count
 
 
+def align_chemical_consumption(instance: Path):
+    """ATM10 8.5 uses deterministic secondary chemical consumption."""
+    path = instance / 'config/Mekanism/machine-usage.toml'
+    if not path.is_file():
+        return 0
+    original = path.read_text()
+    updated, count = re.subn(r'(?m)^(\s*randomizedConsumption\s*=\s*)true(\s*(?:#.*)?)$',
+                             r'\1false\2', original)
+    if count:
+        path.write_text(updated)
+    return count
+
+
 def patch_pack(instance: Path):
-    return {'tooltipSelectors': patch_tooltips(instance),
+    return {'deterministicChemicalConsumption': align_chemical_consumption(instance),
+            'tooltipSelectors': patch_tooltips(instance),
             'optionalChemicalItemSelectors': patch_optional_chemical_items(instance), 'questChapters': enable_quests(instance),
             'unavailableQuestDependencies': remove_unavailable_quest_gates(instance),
             'chemicalFuels': migrate_fuel(instance), 'creativeEnergyComponents': migrate_creative_energy(instance)}
