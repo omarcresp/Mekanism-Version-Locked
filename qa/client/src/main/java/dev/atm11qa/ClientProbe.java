@@ -45,6 +45,7 @@ public final class ClientProbe {
 
     private void tick(ClientTickEvent.Post event) {
         Minecraft client = Minecraft.getInstance();
+        client.options.getSoundSourceOptionInstance(net.minecraft.sounds.SoundSource.MASTER).set(0.0);
         if (ran || !(client.screen instanceof TitleScreen) || client.getOverlay() != null) {
             return;
         }
@@ -52,6 +53,7 @@ public final class ClientProbe {
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("pid", ProcessHandle.current().pid());
         try {
+            check(client.options.getSoundSourceVolume(net.minecraft.sounds.SoundSource.MASTER) == 0, "test client master volume is muted");
             check(true, "real client reached title screen with the full ATM11 renderer stack");
             check(MekanismRenderType.MEKASUIT != null, "MekaSuit render type is available");
             var data = MekanismModelCache.INSTANCE.MEKASUIT;
