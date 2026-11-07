@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import mekanism.api.gear.IModuleHelper;
-import mekanism.client.render.armor.MekaSuitArmor.ModuleOBJModelData;
+import mekanism.client.render.armor.MekaSuitModel.ModuleOBJModelData;
 import mekanism.client.render.transmitter.RenderTransmitterBase;
 import mekanism.common.Mekanism;
 import mekanism.common.tile.qio.TileEntityQIODriveArray.DriveStatus;

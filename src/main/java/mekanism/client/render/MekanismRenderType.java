@@ -4,6 +4,7 @@ import java.util.function.Function;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.resources.Identifier;
+import net.minecraft.client.renderer.texture.TextureAtlas;
 
 public class MekanismRenderType {
 //TODO - 26.1 render types
@@ -78,7 +79,7 @@ public static final RenderType MEK_LIGHTNING = RenderTypes.lightning();/*RenderT
                 .createCompositeState(false)
     );*/
 
-    public static final RenderType MEKASUIT = null;/*RenderType.create("mekasuit", DefaultVertexFormat.NEW_ENTITY, Mode.QUADS, 131_072, true, false,
+    public static final RenderType MEKASUIT = RenderTypes.entityCutout(TextureAtlas.LOCATION_BLOCKS);/*RenderType.create("mekasuit", DefaultVertexFormat.NEW_ENTITY, Mode.QUADS, 131_072, true, false,
           RenderType.CompositeState.builder()
                 .setShaderState(MekanismShaders.MEKASUIT.shard)
                 .setTextureState(RenderType.BLOCK_SHEET)

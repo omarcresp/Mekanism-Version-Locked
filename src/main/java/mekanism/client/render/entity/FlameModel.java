@@ -1,7 +1,7 @@
 package mekanism.client.render.entity;
 
 import mekanism.client.render.MekanismRenderType;
-import mekanism.client.render.entity.RenderFlame.FlameRenderState;
+import mekanism.client.render.entity.FlameRenderer.FlameRenderState;
 import mekanism.common.Mekanism;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;

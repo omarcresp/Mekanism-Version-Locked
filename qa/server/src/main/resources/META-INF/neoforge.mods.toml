@@ -1,0 +1,13 @@
+modLoader="javafml"
+loaderVersion="[11,)"
+license="MIT"
+[[mods]]
+modId="atm11poc"
+version="0.1.0"
+displayName="ATM11 Mekanism POC verification"
+[[dependencies.atm11poc]]
+modId="mekanism"
+type="required"
+versionRange="[10.8,)"
+ordering="AFTER"
+side="BOTH"
