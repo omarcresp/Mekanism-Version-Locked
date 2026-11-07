@@ -194,7 +194,7 @@ final class ReactorSafetyProbe {
             } else {
                 check.accept(IRadiationManager.INSTANCE.getRadiationLevel(level, MELTDOWN.offset(2, 2, 2)) == IRadiationManager.INSTANCE.baselineRadiation(),
                       "safety: destructive fixture has no preexisting fallout");
-                chargeFuel(level, MELTDOWN, 20000);
+                chargeFuel(level, MELTDOWN, 16000);
                 r.setRateLimit(2);
                 r.setActive(true);
                 failedReactor = r;
