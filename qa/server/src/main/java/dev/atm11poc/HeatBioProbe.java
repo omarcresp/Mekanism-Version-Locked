@@ -27,6 +27,8 @@ final class HeatBioProbe {
     private double savedRemainder;
     private boolean reopen;
     private boolean complete;
+    private boolean started;
+    private final int[] startingTicks = new int[7];
     private int ticks;
     private double lavaInitialHeat;
     private double passiveInitialHeat;
@@ -56,6 +58,12 @@ final class HeatBioProbe {
                   "bio generator retains complete single-item output across JVM restart");
             check.accept(bio(level, 5).bioFuelTank.amountAsLong() == 1799 && bio(level, 5).energyContainer().getAmountAsLong() == 140,
                   "biofuel block retains exact remaining burn time and FE across JVM restart");
+        }
+    }
+
+    private void start(ServerLevel level) {
+        for (int i = 0; i < startingTicks.length; i++) startingTicks[i] = i < 4 ? heat(level, i).ticker : bio(level, i).ticker;
+        if (reopen) {
             bio(level, 5).setControlType(RedstoneControl.DISABLED);
             pulse(level);
             return;
@@ -95,7 +103,25 @@ final class HeatBioProbe {
 
     boolean tick(ServerLevel level, int elapsed) {
         if (complete) return true;
+        if (!started) {
+            for (int i = 0; i < startingTicks.length; i++) {
+                int counter = i < 4 ? heat(level, i).ticker : bio(level, i).ticker;
+                if (counter < 2) {
+                    if (elapsed > 100) throw new IllegalStateException("Heat/bio fixture chunk did not begin ticking");
+                    return false;
+                }
+            }
+            start(level);
+            started = true;
+            return false;
+        }
         ticks++;
+        if (ticks == 1) {
+            for (int i = 0; i < startingTicks.length; i++) {
+                int counter = i < 4 ? heat(level, i).ticker : bio(level, i).ticker;
+                check.accept(counter == startingTicks[i] + 1, "heat/bio fixture measures exactly one actual tile update " + i);
+            }
+        }
         if (reopen) {
             if (ticks == 1) {
                 check.accept(bio(level, 5).bioFuelTank.amountAsLong() == 1798 && bio(level, 5).energyContainer().getAmountAsLong() == 280,
@@ -112,7 +138,7 @@ final class HeatBioProbe {
         }
         if (ticks == 1) {
             check.accept(heat(level, 0).energyContainer().isEmpty() && Math.abs(heat(level, 0).getGenerationRemainder() - 0.4) < 1e-9,
-                  "heat generator retains four tenths of one FE from one whole thermal Joule");
+                  "heat generator retains four tenths of one FE from one whole thermal Joule; actual FE=" + heat(level, 0).energyContainer().getAmountAsLong() + " remainder=" + heat(level, 0).getGenerationRemainder());
             check.accept(heat(level, 1).getProductionRate() == 444 && heat(level, 1).energyContainer().getAmountAsLong() == 444,
                   "maximum thermal conversion caps at 1110 Joules and generates 444 FE");
             setTemperature(heat(level, 1), ambient[1]);
