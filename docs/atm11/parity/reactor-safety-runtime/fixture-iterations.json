@@ -1,0 +1,133 @@
+[
+  {
+    "attempt": "before-fuel-capacity",
+    "success": false,
+    "error": "java.lang.IllegalStateException: safety: fissile fuel enters physical input port",
+    "resultSha256": "89c485ffdc646499c2933dbeef6e3a0cce0ae4716007ea056288b8cb515efccc",
+    "logSha256": "b6e6b2b2ad7a81762deaeab278423ae8a3989a6f9882dffdf27debb7f0e96cc8",
+    "inputManifestSha256": "d2af261f0c5c8e703fa5a08f8df803a2f5f7d312650b191598a8866d7aee21de",
+    "sourceInputs": {
+      "Mekanism-26.1.2-10.8.0.homebaked.jar": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+      "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "92acadbdd26027ffa48b2c790914c67bdb4205a72ba2e594a0419ba84d53e865",
+      "atm11-server-qa-0.1.0.jar": "622e391d5468d3a1196fc6b3f959af2264f2f75c955eb90dd87f2e3ada3949d4"
+    },
+    "process": {
+      "pid": 86485,
+      "phase": "seed",
+      "command": [
+        "/Users/jackcres/.t3/projects/ancestrallies/.tools/jdk-25.0.4.1+1/Contents/Home/bin/java",
+        "-Xms1G",
+        "-Xmx6G",
+        "@libraries/net/neoforged/neoforge/26.1.2.126/unix_args.txt",
+        "nogui"
+      ],
+      "exitCode": 0,
+      "seconds": 126.58
+    }
+  },
+  {
+    "attempt": "before-damage-observer",
+    "success": false,
+    "error": "java.lang.IllegalStateException: safety: natural meltdown clears radioactive contents, shuts down and resets damage to 75",
+    "resultSha256": "51b71894a2b7926c260d63a5775dbf8c2ac76dd2dc93626cd2e152e31f3ee209",
+    "logSha256": "7a740e3262c01123593d949d696c67cc0c2f9690676425004d4f729777fe01d3",
+    "inputManifestSha256": "03d102936d43231dc50dab150467e8c49a9c6184755f4909bf8ed84782f7975c",
+    "sourceInputs": {
+      "Mekanism-26.1.2-10.8.0.homebaked.jar": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+      "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "92acadbdd26027ffa48b2c790914c67bdb4205a72ba2e594a0419ba84d53e865",
+      "atm11-server-qa-0.1.0.jar": "c186cadf233d02ac8bdc80e18b990aa8bbdf44be39995380fbe93f04fad7e4f8"
+    },
+    "process": {
+      "pid": 91356,
+      "phase": "seed",
+      "command": [
+        "/Users/jackcres/.t3/projects/ancestrallies/.tools/jdk-25.0.4.1+1/Contents/Home/bin/java",
+        "-Xms1G",
+        "-Xmx6G",
+        "@libraries/net/neoforged/neoforge/26.1.2.126/unix_args.txt",
+        "nogui"
+      ],
+      "exitCode": 0,
+      "seconds": 111.45
+    }
+  },
+  {
+    "attempt": "before-fuel-retention",
+    "success": false,
+    "error": "java.lang.IllegalStateException: safety: natural meltdown clears radioactive contents and resets damage to 75 within one repair tick (damage=75.0, fuel=12534, waste=0, formed=false)",
+    "resultSha256": "f59b095342e7a60720118a640d05bc09efd8d23ce07d4208567a346e9cdbce8c",
+    "logSha256": "7664361f8cb671ff35ee18dc6b1e65ef3e122a8907c9d00b96ba6c7f082b232a",
+    "inputManifestSha256": "658f27318e142ea5af9e34f62602869f2eb25bf890ef78ce2e6cf147582530ba",
+    "sourceInputs": {
+      "Mekanism-26.1.2-10.8.0.homebaked.jar": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+      "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "92acadbdd26027ffa48b2c790914c67bdb4205a72ba2e594a0419ba84d53e865",
+      "atm11-server-qa-0.1.0.jar": "36c1363e37322efec0a04c0a04e71a492044c2b549bfb55d58657d2a0a8a5752"
+    },
+    "process": {
+      "pid": 2200,
+      "phase": "seed",
+      "command": [
+        "/Users/jackcres/.t3/projects/ancestrallies/.tools/jdk-25.0.4.1+1/Contents/Home/bin/java",
+        "-Xms1G",
+        "-Xmx6G",
+        "@libraries/net/neoforged/neoforge/26.1.2.126/unix_args.txt",
+        "nogui"
+      ],
+      "exitCode": 0,
+      "seconds": 293.9
+    }
+  },
+  {
+    "attempt": "before-surviving-casings",
+    "success": false,
+    "error": "java.lang.IllegalStateException: safety: physical rebuild restores damaged inactive reactor cache",
+    "resultSha256": "fd8ddce65e098fb8fea07ac7e8be1b941d407ff0780477d783a20e186ea1d999",
+    "logSha256": "c06b67e739bc30202eb68b08da28b7a7108f73732427f432f960e666b4240164",
+    "inputManifestSha256": "035fd40d24ddccaae1357877e92772ec2c51f5b30c58031f14871236e64b0537",
+    "sourceInputs": {
+      "Mekanism-26.1.2-10.8.0.homebaked.jar": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+      "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "92acadbdd26027ffa48b2c790914c67bdb4205a72ba2e594a0419ba84d53e865",
+      "atm11-server-qa-0.1.0.jar": "a37248ab3525b857077789b1beb670632ef3c35b7a98e9fd244b6019d2260eb0"
+    },
+    "process": {
+      "pid": 17210,
+      "phase": "seed",
+      "command": [
+        "/Users/jackcres/.t3/projects/ancestrallies/.tools/jdk-25.0.4.1+1/Contents/Home/bin/java",
+        "-Xms1G",
+        "-Xmx6G",
+        "@libraries/net/neoforged/neoforge/26.1.2.126/unix_args.txt",
+        "nogui"
+      ],
+      "exitCode": 0,
+      "seconds": 223.55
+    }
+  },
+  {
+    "attempt": "before-partial-waste-decay",
+    "phase": "restart",
+    "success": false,
+    "error": "java.lang.IllegalStateException: sodium: connected fuel and independently counted decay remain conserved until final save",
+    "resultSha256": "cb600aba279172ee8f44217bb54c613e74842836eb53e46045099f1c15f8a4ac",
+    "logSha256": "e1eb2614f757f200674935332adb9c0ce9e1e14ba72c8ef54909a6c746c552ac",
+    "inputManifestSha256": "39cac8a1c230f240c604f77db0f9aef151dd4a8a0731c4f38e49bc746fba3565",
+    "sourceInputs": {
+      "Mekanism-26.1.2-10.8.0.homebaked.jar": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+      "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "92acadbdd26027ffa48b2c790914c67bdb4205a72ba2e594a0419ba84d53e865",
+      "atm11-server-qa-0.1.0.jar": "276eddc9bbac77a5fc68d4cbf0e2e1389d84df624a5ec58c4e8941dde3ee4445"
+    },
+    "process": {
+      "pid": 34697,
+      "phase": "restart",
+      "command": [
+        "/Users/jackcres/.t3/projects/ancestrallies/.tools/jdk-25.0.4.1+1/Contents/Home/bin/java",
+        "-Xms1G",
+        "-Xmx6G",
+        "@libraries/net/neoforged/neoforge/26.1.2.126/unix_args.txt",
+        "nogui"
+      ],
+      "exitCode": 0,
+      "seconds": 265.75
+    }
+  }
+]
