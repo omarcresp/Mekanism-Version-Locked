@@ -33,7 +33,9 @@ to 400 ticks; resistive-heater thermal conversion still needs its own verificati
 
 The first full-pack run passed 246 checks, including all 36 capacities, ordinary
 machine usage, factory buffers, upgrade behavior, and bounded SPS energy insertion.
-Save/restart checks for upgraded machines are tracked separately in runtime evidence.
+A different JVM passed another **58 checks**, preserving eight speed and energy
+upgrades, 128000/192000 FE machine/factory buffers and exactly 12345 stored FE.
+Both runs use identical mod hashes. See `machine-balance-runtime/` for evidence.
 
 ## Fuel and generator work still pending
 
