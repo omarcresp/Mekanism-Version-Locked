@@ -1,0 +1,47 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "e2dc37f7b4fb823b8792a42c15f0a62f91d71e57",
+  "sourceTree": "03f273ed9e39aa38755642ecf59a1590d0e8d485",
+  "profileSha256": "ddcc4f80bf1f2d5e90675e5f0287bff17da8a4ffd056ce8449c69c08607be1b8",
+  "fuelOverlaySha256": "af8ba855b776b59617c4e5ee31d13909c7bc95fcc2893ca76c1355129e22ed52",
+  "fuelOverlay": {
+    "values": {
+      "mekanism:ethene": {
+        "energy": 2400,
+        "maxBurnPerTick": 256,
+        "burnTicksPerMB": 20
+      },
+      "mekanism:hydrogen": {
+        "energy": 80,
+        "maxBurnPerTick": 256
+      }
+    }
+  },
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "checks": {
+    "seed": 282,
+    "restart": 80
+  },
+  "logs": {
+    "seed": {
+      "sha256": "3f41a79f2767c3a70f9ce57e13ed1de2e55feaaaed232d1ffe1daa42d11dfcdf",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "cc9b145967f951827baf41b1400af408106ffd543c86d0ebb897bd2fd551d5a9",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "scope": "ATM10 gas tank and storage; ethene/hydrogen FE densities, full-pressure fractional burning, whole burn-step output near a full buffer, exact energy conservation including final empty-tank credit, typed fuel credit, aborted transactions, normal block loot and component application, exact credit and fuel continuation across a fresh JVM restart. Existing machine/reactor/integration checks retained. External transfer limits, thermal conversion and full parity remain pending."
+}

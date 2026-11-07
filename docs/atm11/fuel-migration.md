@@ -5,7 +5,7 @@ The legacy map defines burn ticks per mB and Joules per burn tick. Ethene is
 20 × 300 J = 2400 FE/mB; hydrogen is 200 J = 80 FE/mB.
 
 The port keeps energy density in `energy` (FE/mB). `burnTicksPerMB` defaults to
-one for existing port data maps, preserving their behavior. `maxBurnPerTick`
+one for existing port data maps, retaining their whole-mB burn step. `maxBurnPerTick`
 counts burn steps; divide it by `burnTicksPerMB` to obtain the maximum mB/t.
 The ATM10 profile uses 256 steps/t, 20 steps/mB for ethene and one for hydrogen.
 At full pressure ethene produces 30720 FE/t (12.8 mB/t equivalent).
