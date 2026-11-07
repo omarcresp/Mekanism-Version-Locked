@@ -67,6 +67,8 @@ final class ConnectedFissionProbe {
     private long previousReactorCoolant;
     private long decayedWaste;
     private int previousDecayProgress;
+    private long previousBarrelWaste;
+    private boolean previousWasteSupplyEmpty;
     private boolean sawReturn;
     private boolean observedHotRestart;
     private double firstRestartTemperature;
@@ -214,10 +216,17 @@ final class ConnectedFissionProbe {
         var sync = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, l.registryAccess());
         barrel(l).writeReducedUpdatedTag(sync);
         int progress = sync.buildResult().getIntOr(mekanism.api.SerializationConstants.PROGRESS, 0);
-        if (progress < previousDecayProgress) decayedWaste += 2;
+        if (progress < previousDecayProgress) {
+            if (previousBarrelWaste < 2) {
+                check.accept(previousWasteSupplyEmpty, "final partial barrel decay has no incoming waste supply");
+            }
+            decayedWaste += Math.min(2, previousBarrelWaste);
+        }
         previousDecayProgress = progress;
         var r = reactor(l);
         var t = turbine(l);
+        previousBarrelWaste = barrel(l).getChemicalTank().amountAsLong();
+        previousWasteSupplyEmpty = !r.isActive() && wasteTotal(l) == previousBarrelWaste;
         if (stage == 5) {
             production += t.getProductionRate();
             return true;
@@ -330,7 +339,8 @@ final class ConnectedFissionProbe {
     }
 
     Map<String, Object> snapshot(ServerLevel l) {
-        check.accept(fuelTotal(l) + wasteTotal(l) + decayedWaste == 3000, "connected fuel and independently counted decay remain conserved until final save");
+        check.accept(fuelTotal(l) + wasteTotal(l) + decayedWaste == 3000, "connected fuel and independently counted decay remain conserved until final save"
+              + " (fuel=" + fuelTotal(l) + ", waste=" + wasteTotal(l) + ", decayed=" + decayedWaste + ")");
         check.accept(energyTotal(l) - energyAtStart == production, "connected generation ledger includes all updates while other fixtures finish");
         Map<String, Object> r = new LinkedHashMap<>();
         r.put("fuel", fuelTotal(l));
