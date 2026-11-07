@@ -26,6 +26,15 @@ The server fixture writes its result to `seed-result.json` or `restart-result.js
 
 Run the same production mod files in two separate JVMs. The first run places and processes the fixture machines; the second verifies exact saved quantities before doing another processing operation. Compare input hashes and process IDs as well as checking `success` in both result files.
 
+## Reactor safety fixtures
+
+The server QA suite includes deliberately destructive reactor accidents at distant
+coordinates in its marked disposable world. It tests coolant loss, manual shutdown,
+emergency cooling, natural repair and a real probabilistic meltdown, followed by
+physical rebuilding and fresh-JVM persistence. It leaves the configured meltdown
+behavior active. Never run the fixture on a playing server or copy its test world
+into production. See `docs/atm11/parity/reactor-safety.md` for exact scope.
+
 ## Audio preference
 
 Every test client must start with `soundCategory_master:0.0` in its isolated `options.txt`. The client fixture also keeps master volume zero and asserts the muted value. This is a test-machine preference; production gameplay sound is unchanged.

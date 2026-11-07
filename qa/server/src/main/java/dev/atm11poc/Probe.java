@@ -53,6 +53,7 @@ public final class Probe {
     private final SPSProbe sps = new SPSProbe(this::check);
     private final TurbineProbe turbine = new TurbineProbe(this::check);
     private final ReactorProbe reactors = new ReactorProbe(this::check);
+    private final ReactorSafetyProbe safety = new ReactorSafetyProbe(this::check);
 
     public Probe() {
         NeoForge.EVENT_BUS.addListener(this::started);
@@ -119,6 +120,8 @@ public final class Probe {
                   .getAsJsonObject().getAsJsonObject("connectedFission") : null);
             sodium.prepare(level, reopen ? JsonParser.parseString(Files.readString(Path.of("seed-result.json")))
                   .getAsJsonObject().getAsJsonObject("sodiumFission") : null);
+            safety.prepare(level, reopen ? JsonParser.parseString(Files.readString(Path.of("seed-result.json")))
+                  .getAsJsonObject().getAsJsonObject("reactorSafety") : null);
             initialMachineEnergy = machine().getEnergyContainer().getCapacityAsLong();
             machine().getEnergyContainer().setEnergy(initialMachineEnergy, null);
             chemicalInterop();
@@ -241,9 +244,10 @@ public final class Probe {
             boolean generatorTransferComplete = generatorTransfer.tick(server.overworld(), ticks);
             boolean sodiumComplete = sodium.tick(server.overworld(), ticks, fusionComplete);
             boolean connectedComplete = connected.tick(server.overworld(), ticks, fusionComplete);
+            boolean safetyComplete = safety.tick(server.overworld(), ticks, fusionComplete);
             var output = machine().getInventorySlots().get(1);
             long expected = reopen ? 3 : 2;
-            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && spsComplete && generatorsComplete && gasComplete && heaterComplete && heatBioComplete && generatorTransferComplete && fuelChainComplete && connectedComplete && sodiumComplete) {
+            if (output.amountAsLong() == expected && reactorsComplete && turbineComplete && fusionComplete && spsComplete && generatorsComplete && gasComplete && heaterComplete && heatBioComplete && generatorTransferComplete && fuelChainComplete && connectedComplete && sodiumComplete && safetyComplete) {
                 if (ModList.get().isLoaded("atm11mekcompat")) {
                     var platinum = (TileEntityMekanism) server.overworld().getBlockEntity(PLATINUM);
                     var dust = platinum.getInventorySlots().get(1);
@@ -257,6 +261,7 @@ public final class Probe {
                 check(machine().getInventorySlots().get(0).isEmpty(), "machine consumed exact supplied input");
                 check(machine().getEnergyContainer().getAmountAsLong() < initialMachineEnergy, "machine consumed energy while processing");
                 observations.put("sodiumFission", sodium.snapshot(server.overworld()));
+                observations.put("reactorSafety", safety.snapshot(server.overworld()));
                 observations.put("connectedFission", connected.snapshot(server.overworld()));
                 observations.put("fission", reactors.snapshot(server.overworld()));
                 observations.put("turbines", turbine.snapshot(server.overworld()));

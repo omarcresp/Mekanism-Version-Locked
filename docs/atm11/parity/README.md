@@ -37,7 +37,7 @@ the final fixture fills its real coolant capacity before each operating cycle.
 
 | Area | Required proof | State |
 | --- | --- | --- |
-| Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Physical water and sodium/boiler loops, fuel/waste ports, turbine output, conserved 400-tick operation, active hot restart and shutdown passed; coolant-loss/safety scenarios pending |
+| Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Physical water and sodium/boiler loops, active hot restart, shutdown, coolant-loss emergency cooling, natural damage repair, meltdown/rebuild and fallout persistence passed; further accident/chunk scenarios pending |
 | Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Physical rotor conversion and fractional restart passed; connected fission loop verifies actual energy output and condenser recirculation |
 | Thermoelectric boiler | Formation, sodium heat transfer, steam output, cooled sodium return and restart | Formed storage above old capacity and physical sodium/water recirculation passed; detailed failure scenarios pending |
 | Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Physical laser/amplifier/focus-matrix ignition and 100 burn ticks passed; controlled FE/fraction restart passed; hot-state safety pending |
@@ -58,7 +58,9 @@ Measured operation conserves coolant, remaining fuel plus waste and decay, and
 reported FE. The fixture saves while the reactor remains active and hot and
 checks the first formed restart state before resuming and shutting it down.
 Sodium/boiler cooling is covered in `sodium-loop.md` and `sodium-loop-runtime/`.
-Coolant-loss/meltdown safety remains pending.
+Coolant-loss recovery, natural meltdown, physical rebuilding and damage/fallout persistence
+are covered in `reactor-safety.md` and `reactor-safety-runtime/`. Interrupted
+meltdown persistence and damaged chunk unloading remain pending.
 
 ## Reactor fuel-chain balance
 
@@ -66,8 +68,8 @@ Twelve remaining general settings now match ATM10, including real neutron
 activation, evaporation, filtered pumping, waste decay and radiation factors.
 A formed boiler stores water, steam and cooled sodium above the previous port
 capacities and checks exact fresh-JVM contents. See `fuel-chain.md` and
-`fuel-chain-runtime/` for measured scope. Connected cooling loops, full fuel
-processing, and hot-state safety remain pending.
+`fuel-chain-runtime/` for measured scope. Connected cooling loops and fission accidents are covered separately. Full fuel
+processing and hot fusion persistence remain pending.
 
 ## Module and integration inventory
 

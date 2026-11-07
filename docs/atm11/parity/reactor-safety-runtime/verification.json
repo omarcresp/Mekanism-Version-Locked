@@ -1,0 +1,103 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "17c546a2230fdc2696897282e26b666298fbbeb6",
+  "sourceTree": "6e264af34f62ae78ba60e7f97a0dd260c7a1bdc9",
+  "profileSha256": "e3a845cff5b9748d7cb338b6c7479b02f4df55256b4dae35bd923490699c2bef",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "validationNote": "Java tests retained from unchanged production build; server QA rebuilt and six Python migration tests rerun for this unit.",
+  "checks": {
+    "seed": 701,
+    "restart": 292
+  },
+  "productionSourceCommit": "c1550848e15f2aefd0b5fb2ddee94c9a49d4943e",
+  "sourceNote": "Snapshot includes physical coolant-loss recovery and natural meltdown fixtures, with connected-loop ledgers retained until save; production code unchanged from c155084; all tested JARs match local build artifacts byte for byte.",
+  "seedReactorSafety": {
+    "recovery": {
+      "fuel": 4338,
+      "water": 9362694,
+      "active": false,
+      "temperature": 372.99953059104354,
+      "steam": 3137306,
+      "waste": 662,
+      "damage": 21.249905386715316,
+      "peakDamage": 21.6431286646691,
+      "shutdownDamage": 20.143128664669113,
+      "shutdownTemperature": 1974.798328835909,
+      "repairTicks": 0
+    },
+    "meltdown": {
+      "fuel": 44184,
+      "water": 0,
+      "active": false,
+      "temperature": 299.80314664542675,
+      "steam": 0,
+      "waste": 0,
+      "damage": 72.08186186704438,
+      "survivingFuel": 44184,
+      "survivingCasings": 230,
+      "postMeltdownDamage": 75.0,
+      "postMeltdownTemperature": 299.80314664542675,
+      "fallout": 91.74074084074074
+    }
+  },
+  "restartReactorSafety": {
+    "meltdown": {
+      "active": false,
+      "temperature": 299.80314664542675,
+      "steam": 0,
+      "waste": 0,
+      "damage": 48.94680273583442,
+      "fuel": 44184,
+      "water": 0,
+      "survivingFuel": 44184,
+      "survivingCasings": 230,
+      "postMeltdownDamage": 75.0,
+      "postMeltdownTemperature": 299.80314664542675,
+      "fallout": 91.74074084074074
+    },
+    "recovery": {
+      "active": false,
+      "temperature": 378.2450219745327,
+      "steam": 3306547,
+      "waste": 702,
+      "damage": 0.0,
+      "fuel": 4298,
+      "water": 9193453,
+      "peakDamage": 21.6431286646691,
+      "shutdownDamage": 20.143128664669113,
+      "shutdownTemperature": 1974.798328835909,
+      "repairTicks": 3063
+    }
+  },
+  "seedGameTicks": 20519,
+  "logs": {
+    "seed": {
+      "sha256": "fba01a3c23213afcdca674fc27a6d2d162c8ae4c0775f6943f396412cd6dcc73",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "dca5f43a92bc7f59c3556866ab2774752fb4505ddce87ce713a676540b4de90e",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "artifactHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "92acadbdd26027ffa48b2c790914c67bdb4205a72ba2e594a0419ba84d53e865",
+    "atm11-server-qa-0.1.0.jar": "8f94fa8ecdd3b22464392061d7ef969fba11edcb5ced26e05daf79279bc64efd"
+  },
+  "scope": "Real dry reactor crosses 1200 K and 20 damage, manual shutdown stops burning while residual heat adds damage, emergency coolant through real port cools reactor. Fresh JVM restores exact nuclear contents and damage, repairs naturally and resumes cooled burning. Separate naturally triggered meltdown physically destroys reactor, clears radioactive waste while preserving nonradioactive fissile fuel, resets heat/damage, releases real fallout, and retains damaged inactive state after physical rebuild and fresh JVM. Retained physical water/sodium loops conserve inventories and generation until final save. Interrupted meltdown persistence, damaged chunk unloading, hot fusion persistence, equipment, full progression and addons remain incomplete.",
+  "excludedAttempts": [
+    "Fixture-only failures: requested 20000 mB in a 16000 mB fuel capacity; incorrectly expected nonradioactive fissile fuel to be cleared. Saved NBT confirmed damage 75, waste cleared and fuel preserved, matching upstream. Small-shell rebuild did not retain the original cache; enlarged destructive fixture explicitly requires surviving casings. Failed worlds and raw evidence archived locally before fresh retries. The first extended restart also exposed a fixture ledger counting 2 mB when the final barrel decay removed only 1; counter now clamps to observed stored waste and checks absent incoming supply. No production change."
+  ]
+}
