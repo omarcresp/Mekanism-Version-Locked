@@ -240,10 +240,10 @@ public final class Probe {
                 observations.put("outputCount", output.amountAsLong());
                 observations.put("processingTicks", ticks);
                 finish(null);
-            } else if (ticks > 1200) {
+            } else if (ticks > 22000) {
                 observations.put("input", machine().getInventorySlots().get(0).asStack().toString());
                 observations.put("output", output.asStack().toString());
-                throw new IllegalStateException("Native recipe failed to complete within 1200 ticks");
+                throw new IllegalStateException("QA fixtures failed to complete within 22000 ticks");
             }
         } catch (Throwable failure) {
             finish(failure);

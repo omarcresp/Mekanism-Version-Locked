@@ -24,6 +24,8 @@ import net.neoforged.neoforge.transfer.transaction.Transaction;
 final class FusionProbe {
     private static final BlockPos START = new BlockPos(80, 80, 24);
     private static final BlockPos LASER = START.offset(-3, 2, 2);
+    private static final BlockPos SOURCE = LASER.offset(0, 0, -3);
+    private static final int IGNITION_FE = 400000000;
     private final BiConsumer<Boolean, String> check;
     private boolean reopen;
     private boolean supplied;
@@ -33,6 +35,8 @@ final class FusionProbe {
     private long initialDeuterium;
     private long initialTritium;
     private double ambient;
+    private int suppliedFE;
+    private boolean ignited;
 
     FusionProbe(BiConsumer<Boolean, String> check) { this.check = check; }
 
@@ -48,6 +52,7 @@ final class FusionProbe {
             new Builder().place(level);
             level.setBlockAndUpdate(START.offset(0, 2, 2), GeneratorsBlocks.LASER_FOCUS_MATRIX.defaultState());
             level.setBlockAndUpdate(LASER, Attribute.setFacing(MekanismBlocks.LASER_AMPLIFIER.defaultState(), Direction.EAST));
+            level.setBlockAndUpdate(SOURCE, Attribute.setFacing(MekanismBlocks.LASER.defaultState(), Direction.SOUTH));
         }
     }
 
@@ -74,6 +79,7 @@ final class FusionProbe {
         }
         if (!supplied) {
             ambient = reactor.getHeatCapacitor().getTemperature();
+            check.accept(mekanism.common.config.MekanismConfig.usage.laser.get() == 20000, "ATM10 powered laser consumes 20000 FE per firing tick");
             check.accept(reactor.energyContainer().getCapacityAsLong() == 400000000, "ATM10 fusion buffer is 400 million FE");
             check.accept(reactor.deuteriumTank.capacityAsLong(GeneratorsChemicals.DEUTERIUM.asResource()) == 500,
                   "ATM10 fusion fuel tank holds 500 mB");
@@ -115,11 +121,21 @@ final class FusionProbe {
             reactor.setInjectionRate(4);
             var laser = (TileEntityLaserAmplifier) level.getBlockEntity(LASER);
             check.accept(laser.getDirection() == Direction.EAST, "real laser amplifier points through the focus matrix");
-            try (var tx = Transaction.openRoot()) {
-                check.accept(laser.getEnergyContainer().insert(1000000000, tx, AutomationType.EXTERNAL) == 1000000000,
-                      "physical ignition amplifier accepts one billion FE within its capacity");
-                tx.commit();
-            }
+            laser.setMinThresholdFromPacket(IGNITION_FE);
+            laser.setMaxThresholdFromPacket(IGNITION_FE);
+            supplyLaser(level);
+            check.accept(level.getServer().tickRateManager().requestGameToSprint(20500),
+                  "isolated server accelerates normal laser charging ticks");
+            return false;
+        }
+        if (!ignited) {
+            if (suppliedFE < IGNITION_FE) supplyLaser(level);
+            if (!reactor.isBurning()) return false;
+            check.accept(suppliedFE == IGNITION_FE, "normal laser source receives exactly 400 million FE for ignition");
+            check.accept(((TileEntityLaserAmplifier) level.getBlockEntity(LASER)).getEnergyContainer().isEmpty() &&
+                  ((mekanism.common.tile.laser.TileEntityLaser) level.getBlockEntity(SOURCE)).getEnergyContainer().isEmpty(),
+                  "laser source and amplifier transfer the full electrical budget through real beams");
+            ignited = true;
             return false;
         }
         if (++operatingTicks < 100) return false;
@@ -131,8 +147,20 @@ final class FusionProbe {
         check.accept(initialDeuterium - reactor.deuteriumTank.amountAsLong() == initialTritium - reactor.tritiumTank.amountAsLong(),
               "fusion consumes equal quantities of deuterium and tritium");
         check.accept(reactor.energyContainer().getAmountAsLong() > 1, "fusion generates stored FE after physical ignition");
+        level.getServer().tickRateManager().stopSprinting();
         complete = true;
         return true;
+    }
+
+    private void supplyLaser(ServerLevel level) {
+        var source = (mekanism.common.tile.laser.TileEntityLaser) level.getBlockEntity(SOURCE);
+        int amount = Math.min(20000, IGNITION_FE - suppliedFE);
+        try (var tx = Transaction.openRoot()) {
+            int inserted = source.getEnergyContainer().insert(amount, tx, AutomationType.EXTERNAL);
+            if (inserted != amount) throw new IllegalStateException("Laser source rejected its bounded electrical supply");
+            tx.commit();
+            suppliedFE += inserted;
+        }
     }
 
     Map<String, Object> shutdownForSave(ServerLevel level) {
