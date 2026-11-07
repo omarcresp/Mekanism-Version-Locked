@@ -1,0 +1,72 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "f65d6e748ed94028a43d55c5fdf9b9b0a6070868",
+  "sourceTree": "3780352d9cbc7f859041898362ffefcf8155125a",
+  "profileSha256": "e3a845cff5b9748d7cb338b6c7479b02f4df55256b4dae35bd923490699c2bef",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "checks": {
+    "seed": 621,
+    "restart": 237
+  },
+  "productionSourceCommit": "f65d6e748ed94028a43d55c5fdf9b9b0a6070868",
+  "sourceNote": "Snapshot includes physical connected fission fixture; production code unchanged from merged fuel-chain implementation; all tested JARs match local build artifacts byte for byte.",
+  "seedConnectedFission": {
+    "fuel": 2600,
+    "waste": 322,
+    "decayedWaste": 78,
+    "coolant": 12500000,
+    "energy": 5956536,
+    "cubeEnergy": 5956536,
+    "active": true,
+    "temperature": 375.6941352719923,
+    "damage": 0.0,
+    "observedReturnedWater": true,
+    "reportedProduction": 5956536,
+    "firstRestartTemperature": 0.0
+  },
+  "restartConnectedFission": {
+    "fuel": 2371,
+    "waste": 501,
+    "decayedWaste": 128,
+    "coolant": 12500000,
+    "energy": 10710792,
+    "cubeEnergy": 10710792,
+    "active": false,
+    "temperature": 373.14463497975015,
+    "damage": 0.0,
+    "observedReturnedWater": true,
+    "reportedProduction": 4175184,
+    "firstRestartTemperature": 375.69392122197564
+  },
+  "seedGameTicks": 20519,
+  "logs": {
+    "seed": {
+      "sha256": "4224139f64ad362a4e6442aba3bd6db6cd78fcc564236263621b2414e4adfce5",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "fa201df659bfc9cdd0926c1b4e8f58f4dbe60b21741a1aaed8fd25687ed5bc6e",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "artifactHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "189f93610fdac1525a4f9a1aa686fba51448151c7c957e597825cf28936c153e",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "92acadbdd26027ffa48b2c790914c67bdb4205a72ba2e594a0419ba84d53e865",
+    "atm11-server-qa-0.1.0.jar": "c8acfab7579435ebd9b56030923397b8bdf723dadc5b25c59e8bfb6050fc0bed"
+  },
+  "scope": "Normal fission/turbine formation with physical fuel and waste ports and chemical tank/tube transport; steam to turbine through tubes; condenser water return through pipes; real turbine energy valve/cable/cube output; 400 measured active seed ticks with coolant, fuel/waste and reported FE conservation, damage-free operation; active hot checkpoint, first-formed-tick hot restoration, exact aggregate FE plus observed boot generation, 200 resumed operating ticks, ten shutdown ticks. Retains all prior fixtures. Sodium/boiler recirculation, loss-of-coolant/meltdown safety, hot fusion persistence, equipment, progression and addons remain incomplete.",
+  "excludedAttempts": [
+    "The initial receiver was an ordinary chemical tank, which rejects radioactive chemicals through its default attribute validator. All 400-tick conservation checks passed but external waste receipt failed. Final fixture uses a real waste barrel fed from its top and counts decay from processing-progress wraps. Failed world and logs are archived separately."
+  ]
+}
