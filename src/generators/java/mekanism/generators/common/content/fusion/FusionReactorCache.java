@@ -1,5 +1,6 @@
 package mekanism.generators.common.content.fusion;
 
+import com.mojang.serialization.Codec;
 import mekanism.api.SerializationConstants;
 import mekanism.common.lib.multiblock.MultiblockCache;
 import net.minecraft.world.level.storage.ValueInput;
@@ -11,6 +12,7 @@ public class FusionReactorCache extends MultiblockCache<FusionReactorMultiblockD
     private double plasmaTemperature = -1;
     private int injectionRate = -1;
     private boolean burning;
+    private double generationRemainder;
 
     private int getInjectionRate() {
         if (injectionRate == -1) {
@@ -27,6 +29,7 @@ public class FusionReactorCache extends MultiblockCache<FusionReactorMultiblockD
         plasmaTemperature = Math.max(plasmaTemperature, ((FusionReactorCache) mergeCache).plasmaTemperature);
         injectionRate = Math.max(injectionRate, ((FusionReactorCache) mergeCache).injectionRate);
         burning |= ((FusionReactorCache) mergeCache).burning;
+        generationRemainder = Math.max(generationRemainder, ((FusionReactorCache) mergeCache).generationRemainder);
     }
 
     @Override
@@ -37,6 +40,7 @@ public class FusionReactorCache extends MultiblockCache<FusionReactorMultiblockD
         }
         data.setInjectionRate(getInjectionRate(), transaction);
         data.setBurning(burning);
+        data.setGenerationRemainder(generationRemainder, transaction);
         data.updateTemperatures();
     }
 
@@ -46,6 +50,7 @@ public class FusionReactorCache extends MultiblockCache<FusionReactorMultiblockD
         plasmaTemperature = data.getPlasmaTemp();
         injectionRate = data.getInjectionRate();
         burning = data.isBurning();
+        generationRemainder = data.getGenerationRemainder();
     }
 
     @Override
@@ -55,6 +60,7 @@ public class FusionReactorCache extends MultiblockCache<FusionReactorMultiblockD
         plasmaTemperature = input.getDoubleOr(SerializationConstants.PLASMA_TEMP, plasmaTemperature);
         injectionRate = input.getIntOr(SerializationConstants.INJECTION_RATE, injectionRate);
         burning = input.getBooleanOr(SerializationConstants.BURNING, burning);
+        generationRemainder = input.read("generationRemainder", Codec.doubleRange(0, Math.nextDown(1D))).orElse(0D);
     }
 
     @Override
@@ -63,5 +69,6 @@ public class FusionReactorCache extends MultiblockCache<FusionReactorMultiblockD
         output.putDouble(SerializationConstants.PLASMA_TEMP, plasmaTemperature);
         output.putInt(SerializationConstants.INJECTION_RATE, getInjectionRate());
         output.putBoolean(SerializationConstants.BURNING, burning);
+        output.putDouble("generationRemainder", generationRemainder);
     }
 }

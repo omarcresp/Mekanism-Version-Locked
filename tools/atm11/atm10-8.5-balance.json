@@ -80,7 +80,8 @@
     },
     "general.toml": {
       "maxUpgradeMultiplier": 16,
-      "sps.energyPerInput": 40000
+      "sps.energyPerInput": 40000,
+      "heater.resistiveEfficiency": 0.6
     },
     "generator-storage.toml": {
       "heatGenerator": 64000,
@@ -94,7 +95,13 @@
       "solar_generator.advancedSolarGeneration": 480,
       "wind_generator.generationMin": 60,
       "wind_generator.generationMax": 360,
-      "gas_generator.tankCapacity": 18000
+      "gas_generator.tankCapacity": 18000,
+      "fission_reactor.energyPerFissionFuel": 250000,
+      "fusion_reactor.thermocoupleEfficiency": 0.04,
+      "fusion_reactor.casingThermalConductivity": 0.333333333,
+      "fusion_reactor.waterHeatingRatio": 0.27272727272727,
+      "fusion_reactor.fuelCapacity": 500,
+      "fusion_reactor.energyCapacity": 400000000
     }
   }
 }

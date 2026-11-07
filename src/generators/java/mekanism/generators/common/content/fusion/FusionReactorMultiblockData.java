@@ -210,9 +210,9 @@ public class FusionReactorMultiblockData extends MultiblockData {
         if (energyAdded > 0) {
             plasmaJournal.updateSnapshots(transaction);
             if (isBurning()) {
-                plasmaJournal.temperature += (double) energyAdded / PLASMA_HEAT_CAPACITY;
+                plasmaJournal.temperature += HeatUtils.feToJoules(energyAdded) / PLASMA_HEAT_CAPACITY;
             } else {
-                plasmaJournal.temperature += ((double) energyAdded / PLASMA_HEAT_CAPACITY) * 10;
+                plasmaJournal.temperature += (HeatUtils.feToJoules(energyAdded) / PLASMA_HEAT_CAPACITY) * 10;
             }
         }
     }
@@ -394,7 +394,10 @@ public class FusionReactorMultiblockData extends MultiblockData {
         if (Math.abs(caseAirHeat) > HeatAPI.EPSILON) {
             heatCapacitor.handleHeat(-caseAirHeat, transaction);
             lastEnvironmentLoss = caseAirHeat;
-            int powerGen = MathUtils.clampToInt(caseAirHeat * MekanismGeneratorsConfig.generators.fusionThermocoupleEfficiency.get());
+            double generatedFE = HeatUtils.joulesToFE(Math.max(0, Math.floor(caseAirHeat * MekanismGeneratorsConfig.generators.fusionThermocoupleEfficiency.get()))) + plasmaJournal.generatedFraction;
+            int powerGen = MathUtils.clampToInt(generatedFE);
+            plasmaJournal.updateSnapshots(transaction);
+            plasmaJournal.generatedFraction = generatedFE - Math.floor(generatedFE);
             if (powerGen > 0) {
                 energyContainer.insert(powerGen, transaction, AutomationType.INTERNAL);
             }
@@ -521,8 +524,8 @@ public class FusionReactorMultiblockData extends MultiblockData {
 
     public long getPassiveGeneration(boolean active, boolean current) {
         double temperature = current ? getLastCaseTemp() : getMaxCasingTemperature(active);
-        return MathUtils.clampToLong(MekanismGeneratorsConfig.generators.fusionThermocoupleEfficiency.get() *
-                                     MekanismGeneratorsConfig.generators.fusionCasingThermalConductivity.get() * temperature);
+        return MathUtils.clampToLong(HeatUtils.joulesToFE(MekanismGeneratorsConfig.generators.fusionThermocoupleEfficiency.get() *
+                                     MekanismGeneratorsConfig.generators.fusionCasingThermalConductivity.get() * temperature));
     }
 
     public int getSteamPerTick(boolean current) {
@@ -558,24 +561,37 @@ public class FusionReactorMultiblockData extends MultiblockData {
     }
     //End computer related methods
 
-    private class PlasmaJournal extends SnapshotJournal<Double> {
+    private record PlasmaState(double temperature, double generatedFraction) {}
+
+    public double getGenerationRemainder() {
+        return plasmaJournal.generatedFraction;
+    }
+
+    public void setGenerationRemainder(double remainder, TransactionContext transaction) {
+        plasmaJournal.updateSnapshots(transaction);
+        plasmaJournal.generatedFraction = remainder;
+    }
+
+    private class PlasmaJournal extends SnapshotJournal<PlasmaState> {
 
         private double temperature;
+        private double generatedFraction;
 
         @Override
-        protected Double createSnapshot() {
-            return temperature;
+        protected PlasmaState createSnapshot() {
+            return new PlasmaState(temperature, generatedFraction);
         }
 
         @Override
-        protected void revertToSnapshot(Double snapshot) {
-            temperature = snapshot;
+        protected void revertToSnapshot(PlasmaState snapshot) {
+            temperature = snapshot.temperature();
+            generatedFraction = snapshot.generatedFraction();
         }
 
         @Override
-        protected void onRootCommit(Double originalState) {
+        protected void onRootCommit(PlasmaState originalState) {
             super.onRootCommit(originalState);
-            if (!Mth.equal(originalState, temperature)) {
+            if (!Mth.equal(originalState.temperature(), temperature) || originalState.generatedFraction() != generatedFraction) {
                 markDirty();
             }
         }
