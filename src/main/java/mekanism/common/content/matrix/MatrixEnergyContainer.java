@@ -2,11 +2,8 @@ package mekanism.common.content.matrix;
 
 import com.google.common.primitives.Ints;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Map;
-import java.util.Set;
 import mekanism.api.AutomationType;
 import mekanism.api.MekanismPreconditions;
 import mekanism.api.energy.IEnergyContainer;
@@ -33,14 +30,13 @@ public class MatrixEnergyContainer implements IEnergyContainer {
 
     private final Map<BlockPos, InductionProviderTier> providers = new Object2ObjectOpenHashMap<>();
     private final Map<BlockPos, IEnergyContainer> cells = new Object2ObjectOpenHashMap<>();
-    private final Set<BlockPos> invalidPositions = new ObjectOpenHashSet<>();
     private final SimpleLongJournal queuedInput = new SimpleLongJournal();
     private final SimpleLongJournal queuedOutput = new SimpleLongJournal();
 
     private long lastInput = 0L;
     private long lastOutput = 0L;
 
-    private long cachedTotal = 0L;
+    private final SimpleLongJournal cachedTotal = new SimpleLongJournal();
     private long transferCap = 0L;
     private long storageCap = 0L;
 
@@ -55,7 +51,7 @@ public class MatrixEnergyContainer implements IEnergyContainer {
         MachineEnergyContainer<TileEntityInductionCell> energyContainer = cell.energyContainer();
         cells.put(pos, energyContainer);
         storageCap = MathUtils.addClamped(storageCap, energyContainer.getCapacityAsLong());
-        cachedTotal = MathUtils.addClamped(cachedTotal, energyContainer.getAmountAsLong());
+        cachedTotal.value = MathUtils.addClamped(cachedTotal.value, energyContainer.getAmountAsLong());
     }
 
     public void addProvider(BlockPos pos, TileEntityInductionProvider provider) {
@@ -63,82 +59,43 @@ public class MatrixEnergyContainer implements IEnergyContainer {
         transferCap = MathUtils.addClamped(transferCap, provider.tier.getOutput());
     }
 
-    //TODO: I believe this is needed or at least will be after we eventually rewrite some of the multiblock system
-    // currently I think it may just be rechecking the entire structure when something changes internally
-    // We need to validate that does properly happen even if the cell is floating in the middle and not touching any walls
-    // We may also want to make cells and providers extend TileEntityInternalMultiblock
     public void removeInternal(BlockPos pos) {
-        if (invalidPositions.add(pos)) {
-            if (providers.containsKey(pos)) {
-                //It is a provider
-                transferCap -= providers.get(pos).getOutput();
-            } else if (cells.containsKey(pos)) {
-                //It is a cell
-                //TODO: Handle this better, as I believe we *technically* could have this cause the cached total to become negative
-                // It may work better if we just flush the buffer writing immediately, and then recalculate the cached totals/caps
-                IEnergyContainer cellContainer = cells.get(pos);
-                storageCap += cellContainer.getCapacityAsLong();
-                cachedTotal -= cellContainer.getAmountAsLong();
-            }
+        InductionProviderTier provider = providers.remove(pos);
+        if (provider != null) transferCap -= provider.getOutput();
+        IEnergyContainer cell = cells.remove(pos);
+        if (cell != null) {
+            storageCap -= cell.getCapacityAsLong();
+            cachedTotal.value -= cell.getAmountAsLong();
         }
     }
 
     public void invalidate() {
-        //Force save
-        tick(Collections.emptyList(), null, null, null);
-        //And reset everything
         cells.clear();
         providers.clear();
         queuedOutput.value = 0L;
         queuedInput.value = 0L;
         lastOutput = 0L;
         lastInput = 0L;
-        cachedTotal = 0L;
+        cachedTotal.value = 0L;
         transferCap = 0L;
         storageCap = 0L;
     }
 
     public boolean tick(Collection<BlockCapabilityCache<EnergyHandler, @Nullable Direction>> targets, @Nullable EnergyInventorySlot energyInputSlot,
           @Nullable EnergyInventorySlot energyOutputSlot, @Nullable TransactionContext transaction) {
-        if (!invalidPositions.isEmpty()) {
-            for (BlockPos invalidPosition : invalidPositions) {
-                cells.remove(invalidPosition);
-                providers.remove(invalidPosition);
+        try (Transaction subTransaction = Transaction.open(transaction)) {
+            if (energyInputSlot != null) energyInputSlot.drainContainerIntoSlot(subTransaction);
+            if (energyOutputSlot != null) energyOutputSlot.fillContainerOrConvert(subTransaction);
+            long available = Math.min(getRemainingOutput(), getAmountAsLong());
+            if (available > 0 && !targets.isEmpty()) {
+                long sent = EnergyUtils.emit(targets, available, subTransaction);
+                if (sent > 0) {
+                    queuedOutput.updateSnapshots(subTransaction);
+                    queuedOutput.value += sent;
+                    removeEnergy(sent, subTransaction);
+                }
             }
-            invalidPositions.clear();
-        }
-        if (queuedInput.value != queuedOutput.value || !targets.isEmpty()) {
-            //Note: The cases where queued input and output might not be equal is:
-            // - If something inserted into our container
-            // - If something forcibly extracted from our container
-            try (Transaction subTransaction = Transaction.open(transaction)) {
-                //Note: Start by trying to transfer energy into/out of the slots' contents (this gets limited by whatever remaining energy rate we have)
-                if (energyInputSlot != null) {
-                    energyInputSlot.drainContainerIntoSlot(subTransaction);
-                }
-                if (energyOutputSlot != null) {
-                    energyOutputSlot.fillContainerOrConvert(subTransaction);
-                }
-                if (!targets.isEmpty()) {
-                    //Next we emit any power we
-                    long sent = EnergyUtils.emit(targets, getRemainingOutput(), subTransaction);
-                    if (sent > 0) {
-                        //Increase how much we are outputting by the amount we accepted
-                        queuedOutput.updateSnapshots(subTransaction);
-                        //Increase how much we are inputting
-                        queuedOutput.value += sent;
-                    }
-                }
-
-                if (queuedInput.value < queuedOutput.value) {
-                    //queuedInput is smaller - we are removing energy
-                    removeEnergy(-getQueuedChange(), subTransaction);
-                } else if (queuedInput.value > queuedOutput.value) {
-                    //queuedInput is larger - we are adding energy
-                    addEnergy(getQueuedChange(), subTransaction);
-                }
-                subTransaction.commit();
-            }
+            subTransaction.commit();
         }
         lastInput = queuedInput.value;
         lastOutput = queuedOutput.value;
@@ -149,7 +106,8 @@ public class MatrixEnergyContainer implements IEnergyContainer {
     }
 
     private void addEnergy(long energy, TransactionContext transaction) {
-        cachedTotal += energy;
+        cachedTotal.updateSnapshots(transaction);
+        cachedTotal.value += energy;
         for (IEnergyContainer container : cells.values()) {
             //Note: inserting into the cell's energy container handles marking the cell for saving if it changes
             long stored = container.getAmountAsLong();
@@ -167,7 +125,8 @@ public class MatrixEnergyContainer implements IEnergyContainer {
     }
 
     private void removeEnergy(long energy, TransactionContext transaction) {
-        cachedTotal -= energy;
+        cachedTotal.updateSnapshots(transaction);
+        cachedTotal.value -= energy;
         for (IEnergyContainer container : cells.values()) {
             //Note: extracting from the cell's energy container handles marking the cell for saving if it changes
             long stored = container.getAmountAsLong();
@@ -183,14 +142,9 @@ public class MatrixEnergyContainer implements IEnergyContainer {
         }
     }
 
-    private long getQueuedChange() {
-        return queuedInput.value - queuedOutput.value;
-    }
-
-    /// @return The energy post queue when this container next actually updates/saves to disk
     @Override
     public long getAmountAsLong() {
-        return cachedTotal + getQueuedChange();
+        return cachedTotal.value;
     }
 
     @Override
@@ -212,6 +166,7 @@ public class MatrixEnergyContainer implements IEnergyContainer {
             queuedInput.updateSnapshots(transaction);
             //Increase how much we are inputting
             queuedInput.value += toAdd;
+            addEnergy(toAdd, transaction);
         }
         return toAdd;
     }
@@ -233,6 +188,7 @@ public class MatrixEnergyContainer implements IEnergyContainer {
             queuedOutput.updateSnapshots(transaction);
             //Increase how much we are inputting
             queuedOutput.value += toRemove;
+            removeEnergy(toRemove, transaction);
         }
         return toRemove;
     }

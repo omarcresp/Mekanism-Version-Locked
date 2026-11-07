@@ -40,11 +40,11 @@ the final fixture fills its real coolant capacity before each operating cycle.
 | Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Physical water and sodium/boiler loops, active hot restart, shutdown, coolant-loss emergency cooling, natural damage repair, meltdown/rebuild and fallout persistence passed; further accident/chunk scenarios pending |
 | Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Physical rotor conversion and fractional restart passed; connected fission loop verifies actual energy output and condenser recirculation |
 | Thermoelectric boiler | Formation, sodium heat transfer, steam output, cooled sodium return and restart | Formed storage above old capacity and physical sodium/water recirculation passed; detailed failure scenarios pending |
-| Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Physical laser/amplifier/focus-matrix ignition and 100 burn ticks passed; controlled FE/fraction restart passed; hot-state safety pending |
+| Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Physical laser ignition, external fuel feeds, hot burning save/restart, exact fuel/FE ledgers, induction output and zero-injection shutdown passed; water-cooled fusion and interruption/starvation scenarios pending |
 | SPS | Coil/port energy, polonium-to-antimatter quantities/cost, output/restart | Real port/coil, bounded external energy insertion and exact 40000 FE per input mB passed; output transport/restart pending |
 | Nuclear progression | Fuel chain, plutonium/polonium, pellets, waste decay/radiation | Physical polonium, brine and heavy-water production, waste/isotope decay and radiation factors passed; full connected fuel chain and pellets pending |
 | Machines | Processing families, factories/upgrades, fivefold ore chain and pack metals | Selected processing passed; full inventory pending |
-| Transport/storage | Cable/tube/pipe/item networks, induction, dynamic tank, QIO, chunk reload | Real cube/cable transfer, fuel/waste/steam tubes and water return pipes passed; broader item networks/storage/chunk reload pending |
+| Transport/storage | Cable/tube/pipe/item networks, induction, dynamic tank, QIO, chunk reload | Real cube/cable transfer, fuel/waste/steam tubes, water return pipes and transactional induction persistence/output passed; induction tiers/mixed transfer timing and broader item networks/storage/chunk reload pending |
 | Equipment | Modules, MekaSuit/tool mechanics, first/third person, ATM stats/recipes | Render evidence exists; mechanics/config parity pending |
 | Pack progression | Quests, gated recipes, ATM star and creative crafts, external recipes | Selected checks passed; complete semantic diff pending |
 | Addons | Compare actual baseline manifest dependencies against available target modules | Pinned server metadata inventory complete; missing Mekanism-specific addons identified, runtime parity pending |
@@ -69,7 +69,7 @@ activation, evaporation, filtered pumping, waste decay and radiation factors.
 A formed boiler stores water, steam and cooled sodium above the previous port
 capacities and checks exact fresh-JVM contents. See `fuel-chain.md` and
 `fuel-chain-runtime/` for measured scope. Connected cooling loops and fission accidents are covered separately. Full fuel
-processing and hot fusion persistence remain pending.
+processing remains pending; hot fusion persistence is covered below.
 
 ## Module and integration inventory
 
@@ -100,10 +100,27 @@ Resistive heating and fusion convert between electrical FE and thermal Joules.
 The full pack passed 298 seed checks, including a real powered-laser/amplifier/
 focus-matrix ignition and 100 fusion burn ticks. A fresh JVM passed 89 checks,
 including exact stored FE and fractional thermocouple output continuation. See
-`reactor-thermal.md` and `reactor-thermal-runtime/`. Hot-state persistence, safety,
-complete transport remain pending. Heat/bio conversion is covered in
+`reactor-thermal.md` and `reactor-thermal-runtime/`. Hot fusion persistence is
+covered below; fission safety is covered in `reactor-safety.md`. Broader accident
+and transport scenarios remain pending. Heat/bio conversion is covered in
 `heat-bio-balance.md`. Turbine conversion
 is covered separately in `turbine-balance.md`.
+
+## Hot fusion and induction persistence
+
+`hot-fusion.md` and `hot-fusion-runtime/` cover separate external fuel feeds,
+physical laser ignition, a hot burning checkpoint, fresh-JVM restoration,
+resumed operation and zero-injection burnout. Real cables, an induction matrix
+and an output cube carry the generated energy. The final run passed 739 seed
+checks and 320 restart checks, with exact fuel and electrical ledgers through
+final save. It also retained the earlier fission and safety fixtures.
+
+The restart test exposed 432630 FE reported by a matrix but absent from its saved
+cell. Committed transfers now update cells immediately and transactionally;
+output cannot exceed stored energy, and cell removal subtracts capacity once.
+Live checks cover rollback, nested aborts, input limits, removal and empty output.
+Water-cooled fusion, physical fuel starvation, interrupted operation and broader
+induction behavior remain pending.
 
 ## Fractional gas fuel
 
@@ -162,7 +179,10 @@ therefore needs an explicit source-level storage decision, not just a TOML copy.
 QA fixtures are separate from production JARs and only run in owned disposable
 worlds. Client tests must retain `soundCategory_master:0.0` before and during launch.
 
-## Runtime test boundaries
+## Initial runtime test boundaries
+
+The following describes the initial heat-codec run only. Later fixtures above
+add physical ignition, external networks and hot restart checks.
 
 Structures form through normal multiblock validation. Fission, turbine and fusion
 fuel/coolant setup uses tank APIs; this does not prove external pipe networks.
@@ -181,7 +201,7 @@ FE per consumed mB; smaller rotors carry fractional FE. A full condenser tank no
 longer rolls back steam conversion. See `turbine-balance.md` for the accounting
 and runtime fixture. The full pack passed 319 seed and 101 fresh-JVM restart
 checks; evidence is in `turbine-balance-runtime/`. External valve transport and
-connected recirculation remain pending.
+connected recirculation are covered in the later connected fission fixtures.
 
 ## Heat and bio generators
 
@@ -191,5 +211,5 @@ to electrical FE after the reference's Carnot calculation and whole-Joule cap.
 Fractional FE survives transaction rollback, normal block loot/replacement and
 a fresh JVM. Full-pack runs passed 341 seed and 116 restart checks. See
 `heat-bio-balance.md` and `heat-bio-runtime/`. Generator transfer limits and
-connected networks remain pending; the Nether heat value is configuration-checked
+connected networks are covered in `generator-output.md`; the Nether heat value is configuration-checked
 without an actual Nether-world generator fixture.

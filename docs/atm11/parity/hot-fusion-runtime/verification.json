@@ -1,0 +1,85 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "ed8061302af18ef5e461c2fb6616533b6725c617",
+  "sourceTree": "919ad5b6e425b3177509252580e23362fdd1df86",
+  "profileSha256": "e3a845cff5b9748d7cb338b6c7479b02f4df55256b4dae35bd923490699c2bef",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "validationNote": "Main data generation and build rerun after production matrix fix; server QA rebuilt and six Python migration tests rerun.",
+  "checks": {
+    "seed": 739,
+    "restart": 320
+  },
+  "productionSourceCommit": "ed8061302af18ef5e461c2fb6616533b6725c617",
+  "sourceNote": "Snapshot includes physically fueled hot fusion and induction output, retaining previous reactor safety fixtures; production matrix persistence now commits transfers directly to cells; all tested JARs match local build artifacts byte for byte.",
+  "seedHotFusion": {
+    "burning": true,
+    "injection": 4,
+    "plasma": 189153439.3524262,
+    "case": 54079086.53686556,
+    "fraction": 0.40000000019790605,
+    "deuterium": 49046,
+    "tritium": 49046,
+    "mixedFuel": 0,
+    "energy": 163369620,
+    "matrixEnergy": 432630,
+    "cubeEnergy": 162936990,
+    "generated": 163369620,
+    "injectedPerFuel": 954,
+    "laserSupply": 400000000,
+    "firstRestartPlasma": 0.0,
+    "firstRestartCase": 0.0
+  },
+  "restartHotFusion": {
+    "burning": false,
+    "injection": 0,
+    "plasma": 3630912.4899798455,
+    "case": 1040799.1245893756,
+    "fraction": 0.6000000008043571,
+    "deuterium": 48590,
+    "tritium": 48590,
+    "mixedFuel": 0,
+    "energy": 606973665,
+    "matrixEnergy": 342781665,
+    "cubeEnergy": 256000000,
+    "generated": 443604045,
+    "injectedPerFuel": 456,
+    "laserSupply": 0,
+    "firstRestartPlasma": 189282490.6467951,
+    "firstRestartCase": 54116071.41542207
+  },
+  "seedGameTicks": 20519,
+  "logs": {
+    "seed": {
+      "sha256": "9aaa9aef6c5f427d754b06e940f2ff271af987ca7c4e0d4368b26d42fa875c15",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "930fd080f3090f6a6a2cbdef51022da31cb5f0aea89ea9279007dffa102544da",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "artifactHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "43134561c9a283a21c02379ab78188a9dda80de3adcaa58ed9cb40101e9d8615",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "982be444ce68ec50b0e16c8a152c48efb97cb879c8827e86436f1ddc00dd3323",
+    "atm11-server-qa-0.1.0.jar": "f83c19e54634fd5ce8b828ca813341a10943e8215a4f16a767167ccac5164d1e"
+  },
+  "scope": "Separate physically laser-ignited fusion reactor with two external chemical tanks and distinct tube/input-port feeds, output port and real cable network into a formed induction matrix, with matrix output cable and energy cube. 400 million FE ignition, 200 tick exact per-fuel consumption and electrical ledger, hot burning save, first-formed active plasma/casing and fractional restoration, exact saved FE plus counted boot generation, exact saved fuels plus counted boot injection, 200 resumed ticks and zero-injection burnout. Fuel and electrical ledgers remain live until final save. Retains water/sodium fission, natural meltdown/recovery and all prior fixtures. Water-cooled fusion, fuel-starvation/interrupt scenarios, induction tier balance, equipment, full progression and addons remain incomplete.",
+  "excludedAttempts": [
+    "Earlier seed-only fixture passed 724 checks before strengthening fuel accounting. Subsequent 725-check seed and fresh-JVM failure exposed 432630 FE missing from persisted matrix cells. Both worlds and raw evidence retained separately. Final two-JVM evidence uses matching fixed production and QA artifacts."
+  ],
+  "tickAcceleration": {
+    "seed": "Existing fusion fixture requests normal charging tick sprint.",
+    "restart": "Console command tick sprint 4000 after resumed fusion and shutdown checks; normal world updates accelerated during retained repair tests."
+  }
+}
