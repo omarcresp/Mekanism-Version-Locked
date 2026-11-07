@@ -1,0 +1,29 @@
+{
+  "target": {
+    "pack": "ATM11 0.14.0-beta",
+    "minecraft": "26.1.2",
+    "neoforge": "26.1.2.126",
+    "serverPackURL": "https://www.curseforge.com/minecraft/modpacks/all-the-mods-11/files/9426897",
+    "serverPackSHA256": "b8635562de0931eb5cadb51954c0fb78658033928ef54b5f73be6cae5c8897fa",
+    "sourceRepository": "https://github.com/victor0hxz/Mekanism-Version-Locked",
+    "ancestralliesLifecycle": [
+      "Java 25 wrapper",
+      "packaged production JAR separate from QA fixture",
+      "full pack dedicated server",
+      "distinct JVM save/restart checks",
+      "frozen input hashes and retained failure logs"
+    ]
+  },
+  "seedAssertions": 38,
+  "restartAssertions": 36,
+  "unitTests": 71,
+  "unitSuites": 11,
+  "communityInvalidRecipeIDs": 257,
+  "finalRecipeParseErrors": 0,
+  "recipeCount": 41296,
+  "identicalModsAcrossRestart": true,
+  "deliveredBytesTested": true,
+  "qaAbsentFromDeliverables": true,
+  "clientPassed": false,
+  "clientBlocker": "Iris 1.11.4 MixinRenderMekasuit doNotSwitchShaders critical redirect injection failed (0/1 targets)"
+}

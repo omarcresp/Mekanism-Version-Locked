@@ -30,7 +30,10 @@ public final class ItemStackIngredient implements InputIngredient<Item, ItemStac
     /// A codec which can (de)encode item stack ingredients.
     ///
     /// @since 10.6.0
-    public static final Codec<ItemStackIngredient> CODEC = SizedIngredient.NESTED_CODEC.xmap(ItemStackIngredient::new, ItemStackIngredient::ingredient);
+    public static final Codec<ItemStackIngredient> CODEC = Codec.withAlternative(
+          SizedIngredient.NESTED_CODEC,
+          Ingredient.CODEC.xmap(value -> new SizedIngredient(value, 1), SizedIngredient::ingredient)
+    ).xmap(ItemStackIngredient::new, ItemStackIngredient::ingredient);
     /// A stream codec which can be used to encode and decode item stack ingredients over the network.
     ///
     /// @since 10.6.0

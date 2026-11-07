@@ -496,7 +496,7 @@ tasks.named('test', Test) {
 dependencies {
     compileOnly(project(':annotation-processor'))
     // Optional integration API; the original KubeJS JAR is never bundled in Mekanism.
-    compileOnly(files(providers.gradleProperty('kubejs_compat_jar').orElse('libs/kubejs-neoforge-26.1.2-8.0.6.jar')))
+    compileOnly('curse.maven:kubejs-238086:8843756')
     localRuntime(project(':annotation-processor'))
     annotationProcessor(project(':annotation-processor'))
 
