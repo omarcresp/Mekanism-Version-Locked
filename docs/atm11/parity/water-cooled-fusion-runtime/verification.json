@@ -1,0 +1,102 @@
+{
+  "pack": "ATM11 0.14.0-beta",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.126",
+  "java": 25,
+  "sourceCommit": "90242022c6cb3aa4b02915a2ef11a61b62674871",
+  "sourceTree": "e55982657b53d92238a24e9477ec88324f918f92",
+  "profileSha256": "e3a845cff5b9748d7cb338b6c7479b02f4df55256b4dae35bd923490699c2bef",
+  "unitTests": {
+    "java": 79,
+    "python": 6,
+    "failures": 0
+  },
+  "validationNote": "QA rebuilt for water-cooled fusion. Production JARs and passing 79 Java / six migration test results retained unchanged from the hot fusion induction fix; exact JAR hashes checked.",
+  "checks": {
+    "seed": 783,
+    "restart": 358
+  },
+  "productionSourceCommit": "ed8061302af18ef5e461c2fb6616533b6725c617",
+  "sourceNote": "Water-cooled fusion QA added alongside air-cooled fusion and earlier safety fixtures; production JARs unchanged from induction persistence fix and match local artifacts byte for byte.",
+  "seedWaterFusion": {
+    "cooling": {
+      "turbineEnergy": 477034344,
+      "turbineGenerated": 477034344,
+      "returnedWater": 119258586,
+      "coolant": 4000000
+    },
+    "burning": true,
+    "injection": 4,
+    "plasma": 176195503.2946596,
+    "case": 27949147.41972457,
+    "fraction": 0.2000000000698492,
+    "deuterium": 49046,
+    "tritium": 49046,
+    "mixedFuel": 0,
+    "energy": 563867545,
+    "matrixEnergy": 223591,
+    "cubeEnergy": 86609610,
+    "generated": 563867545,
+    "injectedPerFuel": 954,
+    "laserSupply": 400000000,
+    "firstRestartPlasma": 0.0,
+    "firstRestartCase": 0.0
+  },
+  "restartWaterFusion": {
+    "cooling": {
+      "returnedWater": 389026838,
+      "coolant": 4000000,
+      "turbineEnergy": 2033141696,
+      "turbineGenerated": 1556107352
+    },
+    "burning": false,
+    "injection": 4,
+    "plasma": 2609676.253365146,
+    "case": 414819.69243691047,
+    "fraction": 0.20000000062964318,
+    "deuterium": 48090,
+    "tritium": 48090,
+    "mixedFuel": 0,
+    "energy": 2394844663,
+    "matrixEnergy": 97510967,
+    "cubeEnergy": 256000000,
+    "generated": 1830977118,
+    "injectedPerFuel": 956,
+    "laserSupply": 0,
+    "firstRestartPlasma": 176298210.58290973,
+    "firstRestartCase": 27965479.06987507
+  },
+  "seedGameTicks": 20519,
+  "logs": {
+    "seed": {
+      "sha256": "0ab60502a549f9b78b6e7b064f86dcca96109ba984f85c41b45c5a4a00bddf04",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    },
+    "restart": {
+      "sha256": "9b8ac9af0cad114accf2d81bc984d1a7afad6c9c2ccebf550e016ac8b0de5c10",
+      "recipeDecodeErrors": 0,
+      "recipeEventErrors": 0,
+      "mekanismDataMapErrors": 0
+    }
+  },
+  "artifactHashes": {
+    "Mekanism-26.1.2-10.8.0.homebaked.jar": "43134561c9a283a21c02379ab78188a9dda80de3adcaa58ed9cb40101e9d8615",
+    "MekanismGenerators-26.1.2-10.8.0.homebaked.jar": "982be444ce68ec50b0e16c8a152c48efb97cb879c8827e86436f1ddc00dd3323",
+    "atm11-server-qa-0.1.0.jar": "47fe82105ffbc5d658c5360c22b40c494a675a1a3bb7f583cf3da70e7d045dec"
+  },
+  "scope": "Separate physically laser-ignited water-cooled fusion reactor, two external chemical feeds, fusion cables/induction receiver, steam tube circuit to full turbine, condenser return pipes and turbine electrical receiver. Finite coolant, fuel and FE ledgers cover measured operation, hot save and exact fresh-JVM restoration including boot generation/injection. Fuel starvation by disabling reactor-facing tube connections leaves injection at four. Existing air-cooled zero-injection shutdown and fission/safety fixtures retained. Interruption/chunk scenarios, full induction, equipment, processing/progression and addon parity remain open.",
+  "tickAcceleration": {
+    "seed": "Existing fusion fixture requests normal charging tick sprint.",
+    "restart": "Console command tick sprint 4000 after resumed fusion, air-cooled shutdown and water-cooled fuel-starvation checks; normal world updates accelerated during retained repair tests."
+  },
+  "excludedAttempts": [
+    {
+      "reason": "Eight-minute process deadline expired during physical laser charging after unusually long pack startup; fixture did not finish. No assertion failure recorded.",
+      "sourceCommit": "a31327d",
+      "lastObservedTicks": 5400,
+      "reusedAsPassingEvidence": false
+    }
+  ]
+}

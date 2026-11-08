@@ -37,11 +37,13 @@ import net.neoforged.neoforge.transfer.transaction.Transaction;
 
 /** Saves real laser-ignited fusion with external fuel feeds and a physical power receiver. */
 final class HotFusionProbe {
-    private static final BlockPos START = new BlockPos(80, 80, 680);
-    private static final BlockPos LASER = START.offset(-3, 2, 2);
-    private static final BlockPos SOURCE = LASER.offset(0, 0, -3);
-    private static final BlockPos MATRIX = START.offset(10, 0, 1);
-    private static final BlockPos CUBE = MATRIX.offset(4, 2, 1);
+    enum Cooling { AIR, WATER }
+    private final BlockPos START;
+    private final BlockPos LASER;
+    private final BlockPos SOURCE;
+    private final BlockPos MATRIX;
+    private final BlockPos CUBE;
+    private final FusionCoolingLoop cooling;
     private static final int IGNITION_FE = 400000000;
     private final BiConsumer<Boolean, String> check;
     private JsonObject saved;
@@ -60,18 +62,34 @@ final class HotFusionProbe {
     private boolean observedRestart;
     private boolean ignited;
 
-    HotFusionProbe(BiConsumer<Boolean, String> check) { this.check = check; }
+    HotFusionProbe(BiConsumer<Boolean, String> check) { this(check, Cooling.AIR); }
+
+    HotFusionProbe(BiConsumer<Boolean, String> check, Cooling mode) {
+        this.check = (ok, message) -> check.accept(ok, mode.name().toLowerCase(java.util.Locale.ROOT) + " " + message);
+        START = new BlockPos(80, 80, mode == Cooling.AIR ? 680 : 960);
+        LASER = START.offset(-3, 2, 2);
+        SOURCE = LASER.offset(0, 0, -3);
+        MATRIX = START.offset(10, 0, 1);
+        CUBE = MATRIX.offset(4, 2, 1);
+        cooling = mode == Cooling.WATER ? new FusionCoolingLoop(START, this.check) : null;
+    }
 
     private static final class Builder extends GeneratorsBuilders.FusionReactorBuilder {
-        void place(Level level) { build(level, START, false); }
+        void place(Level level, BlockPos start) { build(level, start, false); }
     }
 
     void prepare(ServerLevel level, JsonObject saved) {
         this.saved = saved;
         if (saved != null) previousFraction = saved.get("fraction").getAsDouble();
-        for (int x = 4; x <= 6; x++) for (int z = 42; z <= 43; z++) level.setChunkForced(x, z, true);
-        if (saved != null) return;
-        new Builder().place(level);
+        for (int x = 4; x <= 6; x++) for (int z = (START.getZ() - 4) >> 4; z <= (START.getZ() + 4) >> 4; z++) level.setChunkForced(x, z, true);
+        if (saved != null) {
+            if (cooling != null) {
+                cooling.prepare(level, true);
+                cooling.restore(saved.getAsJsonObject("cooling").get("coolant").getAsLong());
+            }
+            return;
+        }
+        new Builder().place(level, START);
         level.setBlockAndUpdate(START.offset(0, 2, 2), GeneratorsBlocks.LASER_FOCUS_MATRIX.defaultState());
         level.setBlockAndUpdate(LASER, Attribute.setFacing(MekanismBlocks.LASER_AMPLIFIER.defaultState(), Direction.EAST));
         level.setBlockAndUpdate(SOURCE, Attribute.setFacing(MekanismBlocks.LASER.defaultState(), Direction.SOUTH));
@@ -104,6 +122,7 @@ final class HotFusionProbe {
         var config = cube.getConfig().getConfig(TransmissionType.ENERGY);
         for (var side : RelativeSide.values()) if (config.setDataType(DataType.INPUT, side)) cube.getConfig().sideChanged(TransmissionType.ENERGY, side);
         config.setEjecting(false);
+        if (cooling != null) cooling.prepare(level, false);
     }
 
     private FusionReactorMultiblockData reactor(ServerLevel level) {
@@ -126,7 +145,7 @@ final class HotFusionProbe {
     }
 
     private long energy(ServerLevel level) {
-        return reactor(level).energyContainer().getAmountAsLong() + matrix(level).getEnergy()
+        return (cooling == null ? 0 : cooling.energy(level)) + reactor(level).energyContainer().getAmountAsLong() + matrix(level).getEnergy()
               + ((TileEntityEnergyCube) level.getBlockEntity(CUBE)).energyContainer().getAmountAsLong()
               + ((TileEntityUniversalCable) level.getBlockEntity(MATRIX.offset(3, 2, 1))).getTransmitter().getBufferWithFallback()
               + ((TileEntityUniversalCable) level.getBlockEntity(START.offset(5, 1, 2))).getTransmitter().getBufferWithFallback();
@@ -153,6 +172,7 @@ final class HotFusionProbe {
         // Account from the first formed observation, including generation before networks reconnect.
         double converted = Math.floor(Math.max(0, r.lastEnvironmentLoss) * 0.04) / 2.5 + previousFraction;
         generated += (long) converted;
+        if (cooling != null) generated += cooling.tick(level, r);
         previousFraction = converted - Math.floor(converted);
         checkFraction(r);
         if (r.isBurning() && r.lastEnvironmentLoss > 0 && r.getInjectionRate() == 4) injectedPerFuel += 2;
@@ -169,7 +189,10 @@ final class HotFusionProbe {
             observedRestart = true;
         }
         if (stage == 0) {
-            if (elapsed < 40 || !matrix(level).isFormed() || !networksReady(level)) return false;
+            if (elapsed < 40 || !matrix(level).isFormed() || !networksReady(level) || (cooling != null && !cooling.ready(level))) {
+                if (elapsed > 200) throw new IllegalStateException("Hot fusion transport or cooling circuit did not form");
+                return false;
+            }
             check.accept(matrix(level).getCellCount() == 1 && matrix(level).getProviderCount() == 1, "hot fusion: physical induction matrix forms with cell and provider");
             if (saved == null) {
                 check.accept(energy(level) == 0, "induction: active output port cannot create energy while the matrix is empty");
@@ -180,6 +203,7 @@ final class HotFusionProbe {
                 var hohlraum = ContainerType.CHEMICAL.getFilledVariant(GeneratorsItems.HOHLRAUM, GeneratorsChemicals.FUSION_FUEL, null);
                 r.getInventorySlots().getFirst().setContents(ItemResource.of(hohlraum), 1, null);
                 r.setInjectionRate(4);
+                if (cooling != null) cooling.charge(level, r);
                 var amplifier = (TileEntityLaserAmplifier) level.getBlockEntity(LASER);
                 amplifier.setMinThresholdFromPacket(IGNITION_FE);
                 amplifier.setMaxThresholdFromPacket(IGNITION_FE);
@@ -231,14 +255,37 @@ final class HotFusionProbe {
             }
             if (measuredTicks < 200) return false;
             if (saved == null) { stage = 4; return true; }
-            r.setInjectionRate(0);
+            if (cooling == null) {
+                r.setInjectionRate(0);
+            } else {
+                cooling.verify(level, r);
+                for (int x : new int[]{1, 3}) {
+                    var tube = ((TileEntityPressurizedTube) level.getBlockEntity(START.offset(x, 2, -1))).getTransmitter();
+                    tube.setConnectionTypeRaw(Direction.SOUTH, mekanism.common.lib.transmitter.ConnectionType.NONE);
+                    tube.onModeChange(Direction.SOUTH);
+                    tube.refreshConnections();
+                    tube.notifyTileChange();
+                }
+            }
             initialDeuterium = fuel(level, 1);
             initialTritium = fuel(level, 3);
             stage = 3;
             return false;
         }
         if (stage == 3) {
-            if (++shutdownTicks < 20) return false;
+            shutdownTicks++;
+            if (cooling != null) {
+                if (r.isBurning()) {
+                    if (shutdownTicks > 300) throw new IllegalStateException("Disconnected fusion fuel feeds did not starve reactor");
+                    return false;
+                }
+                check.accept(r.getInjectionRate() == 4 && r.deuteriumTank.isEmpty() && r.tritiumTank.isEmpty() && r.fuelTank.isEmpty(),
+                      "water-cooled fusion: disconnected physical feeds exhaust stored fuel and stop burning without a commanded shutdown");
+                cooling.verify(level, r);
+                stage = 4;
+                return true;
+            }
+            if (shutdownTicks < 20) return false;
             check.accept(!r.isBurning() && r.fuelTank.isEmpty(), "hot fusion: zero injection burns out the remaining mixed fuel and stops reaction");
             check.accept(fuel(level, 1) == initialDeuterium && fuel(level, 3) == initialTritium,
                   "hot fusion: zero injection preserves both externally supplied fuels");
@@ -313,6 +360,7 @@ final class HotFusionProbe {
         if (saved == null) check.accept(ignited && r.isBurning() && r.getPlasmaTemp() > FusionReactorMultiblockData.BURN_TEMPERATURE,
               "hot fusion: seed saves the physically ignited reactor while hot and burning");
         var out = new LinkedHashMap<String, Object>();
+        if (cooling != null) out.put("cooling", cooling.snapshot(level, r));
         out.put("burning", r.isBurning());
         out.put("injection", r.getInjectionRate());
         out.put("plasma", r.getPlasmaTemp());

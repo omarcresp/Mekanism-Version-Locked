@@ -65,8 +65,8 @@ the main build, 79 Java tests, six Python migration tests and separate QA
 compilation passed after the production fix. Both server processes exited
 normally; the recipe/datamap error filters reported zero errors. The existing
 cold-checkpoint fixture remains alongside this one.
-Water-cooled fusion, interrupted operation, physical fuel starvation, complete
-induction behavior (including mixed push/pull timing and tier balance), equipment,
+Water-cooled fusion and physical fuel starvation are covered in
+`water-cooled-fusion.md`. Interrupted operation and complete induction behavior (including mixed push/pull timing and tier balance), equipment,
 full processing/progression and addon parity remain open in the broader ATM10 goal.
 
 Before ignition, the live fixture checks immediate persistable cell updates,

@@ -40,7 +40,7 @@ the final fixture fills its real coolant capacity before each operating cycle.
 | Fission | Formation, exact burn/waste, cooling, ports, shutdown, save/restart, safety | Physical water and sodium/boiler loops, active hot restart, shutdown, coolant-loss emergency cooling, natural damage repair, meltdown/rebuild and fallout persistence passed; further accident/chunk scenarios pending |
 | Industrial turbine | Formation, steam-to-energy, condensate, actual output, restart | Physical rotor conversion and fractional restart passed; connected fission loop verifies actual energy output and condenser recirculation |
 | Thermoelectric boiler | Formation, sodium heat transfer, steam output, cooled sodium return and restart | Formed storage above old capacity and physical sodium/water recirculation passed; detailed failure scenarios pending |
-| Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Physical laser ignition, external fuel feeds, hot burning save/restart, exact fuel/FE ledgers, induction output and zero-injection shutdown passed; water-cooled fusion and interruption/starvation scenarios pending |
+| Fusion | Hohlraum and laser ignition, sustained fuel injection, heat/energy, shutdown/restart | Physical laser ignition, external fuel feeds, hot burning save/restart, exact fuel/FE ledgers, induction output, zero-injection shutdown, water-cooled turbine recirculation and physical fuel starvation passed; interruption/chunk scenarios pending |
 | SPS | Coil/port energy, polonium-to-antimatter quantities/cost, output/restart | Real port/coil, bounded external energy insertion and exact 40000 FE per input mB passed; output transport/restart pending |
 | Nuclear progression | Fuel chain, plutonium/polonium, pellets, waste decay/radiation | Physical polonium, brine and heavy-water production, waste/isotope decay and radiation factors passed; full connected fuel chain and pellets pending |
 | Machines | Processing families, factories/upgrades, fivefold ore chain and pack metals | Selected processing passed; full inventory pending |
@@ -119,8 +119,22 @@ The restart test exposed 432630 FE reported by a matrix but absent from its save
 cell. Committed transfers now update cells immediately and transactionally;
 output cannot exceed stored energy, and cell removal subtracts capacity once.
 Live checks cover rollback, nested aborts, input limits, removal and empty output.
-Water-cooled fusion, physical fuel starvation, interrupted operation and broader
-induction behavior remain pending.
+Water-cooled fusion and physical fuel starvation are covered below. Interrupted
+operation and broader induction behavior remain pending.
+
+## Water-cooled fusion and fuel starvation
+
+`water-cooled-fusion.md` and `water-cooled-fusion-runtime/` cover a separate
+laser-ignited fusion reactor with physical steam transport to a full turbine,
+condenser water return pipes and turbine electrical output. A finite 4000000 mB
+coolant charge remained exactly conserved. The same fuel and electrical ledgers
+used for air-cooled fusion also include the turbine output inventory.
+
+The full pack passed 783 seed and 358 fresh-JVM restart checks. Hot restoration
+and 200 resumed burning updates passed, then disabling both physical fuel-tube
+connections exhausted stored fuel and stopped burning with injection still four.
+The earlier air-cooled commanded shutdown and all fission safety fixtures remain
+in the run. Interrupted operation and chunk lifecycle scenarios remain pending.
 
 ## Fractional gas fuel
 

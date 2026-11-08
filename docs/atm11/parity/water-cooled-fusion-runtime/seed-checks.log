@@ -1,0 +1,783 @@
+[13:23:16] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS disposable world ownership marker
+[13:23:16] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS registered mekanism:enrichment_chamber
+[13:23:16] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS registered mekanism:metallurgic_infuser
+[13:23:16] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS registered mekanism:chemical_dissolution_chamber
+[13:23:16] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS registered mekanism:sps_casing
+[13:23:16] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS registered mekanismgenerators:fission_reactor_casing
+[13:23:16] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS registered mekanismgenerators:fusion_reactor_controller
+[13:23:16] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS enrichment chamber block entity created
+[13:23:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 turbine supports eight blades per coil and 128000 mB per condenser
+[13:23:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 turbine cavity and energy capacities restored
+[13:23:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 steam carries ten joules without a flow divisor
+[13:23:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 turbine vent and disperser rates restored
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 machine upgrade multiplier is 16
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:enrichment_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity enrichment_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage enrichment_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:osmium_compressor
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity osmium_compressor
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage osmium_compressor
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:combiner
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity combiner
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage combiner
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:crusher
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity crusher
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage crusher
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:metallurgic_infuser
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity metallurgic_infuser
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage metallurgic_infuser
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:purification_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity purification_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage purification_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:energized_smelter
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity energized_smelter
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage energized_smelter
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:digital_miner
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity digital_miner
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage digital_miner
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:electric_pump
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity electric_pump
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage electric_pump
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:chargepad
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity chargepad
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage chargepad
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:rotary_condensentrator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity rotary_condensentrator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage rotary_condensentrator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:chemical_oxidizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity chemical_oxidizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage chemical_oxidizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:chemical_infuser
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity chemical_infuser
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage chemical_infuser
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:chemical_injection_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity chemical_injection_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage chemical_injection_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:electrolytic_separator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity electrolytic_separator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:precision_sawmill
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity precision_sawmill
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage precision_sawmill
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:chemical_dissolution_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity chemical_dissolution_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage chemical_dissolution_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:chemical_washer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity chemical_washer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage chemical_washer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:chemical_crystallizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity chemical_crystallizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage chemical_crystallizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:seismic_vibrator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity seismic_vibrator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage seismic_vibrator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:pressurized_reaction_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity pressurized_reaction_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage pressurized_reaction_chamber
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:fluidic_plenisher
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity fluidic_plenisher
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage fluidic_plenisher
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:laser
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity laser
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:laser_amplifier
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity laser_amplifier
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:laser_tractor_beam
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity laser_tractor_beam
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:formulaic_assemblicator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity formulaic_assemblicator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage formulaic_assemblicator
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:teleporter
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity teleporter
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:modification_station
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity modification_station
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage modification_station
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:isotopic_centrifuge
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity isotopic_centrifuge
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage isotopic_centrifuge
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:nutritional_liquifier
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity nutritional_liquifier
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage nutritional_liquifier
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:antiprotonic_nucleosynthesizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity antiprotonic_nucleosynthesizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage antiprotonic_nucleosynthesizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:pigment_extractor
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity pigment_extractor
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage pigment_extractor
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:pigment_mixer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity pigment_mixer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage pigment_mixer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:painting_machine
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity painting_machine
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage painting_machine
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:sps_port
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity sps_port
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:dimensional_stabilizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy capacity dimensional_stabilizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 base energy usage dimensional_stabilizer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:basic_smelting_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer BASIC SMELTING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:basic_enriching_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer BASIC ENRICHING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:basic_crushing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer BASIC CRUSHING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:basic_compressing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer BASIC COMPRESSING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:basic_combining_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer BASIC COMBINING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:basic_purifying_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer BASIC PURIFYING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:basic_injecting_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer BASIC INJECTING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:basic_infusing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer BASIC INFUSING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:basic_sawing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer BASIC SAWING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:advanced_smelting_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ADVANCED SMELTING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:advanced_enriching_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ADVANCED ENRICHING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:advanced_crushing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ADVANCED CRUSHING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:advanced_compressing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ADVANCED COMPRESSING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:advanced_combining_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ADVANCED COMBINING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:advanced_purifying_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ADVANCED PURIFYING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:advanced_injecting_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ADVANCED INJECTING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:advanced_infusing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ADVANCED INFUSING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:advanced_sawing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ADVANCED SAWING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:elite_smelting_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ELITE SMELTING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:elite_enriching_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ELITE ENRICHING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:elite_crushing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ELITE CRUSHING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:elite_compressing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ELITE COMPRESSING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:elite_combining_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ELITE COMBINING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:elite_purifying_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ELITE PURIFYING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:elite_injecting_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ELITE INJECTING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:elite_infusing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ELITE INFUSING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:elite_sawing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ELITE SAWING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_smelting_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ULTIMATE SMELTING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_enriching_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ULTIMATE ENRICHING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_crushing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ULTIMATE CRUSHING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_compressing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ULTIMATE COMPRESSING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_combining_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ULTIMATE COMBINING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_purifying_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ULTIMATE PURIFYING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_injecting_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ULTIMATE INJECTING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_infusing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ULTIMATE INFUSING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS balance fixture block registered mekanism:ultimate_sawing_factory
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 factory buffer ULTIMATE SAWING
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS eight energy upgrades increase configured buffer sixteenfold
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS speed upgrades preserve independently configured buffer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS eight energy upgrades increase configured buffer sixteenfold
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS speed upgrades preserve independently configured buffer
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 solar ratings are 60/480 FE per tick
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 wind rating spans 60 to 360 FE per tick
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 generator capacity heat_generator at BlockPos{x=8, y=200, z=112}
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 generator capacity bio_generator at BlockPos{x=16, y=200, z=112}
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 generator capacity solar_generator at BlockPos{x=24, y=200, z=112}
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 generator capacity advanced_solar_generator at BlockPos{x=32, y=200, z=112}
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 generator capacity wind_generator at BlockPos{x=40, y=20, z=112}
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 generator capacity wind_generator at BlockPos{x=48, y=315, z=112}
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 gas generator capacity is 80000 FE
+[13:23:21] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 gas generator tank capacity is 18000 mB
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 resistive heater starts at 40 FE/t with a 16000 FE buffer
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heater accepts its one-tick electrical input
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 bio generator restores 140 FE/t, 200 ticks per item and 24000 mB tank
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 heat generator restores thermal Joules for active, lava-adjacent and Nether heat
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 heat generator consumes 10 mB per active tick with a 24000 mB tank
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator transfer fixture has known output orientation 0
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator transfer fixture has known output orientation 1
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator transfer fixture has known output orientation 2
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator transfer fixture has known output orientation 3
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator transfer fixture has known output orientation 4
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator transfer fixture has known output orientation 5
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator transfer fixture has known output orientation 6
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 peak neutron activation rate is 256 mB/t
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 filtered pump yield is 50 mB per source
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 evaporation temperature multiplier and layer heat capacity restored
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 waste decay is two mB every ten ticks
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 source and target radiation decay rates restored
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radiation source decay applies the ATM10 factor
+[13:23:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual entity radiation decay applies the ATM10 factor
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: ATM10 enabled meltdowns, natural chance and post-meltdown damage remain active
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS pack integration block registered trashcans:liquid_trash_can
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS chemical capability available on trashcans:liquid_trash_can
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS chemical insertion accepted by trashcans:liquid_trash_can
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS pack integration block registered trashcans:ultimate_trash_can
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS chemical capability available on trashcans:ultimate_trash_can
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS chemical insertion accepted by trashcans:ultimate_trash_can
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS chemical tank block entity available
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS chemical transaction changes visible before abort
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS aborted chemical transaction restores exact amount
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 8.5 deterministic secondary chemical consumption is active
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 ethene fuel map loads with 2400 FE per mB and 20 burn steps
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 hydrogen fuel map loads with 80 FE per mB
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS creative cube component parses and retains exact long energy value
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM creative energy cube progression recipe loads
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded atm11mekcompat:platinum/from_raw
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/crushing/aum
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/enriching/aum
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/pigment_extracting/aum
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded arsmagicalegacy:compat/mekanism/sawing/witchwood_logs
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded allthemods:mekanism/sawing/undergarden/grongle_planks
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/honeycomb_lithium
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/honeycomb_wasted_radioactive
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/comb_block_lithium
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat recipe decoded and loaded productivebees:mekanism/oxidizing/comb_block_wasted_radioactive
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS uncounted external recipe input defaults to one item
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS counted recipe input preserves quantity
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS zero-count input rejected instead of silently defaulting
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS uncounted input encodes back to canonical counted schema
+[13:23:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS platinum processing chamber available
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full ethene tank generates ATM10 output of 30720 FE in one tick
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full-pressure output consumes exactly 12.8 mB equivalent without losing the fraction
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS gas fixture supports redstone shutdown
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS a 157 FE gap admits one 120 FE burn step and retains 37 FE free
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS partial ethene burn preserves all 2280 ungenerated FE
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS partial ethene credit cannot be mixed with a different fuel
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator loot preserves remaining fuel energy and chemical identity
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS placing the dropped generator restores both fuel credit and output energy
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one hydrogen mB yields exactly 80 FE
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heater consumes exactly 40 FE
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS 40 FE becomes 100 Joules and produces 60 Joules of accounted heater heat at 60 percent efficiency
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heat/bio fixture measures exactly one actual tile update 0
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heat/bio fixture measures exactly one actual tile update 1
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heat/bio fixture measures exactly one actual tile update 2
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heat/bio fixture measures exactly one actual tile update 3
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heat/bio fixture measures exactly one actual tile update 4
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heat/bio fixture measures exactly one actual tile update 5
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heat/bio fixture measures exactly one actual tile update 6
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heat generator retains four tenths of one FE from one whole thermal Joule; actual FE=0 remainder=0.4
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS maximum thermal conversion caps at 1110 Joules and generates 444 FE
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS 10 mB of lava supplies exactly 800 accounted thermal Joules
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS adjacent lava supplies 30 thermal Joules without tank fuel
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one biofuel block supplies 1800 burn ticks and produces its first 140 FE
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS bio generation rolls back fuel and FE when only 139 FE fit
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS bio generation consumes exactly one mB when all 140 FE fit
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS three whole-Joule heat pulses store one FE and retain one fifth FE
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS aborted heat simulation restores fractional credit and stored FE
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal heat-generator loot preserves earned fractional FE
+[13:23:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS placing dropped heat generator restores FE and fractional credit
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS formed fission reactor detects fuel assemblies
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS formed turbine detects physical rotor blade count 0
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine retains ATM10 buffer above integer FE range 0
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine maximum production reports converted FE 0
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine begins without stored FE 0
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS formed turbine detects physical rotor blade count 1
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine retains ATM10 buffer above integer FE range 1
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine maximum production reports converted FE 1
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine begins without stored FE 1
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 powered laser consumes 20000 FE per firing tick
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 fusion buffer is 400 million FE
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 fusion fuel tank holds 500 mB
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS fusion begins unignited
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS 400 million FE supplies one billion Joules for cold-plasma heating
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS aborted fusion energy and fractional state roll back together
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS formed SPS detects actual port-connected coil
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 SPS cost is 40000 FE per input mB
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS SPS port insertion accepts the required energy within its configured capacity
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS SPS port accepts exact energy for one mB antimatter
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS whole Joules accumulate into FE without discarding each tick's fraction
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS fusion conversion retains the exact remaining fifth of one FE
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS real laser amplifier points through the focus matrix
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS isolated server accelerates normal laser charging ticks
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: destructive fixture has no preexisting fallout
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: physical input port exposes fuel capability
+[13:23:36] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: fissile fuel enters physical input port
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one ethene mB yields exactly 2400 FE including final empty-tank credit
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator accepts a different fuel after partial credit is exhausted
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS aborted fuel insertion rolls back without creating fuel
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS 37 FE of free space consumes no fuel or partial credit
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full energy buffer consumes no fuel or partial credit
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS fuel extraction is visible inside a transaction
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS aborted fuel extraction restores exact fuel without changing burn credit
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal turbine ticks conserve FE per whole mB with fractional credit 0
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full condenser tank permits continued generation 0
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine reports committed FE production 0
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS aborted transaction restores fractional turbine credit 0
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal turbine ticks conserve FE per whole mB with fractional credit 1
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full condenser tank permits continued generation 1
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine reports committed FE production 1
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS aborted transaction restores fractional turbine credit 1
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS SPS consumes exact configured polonium input
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS SPS converts polonium into exactly one mB antimatter
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS SPS actual port and coil consume exact supplied energy
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full turbine buffer stops steam consumption 0
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full turbine buffer preserves fractional credit 0
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full turbine buffer stops steam consumption 1
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full turbine buffer preserves fractional credit 1
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS idle turbine reports zero generation 0
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS idle turbine reports zero generation 1
+[13:23:37] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical induction matrix forms with cell and provider
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: active output port cannot create energy while the matrix is empty
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: empty matrix and physical cell agree
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: real matrix accepts committed input
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: committed energy reaches persistable cell before another world tick
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: transactional extraction updates the actual cell immediately
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: aborted extraction restores cell, aggregate and transfer budget
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: nested extraction sees restored output budget
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: outer abort restores a committed nested cell transfer
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: immediate cell storage preserves the shared input throughput limit
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: aborted full-budget input restores persistable storage
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: full committed extraction uses restored budget
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: committed extraction is reflected in persistable cell immediately
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: removing a cell twice subtracts capacity once
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air induction: reattaching physical cell restores exact capacity
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: separate physical feeds conserve both initial fuel charges
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: tubes fill reactor through actual chemical input ports
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical induction matrix forms with cell and provider
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: active output port cannot create energy while the matrix is empty
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: empty matrix and physical cell agree
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: real matrix accepts committed input
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: committed energy reaches persistable cell before another world tick
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: transactional extraction updates the actual cell immediately
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: aborted extraction restores cell, aggregate and transfer budget
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: nested extraction sees restored output budget
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: outer abort restores a committed nested cell transfer
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: immediate cell storage preserves the shared input throughput limit
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: aborted full-budget input restores persistable storage
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: full committed extraction uses restored budget
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: committed extraction is reflected in persistable cell immediately
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: removing a cell twice subtracts capacity once
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water induction: reattaching physical cell restores exact capacity
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: separate physical feeds conserve both initial fuel charges
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: tubes fill reactor through actual chemical input ports
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water water-cooled fusion: real input port exposes water capability
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water water-cooled fusion: finite initial coolant charge enters real port
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected turbine forms with full rotor and condensers
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected reactor begins without damage
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: real coolant circuit input port exposes external fluid capability
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: initial coolant charge enters through real input port
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: real reactor roof input port exposes sodium capability
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: initial sodium charge enters real reactor input port
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected turbine forms with full rotor and condensers
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected reactor begins without damage
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS real coolant circuit input port exposes external fluid capability
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS initial coolant charge enters through real input port
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS formed boiler water storage matches ATM10 per-volume capacity
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS formed boiler heated coolant storage matches ATM10 capacity
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS formed five-layer boiler steam storage matches ATM10 capacity
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS formed five-layer boiler cooled coolant storage matches ATM10 capacity
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS formed four-layer evaporation plant has 2400 J/K heat capacity
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS blacklisted polonium does not decay in a real waste barrel
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS two physical universal cables form one shared energy network
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS cable network discovers the configured energy cube input
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 automatic output budget restored for heat_generator fixture 0
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator receiver starts empty 0
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 automatic output budget restored for bio_generator fixture 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator receiver starts empty 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS roof prevents new solar energy during transfer accounting 2
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 automatic output budget restored for solar_generator fixture 2
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator receiver starts empty 2
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS roof prevents new solar energy during transfer accounting 3
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 automatic output budget restored for advanced_solar_generator fixture 3
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator receiver starts empty 3
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS roof prevents new wind energy during transfer accounting 4
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 automatic output budget restored for wind_generator fixture 4
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator receiver starts empty 4
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 automatic output budget restored for gas_burning_generator fixture 5
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator receiver starts empty 5
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS roof prevents new wind energy during transfer accounting 6
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS ATM10 automatic output budget restored for wind_generator fixture 6
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator receiver starts empty 6
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 1
+[13:23:40] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sunlit activator fixture distinguishes ATM10 rate from old 64 mB/t basis
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one actual sunlit tick converts exact ATM10-rate nuclear waste to polonium
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one actual heated evaporation tick conserves ten water per brine at ATM10 rate
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS heated plant fixture distinguishes restored evaporation rate
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 1
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 1
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 2
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 5
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 6
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 7
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 8
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 9
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 0 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 0 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 1 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 1 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 2 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 2 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 3 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 3 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 4 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 4 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 5 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 5 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal generator tick obeys aggregate automatic output budget 6 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual receivers plus cable buffer conserve generated transfer 6 tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS both physical output faces receive a share of one common budget 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS both physical output faces receive a share of one common budget 3
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS both physical output faces receive a share of one common budget 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS both physical output faces receive a share of one common budget 4
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS automatic generator output reaches an actual receiver through universal cables: [EnergyNetwork] 2 transmitters, 2 acceptors. network=0 local1=0 local2=0 running=true endpointAcceptor=mekanism.common.capabilities.resolver.manager.EnergyHandlerManager$TrackingEnergyHandler@7d445d5c
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS gas transfer fixture accepts fuel in a provisional transaction
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS provisional fuel does not mutate the committed generator output limit
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS aborted fuel insertion preserves the empty-tank output limit
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS committed ethene fuel establishes the 120 FE burn-step output basis
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 10
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS full-pressure gas generation raises automatic output to twice actual 30720 FE production
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 11
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 11
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS gas generator emits its updated 61440 FE budget to a real receiver
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS dynamic gas transfer conserves buffer plus simultaneous fuel generation
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 12
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 12
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 13
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 13
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 14
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 14
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 15
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 15
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 16
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 16
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 17
+[13:23:41] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 17
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 18
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 18
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 19
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 19
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual radioactive waste barrel obeys two mB per ten ticks: 20
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS polonium decay blacklist holds during measured tick 20
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS actual filtered pump extracts exactly 50 mB heavy water from one source
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator produces restored-scale FE through normal ticks at BlockPos{x=24, y=200, z=112}
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator stores exact sum of actual tick output at BlockPos{x=24, y=200, z=112}
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator produces restored-scale FE through normal ticks at BlockPos{x=32, y=200, z=112}
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator stores exact sum of actual tick output at BlockPos{x=32, y=200, z=112}
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator produces restored-scale FE through normal ticks at BlockPos{x=40, y=20, z=112}
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator stores exact sum of actual tick output at BlockPos{x=40, y=20, z=112}
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator produces restored-scale FE through normal ticks at BlockPos{x=48, y=315, z=112}
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS generator stores exact sum of actual tick output at BlockPos{x=48, y=315, z=112}
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS wind at minimum height produces 60 FE/t
+[13:23:42] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS wind at maximum height produces 360 FE/t
+[13:23:43] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS 100 fission ticks consume exactly 100 mB fissile fuel
+[13:23:43] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS 100 fission ticks produce exactly 100 mB nuclear waste
+[13:23:43] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS fission operation consumes water coolant
+[13:23:43] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS fission operation produces heated coolant
+[13:23:43] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS cooled fission operation avoids reactor damage (damage=0.0, water=12149097)
+[13:23:44] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one biofuel item burns for 200 ticks and yields exactly 28000 FE
+[13:24:04] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: natural meltdown clears radioactive waste, shuts down and resets damage to 75 (damage=75.0, waste=0)
+[13:24:04] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: meltdown preserves nonradioactive fissile fuel as ATM10 does (fuel=39952)
+[13:24:04] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: natural meltdown resets heat and releases real world radiation
+[13:24:04] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: natural meltdown physically destroys reactor formation
+[13:25:17] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS normal laser source receives exactly 400 million FE for ignition
+[13:25:17] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS laser source and amplifier transfer the full electrical budget through real beams
+[13:25:17] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical 400 million FE laser ignition consumes the hohlraum
+[13:25:17] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: laser source and amplifier transfer their full budgets
+[13:25:17] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical 400 million FE laser ignition consumes the hohlraum
+[13:25:17] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: laser source and amplifier transfer their full budgets
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: plasma remains burning at measured tick 50
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: separate physical fuel feeds each supply two mB per tick at 50
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical electrical inventory equals thermal generation ledger at 50
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical induction output and cable deliver FE into receiver at 50
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: plasma remains burning at measured tick 50
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: separate physical fuel feeds each supply two mB per tick at 50
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical electrical inventory equals thermal generation ledger at 50
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical induction output and cable deliver FE into receiver at 50
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS laser amplifier transfers its full stored pulse
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical laser ignition consumes the filled hohlraum
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS fusion sustains burning for 100 ticks after physical laser ignition
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS fusion injects both deuterium and tritium
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS fusion consumes equal quantities of deuterium and tritium
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS fusion generates stored FE after physical ignition
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: all water remains in the connected circuit before measurement
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: all sodium remains in the separate reactor boiler circuit before measurement
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical fuel, remaining waste and independently counted barrel decay conserve all 3000 mB
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: external chemical tank supplies fissile fuel through physical tubes and port
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS all water remains in the connected circuit before measurement
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical fuel, remaining waste and independently counted barrel decay conserve all 3000 mB
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS external chemical tank supplies fissile fuel through physical tubes and port
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: physical input port exposes fuel capability
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: fissile fuel enters physical input port
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: coolant-loss fixture starts dry
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: destructive reactor retains actual surviving casings for cache recovery (count=686)
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: physical rebuild restores damaged inactive reactor cache (damage=74.99249835955538, active=false)
+[13:25:18] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: physical rebuild preserves surviving fuel without resurrecting irradiated waste
+[13:25:19] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: plasma remains burning at measured tick 100
+[13:25:19] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: separate physical fuel feeds each supply two mB per tick at 100
+[13:25:19] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical electrical inventory equals thermal generation ledger at 100
+[13:25:19] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical induction output and cable deliver FE into receiver at 100
+[13:25:19] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: plasma remains burning at measured tick 100
+[13:25:19] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: separate physical fuel feeds each supply two mB per tick at 100
+[13:25:19] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical electrical inventory equals thermal generation ledger at 100
+[13:25:19] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical induction output and cable deliver FE into receiver at 100
+[13:25:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical steam and water loop conserves coolant at tick 50
+[13:25:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical heated and cooled sodium networks conserve coolant at tick 50
+[13:25:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: one mB burn and physical waste output plus barrel decay conserve fuel at tick 50
+[13:25:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: turbine and physical cable receiver conserve all reported FE at tick 50
+[13:25:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected cooling prevents damage and keeps coolant at tick 50
+[13:25:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical steam and water loop conserves coolant at tick 50
+[13:25:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one mB burn and physical waste output plus barrel decay conserve fuel at tick 50
+[13:25:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine and physical cable receiver conserve all reported FE at tick 50
+[13:25:20] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected cooling prevents damage and keeps coolant at tick 50
+[13:25:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: plasma remains burning at measured tick 150
+[13:25:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: separate physical fuel feeds each supply two mB per tick at 150
+[13:25:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical electrical inventory equals thermal generation ledger at 150
+[13:25:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical induction output and cable deliver FE into receiver at 150
+[13:25:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: plasma remains burning at measured tick 150
+[13:25:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: separate physical fuel feeds each supply two mB per tick at 150
+[13:25:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical electrical inventory equals thermal generation ledger at 150
+[13:25:22] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical induction output and cable deliver FE into receiver at 150
+[13:25:23] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical steam and water loop conserves coolant at tick 100
+[13:25:23] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical heated and cooled sodium networks conserve coolant at tick 100
+[13:25:23] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: one mB burn and physical waste output plus barrel decay conserve fuel at tick 100
+[13:25:23] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: turbine and physical cable receiver conserve all reported FE at tick 100
+[13:25:23] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected cooling prevents damage and keeps coolant at tick 100
+[13:25:23] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical steam and water loop conserves coolant at tick 100
+[13:25:23] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one mB burn and physical waste output plus barrel decay conserve fuel at tick 100
+[13:25:23] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine and physical cable receiver conserve all reported FE at tick 100
+[13:25:23] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected cooling prevents damage and keeps coolant at tick 100
+[13:25:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: plasma remains burning at measured tick 200
+[13:25:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: separate physical fuel feeds each supply two mB per tick at 200
+[13:25:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical electrical inventory equals thermal generation ledger at 200
+[13:25:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: physical induction output and cable deliver FE into receiver at 200
+[13:25:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: plasma remains burning at measured tick 200
+[13:25:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: separate physical fuel feeds each supply two mB per tick at 200
+[13:25:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical electrical inventory equals thermal generation ledger at 200
+[13:25:24] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: physical induction output and cable deliver FE into receiver at 200
+[13:25:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical steam and water loop conserves coolant at tick 150
+[13:25:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical heated and cooled sodium networks conserve coolant at tick 150
+[13:25:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: one mB burn and physical waste output plus barrel decay conserve fuel at tick 150
+[13:25:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: turbine and physical cable receiver conserve all reported FE at tick 150
+[13:25:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected cooling prevents damage and keeps coolant at tick 150
+[13:25:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical steam and water loop conserves coolant at tick 150
+[13:25:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one mB burn and physical waste output plus barrel decay conserve fuel at tick 150
+[13:25:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine and physical cable receiver conserve all reported FE at tick 150
+[13:25:25] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected cooling prevents damage and keeps coolant at tick 150
+[13:25:28] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical steam and water loop conserves coolant at tick 200
+[13:25:28] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical heated and cooled sodium networks conserve coolant at tick 200
+[13:25:28] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: one mB burn and physical waste output plus barrel decay conserve fuel at tick 200
+[13:25:28] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: turbine and physical cable receiver conserve all reported FE at tick 200
+[13:25:28] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected cooling prevents damage and keeps coolant at tick 200
+[13:25:28] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical steam and water loop conserves coolant at tick 200
+[13:25:28] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one mB burn and physical waste output plus barrel decay conserve fuel at tick 200
+[13:25:28] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine and physical cable receiver conserve all reported FE at tick 200
+[13:25:28] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected cooling prevents damage and keeps coolant at tick 200
+[13:25:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical steam and water loop conserves coolant at tick 250
+[13:25:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical heated and cooled sodium networks conserve coolant at tick 250
+[13:25:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: one mB burn and physical waste output plus barrel decay conserve fuel at tick 250
+[13:25:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: turbine and physical cable receiver conserve all reported FE at tick 250
+[13:25:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected cooling prevents damage and keeps coolant at tick 250
+[13:25:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical steam and water loop conserves coolant at tick 250
+[13:25:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one mB burn and physical waste output plus barrel decay conserve fuel at tick 250
+[13:25:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine and physical cable receiver conserve all reported FE at tick 250
+[13:25:30] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected cooling prevents damage and keeps coolant at tick 250
+[13:25:33] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical steam and water loop conserves coolant at tick 300
+[13:25:33] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical heated and cooled sodium networks conserve coolant at tick 300
+[13:25:33] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: one mB burn and physical waste output plus barrel decay conserve fuel at tick 300
+[13:25:33] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: turbine and physical cable receiver conserve all reported FE at tick 300
+[13:25:33] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected cooling prevents damage and keeps coolant at tick 300
+[13:25:33] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical steam and water loop conserves coolant at tick 300
+[13:25:33] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one mB burn and physical waste output plus barrel decay conserve fuel at tick 300
+[13:25:33] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine and physical cable receiver conserve all reported FE at tick 300
+[13:25:33] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected cooling prevents damage and keeps coolant at tick 300
+[13:25:34] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: coolant loss naturally crosses 1200 K and accumulates damage while burning
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: manual emergency shutdown stops fuel burning for ten hot ticks
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: residual heat continues damaging a shut down dry reactor
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: emergency cooling uses physical input port
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: emergency coolant charge fully accepted
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS safety: restored coolant produces steam and prevents meltdown before damage threshold
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical steam and water loop conserves coolant at tick 350
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical heated and cooled sodium networks conserve coolant at tick 350
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: one mB burn and physical waste output plus barrel decay conserve fuel at tick 350
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: turbine and physical cable receiver conserve all reported FE at tick 350
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected cooling prevents damage and keeps coolant at tick 350
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical steam and water loop conserves coolant at tick 350
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one mB burn and physical waste output plus barrel decay conserve fuel at tick 350
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine and physical cable receiver conserve all reported FE at tick 350
+[13:25:35] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected cooling prevents damage and keeps coolant at tick 350
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical steam and water loop conserves coolant at tick 400
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: physical heated and cooled sodium networks conserve coolant at tick 400
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: one mB burn and physical waste output plus barrel decay conserve fuel at tick 400
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: turbine and physical cable receiver conserve all reported FE at tick 400
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected cooling prevents damage and keeps coolant at tick 400
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: cooled coolant returns through physical transport into the reactor coolant port
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: condenser water returns through physical pipes into boiler input valve
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: actual hot sodium heats the boiler and produces turbine steam
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: real waste output port delivers nuclear waste through tubes into the barrel top
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: reactor steam produces turbine power delivered through real valve and cable to energy cube
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected fission operates hot and produces committed electrical output
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS physical steam and water loop conserves coolant at tick 400
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS one mB burn and physical waste output plus barrel decay conserve fuel at tick 400
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS turbine and physical cable receiver conserve all reported FE at tick 400
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected cooling prevents damage and keeps coolant at tick 400
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS cooled coolant returns through physical transport into the reactor coolant port
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS real waste output port delivers nuclear waste through tubes into the barrel top
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS reactor steam produces turbine power delivered through real valve and cable to energy cube
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected fission operates hot and produces committed electrical output
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS three raw platinum processed into exactly four dust
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS compat processing outputs native AllTheOres platinum dust
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS platinum recipe consumed exactly three raw items
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS native enrichment recipe produces enriched carbon
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS machine consumed exact supplied input
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS machine consumed energy while processing
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected fuel and independently counted decay remain conserved until final save (fuel=2600, waste=322, decayed=78)
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS sodium: connected generation ledger includes all updates while other fixtures finish
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: complete electrical ledger remains conserved until final save
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: complete separate fuel ledgers remain conserved until final save
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS air hot fusion: seed saves the physically ignited reactor while hot and burning
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: complete electrical ledger remains conserved until final save
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: complete separate fuel ledgers remain conserved until final save
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water hot fusion: seed saves the physically ignited reactor while hot and burning
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water water-cooled fusion: finite coolant conserved across reactor, steam, turbine, condenser and return pipes
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water water-cooled fusion: physical reactor steam generates turbine power
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water water-cooled fusion: condenser water returns through physical pipes
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS water water-cooled fusion: turbine output reaches physical cable receiver
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected fuel and independently counted decay remain conserved until final save (fuel=2600, waste=322, decayed=78)
+[13:25:38] [Server thread/INFO] [STDOUT/]: [dev.atm11poc.Probe:check:68]: ATM11_POC PASS connected generation ledger includes all updates while other fixtures finish
