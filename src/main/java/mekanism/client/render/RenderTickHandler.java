@@ -184,8 +184,8 @@ public class RenderTickHandler {
             MekaSuitArmor armor = (MekaSuitArmor) ((ISpecialGear) IClientItemExtensions.of(armorItem)).gearModel();
             AvatarRenderer<AbstractClientPlayer> renderer = (AvatarRenderer<AbstractClientPlayer>) Minecraft.getInstance().getEntityRenderDispatcher().getRenderer(player);
             PlayerModel model = renderer.getModel();
-            AvatarRenderState renderState = renderer.createRenderState();
-            renderer.extractRenderState(player, renderState, MekanismRenderer.getPartialTick());
+            //Note: Use the entity aware overload so that render state modifiers such as the MekaSuit module activity are applied
+            AvatarRenderState renderState = renderer.createRenderState(player, MekanismRenderer.getPartialTick());
             //TODO - 26.1 model.setAllVisible(true);
             //Note: We just want it to act as empty even if there is a map as it looks a lot better
             boolean rightHand = event.getArm() == HumanoidArm.RIGHT;

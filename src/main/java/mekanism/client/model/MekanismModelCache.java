@@ -18,12 +18,12 @@ public class MekanismModelCache extends BaseModelCache {
     private final Set<Runnable> callbacks = new HashSet<>();
 
     public final OBJModelData MEKASUIT = registerOBJ("models/entity/mekasuit.obj");
-    public final OBJModelData MEKATOOL_LEFT_HAND = registerOBJ("models/entity/mekatool_left.obj");
-    public final OBJModelData MEKATOOL_RIGHT_HAND = registerOBJ("models/entity/mekatool_right.obj");
+    public final OBJModelData MEKATOOL_LEFT_HAND = registerOBJGeometry("models/entity/mekatool_left.obj");
+    public final OBJModelData MEKATOOL_RIGHT_HAND = registerOBJGeometry("models/entity/mekatool_right.obj");
     private final Set<ModuleOBJModelData> mekaSuitModules = new HashSet<>();
     public final Set<ModuleOBJModelData> MEKASUIT_MODULES = Collections.unmodifiableSet(mekaSuitModules);
 
-    public final OBJModelData TRANSMITTER_CONTENTS = register(RenderTransmitterBase.MODEL_LOCATION, rl -> new OBJModelData(rl) {
+    public final OBJModelData TRANSMITTER_CONTENTS = register(RenderTransmitterBase.MODEL_LOCATION, rl -> new GeometryOnlyOBJModelData(rl) {
         @Override
         protected boolean useDiffuseLighting() {
             return false;

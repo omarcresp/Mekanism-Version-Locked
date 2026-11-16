@@ -7,4 +7,3 @@ newmtl 4
 map_Kd mekanism:entity/armor/mekasuit_armor_helmet
 newmtl 5
 map_Kd mekanism:entity/armor/mekasuit_armor_exoskeleton
-newmtl none

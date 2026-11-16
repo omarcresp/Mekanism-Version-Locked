@@ -1,5 +1,6 @@
 package mekanism.client;
 
+import com.google.common.reflect.TypeToken;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -175,6 +176,7 @@ import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.entity.layers.WingsLayer;
 import net.minecraft.client.renderer.entity.player.AvatarRenderer;
 import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.Util;
 import net.minecraft.world.entity.EntityType;
@@ -203,6 +205,7 @@ import net.neoforged.neoforge.client.event.RegisterSelectItemModelPropertyEvent;
 import net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
+import net.neoforged.neoforge.client.renderstate.RegisterRenderStateModifiersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 
 @EventBusSubscriber(modid = Mekanism.MODID, value = Dist.CLIENT)
@@ -519,6 +522,13 @@ public class ClientRegistration {
         event.registerBlock(RenderPropertiesProvider.boundingParticles(), MekanismBlocks.BOUNDING_BLOCK);
         ClientRegistrationUtil.registerBlockExtensions(event, MekanismBlocks.BLOCKS);
         ClientRegistrationUtil.registerFluidExtensions(event, MekanismFluids.FLUIDS);
+    }
+
+    @SubscribeEvent
+    public static void registerRenderStateModifiers(RegisterRenderStateModifiersEvent event) {
+        //Note: Narrow to humanoid states in the modifier, as NeoForge requires the renderer's type arguments to match its declared bounds
+        event.<LivingEntity, LivingEntityRenderState>registerEntityModifier(new TypeToken<LivingEntityRenderer<LivingEntity, LivingEntityRenderState, ?>>() {},
+              MekaSuitArmor::captureModuleActivity);
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
