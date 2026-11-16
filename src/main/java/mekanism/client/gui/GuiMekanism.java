@@ -441,16 +441,20 @@ public abstract class GuiMekanism<CONTAINER extends AbstractContainerMenu> exten
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double xDelta, double yDelta) {
         // first try to send the mouse event to our focused window
-        GuiWindow top = windows.peek();
-        if (top != null) {
-            boolean windowScroll = top.mouseScrolled(mouseX, mouseY, xDelta, yDelta);
-            if (windowScroll || !top.getInteractionStrategy().allowAll()) {
+        GuiWindow focusedWindow = windows.peek();
+        if (focusedWindow != null) {
+            boolean windowScroll = focusedWindow.mouseScrolled(mouseX, mouseY, xDelta, yDelta);
+            if (windowScroll || !focusedWindow.getInteractionStrategy().allowAll()) {
                 //If our focused window was able to handle the scroll or doesn't allow interacting with
                 // things outside the window, return our scroll result
                 return windowScroll;
             }
         }
-        return super.mouseScrolled(mouseX, mouseY, xDelta, yDelta);
+        if (super.mouseScrolled(mouseX, mouseY, xDelta, yDelta)) {
+            return true;
+        }
+        //AbstractContainerScreen only passes scrolling to slot actions, so pass it to the hovered child ourselves
+        return getChildAt(mouseX, mouseY).filter(child -> child != focusedWindow && child.mouseScrolled(mouseX, mouseY, xDelta, yDelta)).isPresent();
     }
 
     @Override
