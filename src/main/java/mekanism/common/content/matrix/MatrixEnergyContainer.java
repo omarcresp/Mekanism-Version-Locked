@@ -121,7 +121,7 @@ public class MatrixEnergyContainer implements IEnergyContainer {
                 }
                 if (!targets.isEmpty()) {
                     //Next we emit any power we
-                    long sent = EnergyUtils.emit(targets, getRemainingOutput(), subTransaction);
+                    long sent = EnergyUtils.emit(targets, Math.min(getRemainingOutput(), getAmountAsLong()), subTransaction);
                     if (sent > 0) {
                         //Increase how much we are outputting by the amount we accepted
                         queuedOutput.updateSnapshots(subTransaction);
