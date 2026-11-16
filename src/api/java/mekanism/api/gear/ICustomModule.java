@@ -40,12 +40,12 @@ public interface ICustomModule<MODULE extends ICustomModule<MODULE>> {
     default void tickServer(IModule<MODULE> module, ItemAccess itemAccess, Player player, TransactionContext transaction) {
     }
 
-    /// Called each tick on the client side when installed in a MekaSuit and set to enabled.
+    /// Called each tick on the client side when installed in a MekaSuit and set to enabled. This is only called for the local player.
     ///
     /// @param module      Module instance.
     /// @param itemAccess  The item access that the module is installed on.
     /// @param player      Player wearing the MekaSuit.
-    /// @param transaction The transaction that this operation is part of.
+    /// @param transaction The transaction that this operation is part of. It is never committed, as the server is responsible for any changes to the item.
     ///
     /// @since 10.8.0
     default void tickClient(IModule<MODULE> module, ItemAccess itemAccess, Player player, TransactionContext transaction) {

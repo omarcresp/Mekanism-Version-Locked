@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "mekanism.common.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["ItemStackClientArmorTickMixin"],
+  "injectors": {"defaultRequire": 1}
+}

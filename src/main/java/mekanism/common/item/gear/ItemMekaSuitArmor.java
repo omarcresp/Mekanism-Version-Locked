@@ -242,16 +242,20 @@ public class ItemMekaSuitArmor extends ItemSpecialArmor implements IModuleContai
     @Override
     public void inventoryTick(ItemStack stack, ServerLevel level, Entity entity, @Nullable EquipmentSlot slot) {
         super.inventoryTick(stack, level, entity, slot);
+        try (Transaction transaction = Transaction.openRoot()) {
+            tickWornModules(stack, entity, slot, transaction);
+            transaction.commit();
+        }
+    }
+
+    public static void tickWornModules(ItemStack stack, Entity entity, @Nullable EquipmentSlot slot, TransactionContext transaction) {
         if (slot != null && slot.getType() == Type.HUMANOID_ARMOR && entity instanceof Player player) {
             ModuleContainer container = ModuleHelper.get().getModuleContainer(stack);
             if (container != null) {
-                try (Transaction transaction = Transaction.openRoot()) {
-                    //TODO - 26.1: Re-evaluate this item access
-                    ItemAccess itemAccess = ItemAccess.forStack(stack);
-                    for (Module<?> module : container.modules()) {
-                        module.tick(itemAccess, player, transaction);
-                    }
-                    transaction.commit();
+                //TODO - 26.1: Re-evaluate this item access
+                ItemAccess itemAccess = ItemAccess.forStack(stack);
+                for (Module<?> module : container.modules()) {
+                    module.tick(itemAccess, player, transaction);
                 }
             }
         }
