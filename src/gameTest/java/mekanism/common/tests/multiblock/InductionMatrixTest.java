@@ -49,13 +49,37 @@ public class InductionMatrixTest {
               .thenExecute(() -> {
                   MatrixEnergyContainer matrix = createMatrix(helper).energyContainer();
                   IEnergyContainer cube = helper.getBlockEntity(3, 0, 0, TileEntityEnergyCube.class).energyContainer();
-                  List<BlockCapabilityCache<EnergyHandler, @Nullable Direction>> targets = getCubeTargets(helper);
+                  List<BlockCapabilityCache<EnergyHandler, @Nullable Direction>> targets = getAllCubeSideTargets(helper);
                   matrix.tick(targets, null, null, null);
                   helper.assertValueEqual(cube.getAmountAsLong(), 0L, "Energy output by an empty matrix");
                   insert(matrix, 1_000);
                   matrix.tick(targets, null, null, null);
                   helper.assertValueEqual(cube.getAmountAsLong(), 1_000L, "Energy output by a matrix storing 1000 FE");
                   helper.assertValueEqual(matrix.getAmountAsLong(), 0L, "Energy left in the matrix");
+              })
+              .thenSucceed();
+    }
+
+    @GameTest(template = MATRIX_PARTS)
+    @TestHolder(description = "Tests to make sure that committed induction matrix transfers are stored in its cells right away, and aborted ones are not.")
+    public static void testTransfersStoredInCells(final MekGameTestHelper helper) {
+        helper.startSequence()
+              .thenExecute(() -> {
+                  MatrixEnergyContainer matrix = createMatrix(helper).energyContainer();
+                  IEnergyContainer cell = helper.getBlockEntity(1, 0, 0, TileEntityInductionCell.class).energyContainer();
+                  try (Transaction transaction = Transaction.openRoot()) {
+                      matrix.insert(1_000, transaction, AutomationType.EXTERNAL);
+                  }
+                  helper.assertValueEqual(cell.getAmountAsLong(), 0L, "Cell energy after an aborted insertion");
+                  helper.assertValueEqual(matrix.getAmountAsLong(), 0L, "Matrix energy after an aborted insertion");
+                  insert(matrix, 1_000);
+                  helper.assertValueEqual(cell.getAmountAsLong(), 1_000L, "Cell energy after a committed insertion");
+                  try (Transaction transaction = Transaction.openRoot()) {
+                      matrix.extract(400, transaction, AutomationType.EXTERNAL);
+                      transaction.commit();
+                  }
+                  helper.assertValueEqual(cell.getAmountAsLong(), 600L, "Cell energy after a committed extraction");
+                  helper.assertValueEqual(matrix.getAmountAsLong(), 600L, "Matrix energy after a committed extraction");
               })
               .thenSucceed();
     }
@@ -68,8 +92,7 @@ public class InductionMatrixTest {
         return matrix;
     }
 
-    private static List<BlockCapabilityCache<EnergyHandler, @Nullable Direction>> getCubeTargets(MekGameTestHelper helper) {
-        //Target every side so that the test doesn't depend on which sides of the cube are configured to accept energy
+    private static List<BlockCapabilityCache<EnergyHandler, @Nullable Direction>> getAllCubeSideTargets(MekGameTestHelper helper) {
         BlockPos cube = helper.absolutePos(new BlockPos(3, 0, 0));
         return Arrays.stream(EnumUtils.DIRECTIONS)
               .map(side -> Capabilities.ENERGY.createCache(helper.getLevel(), cube, side))
