@@ -1,13 +1,18 @@
 package mekanism.common.tests.qio;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
+import mekanism.common.component.qio.DriveContents;
 import mekanism.common.content.qio.QIODriveData.QIODriveKey;
 import mekanism.common.registries.MekanismBlocks;
+import mekanism.common.registries.MekanismDataComponents;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.tests.MekanismTests;
 import mekanism.common.tests.helpers.QIOGameTestHelper;
 import mekanism.common.tests.util.StructureBuilderUtils;
+import mekanism.common.tile.qio.TileEntityQIODriveArray;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.neoforged.neoforge.transfer.item.ItemResource;
@@ -95,6 +100,37 @@ public class TransactionalQIOTest {
               .thenExecute(helper::addDrives)
               .thenExecute(frequency -> helper.testExtract(frequency, ItemResource.of(Items.STONE), 1_000, true))
               .thenSucceed();
+    }
+
+    @GameTest(template = BASE_DRIVE)
+    @TestHolder(description = "Tests to make sure the drive item is updated when a committed transaction exchanges items without changing the total count or types.")
+    public static void testQIOExchangeSavesDrive(final QIOGameTestHelper helper) {
+        helper.startWithFrequency()
+              .thenExecute(helper::addDrives)
+              .thenExecute(frequency -> {
+                  ItemResource stone = ItemResource.of(Items.STONE);
+                  ItemResource dirt = ItemResource.of(Items.DIRT);
+                  try (Transaction transaction = Transaction.openRoot()) {
+                      frequency.massInsert(stone, 10, transaction);
+                      frequency.massInsert(dirt, 20, transaction);
+                      transaction.commit();
+                  }
+                  helper.assertValueEqual(getDriveContents(helper), Map.of(stone, 10L, dirt, 20L), "Drive contents after insertion");
+                  try (Transaction transaction = Transaction.openRoot()) {
+                      helper.assertValueEqual(frequency.massExtract(stone, 1, transaction), 1L, "Extracted stone");
+                      helper.assertValueEqual(frequency.massInsert(dirt, 1, transaction), 1L, "Inserted dirt");
+                      transaction.commit();
+                  }
+                  helper.assertValueEqual(getDriveContents(helper), Map.of(stone, 9L, dirt, 21L), "Drive contents after exchange");
+              })
+              .thenSucceed();
+    }
+
+    private static Map<ItemResource, Long> getDriveContents(QIOGameTestHelper helper) {
+        ItemResource drive = helper.getBlockEntity(0, 0, 0, TileEntityQIODriveArray.class).getDriveSlots().getFirst().resource();
+        Map<ItemResource, Long> contents = new HashMap<>();
+        drive.getOrDefault(MekanismDataComponents.DRIVE_CONTENTS, DriveContents.EMPTY).loadItemMap(contents::put);
+        return contents;
     }
 
     @GameTest(template = BASE_DRIVE)

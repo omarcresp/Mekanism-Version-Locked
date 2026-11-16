@@ -103,11 +103,8 @@ public class QIODriveData extends SnapshotJournal<QIODriveData.Snapshot> {
     @Override
     protected void onRootCommit(QIODriveData.Snapshot originalState) {
         super.onRootCommit(originalState);
-        if (originalState.itemCount() != itemCount || originalState.itemTypes() != itemTypes) {
-            //If the state changed, update the metadata and stored data on the physical drive so that if it is removed it will have valid data
-            //TODO: Is there a way we can just have the diff of what happened get applied?
-            key.save(this);
-        }
+        //TODO: Is there a way we can just have the diff of what happened get applied?
+        key.save(this);
     }
 
     @VisibleForTesting
